@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arden Automotive Group Case Study — Farouk Yusuf</title>
+<meta name="description" content="Supplier reliability, inventory risk & freight-cost analytics case study: Excel, SQL, Python and Power BI analysis of a fictional premium vehicle manufacturer's component supply chain, supplier fairness and shortage root causes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/charts.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f374d'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EFY%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="disclaimer-strip">Arden Automotive Group is fictional. All data on this page is synthetically generated for portfolio purposes — see the disclaimer below for detail.</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">FY</span>
+      Farouk Yusuf
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html#case-studies">Case Studies</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="cs-breadcrumb"><a href="../index.html">Home</a> / Case Studies / Arden Automotive Group</div>
+    <span class="eyebrow">Case Study</span>
+    <h1>Global Parts Supply &amp; Production Risk Intelligence</h1>
+    <p class="cs-sub">Are Arden's worst-performing suppliers actually unreliable — or are they just stuck with harder parts to deliver? An end-to-end analysis across Excel, SQL, Python and Power BI on 14,403 purchase orders from a fictional premium vehicle manufacturer's two-year, 30-supplier component supply chain.</p>
+    <nav class="anchor-nav"><a href="#findings">Key Findings</a><a href="#problem">Business Problem</a><a href="#stakeholders">Stakeholders</a><a href="#dataset">Dataset</a><a href="#approach">Approach &amp; Tools</a><a href="#casemix">Supplier Case-Mix Analysis</a><a href="#shortages">Shortage Root Causes</a><a href="#freight">Freight Cost Concentration</a><a href="#recommendations">Recommendations</a><a href="#limitations">Limitations &amp; Debugging</a><a href="#gallery">More Charts</a><a href="#technical">Technical Evidence</a></nav>
+  </div>
+</section>
+
+<div class="container">
+  <div class="disclaimer-box">
+    <span class="dot">i</span>
+    <div><strong>Synthetic-data disclaimer:</strong> Arden Automotive Group is a fictional vehicle manufacturer. Every supplier, component, purchase order, plant and figure on this page was generated for data-analytics portfolio purposes — none of it describes a real manufacturer or supplier, and no figure should be read as representing an actual business. No individual is identified, ranked or scored anywhere in this project.</div>
+  </div>
+</div>
+
+<section id="findings" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">At a Glance</span>
+      <h2>Headline Numbers</h2>
+      <p>Every figure below is <button type="button" class="term" data-term="reconciled">reconciled <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> exactly across the Excel workbook, every SQL script and the Python notebook.</p>
+    </div>
+    <div class="short-version">
+      <span class="eyebrow">The Short Version</span>
+      <p>Arden is a made-up premium UK vehicle manufacturer, used here to practise a real supply-chain analytics workflow end to end. Its two worst-performing suppliers stay its two worst-performing suppliers even after fairly adjusting for how hard the parts they supply actually are — their poor delivery record is real, not an artefact of a tough job.</p><p>Along the way, the same analysis found a supplier whose sudden five-month slump turned out to be an isolated, fixable episode rather than a trend, confirmed that on-time delivery barely moved across the whole network year on year, and found that rushed shipping costs three and a half times more than standard freight while eating over half the freight budget — despite being only a quarter of all shipments.</p>
+    </div>
+    <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">70.3%</span><span class="kpi-lbl">Overall on-time-in-full (OTIF) delivery rate, across 14,383 orders</span></div><div class="kpi-tile"><span class="kpi-num">69.9% &rarr; 70.8%</span><span class="kpi-lbl">Network-wide OTIF, 2024 &rarr; 2025</span><span class="tag tag-not-significant">Not statistically significant</span></div><div class="kpi-tile"><span class="kpi-num">3.56x</span><span class="kpi-lbl">Cost premium for expedited vs standard freight shipments</span></div><div class="kpi-tile"><span class="kpi-num">92.4%</span><span class="kpi-lbl">Of shortage events caused by supplier or logistics delay, not demand swings</span></div></div>
+    <div class="two-col" style="margin-top:32px;">
+      <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Raw vs. case-mix-adjusted OTIF rate, by supplier</span></div>
+  <div data-chart="casemix-data" data-chart-type="comparison"></div>
+  <script type="application/json" id="casemix-data">{"rows": [{"label": "Caldervale Systems", "before": 92.6, "after": 91.8, "meta": {"n": 474, "rank_change": 0}}, {"label": "Barrowfield Components", "before": 90.6, "after": 90.6, "meta": {"n": 233, "rank_change": -1}}, {"label": "Pennington Plastics", "before": 90.2, "after": 90.2, "meta": {"n": 336, "rank_change": -1}}, {"label": "Quillon Braking Systems", "before": 89.8, "after": 88.2, "meta": {"n": 391, "rank_change": -2}}, {"label": "Silverbrook Alloys", "before": 89.6, "after": 91.4, "meta": {"n": 211, "rank_change": 3}}, {"label": "Millbeck Fasteners", "before": 89.3, "after": 89.2, "meta": {"n": 503, "rank_change": 1}}, {"label": "Oakridge Electrical", "before": 84.4, "after": 86.6, "meta": {"n": 642, "rank_change": 0}}, {"label": "Juniper Automotive Supply", "before": 83.8, "after": 81.6, "meta": {"n": 445, "rank_change": -3}}, {"label": "Xenith Electronics", "before": 83.0, "after": 81.8, "meta": {"n": 282, "rank_change": -1}}, {"label": "Thistledown Trim", "before": 82.8, "after": 81.0, "meta": {"n": 829, "rank_change": -2}}, {"label": "Elmswood Manufacturing", "before": 81.8, "after": 82.3, "meta": {"n": 307, "rank_change": 2}}, {"label": "Falkbridge Engineering", "before": 81.5, "after": 80.8, "meta": {"n": 399, "rank_change": -1}}, {"label": "Vantage Powertrain Ltd", "before": 80.8, "after": 80.3, "meta": {"n": 687, "rank_change": -1}}, {"label": "Everglade Rubber & Seals", "before": 80.1, "after": 77.7, "meta": {"n": 146, "rank_change": -1}}, {"label": "Ravensworth Chassis", "before": 80.0, "after": 83.3, "meta": {"n": 461, "rank_change": 7}}, {"label": "Westerham Composites", "before": 76.0, "after": 73.2, "meta": {"n": 196, "rank_change": -3}}, {"label": "Zephyr Interiors", "before": 72.1, "after": 76.4, "meta": {"n": 506, "rank_change": 1}}, {"label": "Hartlow Electronics", "before": 71.7, "after": 71.9, "meta": {"n": 565, "rank_change": -2}}, {"label": "Ironvale Forge", "before": 71.6, "after": 74.6, "meta": {"n": 313, "rank_change": 1}}, {"label": "Ashcombe Precision", "before": 70.9, "after": 75.3, "meta": {"n": 275, "rank_change": 3}}, {"label": "Northgate Machining", "before": 70.7, "after": 70.1, "meta": {"n": 433, "rank_change": 0}}, {"label": "Yarrowdale Suspension", "before": 69.5, "after": 67.3, "meta": {"n": 285, "rank_change": -2}}, {"label": "Umberleigh Wiring", "before": 67.7, "after": 67.3, "meta": {"n": 384, "rank_change": 0}}, {"label": "Dunbrook Industries", "before": 65.4, "after": 70.1, "meta": {"n": 538, "rank_change": 3}}, {"label": "Greymoor Metals", "before": 54.9, "after": 59.0, "meta": {"n": 359, "rank_change": 0}}, {"label": "Solmar Fasteners Ltd", "before": 50.9, "after": 47.9, "meta": {"n": 900, "rank_change": -1}}, {"label": "Larchmont Tooling", "before": 50.8, "after": 46.0, "meta": {"n": 591, "rank_change": -3}}, {"label": "Norwood Castings", "before": 49.3, "after": 46.4, "meta": {"n": 665, "rank_change": -1}}, {"label": "Kestrel Precision Components", "before": 49.2, "after": 47.4, "meta": {"n": 1427, "rank_change": 1}}, {"label": "Cliffgate Logistics Components", "before": 46.8, "after": 51.7, "meta": {"n": 600, "rank_change": 4}}], "options": {"valueFormat": "percent", "beforeLabel": "Raw OTIF rate", "afterLabel": "Case-mix adjusted OTIF rate", "categoryLabel": "Supplier", "metaColumns": [{"key": "n", "label": "Orders", "numeric": true, "format": "number"}, {"key": "rank_change", "label": "Rank change", "numeric": true, "format": "number"}]}}</script>
+  <div class="chart-caption">All 30 suppliers, sorted by raw OTIF rate. Ravensworth Chassis moves the furthest under adjustment (15th &rarr; 8th) — proof the adjustment is meaningful generally. Kestrel Precision Components and Solmar Fasteners Ltd barely move, and stay near the bottom either way.</div>
+</div>
+      <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Average shipment cost: standard vs. expedited freight</span></div>
+  <div data-chart="freight-data" data-chart-type="bar"></div>
+  <script type="application/json" id="freight-data">{"categories": ["Standard freight", "Expedited freight"], "series": [{"label": "Average shipment cost", "values": [173.04, 616.66]}], "options": {"valueFormat": "gbp", "categoryLabel": "Freight type"}}</script>
+  <div class="chart-caption">Expedited (air) shipments cost 3.56x more on average than standard freight, and account for over half of total freight spend despite being just over a quarter of shipments (Finding 6).</div>
+</div>
+    </div>
+    <h3 style="margin-top:8px;">Eight strongest findings</h3>
+    <div class="finding-card">
+      <span class="finding-num">FINDING 1</span>
+      <h4>The two suppliers with the worst delivery records stay the worst — even after fairly accounting for how hard their parts are to supply.</h4>
+      <p>Some suppliers' rankings do shift a lot once you account for job difficulty — one moves by seven places. But the two suppliers with the worst on-time-in-full delivery records, Cliffgate Logistics Components and Kestrel Precision Components, are still the two worst performers after that adjustment. Their poor delivery record is real, not an excuse.</p>
+      <div class="figure-line">Cliffgate: 46.8% raw OTIF &middot; Kestrel: 49.2% raw OTIF &middot; Gap vs. the rest of the network stays at roughly 25 percentage points even after adjustment</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Logistic <button type="button" class="term" data-term="regression">regression <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> of OTIF on supplier + criticality tier + commodity group (pseudo <button type="button" class="term" data-term="r-squared">R&sup2; <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>=0.10, n=14,383) — this is the <button type="button" class="term" data-term="case-mix adjustment">case-mix adjustment <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> referenced throughout this page. Bootstrap 95% <button type="button" class="term" data-term="confidence interval">CI <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> on the OTIF gap between the two worst suppliers and the rest of the network: 23.2&ndash;27.7 percentage points (2,000 resamples; excludes zero, i.e. the gap is real).</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 2</span>
+      <h4>One of those two, Kestrel Precision Components, does supply genuinely harder parts — but that alone doesn't explain its poor record.</h4>
+      <p>Kestrel's components are the hardest mix of any major supplier — nearly three-quarters are rated Critical or High criticality, roughly double the network average. If a hard job were the whole story, adjusting for it should make Kestrel look meaningfully better. It barely moves.</p>
+      <div class="figure-line">72.9% of Kestrel's parts are Critical/High criticality vs. 36.3% network average &middot; Adjusted OTIF: 49.2% raw &rarr; 47.4% adjusted (slightly worse, not better)</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Kestrel's <button type="button" class="term" data-term="case-mix adjustment">case-mix adjustment <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>-adjusted OTIF (47.4%) is not meaningfully better than its raw rate (49.2%) — its adjusted rank actually falls slightly, from 29th to 28th of 30 — confirming its harder parts mix does not explain its performance.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 3</span>
+      <h4>Another supplier, Solmar Fasteners Ltd, has an easy parts mix — and performs just as poorly.</h4>
+      <p>Solmar's components lean toward the easier end of the difficulty scale, not the harder end. Yet its on-time-in-full record is nearly identical to Kestrel's, and adjusting for job difficulty doesn't help it either — this is the cleanest example in the whole dataset of a supplier whose weak record can't be blamed on what it was asked to supply.</p>
+      <div class="figure-line">50.9% raw OTIF across 900 orders &middot; 67.5% of Solmar's parts are Medium/Low criticality — an easier-than-average mix &middot; Adjusted OTIF falls slightly, to 47.9%</div>
+      
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 4</span>
+      <h4>One supplier's reliability collapsed suddenly for five months — but it looks like a one-off, not a trend.</h4>
+      <p>Ashcombe Precision delivered normally for most of the two-year period, then its on-time-in-full rate fell off a cliff for five months running, right at the end of the data. That kind of sudden, isolated drop is usually more fixable than a slow, structural decline — it points to a specific, recent problem worth a direct conversation.</p>
+      <div class="figure-line">Normal range: roughly 60%&ndash;90% OTIF most months &middot; Aug&ndash;Dec 2025: 21.4%, 36.4%, 20.0%, 30.0%, 40.0%</div>
+      
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 5</span>
+      <h4>Across the whole network, on-time delivery barely changed year on year — despite Ashcombe's collapse.</h4>
+      <p>Zoom out from any one supplier, and the network's overall on-time-in-full rate was essentially flat between 2024 and 2025. A formal check confirms the small change is easily explained by chance, not a real network-wide trend — concern about “declining performance” belongs at the supplier level, not the portfolio level.</p>
+      <div class="figure-line">69.9% (2024) &rarr; 70.8% (2025) &middot; 14,383 OTIF-eligible orders</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Two-proportion z-test on network-wide OTIF, 2024 vs. 2025: z=&minus;1.214, <button type="button" class="term" data-term="p-value">p=0.225 <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> (<button type="button" class="term" data-term="statistically significant">not significant <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>).</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 6</span>
+      <h4>Rushed shipping costs three and a half times more than standard shipping — and eats over half the freight budget.</h4>
+      <p>When a part has to be shipped by air to catch up on a late delivery, it costs far more than shipping it the normal way. These rushed shipments are a minority of all shipments, but they're eating the majority of the money spent on freight.</p>
+      <div class="figure-line">Average expedited shipment: £616.66 vs. standard: £173.04 (3.56x) &middot; 26.0% of shipments were expedited, but made up 55.6% of the £4.16m total freight spend (£2.31m)</div>
+      
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 7</span>
+      <h4>Inventory risk is low overall, but it isn't spread evenly — it's concentrated in a specific plant and a short list of parts.</h4>
+      <p>Across the whole network, the share of stock checks showing dangerously low inventory cover is small. But a group of 20 components sit below their safety-stock level nearly half the time, and one plant carries more of this risk in its most critical components than the other two.</p>
+      <div class="figure-line">Low-cover rate: 1.5% (excluding a documented data warm-up period) &middot; 20 components below safety stock in 40%+ of monthly checks &middot; Ridgeway Powertrain Plant: 8.0% vs. 6.9%&ndash;7.5% at the other two plants</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Overall low-cover rate 4.32% including two documented simulation warm-up months, 95% <button type="button" class="term" data-term="confidence interval">CI <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> 4.07%&ndash;4.58%; 1.47% excluding them &mdash; see Limitations &amp; Debugging.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 8</span>
+      <h4>Shortages are overwhelmingly a supplier and logistics problem — not a forecasting problem.</h4>
+      <p>When production-risk events were traced back to a cause, the overwhelming majority came down to suppliers delivering late or shipments being delayed in transit. Getting the demand forecast wrong was a minor factor by comparison.</p>
+      <div class="figure-line">57.8% Supplier Late Delivery + 34.6% Logistics Delay = 92.4% of 334 events &middot; Only 5.2% Demand Spike</div>
+      
+    </div>
+  </div>
+</section>
+<section id="problem" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">1. Business Problem</span>
+      <h2>What management wanted answered</h2>
+    </div>
+    <p>Arden is a fictional premium UK vehicle manufacturer experiencing component shortages, late deliveries, volatile lead times and expensive expedited freight. Management wanted to know which suppliers genuinely create production risk, which components are most likely to disrupt production, where inventory cover is dangerously low, whether shortages are driven by supplier reliability or demand changes, and where expedited freight is increasing cost.</p><p>One rule was non-negotiable: <strong>no supplier could be labelled a poor performer</strong> without first checking whether its raw delivery record still held up once the difficulty of the components it actually supplies was taken into account.</p>
+  </div>
+</section>
+<section id="stakeholders">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">2. Stakeholders &amp; Business Decision</span>
+      <h2>Who this was for, and what they needed to decide</h2>
+    </div>
+    <div class="stakeholder-grid"><div class="stakeholder-card"><strong>Director of Procurement &amp; Supply Chain</strong><span>Needed to know which suppliers genuinely create production risk, and which just look bad because they carry harder-to-supply components.</span></div><div class="stakeholder-card"><strong>Production Planning</strong><span>Needed to know where inventory cover is dangerously low, and whether that risk is spread evenly or concentrated in specific components and plants.</span></div><div class="stakeholder-card"><strong>Logistics &amp; Freight Management</strong><span>Needed to know how much expedited freight is really costing, and whether it's a symptom of a deeper supplier-reliability problem rather than a freight-policy problem.</span></div><div class="stakeholder-card"><strong>Supplier Quality &amp; Category Management</strong><span>Needed a fair basis for supplier conversations that doesn't punish a supplier simply for being asked to supply harder, more critical components.</span></div></div>
+  </div>
+</section>
+<section id="dataset" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">3. Dataset Overview</span>
+      <h2>What the data covers</h2>
+    </div>
+    <table class="data-table"><tbody><tr><th>Coverage</th><td>30 suppliers, 650 components, 3 manufacturing plants, multiple commodity groups and criticality tiers</td></tr><tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr><tr><th>Purchase orders</th><td class="num">14,403 (canonical, processed layer)</td></tr><tr><th>OTIF-eligible orders</th><td class="num">14,383 (used for on-time-in-full rate calculations)</td></tr><tr><th>Shipments</th><td class="num">14,418</td></tr><tr><th>Inventory stock snapshots</th><td class="num">23,925 (monthly stock-level checks across components and plants)</td></tr><tr><th>Shortage / production-risk events</th><td class="num">334</td></tr></tbody></table>
+  </div>
+</section>
+<section id="approach">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">4. Analytical Approach &amp; Tools Used</span>
+      <h2>Four tools, one reconciled set of numbers</h2>
+      <p>Each tool answers a different part of the brief, but every headline number reconciles exactly across all of them. Lead time and purchase-order value are both right-skewed (see the gallery below), so medians and percentiles are used throughout rather than simple averages.</p>
+    </div>
+    <div class="tool-grid"><div class="tool-chip"><strong>Excel</strong><span>A 10-sheet workbook where every KPI is a live formula or PivotTable over the processed purchase-order, delivery and inventory data — not typed in by hand.</span></div><div class="tool-chip"><strong>SQL</strong><span>Six portable, CTE/window-function-based queries covering KPIs, supplier performance, inventory coverage, shortages, freight cost and component criticality — validated against a SQLite load of the same tables.</span></div><div class="tool-chip"><strong>Python</strong><span>The statistical work: a logistic-regression case-mix adjustment for supplier fairness, Wilson-score confidence intervals, a significance test on the year-over-year OTIF change, and a bootstrap sensitivity check.</span></div><div class="tool-chip"><strong>Power BI</strong><span>A full dashboard build specification — the data model, the DAX measure library and the page layouts — ready to build.</span></div></div>
+  </div>
+</section>
+<section id="casemix" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">5. Supplier <button type="button" class="term" data-term="case-mix adjustment">Case-Mix <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> Analysis</span>
+      <h2>Testing whether raw supplier comparisons are fair</h2>
+      <p>The interactive chart above (Headline Numbers) shows raw vs. case-mix-adjusted OTIF for all 30 suppliers, sorted from best to worst raw performer. The table below names the specific suppliers this analysis turned out to be about.</p>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Supplier</th><th>Raw rank</th><th>Adjusted rank</th><th>Interpretation</th></tr></thead>
+      <tbody><tr><td>Kestrel Precision Components</td><td>29th of 30 (49.2%)</td><td>28th of 30 (47.4%)</td><td>Genuinely harder mix (72.9% Critical/High vs. 36.3% average) — but adjustment barely moves it; poor record stands even after accounting for the harder job</td></tr><tr><td>Solmar Fasteners Ltd</td><td>26th of 30 (50.9%)</td><td>27th of 30 (47.9%)</td><td>Easier-than-average mix (67.5% Medium/Low criticality) — adjustment makes its position slightly worse, not better; the cleanest genuinely-poor-supplier case in the dataset</td></tr><tr><td>Cliffgate Logistics Components</td><td>30th of 30, worst raw OTIF (46.8%)</td><td>26th of 30 (51.7%)</td><td>Adjustment does lift Cliffgate meaningfully (+4 ranks) — but it's still bottom-tier even adjusted; forms the other half of the “two worst suppliers stay worst” finding</td></tr><tr><td>Ravensworth Chassis</td><td>15th of 30 (80.0%)</td><td>8th of 30 (83.3%)</td><td>The single biggest mover in the whole supplier set (+7 ranks) — proof the adjustment is meaningful generally, just not for the two worst performers</td></tr></tbody>
+    </table>
+  </div>
+</section>
+<section id="shortages">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">6. Shortage Root Causes</span>
+      <h2>Why parts actually run short</h2>
+      <p>Every shortage/production-risk event was traced back to a single primary cause. The result answers the "supplier reliability vs. demand changes" question management asked directly.</p>
+    </div>
+    <figure class="chart-figure">
+    <img src="../assets/images/arden/04_shortage_root_cause.png" alt="Bar chart of shortage events by root cause">
+    <figcaption>Of 334 shortage/production-risk events, 57.8% are attributed to Supplier Late Delivery and 34.6% to Logistics Delay — together over 92% of events — versus just 5.2% for Demand Spike.</figcaption>
+  </figure>
+  </div>
+</section>
+<section id="freight" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">7. Freight Cost Concentration</span>
+      <h2>Where the freight budget actually goes</h2>
+      <p>The interactive chart above (Headline Numbers) compares average standard vs. expedited shipment cost. The chart below breaks total freight spend down by commodity group.</p>
+    </div>
+    <figure class="chart-figure">
+    <img src="../assets/images/arden/05_cost_pareto_by_commodity.png" alt="Pareto chart of freight cost by commodity group">
+    <figcaption>Freight cost concentrates heavily in a small number of commodity groups — consistent with the pattern in Finding 6, where a minority of expedited shipments drive a disproportionate share of the £4.16m total freight spend.</figcaption>
+  </figure>
+  </div>
+</section>
+<section id="recommendations">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">8. Management Recommendations</span>
+      <h2>What follows from the evidence</h2>
+    </div>
+    <ol class="rec-list"><li><strong>Open a specific, time-bounded conversation with Ashcombe Precision</strong> about its August&ndash;December 2025 performance — the isolated, recent, severe nature of this episode makes it the single most tractable issue in this report.</li><li><strong>Escalate Solmar Fasteners Ltd for contract review</strong>, on the basis of consistently poor performance on an easier-than-average parts mix — its weak position is not an artefact of job difficulty.</li><li><strong>Treat Kestrel Precision Components as a genuine reliability risk, not merely a hard-parts victim</strong> — continue sourcing it for what it does well, but don't excuse its OTIF record purely on job-mix grounds; a joint improvement plan is more appropriate than either dismissing the concern or replacing a supplier that does carry real technical difficulty.</li><li><strong>Prioritise the 20 chronically low-cover components and Ridgeway Powertrain Plant specifically</strong> for safety-stock review, rather than a blanket inventory policy change — the risk is concentrated, not systemic.</li><li><strong>Investigate expedited-freight triggers as a cost-reduction lever</strong> — since shortages are overwhelmingly supplier- and logistics-driven, improving upstream delivery reliability for the highest-expediting suppliers is likely to reduce freight cost more effectively than freight-policy changes alone.</li></ol>
+  </div>
+</section>
+<section id="limitations" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">9. Limitations &amp; Debugging Lessons</span>
+      <h2>What this analysis does not claim — and two things caught before they shipped</h2>
+    </div>
+    <ul class="limit-list"><li><strong>The synthetic data was originally scripted with a different headline story.</strong> The plan was for Kestrel Precision Components to look poor mainly because of a harder parts mix, while Solmar Fasteners Ltd would be genuinely poor regardless of mix. Running the actual case-mix regression told a more honest story: Kestrel's harder mix (72.9% Critical/High components) barely moves its adjusted rating at all — its poor record is real, not just a reflection of what it was asked to supply. The write-up was rewritten to match what the regression actually showed, not the story that was originally planned.</li><li><strong>An early version of the inventory simulation produced an implausible reliability swing.</strong> A first pass showed an implausible swing from around 81% to around 4% in an inventory-reliability metric within the first eight months of the dataset — a simulation cold-start effect (component reorder cycles hadn't reached steady state yet), not a real pattern. The generator's order-scheduling logic was fixed and the affected data regenerated before any analysis was built on it. A smaller residual version of the same effect remains in January&ndash;February 2024 and is documented and excluded from the headline low-cover figure throughout this project (4.32% including those two months vs. 1.47% excluding them).</li></ul>
+    <ul class="limit-list"><li><strong>Synthetic data throughout</strong> — every figure describes patterns in a generated dataset built for this portfolio, not a real vehicle manufacturer.</li><li><strong>Association, not proof of cause</strong> — the case-mix adjustment controls for observed criticality and commodity-group differences, but doesn't prove a causal supplier effect. The expedited-freight/lateness relationship is a plausible operational pattern built into the data, not independently proven causal.</li><li><strong>The case-mix regression is less precise for suppliers with narrow, concentrated component portfolios</strong> (e.g. a supplier operating in only one commodity group) — individual supplier rank-change magnitudes should be read as indicative, not exact.</li><li><strong>Supplier order counts range from 146 to 1,427</strong> — comparisons involving the smaller-volume suppliers carry wider uncertainty than headline suppliers like Kestrel (n=1,427) or Solmar (n=900).</li><li><strong>Shortage cause is recorded as a single label per event</strong>, not a full multi-cause decomposition — a shortage with several contributing factors is recorded under its primary cause only.</li></ul>
+  </div>
+</section>
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">10. More Charts</span>
+      <h2>Supporting visuals</h2>
+    </div>
+    <div class="chart-gallery"><figure class="chart-figure">
+        <img src="../assets/images/arden/01_distribution_shape.png" alt="Histogram showing purchase-order lead time is right-skewed">
+        <figcaption>Purchase-order lead time is right-skewed (mean 25.0 days, median 22.0 days, 90th percentile 41 days) — most orders arrive within a few weeks, with a long tail of much slower ones, which is why medians rather than averages are used for lead time throughout this project.</figcaption>
+      </figure><figure class="chart-figure">
+        <img src="../assets/images/arden/02_monthly_otif_trend.png" alt="Line chart of monthly OTIF rate across the two-year period">
+        <figcaption>Month-by-month OTIF rate across the full two-year window. The year-over-year change is not statistically significant (Finding 5) — the visible movement mostly reflects Ashcombe Precision's isolated Aug&ndash;Dec 2025 collapse (Finding 4), not a network-wide trend.</figcaption>
+      </figure></div>
+  </div>
+</section>
+<section id="technical" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">11. Technical Evidence</span>
+      <h2>Source deliverables</h2>
+      <p>Source files for this project are organised as shown below (not yet published to a public GitHub repository). Every deliverable reconciles to the same figures shown on this page.</p>
+    </div>
+    <div class="tech-grid"><div class="tech-card"><h4>03_excel/</h4><ul><li>documentation/build_excel_workbook.py — reproducible build script</li><li>workbook/arden_supply_risk_analysis.xlsx — 10-sheet workbook</li></ul></div><div class="tech-card"><h4>04_sql/</h4><ul><li>01_kpi_analysis.sql &middot; 02_supplier_analysis.sql</li><li>03_inventory_coverage.sql &middot; 04_shortage_root_cause.sql</li><li>05_cost_freight_analysis.sql &middot; 06_component_criticality_analysis.sql</li></ul></div><div class="tech-card"><h4>07_python/</h4><ul><li>arden_supply_risk_analysis.py — full analysis script</li><li>arden_supply_risk_analysis.ipynb — narrated notebook</li><li>results/arden_results.json — machine-readable results</li></ul></div><div class="tech-card"><h4>05_power_bi/documentation/</h4><ul><li>dashboard_specification.md — build specification</li><li>dax_measures.md — full DAX measure library</li><li>data_model.md — data model design</li></ul></div></div>
+    <p class="tech-note">See also: <code>08_outputs/executive_summary/</code> for the full written analysis and <code>09_case_study/portfolio_case_study.md</code> for the source of this page.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Farouk Yusuf. Arden Automotive Group is fictional; all data is synthetic.</p>
+    <p><a href="../index.html">← Back to portfolio home</a></p>
+  </div>
+</footer>
+
+<script type="application/json" id="glossary-data">{"p-value": "A measure of how likely a result this size would happen by chance alone. Small (under 0.05) usually means the pattern is probably real; large means it could easily be random noise.", "statistically significant": "The difference is unlikely to be down to chance. \u201cNot significant\u201d doesn't mean \u201cno difference\u201d \u2014 it means the data can't rule out chance as the explanation.", "case-mix adjustment": "A fair way of comparing suppliers, regions or providers that accounts for how hard their jobs actually were, instead of just comparing raw averages.", "r-squared": "How much of the variation in an outcome a model explains, from 0 (none) to 1 (all of it). A low value means other, unmeasured factors matter too.", "regression": "A statistical method for estimating how one factor relates to an outcome while holding other factors constant \u2014 the main tool used here for fair before/after comparisons.", "decomposition": "Splitting a total change into its exact contributing parts (e.g. more cases happening vs. each case costing more), so they add up precisely to the real figure.", "confidence interval": "A range that's likely to contain the true value. A narrow range means a precise estimate; a wide one means more uncertainty.", "reconciled": "Checked and confirmed to match exactly across every tool used (Excel, SQL, Python) \u2014 no figure is reported unless it agrees everywhere it's calculated."}</script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/tooltip.js"></script>
+<script src="../assets/js/charts.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>

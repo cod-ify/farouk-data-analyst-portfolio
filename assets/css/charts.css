@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Interactive chart engine — styling for charts.js output.
+   Requires tokens.css, base.css, case-study.css (loaded last).
+   ========================================================================== */
+
+.chart-block {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+.chart-block .chart-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.chart-block .chart-title { font-weight: 700; color: var(--ink); font-size: 0.98rem; }
+.chart-block .chart-caption {
+  font-size: 0.86rem;
+  color: var(--muted);
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+}
+.chart-block svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-block .chart-canvas { position: relative; }
+
+/* filter toggle (e.g. Albion supplier-type) */
+.chart-filter {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 3px;
+  gap: 3px;
+}
+.chart-filter button {
+  border: none;
+  background: none;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+.chart-filter button.active { background: var(--navy); color: #fff; }
+
+/* axes / bars / lines */
+.chart-axis line, .chart-axis path { stroke: var(--line); stroke-width: 1; }
+.chart-axis text { fill: var(--muted); font-size: 11px; font-family: inherit; }
+.chart-gridline { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
+
+.chart-bar { fill: var(--teal); }
+.chart-bar.is-secondary { fill: var(--navy); }
+.chart-bar.is-tertiary { fill: var(--warn); }
+.chart-bar.is-quaternary { fill: var(--muted); }
+.chart-bar:hover, .chart-bar.is-active { fill: var(--navy-deep); }
+
+.chart-line-path { fill: none; stroke: var(--teal); stroke-width: 2.5; }
+.chart-line-dot { fill: var(--teal); stroke: #fff; stroke-width: 1.5; }
+.chart-line-dot:hover, .chart-line-dot.is-active { fill: var(--navy-deep); r: 5; }
+.chart-annotation-line { stroke: var(--bad); stroke-width: 1; stroke-dasharray: 4 3; }
+.chart-annotation-label { fill: var(--bad); font-size: 10.5px; font-weight: 600; }
+
+.chart-waterfall-bar.is-positive { fill: var(--good); }
+.chart-waterfall-bar.is-negative { fill: var(--bad); }
+.chart-waterfall-bar.is-total { fill: var(--navy); }
+.chart-waterfall-connector { stroke: var(--line); stroke-width: 1; }
+
+.chart-comparison-line { stroke: var(--line); stroke-width: 2; }
+.chart-comparison-dot.is-before { fill: var(--muted); }
+.chart-comparison-dot.is-after { fill: var(--teal); }
+.chart-comparison-label { fill: var(--ink); font-size: 11.5px; }
+
+.chart-histogram-bar { fill: var(--teal-light); stroke: var(--teal); stroke-width: 1; }
+.chart-histogram-marker { stroke: var(--navy); stroke-width: 1.5; stroke-dasharray: 4 3; }
+
+/* legend */
+.chart-legend { display: flex; gap: 16px; flex-wrap: wrap; margin: 10px 0 4px; font-size: 0.8rem; color: var(--muted); }
+.chart-legend .swatch { display: inline-flex; align-items: center; gap: 6px; }
+.chart-legend .swatch span.dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+/* tooltip */
+.chart-tooltip {
+  position: fixed;
+  z-index: 90;
+  background: var(--navy-deep);
+  color: #eaf1f5;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding: 8px 11px;
+  border-radius: 7px;
+  pointer-events: none;
+  box-shadow: var(--shadow);
+  max-width: 240px;
+}
+.chart-tooltip[hidden] { display: none; }
+.chart-tooltip .tt-label { font-weight: 700; }
+
+/* accessible "view as table" fallback, used by every chart type */
+.chart-table-toggle {
+  margin-top: 10px;
+  font-size: 0.82rem;
+}
+.chart-table-toggle summary {
+  cursor: pointer;
+  color: var(--teal);
+  font-weight: 600;
+  list-style: none;
+}
+.chart-table-toggle summary::-webkit-details-marker { display: none; }
+.chart-table-toggle table.data-table { margin-top: 10px; font-size: 0.85rem; }
+
+/* if charts.js hasn't run, hide the empty canvas — the "View as table" <details>
+   below it is a native element and needs no JS to work */
+.chart-canvas:empty { display: none; }

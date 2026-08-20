@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AeroVista Travel Group Case Study — Farouk Yusuf</title>
+<meta name="description" content="Flight disruption, delay & operational recovery analytics case study: Excel, SQL, Python and Power BI analysis of a synthetic airline's delay-propagation, case-mix route/airport and recovery-cost data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/charts.css">
+<link rel="stylesheet" href="../assets/css/case-study.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f374d'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EFY%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="disclaimer-strip">AeroVista Travel Group is fictional. All data on this page is synthetically generated for portfolio purposes — see the disclaimer below for detail.</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">FY</span>
+      Farouk Yusuf
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html#case-studies">Case Studies</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="container">
+    <div class="cs-breadcrumb"><a href="../index.html">Home</a> / Case Studies / AeroVista Travel Group</div>
+    <span class="eyebrow">Case Study</span>
+    <h1>Flight Disruption, Delay &amp; Operational Recovery Analytics</h1>
+    <p class="cs-sub">Why is on-time performance declining, how much delay actually propagates from a late inbound aircraft, and do raw route and airport disruption comparisons hold up once operational complexity is accounted for? An end-to-end analysis across Excel, SQL, Python and Power BI on 25,204 scheduled flights from a fictional airline's two-year operation.</p>
+    <nav class="anchor-nav"><a href="#findings">Key Findings</a><a href="#problem">Business Problem</a><a href="#dataset">Dataset</a><a href="#approach">Approach &amp; Tools</a><a href="#decomposition">Delay Decomposition</a><a href="#propagation">Propagation &amp; Turnaround</a><a href="#casemix">Case-Mix Analysis</a><a href="#recovery">Recovery Cost</a><a href="#recommendations">Recommendations</a><a href="#limitations">Limitations &amp; Debugging</a><a href="#gallery">More Charts</a><a href="#technical">Technical Evidence</a></nav>
+  </div>
+</section>
+
+<div class="container">
+  <div class="disclaimer-box">
+    <span class="dot">i</span>
+    <div><strong>Synthetic-data disclaimer:</strong> AeroVista Travel Group is a fictional airline. Every airport, route, aircraft, flight and figure on this page was generated for data-analytics portfolio purposes — none of it describes a real airline or its operational performance, and no figure should be read as representing an actual carrier. No individual passenger is identified, ranked or scored anywhere in this project.</div>
+  </div>
+</div>
+
+<section id="findings" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">At a Glance</span>
+      <h2>Headline Numbers</h2>
+      <p>Every figure below is <button type="button" class="term" data-term="reconciled">reconciled <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> exactly across the Excel workbook, every SQL script and the Python notebook.</p>
+    </div>
+    <div class="short-version">
+      <span class="eyebrow">The Short Version</span>
+      <p>AeroVista is a made-up airline, used here to practise a real operational-analytics workflow end to end. Its on-time performance genuinely got worse over two years — and the data shows that decline is <strong>real, not just bad luck</strong>: it's still there even after removing the three worst known disruption episodes from the numbers.</p><p>Along the way, the same analysis found that cancellations tell the opposite story — almost entirely explained by an 8-day grounding of one aircraft type — that delay from a late aircraft only really spreads once a built-in schedule cushion runs out, and that a small number of long-haul disruptions account for a disproportionate share of the £20.40m yearly recovery bill.</p>
+    </div>
+    <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">87.72% → 86.18%</span><span class="kpi-lbl">On-time performance, 2024 → 2025</span><span class="tag tag-significant">Statistically significant</span></div><div class="kpi-tile"><span class="kpi-num">1.77% → 2.22%</span><span class="kpi-lbl">Cancellation rate, 2024 → 2025 — almost entirely one grounding episode</span><span class="tag tag-caution">Caution</span></div><div class="kpi-tile"><span class="kpi-num">0.658</span><span class="kpi-lbl">Minutes of reactionary delay per minute of inbound lateness, once the buffer's used up</span></div><div class="kpi-tile"><span class="kpi-num">£20.40m</span><span class="kpi-lbl">Total passenger recovery cost, concentrated in a small number of events</span></div></div>
+    <div class="two-col" style="margin-top:32px;">
+      <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Monthly on-time performance and cancellation rate, 2024–2025</span></div>
+  <div data-chart="c1-data" data-chart-type="line"></div>
+  <script type="application/json" id="c1-data">{"xLabels": ["Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"], "series": [{"label": "On-time performance", "values": [88.83, 85.83, 89.82, 88.37, 87.26, 89.51, 86.1, 86.93, 89.0, 87.18, 87.62, 86.19, 84.75, 84.66, 87.09, 88.0, 88.03, 84.68, 86.64, 85.87, 88.05, 85.78, 86.01, 84.51], "valueFormat": "percent"}, {"label": "Cancellation rate", "values": [2.09, 1.59, 1.92, 1.14, 2.05, 1.15, 0.83, 2.84, 1.89, 2.08, 1.94, 1.65, 1.82, 1.78, 2.22, 2.7, 1.45, 1.78, 0.82, 2.44, 7.12, 0.92, 1.75, 1.88], "valueFormat": "percent", "axis": "secondary"}], "options": {"annotations": [{"x": "Jul 2024", "label": "ATC staffing crisis"}, {"x": "Jan 2025", "label": "Storm Brannigan"}, {"x": "Sep 2025", "label": "Turboprop AD grounding"}]}}</script>
+  <div class="chart-caption">A sharp cancellation spike in September 2025 (the Turboprop grounding) sits on top of a steadier, more gradual on-time-performance decline across the full two years — two different problems, visible in one chart.</div>
+</div>
+      <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Raw vs case-mix-expected on-time performance, worst 15 routes</span></div>
+  <div data-chart="c4-data" data-chart-type="comparison"></div>
+  <script type="application/json" id="c4-data">{"rows": [{"label": "Northgate International\u2013Solmara-Vantage", "before": 69.67, "after": 70.33, "meta": {"haul_type": "Long", "distance_km": 6223.8, "n_flights": 244}}, {"label": "Northgate International\u2013Norlandia Nordport", "before": 72.08, "after": 71.81, "meta": {"haul_type": "Long", "distance_km": 5901.8, "n_flights": 265}}, {"label": "Northgate International\u2013Bellhaven Intl", "before": 72.25, "after": 77.7, "meta": {"haul_type": "Long", "distance_km": 4698.7, "n_flights": 227}}, {"label": "Northgate International\u2013Kestria Skyport", "before": 72.41, "after": 70.42, "meta": {"haul_type": "Long", "distance_km": 6245.2, "n_flights": 203}}, {"label": "Castellan Gateway\u2013Norlandia Nordport", "before": 72.68, "after": 73.15, "meta": {"haul_type": "Long", "distance_km": 5680.8, "n_flights": 205}}, {"label": "Merrivale Central\u2013Solmara-Vantage", "before": 82.08, "after": 79.57, "meta": {"haul_type": "Long", "distance_km": 4257.8, "n_flights": 212}}, {"label": "Merrivale Central\u2013Bellhaven Intl", "before": 83.33, "after": 82.42, "meta": {"haul_type": "Long", "distance_km": 3516.0, "n_flights": 240}}, {"label": "Merrivale Central\u2013Dunraven", "before": 83.8, "after": 86.56, "meta": {"haul_type": "Medium", "distance_km": 1354.3, "n_flights": 784}}, {"label": "Porthaven\u2013Ashcombe Regional", "before": 84.03, "after": 89.44, "meta": {"haul_type": "Short", "distance_km": 652.0, "n_flights": 238}}, {"label": "Castellan Gateway\u2013Copperfield", "before": 84.15, "after": 88.23, "meta": {"haul_type": "Short", "distance_km": 719.4, "n_flights": 265}}, {"label": "Northgate International\u2013Greybourne", "before": 84.52, "after": 87.91, "meta": {"haul_type": "Medium", "distance_km": 878.2, "n_flights": 478}}, {"label": "Fenwick Regional\u2013Greybourne", "before": 84.58, "after": 89.87, "meta": {"haul_type": "Short", "distance_km": 443.0, "n_flights": 214}}, {"label": "Northgate International\u2013Ashcombe Regional", "before": 84.86, "after": 87.8, "meta": {"haul_type": "Medium", "distance_km": 975.2, "n_flights": 806}}, {"label": "Castellan Gateway\u2013Northgate International", "before": 84.86, "after": 86.04, "meta": {"haul_type": "Medium", "distance_km": 1326.8, "n_flights": 1156}}, {"label": "Northgate International\u2013Wrenfield", "before": 85.57, "after": 88.81, "meta": {"haul_type": "Short", "distance_km": 364.1, "n_flights": 388}}], "options": {"valueFormat": "percent", "beforeLabel": "Raw OTP", "afterLabel": "Case-mix expected OTP", "categoryLabel": "Route", "limit": 15, "metaColumns": [{"key": "haul_type", "label": "Haul type", "numeric": false}, {"key": "distance_km", "label": "Distance (km)", "numeric": true, "format": "number"}, {"key": "n_flights", "label": "Flights", "numeric": true, "format": "number"}]}}</script>
+  <div class="chart-caption">Northgate–Solmara-Vantage (raw-worst) has only a small case-mix gap — mostly explained by being a very long route. Northgate–Bellhaven Intl has the largest negative gap in the entire network — a genuine outlier, not explained by distance, haul type or congestion.</div>
+</div>
+    </div>
+    <h3 style="margin-top:8px;">Eight strongest findings</h3>
+    <div class="finding-card">
+      <span class="finding-num">FINDING 1</span>
+      <h4>On-time performance really did get worse — and it's not just a run of bad weeks.</h4>
+      <p>The share of flights arriving broadly on time fell over the two years covered by this data. Even after removing the three known bad-weather and grounding episodes from the numbers, the decline is still there — this is a genuine underlying trend, not one-off bad luck.</p>
+      <div class="figure-line">On-time performance: 87.72% (2024) &rarr; 86.18% (2025) &middot; Still falls to 86.25% (&minus;1.52pp) even with the 3 disruption episodes removed</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Two-proportion z-test on on-time performance: z=&minus;3.57, <button type="button" class="term" data-term="p-value">p=0.0004 <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> (<button type="button" class="term" data-term="statistically significant">significant <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>). Sensitivity check excluding all 3 disruption-episode windows: on-time performance still falls from 87.77% to 86.25%.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 2</span>
+      <h4>Cancellations went up too — but almost all of that is one grounding, not the airline getting worse overall.</h4>
+      <p>The share of flights cancelled rose over the same period. But once you take out an 8-day grounding of one aircraft type, that rise almost completely disappears — this is really a story about one fleet problem, not a general decline.</p>
+      <div class="figure-line">Cancellation rate: 1.77% (2024) &rarr; 2.22% (2025) &middot; Falls to essentially flat (&minus;0.03pp) once the 8-day Turboprop grounding window is excluded</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Two-proportion z-test: z=2.56, <button type="button" class="term" data-term="p-value">p=0.0106 <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> (<button type="button" class="term" data-term="statistically significant">significant <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>). Sensitivity check excluding the 3 disruption episodes turns the +0.45pp headline rise into &minus;0.03pp.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 3</span>
+      <h4>Flight delay has three roughly-sized causes — there's no single lever to pull.</h4>
+      <p>About half of all delay minutes come from things outside the airline's control, like weather and air-traffic congestion. Just under a third come from things the airline could fix directly, like crew and maintenance. The rest is delay inherited from a previous late flight.</p>
+      <div class="figure-line">External: 50.3% &middot; Airline-controllable: 31.7% &middot; Reactionary (inherited from a late aircraft): 17.9% of all delay minutes</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Exact <button type="button" class="term" data-term="decomposition">decomposition <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> of departure-delay minutes into three causal categories, verified independently in SQL and Python — 24,687 of 24,702 completed flights reconcile exactly (the remaining 15 are a documented data-quality exclusion, not a defect).</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 4</span>
+      <h4>Cancellations are almost never about the weather — they're almost always something the airline could have controlled.</h4>
+      <p>Unlike delay, which is roughly half outside anyone's control, cancellations are overwhelmingly down to things inside the airline: maintenance issues, crew availability and ground handling. Weather barely features at all.</p>
+      <div class="figure-line">Weather causes just 0.6% of cancellations &middot; The remaining 99.4% are airline-controllable (Technical/Maintenance 40.4%, Other 21.7%, Ground Handling 18.7%, Crew 18.5%)</div>
+      
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 5</span>
+      <h4>A late incoming plane doesn't automatically make the next flight late too — there's a built-in cushion that soaks up the first bit of lateness.</h4>
+      <p>When a plane arrives late, the schedule has some slack built in to make up time before it flies again. Small delays get absorbed almost completely. It's only once a delay runs past about 15 minutes that it starts spilling over into the next flight, and once it's past an hour, nearly all of it carries through.</p>
+      <div class="figure-line">Inbound delay under 15 min: fully absorbed, 0 minutes carries over on average &middot; Inbound delay over 60 min: 63.7 minutes carries over on average</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body"><button type="button" class="term" data-term="regression">Regression <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> of reactionary delay on inbound-aircraft lateness (legs where the inbound aircraft was already late, n=7,072): slope=0.658 minutes per minute, <button type="button" class="term" data-term="r-squared">R² <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>=0.863, 95% <button type="button" class="term" data-term="confidence interval">CI <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> on the slope 0.652–0.664.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 6</span>
+      <h4>The route that looks worst on paper is mostly just a very long flight — but a different route is a genuine problem case.</h4>
+      <p>The five worst-performing routes for on-time arrival are all long-haul flights from the airline's busiest hub — no surprise, since longer flights pick up more weather and air-traffic delay along the way. Once that's accounted for, the single worst route on paper turns out to be almost entirely explained by its length. But one other route stood out as genuinely underperforming, worse than its own difficulty would predict.</p>
+      <div class="figure-line">Worst route on paper (Northgate&ndash;Solmara-Vantage): 69.67% raw on-time rate, only &minus;0.65pp gap once route difficulty is accounted for &middot; Northgate&ndash;Bellhaven Intl: &minus;5.46pp gap, the worst in the network &mdash; a genuine outlier</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body"><button type="button" class="term" data-term="case-mix adjustment">Case-mix adjustment <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>: expected-vs-actual residual <button type="button" class="term" data-term="regression">regression <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> on distance, haul type and daily congestion (not route fixed effects, since distance and haul type are fixed within a route), n=24,702 flights across 55 routes, pseudo-<button type="button" class="term" data-term="r-squared">R² <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>=0.0129. Of the worst-raw-OTP quartile (14 routes), 8 are genuine outliers and 6 are explained by complexity.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 7</span>
+      <h4>The busiest airport looks bad on delay — but that's mostly just because it's busy; two quieter airports have a real problem.</h4>
+      <p>The busiest hub airport has some of the highest average delays in the network. But once you account for how much traffic and complexity it handles, most of that delay is explained away — it's simply a very complex airport to run. Two much smaller, quieter airports show high delays that aren't explained by complexity at all, which makes them the more genuine concern.</p>
+      <div class="figure-line">Northgate International (busiest hub, 6,254 flights): raw rank 2nd-highest delay &rarr; adjusted rank 8th &middot; Porthaven &amp; Millbeck: stay 1st and 2nd highest delay even after adjustment</div>
+      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body"><button type="button" class="term" data-term="case-mix adjustment">Case-mix adjustment <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>: <button type="button" class="term" data-term="regression">regression <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> of departure delay on haul-type mix and daily congestion, n=24,702, <button type="button" class="term" data-term="r-squared">R² <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button>=0.0025 &mdash; a low value, so this adjustment is read as directional, not precise.</div></details>
+    </div>
+<div class="finding-card">
+      <span class="finding-num">FINDING 8</span>
+      <h4>A small number of big, long-haul disruptions account for a disproportionate share of the total recovery bill.</h4>
+      <p>Most disruption events are short or medium-haul flights, and together they account for most of the total cost simply because there are so many of them. But long-haul disruptions, while rare, cost far more each time — because compensation, rebooking and hotel costs all scale up with a much bigger number of passengers on board.</p>
+      <div class="figure-line">Long-haul disruptions: just 21 of 521 events (4%) but £161,627 average cost each &middot; Medium-haul: the largest total-cost bucket at £12.38m of £20.40m (61%), on volume alone</div>
+      
+    </div>
+  </div>
+</section>
+<section id="problem" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">1. Business Problem</span>
+      <h2>What management wanted answered</h2>
+    </div>
+    <p>AeroVista is a fictional airline whose delays, cancellations, passenger disruption and recovery costs have been rising. Management wanted a straight answer to several questions: what actually causes delay, how much of it is inherited from a previous late flight rather than caused directly, whether specific routes or airports create disproportionate disruption once operational complexity is accounted for, how much disruption is genuinely outside the airline's control, what drives cancellations, and where Operations should intervene first.</p><p>One rule was non-negotiable: <strong>no route or airport comparison could be presented as a simple ranking</strong> without first checking whether it still held up once distance, haul type and traffic complexity were taken into account.</p>
+  </div>
+</section>
+<section id="stakeholders">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">2. Stakeholders &amp; Business Decision</span>
+      <h2>Who this was for, and what they needed to decide</h2>
+    </div>
+    <div class="stakeholder-grid"><div class="stakeholder-card"><strong>Director of Operations</strong><span>Needed to know whether the on-time-performance decline is a broad structural trend or a handful of bad episodes, to decide between a capacity review and a targeted fix.</span></div><div class="stakeholder-card"><strong>Fleet &amp; Maintenance Planning</strong><span>Needed to understand how concentrated the September 2025 cancellation spike was in a single fleet type, and what that means for maintenance scheduling.</span></div><div class="stakeholder-card"><strong>Network Planning</strong><span>Needed a fair, case-mix-aware basis for route and airport performance conversations, without a raw ranking that ignores complexity differences.</span></div><div class="stakeholder-card"><strong>Customer Experience / Finance</strong><span>Needed to know where the £20.40m annual recovery cost concentrates, to prioritise the highest-impact disruption types.</span></div></div>
+  </div>
+</section>
+<section id="dataset" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">3. Dataset Overview</span>
+      <h2>What the data covers</h2>
+    </div>
+    <table class="data-table"><tbody><tr><th>Coverage</th><td>24 airports (3 Major Hub, 8 Regional, 9 Small, 4 International), 55 routes</td></tr><tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr><tr><th>Fleet</th><td class="num">55 aircraft across 4 types (Regional Turboprop, 2 Narrowbody types, Widebody)</td></tr><tr><th>Scheduled flights</th><td class="num">25,204 (25,242 unique, before a known duplication issue was cleaned)</td></tr><tr><th>Delay-cause events</th><td class="num">5,743 (one row per flight × triggered delay cause)</td></tr><tr><th>Turnaround events</th><td class="num">12,275 (aircraft ground-turn records)</td></tr><tr><th>Passenger disruption records</th><td class="num">521 (cancellations plus long delays/diversions)</td></tr><tr><th>Airport-day weather/congestion records</th><td class="num">17,544</td></tr></tbody></table>
+  </div>
+</section>
+<section id="approach">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">4. Analytical Approach &amp; Tools Used</span>
+      <h2>Four tools, one reconciled set of numbers</h2>
+      <p>Each tool answers a different part of the brief, but every headline number reconciles exactly across all of them.</p>
+    </div>
+    <div class="tool-grid"><div class="tool-chip"><strong>Excel</strong><span>A 10-sheet workbook where every KPI that can be computed live is a genuine formula or PivotTable — route and airport case-mix figures are imported as clearly-labelled reference tables instead.</span></div><div class="tool-chip"><strong>SQL</strong><span>Six database queries covering KPIs, delay causes, route/airport performance, turnaround propagation, cancellations and fleet use — checked against a real database.</span></div><div class="tool-chip"><strong>Python</strong><span>The statistical work: splitting delay into its exact causes, modelling how delay spreads from a late inbound aircraft, and testing whether route and airport performance differences hold up once complexity is accounted for.</span></div><div class="tool-chip"><strong>Power BI</strong><span>A full dashboard design — the data model, the DAX measures and the page layouts — ready to build, including a check for two ways the numbers could be modelled wrong before they reached a dashboard.</span></div></div>
+  </div>
+</section>
+<section id="decomposition" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">5. Delay-Cause Decomposition</span>
+      <h2>What actually causes delay — and what causes cancellations</h2>
+      <p>Every completed flight's departure delay is, by construction, the exact sum of its logged delay-event minutes across three categories — verified independently in SQL and Python (24,687 of 24,702 completed flights reconcile exactly; the remaining 15 are a documented data-quality exclusion).</p>
+    </div>
+    <div class="two-col">
+      <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">What causes delay minutes</span></div>
+  <div data-chart="c2-data" data-chart-type="bar"></div>
+  <script type="application/json" id="c2-data">{"categories": ["External", "Airline Controllable", "Reactionary"], "series": [{"label": "% of delay minutes", "values": [50.3, 31.7, 17.9]}], "options": {"valueFormat": "percent", "categoryLabel": "Delay category"}}</script>
+  <div class="chart-caption">No single cause dominates — roughly half of all delay is outside the airline's control, a third is within its control, and the rest is inherited from a previous late aircraft.</div>
+</div>
+      <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Cancellation cause breakdown</span></div>
+  <div data-chart="c6-data" data-chart-type="bar"></div>
+  <script type="application/json" id="c6-data">{"categories": ["Technical / Maintenance", "Airline Operational - Other", "Ground Handling / Airport Operations", "Crew Availability", "Weather"], "series": [{"label": "% of cancellations", "values": [40.44, 21.71, 18.73, 18.53, 0.6]}], "options": {"horizontal": true, "valueFormat": "percent", "categoryLabel": "Cause"}}</script>
+  <div class="chart-caption">Cancellations are a near-total airline-controllable story — Weather accounts for just 0.6%, the opposite pattern from delay (which is half external).</div>
+</div>
+    </div>
+  </div>
+</section>
+<section id="propagation">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">6. Turnaround Performance &amp; Delay Propagation</span>
+      <h2>How much of a late inbound aircraft's delay actually reaches the next departure</h2>
+    </div>
+    <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Average reactionary delay by inbound-aircraft lateness band</span></div>
+  <div data-chart="c3-data" data-chart-type="bar"></div>
+  <script type="application/json" id="c3-data">{"categories": ["Early", "0-15min", "15-30min", "30-60min", "60min+"], "series": [{"label": "Avg reactionary delay (minutes)", "values": [0.0, 0.0, 3.8, 22.5, 63.7]}], "options": {"categoryLabel": "Inbound delay band"}}</script>
+  <div class="chart-caption">Inbound delay under 15 minutes is almost fully absorbed by the scheduled turnaround buffer (average reactionary delay: 0 minutes). Once inbound lateness passes 60 minutes, the buffer is exhausted and delay passes through almost 1-for-1 (63.7 minutes on average).</div>
+</div>
+  </div>
+</section>
+<section id="casemix" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">7. Route &amp; Airport <button type="button" class="term" data-term="case-mix adjustment">Case-Mix <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+  <path d="M12 17h.01" />
+</svg>
+</button> Analysis</span>
+      <h2>Testing whether raw route and airport comparisons are fair</h2>
+      <p>The interactive chart above (Headline Numbers) shows the worst 15 routes by raw on-time performance next to what their own distance, haul type and congestion profile would predict. The table below names the specific outliers.</p>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Route / Airport</th><th>Raw position</th><th>Case-mix result</th><th>Interpretation</th></tr></thead>
+      <tbody><tr><td>Northgate&ndash;Solmara-Vantage</td><td>Worst raw OTP (69.67%)</td><td>&minus;0.65pp gap</td><td>Mostly explained by being a very long route (6,223.8km) — one of the network's longest</td></tr><tr><td>Northgate&ndash;Bellhaven Intl</td><td>3rd-worst raw OTP (72.25%)</td><td>&minus;5.46pp gap (worst in the network)</td><td>A genuine outlier — not explained by distance, haul type or congestion</td></tr><tr><td>Northgate International (airport)</td><td>2nd-highest raw delay</td><td>Drops to 8th once adjusted</td><td>Mostly explained by being the network's busiest, most complex hub (6,254 flights)</td></tr><tr><td>Porthaven &amp; Millbeck (airports)</td><td>1st &amp; 2nd highest raw delay</td><td>Stay 1st &amp; 2nd once adjusted</td><td>Not explained by complexity — genuine operational review warranted</td></tr></tbody>
+    </table>
+  </div>
+</section>
+<section id="recovery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">8. Passenger Disruption &amp; Recovery Cost</span>
+      <h2>Where the £20.40m recovery cost concentrates</h2>
+    </div>
+    <div class="chart-block ">
+  <div class="chart-head"><span class="chart-title">Passenger recovery cost by haul type and cost component</span></div>
+  <div data-chart="c5-data" data-chart-type="bar"></div>
+  <script type="application/json" id="c5-data">{"categories": ["Short", "Medium", "Long"], "series": [{"label": "Compensation", "values": [2872729.71, 7327743.5, 1668875.92]}, {"label": "Rebooking", "values": [1220183.13, 3290562.61, 1124495.85]}, {"label": "Care (hotel/meals)", "values": [650397.66, 1757972.72, 600796.7]}], "options": {"valueFormat": "gbp", "categoryLabel": "Haul type"}}</script>
+  <div class="chart-caption">Medium-haul disruptions are the largest total-cost bucket simply on volume; long-haul disruptions are rare but average far more per event (£161,627), driven by full-widebody cancellations where compensation, rebooking and care costs all scale with a much larger passenger count.</div>
+</div>
+  </div>
+</section>
+<section id="recommendations" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">9. Management Recommendations</span>
+      <h2>What follows from the evidence</h2>
+    </div>
+    <ol class="rec-list"><li><strong>Treat the on-time-performance decline and the cancellation-rate rise as two separate problems with two separate responses.</strong> The former is structural (network growth vs. capacity) and needs an Operations-capacity review; the latter is concentrated in the September 2025 Turboprop grounding and needs a fleet-maintenance-scheduling review, not a network-wide policy change.</li><li><strong>Prioritise controllable causes for the cancellation problem specifically</strong> — 99.4% of cancellations are airline-controllable, essentially none weather-driven, unlike delay (which is half external).</li><li><strong>Investigate Northgate&ndash;Bellhaven Intl specifically</strong>, using its case-mix-adjusted gap (&minus;5.46pp, the worst in the network) as the concrete test case — not explained by distance, haul type or congestion, unlike most other worst-raw-OTP routes.</li><li><strong>Review scheduled turnaround buffers on routes and aircraft with frequent inbound delays beyond 15 minutes</strong> — the buffer absorbs almost all reactionary delay up to that point, so a modest buffer increase on the most delay-prone rotations would disproportionately reduce reactionary delay.</li><li><strong>Do not treat Northgate International's high raw departure delay as a standalone airport problem</strong> — most of it is explained by being the network's busiest, most complex hub; Porthaven and Millbeck's delay positions are not explained by complexity and warrant more direct operational review despite their smaller size.</li></ol>
+  </div>
+</section>
+<section id="limitations">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">10. Limitations &amp; Debugging Lessons</span>
+      <h2>What this analysis does not claim — and three bugs caught before they shipped</h2>
+    </div>
+    <ul class="limit-list"><li><strong>An early version of the schedule generator produced 7x too many flights.</strong> Every aircraft was made to fly at its maximum physical capacity regardless of its route's target frequency, producing 183,772 flights against a ~25,000 target and an unrealistic 41% on-time performance. Diagnosed by comparing actual vs target flight counts per route, and fixed by deriving each aircraft's flight count and daily operating probability jointly from the route's own target.</li><li><strong>A missing turnaround buffer made delay propagation suspiciously perfect.</strong> An early version of the propagation logic used the already-padded scheduled turnaround time as the absorbable buffer — leaving mechanically no slack to absorb anything, so a late aircraft's delay passed straight through 1-for-1 (slope=1.000, R²=0.999, an unrealistically clean result). Fixed by letting ground crews compress a turnaround under pressure down to the aircraft type's minimum feasible time — after which the relationship became realistic and buffered (slope 0.658, R²=0.863).</li><li><strong>A route fairness check, copied from a previous project's supplier fairness check, produced meaningless results.</strong> It tried to control for each individual route while also controlling for that route's distance — but a route's distance never changes from flight to flight, so the two were fighting over the same information and the model explained almost nothing (rank changes of up to 33 out of 55 routes). Recognising that the earlier method didn't transfer, it was redesigned from scratch as a genuinely different comparison: predicting each flight's expected on-time chance from its distance and complexity alone, then comparing each route's actual performance to that expectation.</li></ul>
+    <ul class="limit-list"><li><strong>Made-up data throughout</strong> — every figure describes patterns in a generated dataset built for this portfolio, not a real airline.</li><li><strong>Association, not proof of cause</strong> — the route and airport comparisons account for known differences in distance, haul type and congestion, but don't prove a route or airport directly causes worse performance.</li><li><strong>The route fairness adjustment explains only a modest part of the pattern</strong> (pseudo-R²=0.013) — a deliberate trade-off, since the simpler design it replaced couldn't isolate a route's real effect at all.</li><li><strong>The airport fairness adjustment explains very little of the pattern in delay</strong> (R²=0.0025) — useful as a directional signal, not as a precise correction.</li><li><strong>15 completed flights out of 24,702 were excluded</strong> from the delay-cause reconciliation check because of a known data-quality issue — nothing else is affected.</li><li><strong>Compensation, rebooking and care costs use a simplified, purely synthetic cost model</strong> — not a reproduction of any real regulatory compensation scheme.</li></ul>
+  </div>
+</section>
+<section id="gallery" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">11. More Charts</span>
+      <h2>Supporting visuals</h2>
+    </div>
+    <div class="chart-gallery"><figure class="chart-figure">
+        <img src="../assets/images/aerovista/01_distribution_shape.png" alt="Histogram showing departure delay is right-skewed">
+        <figcaption>Departure delay is right-skewed — most flights depart close to on time, with a long tail of larger delays.</figcaption>
+      </figure></div>
+  </div>
+</section>
+<section id="technical">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">12. Technical Evidence</span>
+      <h2>Source deliverables</h2>
+      <p>Source files for this project are organised as shown below (not yet published to a public GitHub repository). Every deliverable reconciles to the same figures shown on this page.</p>
+    </div>
+    <div class="tech-grid"><div class="tech-card"><h4>03_excel/</h4><ul><li>build_excel_workbook.py — reproducible COM-automation build script</li><li>aerovista_disruption_analysis.xlsx — 10 sheets, 4 charts, 3 PivotTables, 22 Excel Tables</li></ul></div><div class="tech-card"><h4>04_sql/</h4><ul><li>01_kpi_analysis.sql &middot; 02_delay_cause_decomposition.sql</li><li>03_route_airport_performance.sql &middot; 04_turnaround_propagation_analysis.sql</li><li>05_cancellation_passenger_recovery_analysis.sql &middot; 06_fleet_utilisation_analysis.sql</li></ul></div><div class="tech-card"><h4>07_python/</h4><ul><li>aerovista_disruption_analysis.py — full analysis script</li><li>aerovista_disruption_analysis.ipynb — narrated notebook</li><li>results/aerovista_results.json — machine-readable results</li></ul></div><div class="tech-card"><h4>05_power_bi/documentation/</h4><ul><li>dashboard_specification.md — 4-page dashboard design</li><li>dax_measures.md — full DAX measure library</li><li>data_model.md — data model design, incl. grain-consistency audit</li></ul></div></div>
+    <p class="tech-note">See also: <code>08_outputs/executive_summary/</code> for the full written analysis and <code>09_case_study/portfolio_case_study.md</code> for the source of this page.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Farouk Yusuf. AeroVista Travel Group is fictional; all data is synthetic.</p>
+    <p><a href="../index.html">← Back to portfolio home</a></p>
+  </div>
+</footer>
+
+<script type="application/json" id="glossary-data">{"p-value": "A measure of how likely a result this size would happen by chance alone. Small (under 0.05) usually means the pattern is probably real; large means it could easily be random noise.", "statistically significant": "The difference is unlikely to be down to chance. \u201cNot significant\u201d doesn't mean \u201cno difference\u201d \u2014 it means the data can't rule out chance as the explanation.", "case-mix adjustment": "A fair way of comparing suppliers, regions or providers that accounts for how hard their jobs actually were, instead of just comparing raw averages.", "r-squared": "How much of the variation in an outcome a model explains, from 0 (none) to 1 (all of it). A low value means other, unmeasured factors matter too.", "regression": "A statistical method for estimating how one factor relates to an outcome while holding other factors constant \u2014 the main tool used here for fair before/after comparisons.", "decomposition": "Splitting a total change into its exact contributing parts (e.g. more cases happening vs. each case costing more), so they add up precisely to the real figure.", "confidence interval": "A range that's likely to contain the true value. A narrow range means a precise estimate; a wide one means more uncertainty.", "reconciled": "Checked and confirmed to match exactly across every tool used (Excel, SQL, Python) \u2014 no figure is reported unless it agrees everywhere it's calculated."}</script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/tooltip.js"></script>
+<script src="../assets/js/charts.js"></script>
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
