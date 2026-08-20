@@ -570,28 +570,6 @@
   box-shadow: 0 10px 32px rgba(12, 38, 56, 0.045);
 }
 
-.hearthstead-case-study .finding-card:first-child {
-  grid-column: 1 / -1;
-  padding: clamp(26px, 4vw, 40px);
-  background: linear-gradient(135deg, #0d2d40 0%, #17475d 100%);
-}
-
-.hearthstead-case-study .finding-card:first-child h4,
-.hearthstead-case-study .finding-card:first-child .figure-line { color: #fff; }
-
-.hearthstead-case-study .finding-card:first-child p { color: #c8d9df; }
-
-.hearthstead-case-study .finding-card:first-child .finding-num {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  color: #8ed9e7;
-}
-
-.hearthstead-case-study .finding-card:first-child details.detail .detail-body {
-  background: rgba(255, 255, 255, 0.08);
-  color: #d5e2e7;
-}
-
 .hearthstead-case-study .finding-card h4 {
   margin-bottom: 0.75rem;
   color: #173448;
@@ -725,6 +703,13 @@
 
 .hearthstead-case-study table.data-table tbody tr:nth-child(even) td { background: #f8fbfc; }
 
+#dataset .data-table th { width: 31%; }
+
+#dataset .data-table td {
+  text-align: right;
+  line-height: 1.55;
+}
+
 .table-takeaway {
   max-width: 900px;
   margin: 1.2rem 0 0;
@@ -739,9 +724,41 @@
 
 #distributions .two-col { gap: 22px; }
 
-#apex .chart-figure {
+#apex .chart-figure,
+#apex .chart-block {
   max-width: 980px;
   margin-inline: auto;
+}
+
+.apex-chart-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  background: #fff3df;
+  color: #765020;
+  font-size: 0.76rem;
+  font-weight: 750;
+}
+
+.cost-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+}
+
+.hearthstead-case-study .cost-theme-card {
+  margin: 0;
+  padding: 18px;
+}
+
+.cost-theme-total {
+  color: #5f717b;
+  font-size: 0.74rem;
+  font-weight: 650;
 }
 
 /* ---------- Recommendations ---------- */
@@ -913,14 +930,16 @@
   .plain-answer > span { justify-self: start; }
   .hearthstead-case-study .kpi-grid,
   .findings-grid,
+  .cost-theme-grid,
   .hearthstead-case-study .tool-grid,
   .hearthstead-case-study .rec-list,
   .hearthstead-case-study .limit-list { grid-template-columns: 1fr; }
-  .hearthstead-case-study .finding-card:first-child,
   .hearthstead-case-study .rec-list li:first-child { grid-column: auto; }
   .hearthstead-case-study .kpi-tile { min-height: auto; }
   .hearthstead-case-study .finding-card { padding: 22px; }
   .findings-heading { margin-top: 52px; }
+  .hearthstead-case-study .chart-histogram-label { font-size: 14px; }
+  .hearthstead-case-study .cost-theme-card text.chart-axis { font-size: 18px; }
   .hearthstead-case-study table.data-table {
     display: block;
     width: 100%;

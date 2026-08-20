@@ -251,9 +251,13 @@
     var maxV = niceMax(Math.max.apply(null, allVals.concat([0])));
     var minV = Math.min(0, Math.min.apply(null, allVals.concat([0])));
 
+    var longestCategory = categories.reduce(function (longest, category) {
+      return Math.max(longest, String(category).length);
+    }, 0);
+    var horizontalLabelSpace = Math.min(176, Math.max(72, longestCategory * 6.2));
     var plot = {
-      left: PAD.left + (horizontal ? 60 : 0),
-      right: VB_W - PAD.right,
+      left: PAD.left + (horizontal ? horizontalLabelSpace : 0),
+      right: VB_W - PAD.right - (horizontal ? 26 : 0),
       top: PAD.top,
       bottom: height - PAD.bottom
     };
@@ -661,7 +665,7 @@
 
     var root = buildChartRoot(el, height);
     var svg = root.svg;
-    var plot = { left: PAD.left, right: VB_W - PAD.right, top: PAD.top, bottom: height - PAD.bottom };
+    var plot = { left: PAD.left, right: VB_W - PAD.right, top: PAD.top + 30, bottom: height - PAD.bottom };
 
     var maxC = niceMax(Math.max.apply(null, counts.concat([0])));
     var xMin = binEdges[0], xMax = binEdges[binEdges.length - 1];
@@ -693,14 +697,14 @@
     }
     svg.appendChild(svgEl('line', { class: 'chart-axis', x1: plot.left, x2: plot.right, y1: plot.bottom, y2: plot.bottom }));
 
-    function marker(val, label) {
+    function marker(val, label, row) {
       if (val == null) return;
       var mx = xScale(val);
       svg.appendChild(svgEl('line', { class: 'chart-histogram-marker', x1: mx, x2: mx, y1: plot.top, y2: plot.bottom }));
-      svg.appendChild(textEl(mx, plot.top - 4, label + ' ' + valueFmt(val), { 'text-anchor': 'middle', class: 'chart-annotation-label', fill: 'var(--navy)' }));
+      svg.appendChild(textEl(mx, plot.top - 7 - (row * 20), label + ' ' + valueFmt(val), { 'text-anchor': 'middle', class: 'chart-annotation-label chart-histogram-label', fill: 'var(--navy)' }));
     }
-    marker(opts.meanLine, 'Mean');
-    marker(opts.medianLine, 'Median');
+    marker(opts.meanLine, 'Mean', 0);
+    marker(opts.medianLine, 'Median', 1);
 
     var headers = [
       { key: 'range', label: 'Range' },

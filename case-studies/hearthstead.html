@@ -47,7 +47,7 @@
           <span class="case-status">End-to-end analysis</span>
         </div>
         <h1>Housing Repairs: A Fair Contractor Comparison</h1>
-        <p class="case-question"><span>Business question</span>When Hearthstead orders its six external repair companies by the share of jobs completed on time, does that order stay the same after allowing for harder jobs?</p>
+        <p class="case-question"><span>Business question</span>When Hearthstead ranks its six external repair companies by the share of jobs completed on time, does that ranking stay the same after accounting for harder jobs?</p>
         <p class="cs-sub">Hearthstead is a fictional housing association. It uses its own maintenance teams and external repair companies, called contractors, to complete repairs for residents. I analysed 26,000 repairs to show which companies needed attention and whether the comparison between them was fair.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#findings">See the findings <span aria-hidden="true">↓</span></a>
@@ -117,9 +117,9 @@
         <div class="story-step"><span>1</span><strong>Who are the contractors?</strong><p>They are six external companies paid by Hearthstead to complete some resident repairs. Other repairs are handled by Hearthstead's own maintenance teams.</p></div>
         <div class="story-step"><span>2</span><strong>Why compare them?</strong><p>Managers needed to know which companies delivered repairs on time, which needed support or contract review, and where residents were most at risk of poor service.</p></div>
         <div class="story-step"><span>3</span><strong>What does “ranking” mean?</strong><p>It simply means placing the six companies in order from highest to lowest based on the percentage of repairs completed within the agreed deadline. This is the on-time completion rate, also called the SLA compliance rate.</p></div>
-        <div class="story-step"><span>4</span><strong>Why was fairness questioned?</strong><p>The companies said a simple comparison was unfair because some received more urgent or complex work. I therefore repeated the comparison after allowing for repair urgency, repair type and operating area.</p></div>
+        <div class="story-step"><span>4</span><strong>Why was fairness questioned?</strong><p>The companies said a simple comparison was unfair because some received more urgent or complex work. I therefore repeated the comparison after accounting for repair urgency, repair type and operating area.</p></div>
       </div>
-      <div class="plain-answer"><span>The answer</span><p><strong>The order does not change.</strong> All six companies remain in the same position after allowing for job difficulty. This makes the comparison useful as a starting point for management action—not as a verdict on its own.</p></div>
+      <div class="plain-answer"><span>The answer</span><p><strong>The order does not change.</strong> All six companies remain in the same position after accounting for job difficulty. This means the contractor ranking is useful for showing management where to investigate first—for example, Pinnacle&apos;s consistently weak results warrant closer review—but the ranking alone does not explain why a contractor performed poorly or justify a contract decision without further investigation.</p></div>
     </div>
     <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">0 of 6</span><span class="kpi-lbl">Companies that changed position after allowing for job difficulty</span></div><div class="kpi-tile"><span class="kpi-num">-2.8 points</span><span class="kpi-lbl">Fall in the share of repairs completed on time from 2024 to 2025, excluding the incomplete final month</span><span class="tag tag-significant">Unlikely to be random</span></div><div class="kpi-tile"><span class="kpi-num">63.6% → 29.4%</span><span class="kpi-lbl">Apex's on-time completion rate during its four-month decline</span></div><div class="kpi-tile"><span class="kpi-num">-11.0 points</span><span class="kpi-lbl">Lower on-time completion when a contractor missed an appointment</span><span class="tag tag-significant">Unlikely to be random</span></div></div>
     <div class="two-col" style="margin-top:32px;">
@@ -419,7 +419,7 @@
     <div class="chart-block ">
   <div class="chart-head"><span class="chart-title">Recorded first-visit completion compared with the stricter check</span></div>
   <div data-chart="c2-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c2-data">{"categories": ["Recorded as completed first visit", "After checking later repeat work"], "series": [{"label": "Repairs completed without a confirmed return visit", "values": [74.52, 73.9]}], "options": {"valueFormat": "percent", "categoryLabel": "How the measure was checked"}}</script>
+  <script type="application/json" id="c2-data">{"categories": ["Recorded", "Verified"], "series": [{"label": "Repairs completed without a confirmed return visit", "values": [74.52, 73.9]}], "options": {"valueFormat": "percent", "categoryLabel": "How the measure was checked"}}</script>
   <div class="chart-caption">The stricter check lowers the result by only 0.6 percentage points, covering 158 repairs. Hidden repeat or rework jobs are therefore not a major reason for the reported first-visit performance.</div>
 </div>
   </div>
@@ -431,25 +431,48 @@
       <h2>Apex caused most of the fall in on-time performance</h2>
       <p>Hearthstead's overall on-time rate fell for four consecutive months from July to October 2025. Separating the figures by repair company showed that Apex fell sharply during exactly this period, while the other companies remained close to their usual performance.</p>
     </div>
-    <figure class="chart-figure">
-    <img src="../assets/images/hearthstead/06_apex_july_october_2025_episode.png" alt="Bar chart comparing each repair provider's usual on-time completion rate with its rate from July to October 2025">
-    <figcaption>Every provider except Apex stayed within a few percentage points of its usual on-time rate. Apex fell from 63.6% across the full period to 29.4% during these four months.</figcaption>
-  </figure>
+    <div class="chart-block apex-comparison-card">
+      <div class="chart-head"><span class="chart-title">Apex's full-period on-time rate compared with July–October 2025</span></div>
+      <div class="apex-chart-note">A fall of 34.2 percentage points</div>
+      <div data-chart="apex-data" data-chart-type="comparison"></div>
+      <script type="application/json" id="apex-data">{"rows": [{"label": "Apex Property Solutions", "before": 63.56, "after": 29.4}], "options": {"valueFormat": "percent", "beforeLabel": "Full-period rate", "afterLabel": "July–October 2025", "categoryLabel": "Repair company"}}</script>
+      <div class="chart-caption">Every other provider stayed within a few percentage points of its usual on-time rate. Apex fell from 63.6% across the full period to 29.4% during these four months, making it the clearest source of the overall dip.</div>
+    </div>
   </div>
 </section>
 <section id="cost" class="section-alt">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">9. Where the money goes</span>
-      <h2>Four repair types account for 40% of total cost</h2>
-      <p>Instead of applying a general cost-cutting target, Hearthstead can focus investigation on the repair types where spending is most concentrated.</p>
+      <h2>Repair spending is clearer when grouped into four themes</h2>
+      <p>The four highest-cost repair types still account for 40.3% of total cost. Grouping all 24 types by theme makes it easier to see where that spending sits and where management should investigate first.</p>
     </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Total repair cost, from highest-cost category to lowest</span></div>
-  <div data-chart="c6-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c6-data">{"categories": ["Roof Leak", "Boiler Breakdown", "No Hot Water", "No Heating", "Guttering Fault", "Water Ingress", "Power Loss", "Internal Wall/Ceiling", "Radiator Fault", "Internal Flooring", "External Drain Blockage", "Leaking Pipe", "Communal Door Fault", "Window Fault", "Bath/Shower Fault", "Fencing/Gates", "Broken Glazing", "Door/Lock Fault", "Extractor Fan Fault", "Socket Fault", "Blocked Toilet", "Leaking Tap", "Lighting Fault", "Blocked Sink"], "series": [{"label": "Net cost", "values": [478473.63, 464631.08, 360574.5, 318454.17, 216820.39, 205156.23, 180828.38, 171338.99, 169187.95, 156799.94, 148701.47, 134653.08, 128192.65, 108034.0, 107070.63, 103759.98, 95408.27, 82845.22, 77937.98, 74207.54, 70141.1, 63399.24, 51941.34, 51729.05]}], "options": {"horizontal": true, "valueFormat": "gbp", "categoryLabel": "Repair category"}}</script>
-  <div class="chart-caption">Roof leaks, boiler breakdowns, no hot water and no heating together account for 40.3% of total cost. Hover over a bar to see the exact amount and running share.</div>
-</div>
+    <div class="cost-theme-grid">
+      <div class="chart-block cost-theme-card">
+        <div class="chart-head"><span class="chart-title">Heating &amp; hot water</span><span class="cost-theme-total">£1.31m · 32.7% of total</span></div>
+        <div data-chart="cost-heating-data" data-chart-type="bar"></div>
+        <script type="application/json" id="cost-heating-data">{"categories": ["Boiler Breakdown", "No Hot Water", "No Heating", "Radiator Fault"], "series": [{"label": "Net cost", "values": [464631.08, 360574.5, 318454.17, 169187.95]}], "options": {"horizontal": true, "valueFormat": "gbp", "categoryLabel": "Repair type"}}</script>
+        <div class="chart-caption">Boiler breakdowns are the largest cost in this group.</div>
+      </div>
+      <div class="chart-block cost-theme-card">
+        <div class="chart-head"><span class="chart-title">Water, roofing &amp; drainage</span><span class="cost-theme-total">£1.48m · 36.7% of total</span></div>
+        <div data-chart="cost-water-data" data-chart-type="bar"></div>
+        <script type="application/json" id="cost-water-data">{"categories": ["Roof Leak", "Guttering Fault", "Water Ingress", "External Drain Blockage", "Leaking Pipe", "Bath/Shower Fault", "Blocked Toilet", "Leaking Tap", "Blocked Sink"], "series": [{"label": "Net cost", "values": [478473.63, 216820.39, 205156.23, 148701.47, 134653.08, 107070.63, 70141.1, 63399.24, 51729.05]}], "options": {"horizontal": true, "valueFormat": "gbp", "categoryLabel": "Repair type"}}</script>
+        <div class="chart-caption">Roof leaks alone account for almost one-third of this theme.</div>
+      </div>
+      <div class="chart-block cost-theme-card">
+        <div class="chart-head"><span class="chart-title">Electrical &amp; ventilation</span><span class="cost-theme-total">£384,915 · 9.6% of total</span></div>
+        <div data-chart="cost-electrical-data" data-chart-type="bar"></div>
+        <script type="application/json" id="cost-electrical-data">{"categories": ["Power Loss", "Extractor Fan Fault", "Socket Fault", "Lighting Fault"], "series": [{"label": "Net cost", "values": [180828.38, 77937.98, 74207.54, 51941.34]}], "options": {"horizontal": true, "valueFormat": "gbp", "categoryLabel": "Repair type"}}</script>
+        <div class="chart-caption">Power-loss work accounts for nearly half of this theme.</div>
+      </div>
+      <div class="chart-block cost-theme-card">
+        <div class="chart-head"><span class="chart-title">Building fabric &amp; security</span><span class="cost-theme-total">£846,379 · 21.1% of total</span></div>
+        <div data-chart="cost-fabric-data" data-chart-type="bar"></div>
+        <script type="application/json" id="cost-fabric-data">{"categories": ["Internal Wall/Ceiling", "Internal Flooring", "Communal Door Fault", "Window Fault", "Fencing/Gates", "Broken Glazing", "Door/Lock Fault"], "series": [{"label": "Net cost", "values": [171338.99, 156799.94, 128192.65, 108034.0, 103759.98, 95408.27, 82845.22]}], "options": {"horizontal": true, "valueFormat": "gbp", "categoryLabel": "Repair type"}}</script>
+        <div class="chart-caption">Walls, ceilings and flooring lead a more evenly spread group.</div>
+      </div>
+    </div>
   </div>
 </section>
 <section id="recommendations">

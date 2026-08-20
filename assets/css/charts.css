@@ -79,6 +79,7 @@ text.chart-comparison-label, .chart-comparison-label { fill: var(--ink); font-si
 
 .chart-histogram-bar { fill: var(--teal-light); stroke: var(--teal); stroke-width: 1; }
 .chart-histogram-marker { stroke: var(--navy); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.chart-histogram-label { font-size: 10px; }
 
 /* legend */
 .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; margin: 10px 0 4px; font-size: 0.8rem; color: var(--muted); }
