@@ -14,9 +14,10 @@
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/charts.css">
 <link rel="stylesheet" href="../assets/css/case-study.css">
+<link rel="stylesheet" href="../assets/css/hearthstead.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f374d'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EFY%3C/text%3E%3C/svg%3E">
 </head>
-<body>
+<body class="hearthstead-case-study">
 
 <div class="disclaimer-strip">Hearthstead Housing Group is fictional. All data on this page is synthetically generated for portfolio purposes — see the disclaimer below for detail.</div>
 
@@ -26,8 +27,8 @@
       <span class="brand-mark">FY</span>
       Farouk Yusuf
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="../index.html#case-studies">Case Studies</a></li>
       <li><a href="../index.html#skills">Skills</a></li>
       <li><a href="../index.html#about">About</a></li>
@@ -38,11 +39,33 @@
 
 <section class="cs-hero">
   <div class="container">
-    <div class="cs-breadcrumb"><a href="../index.html">Home</a> / Case Studies / Hearthstead Housing Group</div>
-    <span class="eyebrow">Case Study</span>
-    <h1>Repairs Performance &amp; Contractor Intelligence</h1>
-    <p class="cs-sub">External contractors said their rankings were unfair because they get harder jobs than everyone else. Does that hold up once you account for it fairly? An end-to-end analysis across Excel, SQL, Python and Power BI on 26,000 repairs from a fictional housing association's two-year repairs book.</p>
-    <nav class="anchor-nav"><a href="#findings">Key Findings</a><a href="#problem">Business Problem</a><a href="#stakeholders">Stakeholders</a><a href="#dataset">Dataset</a><a href="#approach">Approach &amp; Tools</a><a href="#distributions">Why Medians, Not Averages</a><a href="#casemix">Contractor Case-Mix Analysis</a><a href="#ftf">First-Time Fix</a><a href="#apex">The Apex Episode</a><a href="#cost">Cost Concentration</a><a href="#recommendations">Recommendations</a><a href="#limitations">Limitations &amp; Debugging</a><a href="#technical">Technical Evidence</a></nav>
+    <div class="cs-breadcrumb"><a href="../index.html">Home</a> <span aria-hidden="true">/</span> Case Studies <span aria-hidden="true">/</span> Hearthstead Housing Group</div>
+    <div class="case-hero-grid">
+      <div class="case-hero-copy">
+        <div class="case-hero-meta">
+          <span class="eyebrow">Housing · Contractor intelligence</span>
+          <span class="case-status">End-to-end analysis</span>
+        </div>
+        <h1>Repairs Performance &amp; Contractor Intelligence</h1>
+        <p class="case-question"><span>Business question</span>Do contractor rankings still hold when job difficulty is accounted for fairly?</p>
+        <p class="cs-sub">I analysed 26,000 repairs across a fictional housing association's two-year repairs book, connecting operational performance, supplier challenge and cost into one decision-ready view.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#findings">See the findings <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-secondary" href="#technical">View technical evidence</a>
+        </div>
+      </div>
+      <aside class="project-brief" aria-label="Project snapshot">
+        <span class="eyebrow">Project at a glance</span>
+        <dl class="brief-stats">
+          <div><dt>Repairs analysed</dt><dd>26,000</dd></div>
+          <div><dt>Time period</dt><dd>24 months</dd></div>
+          <div><dt>Suppliers tested</dt><dd>6 contractors</dd></div>
+          <div><dt>Net cost reconciled</dt><dd>£4.02m</dd></div>
+        </dl>
+        <div class="brief-tools" aria-label="Tools used"><span>Excel</span><span>SQL</span><span>Python</span><span>Power BI</span></div>
+        <p class="brief-outcome"><strong>Primary decision:</strong> retain the contractor ranking, then focus intervention on Pinnacle's broad underperformance and Apex's isolated four-month episode.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -53,11 +76,23 @@
   </div>
 </div>
 
-<section id="findings" style="padding-top:0;">
+<div class="case-nav-shell">
+  <nav class="container anchor-nav" aria-label="Case study sections">
+    <span>Explore</span>
+    <a href="#findings">Executive summary</a>
+    <a href="#problem">The brief</a>
+    <a href="#approach">Method</a>
+    <a href="#casemix">Analysis</a>
+    <a href="#recommendations">Recommendations</a>
+    <a href="#technical">Technical evidence</a>
+  </nav>
+</div>
+
+<section id="findings">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">At a Glance</span>
-      <h2>Headline Numbers</h2>
+      <span class="eyebrow">Executive summary</span>
+      <h2>The decision in one screen</h2>
       <p>Every figure below is <button type="button" class="term" data-term="reconciled">reconciled <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -94,7 +129,11 @@
   <div class="chart-caption">SLA compliance sits in a steady 70%-75% band for almost the whole two years, with one clear four-month dip from July to October 2025 — traced in the Apex Episode section below to a single contractor, not a general decline.</div>
 </div>
     </div>
-    <h3 style="margin-top:8px;">Eight strongest findings</h3>
+    <div class="findings-heading">
+      <span class="eyebrow">Decision-ready evidence</span>
+      <h3>Eight findings that change what management does next</h3>
+    </div>
+    <div class="findings-grid">
     <div class="finding-card">
       <span class="finding-num">FINDING 1</span>
       <h4>Contractors said the rankings were unfair because they get harder jobs — the data says otherwise.</h4>
@@ -271,6 +310,7 @@
       <div class="figure-line">Follow-on/rework cost: £121,080, just 3.0% of total direct cost &middot; Roof Leak, Boiler Breakdown, No Hot Water &amp; No Heating: 40.3% of total cost from a much smaller share of jobs</div>
       
     </div>
+    </div>
   </div>
 </section>
 <section id="problem" class="section-alt">
@@ -430,6 +470,22 @@
     </div>
     <div class="tech-grid"><div class="tech-card"><h4>03_excel/</h4><ul><li>build_excel_workbook.py — reproducible build script</li><li>hearthstead_repairs_analysis.xlsx — 10 visible sheets (33 total), 13 charts, 3 PivotTables</li></ul></div><div class="tech-card"><h4>04_sql/</h4><ul><li>01_kpi_analysis.sql &middot; 02_contractor_analysis.sql</li><li>03_repeat_repairs.sql &middot; 04_appointments.sql</li><li>05_cost_analysis.sql &middot; 06_root_cause_analysis.sql</li></ul></div><div class="tech-card"><h4>07_python/</h4><ul><li>hearthstead_repairs_analysis.py — full analysis script</li><li>hearthstead_repairs_analysis.ipynb — narrated notebook</li><li>results/hearthstead_results.json — machine-readable results</li></ul></div><div class="tech-card"><h4>05_power_bi/documentation/</h4><ul><li>dashboard_specification.md — dashboard design</li><li>dax_measures.md — full DAX measure library</li><li>data_model.md — data model design</li></ul></div></div>
     <p class="tech-note">See also: <code>08_outputs/executive_summary/</code> for the full written analysis and <code>09_case_study/portfolio_case_study.md</code> for the source of this page.</p>
+  </div>
+</section>
+
+<section class="case-next" aria-label="Continue exploring projects">
+  <div class="container">
+    <div class="case-next-card">
+      <div>
+        <span class="eyebrow">Continue exploring</span>
+        <h2>From operational services to airline performance</h2>
+        <p>See how the same decision-first approach turns air-travel operations data into commercial and service insight.</p>
+      </div>
+      <div class="case-next-actions">
+        <a class="btn btn-primary" href="aerovista.html">Next: Aerovista <span aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="../index.html#case-studies">All case studies</a>
+      </div>
+    </div>
   </div>
 </section>
 
