@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hearthstead Housing Group Case Study — Farouk Yusuf</title>
-<meta name="description" content="Repairs performance & contractor intelligence case study: Excel, SQL, Python and Power BI analysis of a fictional housing association's repairs data, testing whether contractor performance differences survive a fair, case-mix-adjusted comparison.">
+<title>Hearthstead Housing Repairs Case Study — Farouk Yusuf</title>
+<meta name="description" content="A plain-English case study showing why a fictional housing association compared six external repair companies, how the comparison was made fair, what the analysis found and what management should do next.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -43,12 +43,12 @@
     <div class="case-hero-grid">
       <div class="case-hero-copy">
         <div class="case-hero-meta">
-          <span class="eyebrow">Housing · Contractor intelligence</span>
+          <span class="eyebrow">Housing · Repairs performance</span>
           <span class="case-status">End-to-end analysis</span>
         </div>
-        <h1>Repairs Performance &amp; Contractor Intelligence</h1>
-        <p class="case-question"><span>Business question</span>Do contractor rankings still hold when job difficulty is accounted for fairly?</p>
-        <p class="cs-sub">I analysed 26,000 repairs across a fictional housing association's two-year repairs book, connecting operational performance, supplier challenge and cost into one decision-ready view.</p>
+        <h1>Housing Repairs: A Fair Contractor Comparison</h1>
+        <p class="case-question"><span>Business question</span>When Hearthstead orders its six external repair companies by the share of jobs completed on time, does that order stay the same after allowing for harder jobs?</p>
+        <p class="cs-sub">Hearthstead is a fictional housing association. It uses its own maintenance teams and external repair companies, called contractors, to complete repairs for residents. I analysed 26,000 repairs to show which companies needed attention and whether the comparison between them was fair.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#findings">See the findings <span aria-hidden="true">↓</span></a>
           <a class="btn btn-secondary" href="#technical">View technical evidence</a>
@@ -59,11 +59,11 @@
         <dl class="brief-stats">
           <div><dt>Repairs analysed</dt><dd>26,000</dd></div>
           <div><dt>Time period</dt><dd>24 months</dd></div>
-          <div><dt>Suppliers tested</dt><dd>6 contractors</dd></div>
-          <div><dt>Net cost reconciled</dt><dd>£4.02m</dd></div>
+          <div><dt>Companies compared</dt><dd>6 contractors</dd></div>
+          <div><dt>Repair cost analysed</dt><dd>£4.02m</dd></div>
         </dl>
         <div class="brief-tools" aria-label="Tools used"><span>Excel</span><span>SQL</span><span>Python</span><span>Power BI</span></div>
-        <p class="brief-outcome"><strong>Primary decision:</strong> retain the contractor ranking, then focus intervention on Pinnacle's broad underperformance and Apex's isolated four-month episode.</p>
+        <p class="brief-outcome"><strong>Main conclusion:</strong> all six companies stay in the same strongest-to-weakest order after allowing for job difficulty. Management should focus first on Pinnacle's broad underperformance and Apex's four-month decline.</p>
       </aside>
     </div>
   </div>
@@ -79,21 +79,21 @@
 <div class="case-nav-shell">
   <nav class="container anchor-nav" aria-label="Case study sections">
     <span>Explore</span>
-    <a href="#findings">Executive summary</a>
-    <a href="#problem">The brief</a>
-    <a href="#approach">Method</a>
-    <a href="#casemix">Analysis</a>
-    <a href="#recommendations">Recommendations</a>
-    <a href="#technical">Technical evidence</a>
+    <a href="#findings">Start here</a>
+    <a href="#problem">Why compare?</a>
+    <a href="#approach">How I tested it</a>
+    <a href="#casemix">Fair comparison</a>
+    <a href="#recommendations">What to do</a>
+    <a href="#technical">Technical files</a>
   </nav>
 </div>
 
 <section id="findings">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Executive summary</span>
-      <h2>The decision in one screen</h2>
-      <p>Every figure below is <button type="button" class="term" data-term="reconciled">reconciled <svg
+      <span class="eyebrow">Read this first</span>
+      <h2>Why Hearthstead compared its repair contractors</h2>
+      <p>Every number below has been <button type="button" class="term" data-term="reconciled">checked to match <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
   height="24"
@@ -108,37 +108,44 @@
   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
   <path d="M12 17h.01" />
 </svg>
-</button> exactly across the Excel workbook, every SQL script and the Python notebook.</p>
+</button> across the Excel workbook, SQL scripts and Python analysis.</p>
     </div>
-    <div class="short-version">
-      <span class="eyebrow">The Short Version</span>
-      <p>Hearthstead is a made-up housing association, used here to practise a real analytics workflow end to end. Its external contractors pushed back on being ranked against each other, arguing they get harder jobs — but fairly adjusting for exactly that changes nothing: the ranking from best to worst contractor comes out <strong>identical</strong> either way.</p><p>Along the way, the same analysis found that a worrying mid-2025 dip in service performance was really one contractor's four-month collapse, that one contractor's near-perfect score needs independent checking rather than celebrating uncritically, and that repeat/rework repairs — the thing everyone worried about — turn out to be only 3% of total cost.</p>
+    <div class="short-version story-explainer">
+      <span class="eyebrow">The story in four steps</span>
+      <h3>From a management question to a fair answer</h3>
+      <div class="story-steps">
+        <div class="story-step"><span>1</span><strong>Who are the contractors?</strong><p>They are six external companies paid by Hearthstead to complete some resident repairs. Other repairs are handled by Hearthstead's own maintenance teams.</p></div>
+        <div class="story-step"><span>2</span><strong>Why compare them?</strong><p>Managers needed to know which companies delivered repairs on time, which needed support or contract review, and where residents were most at risk of poor service.</p></div>
+        <div class="story-step"><span>3</span><strong>What does “ranking” mean?</strong><p>It simply means placing the six companies in order from highest to lowest based on the percentage of repairs completed within the agreed deadline. This is the on-time completion rate, also called the SLA compliance rate.</p></div>
+        <div class="story-step"><span>4</span><strong>Why was fairness questioned?</strong><p>The companies said a simple comparison was unfair because some received more urgent or complex work. I therefore repeated the comparison after allowing for repair urgency, repair type and operating area.</p></div>
+      </div>
+      <div class="plain-answer"><span>The answer</span><p><strong>The order does not change.</strong> All six companies remain in the same position after allowing for job difficulty. This makes the comparison useful as a starting point for management action—not as a verdict on its own.</p></div>
     </div>
-    <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">0 of 6</span><span class="kpi-lbl">Contractor rank changes after fairly adjusting for job difficulty</span></div><div class="kpi-tile"><span class="kpi-num">-2.8pp</span><span class="kpi-lbl">SLA compliance decline, 2024 → 2025 (excl. Dec-2025 boundary month)</span><span class="tag tag-significant">Statistically significant</span></div><div class="kpi-tile"><span class="kpi-num">63.6% → 29.4%</span><span class="kpi-lbl">Apex Property Solutions' SLA compliance during its 4-month episode</span></div><div class="kpi-tile"><span class="kpi-num">-11.0pp</span><span class="kpi-lbl">Lower SLA compliance when a contractor misses an appointment</span><span class="tag tag-significant">Statistically significant</span></div></div>
+    <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">0 of 6</span><span class="kpi-lbl">Companies that changed position after allowing for job difficulty</span></div><div class="kpi-tile"><span class="kpi-num">-2.8 points</span><span class="kpi-lbl">Fall in the share of repairs completed on time from 2024 to 2025, excluding the incomplete final month</span><span class="tag tag-significant">Unlikely to be random</span></div><div class="kpi-tile"><span class="kpi-num">63.6% → 29.4%</span><span class="kpi-lbl">Apex's on-time completion rate during its four-month decline</span></div><div class="kpi-tile"><span class="kpi-num">-11.0 points</span><span class="kpi-lbl">Lower on-time completion when a contractor missed an appointment</span><span class="tag tag-significant">Unlikely to be random</span></div></div>
     <div class="two-col" style="margin-top:32px;">
       <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Raw vs case-mix-adjusted SLA compliance by contractor</span></div>
+  <div class="chart-head"><span class="chart-title">Does allowing for job difficulty change the contractor order?</span></div>
   <div data-chart="c1-data" data-chart-type="comparison"></div>
-  <script type="application/json" id="c1-data">{"rows": [{"label": "Keystone Maintenance Ltd", "before": 99.78, "after": 99.78, "meta": {"n": 3614, "rank_change": 0}}, {"label": "Orion Facilities", "before": 88.69, "after": 88.59, "meta": {"n": 3598, "rank_change": 0}}, {"label": "Vertex Property Care", "before": 74.59, "after": 74.47, "meta": {"n": 3640, "rank_change": 0}}, {"label": "Apex Property Solutions", "before": 63.56, "after": 63.37, "meta": {"n": 3537, "rank_change": 0}}, {"label": "Nexus Building Services", "before": 56.03, "after": 57.22, "meta": {"n": 2720, "rank_change": 0}}, {"label": "Pinnacle Repairs", "before": 45.26, "after": 45.09, "meta": {"n": 3548, "rank_change": 0}}], "options": {"valueFormat": "percent", "beforeLabel": "Raw SLA rate", "afterLabel": "Case-mix adjusted", "categoryLabel": "Contractor", "metaColumns": [{"key": "n", "label": "Repairs", "numeric": true, "format": "number"}, {"key": "rank_change", "label": "Rank change", "numeric": true, "format": "number"}]}}</script>
-  <div class="chart-caption">Adjusting each contractor's compliance rate for the exact mix of priority, trade and area it actually worked (case-mix adjustment) produces the same 1-through-6 ranking as the simple raw comparison — the contractors' objection that raw rankings are unfair doesn't hold up.</div>
+  <script type="application/json" id="c1-data">{"rows": [{"label": "Keystone Maintenance Ltd", "before": 99.78, "after": 99.78, "meta": {"n": 3614, "rank_change": 0}}, {"label": "Orion Facilities", "before": 88.69, "after": 88.59, "meta": {"n": 3598, "rank_change": 0}}, {"label": "Vertex Property Care", "before": 74.59, "after": 74.47, "meta": {"n": 3640, "rank_change": 0}}, {"label": "Apex Property Solutions", "before": 63.56, "after": 63.37, "meta": {"n": 3537, "rank_change": 0}}, {"label": "Nexus Building Services", "before": 56.03, "after": 57.22, "meta": {"n": 2720, "rank_change": 0}}, {"label": "Pinnacle Repairs", "before": 45.26, "after": 45.09, "meta": {"n": 3548, "rank_change": 0}}], "options": {"valueFormat": "percent", "beforeLabel": "Simple on-time rate", "afterLabel": "Adjusted for job difficulty", "categoryLabel": "Repair company", "metaColumns": [{"key": "n", "label": "Repairs", "numeric": true, "format": "number"}, {"key": "rank_change", "label": "Position change", "numeric": true, "format": "number"}]}}</script>
+  <div class="chart-caption">No. The light and dark markers are almost on top of each other for every company. After allowing for urgency, repair type and operating area, all six remain in the same strongest-to-weakest order.</div>
 </div>
       <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Monthly SLA compliance and Operational First-Time Fix, 2024-2025</span></div>
+  <div class="chart-head"><span class="chart-title">How on-time performance changed month by month</span></div>
   <div data-chart="c5-data" data-chart-type="line"></div>
-  <script type="application/json" id="c5-data">{"xLabels": ["Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"], "series": [{"label": "SLA compliance", "values": [72.92, 72.76, 75.32, 73.05, 73.68, 73.63, 74.89, 73.72, 75.49, 70.52, 73.41, 75.18, 74.05, 72.73, 73.8, 74.0, 75.0, 73.48, 67.92, 65.71, 68.14, 65.37, 69.95, 73.4], "valueFormat": "percent"}, {"label": "Operational FTF", "values": [77.03, 74.42, 75.07, 73.05, 74.59, 74.34, 76.48, 76.39, 75.58, 74.98, 74.61, 74.64, 74.21, 73.75, 72.77, 72.31, 76.4, 74.47, 74.08, 73.13, 75.07, 72.59, 72.79, 76.16], "valueFormat": "percent"}], "options": {"annotations": [{"x": "Jul 2025", "label": "Apex episode begins"}]}}</script>
-  <div class="chart-caption">SLA compliance sits in a steady 70%-75% band for almost the whole two years, with one clear four-month dip from July to October 2025 — traced in the Apex Episode section below to a single contractor, not a general decline.</div>
+  <script type="application/json" id="c5-data">{"xLabels": ["Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"], "series": [{"label": "Repairs completed on time", "values": [72.92, 72.76, 75.32, 73.05, 73.68, 73.63, 74.89, 73.72, 75.49, 70.52, 73.41, 75.18, 74.05, 72.73, 73.8, 74.0, 75.0, 73.48, 67.92, 65.71, 68.14, 65.37, 69.95, 73.4], "valueFormat": "percent"}, {"label": "Completed on the first visit", "values": [77.03, 74.42, 75.07, 73.05, 74.59, 74.34, 76.48, 76.39, 75.58, 74.98, 74.61, 74.64, 74.21, 73.75, 72.77, 72.31, 76.4, 74.47, 74.08, 73.13, 75.07, 72.59, 72.79, 76.16], "valueFormat": "percent"}], "options": {"annotations": [{"x": "Jul 2025", "label": "Apex decline begins"}]}}</script>
+  <div class="chart-caption">The share of repairs completed within the agreed deadline usually stayed between 70% and 75%. The clear dip from July to October 2025 was traced mainly to Apex Property Solutions rather than to every contractor.</div>
 </div>
     </div>
     <div class="findings-heading">
-      <span class="eyebrow">Decision-ready evidence</span>
-      <h3>Eight findings that change what management does next</h3>
+      <span class="eyebrow">What the evidence says</span>
+      <h3>Eight findings, explained in plain English</h3>
     </div>
     <div class="findings-grid">
     <div class="finding-card">
       <span class="finding-num">FINDING 1</span>
-      <h4>Contractors said the rankings were unfair because they get harder jobs — the data says otherwise.</h4>
-      <p>Fairly re-scoring every contractor's performance for the exact mix of urgent jobs, trade types and areas it actually worked produces the same order from best to worst as the simple raw comparison. Their objection doesn't hold up.</p>
-      <div class="figure-line">All 6 contractors keep the same rank after adjusting for job difficulty (e.g. Keystone 99.8% → 99.8% adjusted, Pinnacle 45.3% → 45.1% adjusted)</div>
+      <h4>The fairer comparison reaches the same conclusion as the simple one.</h4>
+      <p>Hearthstead first placed the six companies in order using only their on-time completion rates. I then repeated the comparison after allowing for differences in repair urgency, repair type and operating area. Every company stayed in the same position.</p>
+      <div class="figure-line">All 6 companies kept their position. Keystone remained 1st (99.8% before and after adjustment); Pinnacle remained 6th (45.3% before, 45.1% after).</div>
       <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Logistic regression of SLA compliance on contractor + priority + trade + operating area (n=20,657, pseudo-<button type="button" class="term" data-term="r-squared">R² <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -173,9 +180,9 @@
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 2</span>
-      <h4>One contractor is the weakest performer on every single measure that matters, all at once.</h4>
-      <p>Pinnacle Repairs isn't just behind on one number — it has the lowest compliance rate, the lowest first-time-fix rate, the highest rate of missed appointments and the slowest average repair, simultaneously. That kind of consistency across four separate measures is much harder to explain away than one bad number.</p>
-      <div class="figure-line">Pinnacle Repairs: 45.3% SLA compliance &middot; 62.0% first-time-fix rate (vs 68.8%-77.2% for peers) &middot; 15.0% missed appointments (2-4x every other contractor) &middot; 11.3-day median completion</div>
+      <h4>Pinnacle needs attention because it performs poorly across four separate measures.</h4>
+      <p>Pinnacle is not behind on only one score. It has the lowest share of repairs completed on time, the lowest share completed on the first visit, the highest missed-appointment rate and the slowest typical completion time. Four measures pointing in the same direction make this a stronger management concern.</p>
+      <div class="figure-line">Pinnacle: 45.3% completed on time · 62.0% completed on the first visit · 15.0% missed appointments · typical repair completed in 11.3 days.</div>
       <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Lowest on both raw (45.3%) and <button type="button" class="term" data-term="case-mix adjustment">case-mix adjusted <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -195,16 +202,16 @@
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 3</span>
-      <h4>A worrying portfolio-wide dip turned out to be one contractor's four-month collapse.</h4>
-      <p>When overall compliance dropped noticeably for four months in a row, it looked like a general service problem. Breaking it down by contractor showed almost the entire dip came from a single contractor going badly wrong for exactly those four months — everyone else stayed close to normal.</p>
-      <div class="figure-line">Apex Property Solutions: 63.6% full-period average &rarr; 29.4% during July-October 2025 &middot; every other contractor moved by only a few points over the same window (e.g. Keystone 99.8% &rarr; 100.0%, Orion 88.7% &rarr; 88.1%)</div>
+      <h4>The four-month service decline came mainly from Apex, not from every company.</h4>
+      <p>Hearthstead's overall on-time rate fell between July and October 2025. That initially looked like a wider service problem. When the figures were separated by company, Apex accounted for most of the decline while the others stayed close to their usual level.</p>
+      <div class="figure-line">Apex completed 63.6% of repairs on time across the full period, but only 29.4% during July–October 2025.</div>
       
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 4</span>
-      <h4>Performance really did get worse year over year — not by a huge amount, but it's real.</h4>
-      <p>Comparing 2024 to 2025 (excluding the final month, which is skewed by an unrelated data cut-off issue — see the next finding), compliance fell by about three points. That's a small but genuine decline, not just noise in the numbers — and most of it traces back to the one contractor's episode above.</p>
-      <div class="figure-line">SLA compliance: 73.7% (2024) &rarr; 70.9% (2025, excl. December) — a 2.79 percentage-point fall</div>
+      <h4>Overall on-time performance fell slightly in 2025, and the fall is unlikely to be random.</h4>
+      <p>After excluding the incomplete final month, the share of repairs completed on time fell by 2.8 percentage points. This is a modest decline, but the statistical test suggests it is unlikely to be ordinary random variation. Much of it is connected to the Apex period above.</p>
+      <div class="figure-line">Completed on time: 73.7% in 2024, falling to 70.9% in 2025 when December is excluded.</div>
       <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Two-proportion z-test on SLA compliance, 2024 vs 2025 excluding December 2025: z=4.931, <button type="button" class="term" data-term="p-value">p&lt;0.001 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -239,23 +246,23 @@
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 5</span>
-      <h4>One month looked like a service collapse — it was actually just how the data was cut off, not a real problem.</h4>
-      <p>First-time-fix performance appeared to crash in the dataset's final month. Looking closer, almost every repair in the whole two-year dataset that was still open (not yet finished) happened to fall in that exact month — because the data was extracted right then, before those jobs had a fair chance to finish. Compliance in that same month, measured a different way, was completely normal.</p>
-      <div class="figure-line">346 of the whole dataset's 348 open (not-yet-completed) repairs fall in December 2025 &middot; that month's own SLA compliance was a normal 73.4%</div>
+      <h4>December 2025 looks worse only because many repairs were still in progress when the data was taken.</h4>
+      <p>The first-visit completion measure appears to collapse in the final month. It is not a fair month to compare: the data was extracted before those newly reported repairs had enough time to receive an appointment or be completed. The separate on-time measure remained normal.</p>
+      <div class="figure-line">346 of the dataset's 348 unfinished repairs fall in December 2025, while that month's on-time completion rate was a normal 73.4%.</div>
       <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Consistent with right-censoring: repairs reported late in the extraction window haven't had time to reach an appointment or completion. All year-on-year comparisons on this page are shown excluding December 2025 for this reason.</div></details>
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 6</span>
-      <h4>One contractor's near-perfect score is being flagged for a second look, not celebrated as a top performer.</h4>
-      <p>Keystone Maintenance Ltd's compliance rate is far above every other contractor and well above the in-house teams used as an internal benchmark — even after fairly adjusting for job difficulty. A result this close to perfect, isolated to one provider, deserves independent verification against the source system before anyone relies on it operationally.</p>
-      <div class="figure-line">Keystone: 99.8% SLA compliance vs 56.0%-88.7% for the other five contractors and 73.8% for internal teams &middot; unchanged after adjusting for job difficulty</div>
+      <h4>Keystone's near-perfect result should be checked before it is treated as genuine.</h4>
+      <p>Keystone's reported on-time rate is far above every other external company and Hearthstead's own teams. The adjustment for job difficulty does not explain the gap. A result this unusual should be checked against the source system before it is used in a scorecard or contract decision.</p>
+      <div class="figure-line">Keystone: 99.8% completed on time, compared with 56.0%–88.7% for the other five companies and 73.8% for Hearthstead's own teams.</div>
       
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 7</span>
-      <h4>When a contractor misses a scheduled appointment, the whole job is more likely to go wrong.</h4>
-      <p>Repairs with at least one missed appointment are noticeably less likely to meet their target and take longer to finish. This pattern holds up even after accounting for how urgent the job was and what type of work it involved — though it remains an association, not proof that the missed appointment itself caused the problem.</p>
-      <div class="figure-line">62.3% SLA compliance with a missed appointment vs 73.3% without it (an 11.0-point gap) &middot; 23.6 vs 20.8 days at the 90th percentile for completion time</div>
+      <h4>Repairs with a missed contractor appointment are less likely to finish on time.</h4>
+      <p>When at least one contractor appointment was missed, the repair was less likely to meet its deadline and slow repairs took even longer. The relationship remains after allowing for urgency and repair type, although this analysis cannot prove the missed appointment caused the delay.</p>
+      <div class="figure-line">62.3% completed on time when an appointment was missed, compared with 73.3% when no appointment was missed.</div>
       <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Logistic regression: repairs with &ge;1 missed appointment have roughly 40% lower odds of meeting SLA after adjusting for priority and trade (adjusted odds ratio 0.599, 95% <button type="button" class="term" data-term="confidence interval">CI <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -305,9 +312,9 @@
     </div>
 <div class="finding-card">
       <span class="finding-num">FINDING 8</span>
-      <h4>Repeat repairs aren't the big cost problem people assumed — a handful of repair types are.</h4>
-      <p>Reworked or repeated jobs make up a tiny slice of total spend. The real cost is concentrated in a small number of repair categories — roof leaks, boiler breakdowns, no hot water and no heating — which together account for a disproportionate share of everything spent on repairs.</p>
-      <div class="figure-line">Follow-on/rework cost: £121,080, just 3.0% of total direct cost &middot; Roof Leak, Boiler Breakdown, No Hot Water &amp; No Heating: 40.3% of total cost from a much smaller share of jobs</div>
+      <h4>Repeat work is not the main cost problem; four repair types drive much more spending.</h4>
+      <p>Managers were concerned that repeat or reworked repairs might be creating a large avoidable cost. They account for only a small share of spending. Cost is much more concentrated in roof leaks, boiler breakdowns, no hot water and no heating.</p>
+      <div class="figure-line">Repeat and rework cost: £121,080, or 3.0% of direct cost. The four highest-cost repair types account for 40.3% of total cost.</div>
       
     </div>
     </div>
@@ -316,59 +323,59 @@
 <section id="problem" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">1. Business Problem</span>
-      <h2>What management wanted answered</h2>
+      <span class="eyebrow">1. Why compare the contractors?</span>
+      <h2>The management decision behind the analysis</h2>
     </div>
-    <p>Hearthstead is a fictional UK housing association whose Executive Director of Operations and Head of Repairs were concerned that repairs costs might be rising, service performance might be slipping, some contractors might be underperforming, and repeat repairs might be creating avoidable cost. External contractors pushed back on simple headline rankings, arguing they receive different volumes, priorities, geographies and job complexity — so any comparison needed to account for that before it could be trusted.</p><p>One rule was non-negotiable: <strong>no contractor comparison could be presented as a simple ranking</strong> without first checking whether it still held up once job difficulty was taken into account.</p>
+    <p>Hearthstead pays six external companies to complete some repairs for residents. Managers need to monitor those contracts so they can identify poor service, offer targeted support, challenge repeated underperformance and make better-informed renewal decisions. Comparing the companies helps management decide where to look first; it is not meant to replace investigation or professional judgement.</p><p>The starting comparison placed the six companies from highest to lowest using the percentage of repairs completed within the agreed deadline. The companies challenged that order because they did not all receive the same kinds of jobs. The rule for this project was therefore clear: <strong>do not rely on the simple order until it has been retested after allowing for job difficulty.</strong></p>
   </div>
 </section>
 <section id="stakeholders">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">2. Stakeholders &amp; Business Decision</span>
-      <h2>Who this was for, and what they needed to decide</h2>
+      <span class="eyebrow">2. Who needed the answer?</span>
+      <h2>Four teams, four connected decisions</h2>
     </div>
-    <div class="stakeholder-grid"><div class="stakeholder-card"><strong>Executive Director of Operations</strong><span>Needed to know whether repairs performance had genuinely declined, and where repair cost concentrates, to prioritise where to intervene.</span></div><div class="stakeholder-card"><strong>Head of Repairs</strong><span>Needed to know which contractors underperform, what drives SLA failures and long completion times, and how much missed appointments matter.</span></div><div class="stakeholder-card"><strong>Contractor &amp; Supplier Management</strong><span>Needed a fair, defensible basis for contractor performance conversations that accounts for job-mix differences, since contractors had directly disputed raw rankings.</span></div><div class="stakeholder-card"><strong>Finance &amp; Repairs Operations</strong><span>Needed to know whether repeat/rework repairs were driving avoidable cost, or whether cost concentrated somewhere else entirely.</span></div></div>
+    <div class="stakeholder-grid"><div class="stakeholder-card"><strong>Executive Director of Operations</strong><span>Decide whether the service had genuinely declined and where management attention would have the greatest effect.</span></div><div class="stakeholder-card"><strong>Head of Repairs</strong><span>Identify which repair companies needed support or challenge, and understand what was linked to missed deadlines.</span></div><div class="stakeholder-card"><strong>Contractor &amp; Supplier Management</strong><span>Hold fair performance conversations using a comparison that allows for differences in the jobs each company received.</span></div><div class="stakeholder-card"><strong>Finance &amp; Repairs Operations</strong><span>Decide whether repeat work was the main avoidable cost or whether spending was concentrated elsewhere.</span></div></div>
   </div>
 </section>
 <section id="dataset" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">3. Dataset Overview</span>
-      <h2>What the data covers</h2>
+      <span class="eyebrow">3. What was analysed?</span>
+      <h2>Two years of repairs, appointments and cost records</h2>
     </div>
-    <table class="data-table"><tbody><tr><th>Coverage</th><td>4,000 properties, 6 external contractors, 4 internal maintenance teams, 6 operating areas, 24 repair categories</td></tr><tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr><tr><th>Properties</th><td class="num">4,000</td></tr><tr><th>Repairs</th><td class="num">26,000 (26,078 raw rows; 78 duplicate records were found and removed during cleaning)</td></tr><tr><th>Appointments</th><td class="num">33,460</td></tr><tr><th>Repair relationships (repeat/rework links)</th><td class="num">1,528</td></tr><tr><th>Cost events</th><td class="num">53,270, reconciling to £4,020,286.81 total net cost</td></tr><tr><th>Open (not-yet-completed) repairs at extraction</th><td class="num">348 (346 of which fall in the final month — see Finding 5)</td></tr></tbody></table>
+    <table class="data-table"><tbody><tr><th>Coverage</th><td>4,000 properties, 6 external repair companies, 4 internal maintenance teams, 6 operating areas and 24 repair types</td></tr><tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr><tr><th>Properties</th><td class="num">4,000</td></tr><tr><th>Repairs analysed</th><td class="num">26,000 (26,078 original rows; 78 duplicates removed during cleaning)</td></tr><tr><th>Appointments</th><td class="num">33,460</td></tr><tr><th>Links to later repeat or rework jobs</th><td class="num">1,528</td></tr><tr><th>Cost transactions</th><td class="num">53,270, adding up to £4,020,286.81 in total repair cost</td></tr><tr><th>Repairs still unfinished when the data was taken</th><td class="num">348 (346 fall in the final month — see Finding 5)</td></tr></tbody></table>
   </div>
 </section>
 <section id="approach">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">4. Analytical Approach &amp; Tools Used</span>
-      <h2>Four tools, one reconciled set of numbers</h2>
-      <p>Each tool answers a different part of the brief, but every headline number reconciles exactly across all of them.</p>
+      <span class="eyebrow">4. How I tested it</span>
+      <h2>From raw records to a checked, fair comparison</h2>
+      <p>Each tool had a clear job. The important figures were calculated more than once and checked to ensure they matched.</p>
     </div>
-    <div class="tool-grid"><div class="tool-chip"><strong>Excel</strong><span>A 33-sheet workbook (10 visible, 23 supporting) where every KPI is a live formula or PivotTable over the processed data — not a pasted-in report.</span></div><div class="tool-chip"><strong>SQL</strong><span>Six portable, CTE/window-function-based queries covering KPIs, contractor performance, repeat repairs, appointments, costs and root causes — validated against a SQLite load of the same processed data.</span></div><div class="tool-chip"><strong>Python</strong><span>The statistical validation stage: a logistic regression to fairly adjust contractor performance for job mix, Wilson-score confidence intervals, a two-proportion significance test, a bootstrap cross-check and multiple sensitivity checks.</span></div><div class="tool-chip"><strong>Power BI</strong><span>A full dashboard build specification — the data model, DAX measure library and page layouts — ready to build, not yet a live workspace.</span></div></div>
+    <div class="tool-grid"><div class="tool-chip"><strong>Excel — inspect and reconcile</strong><span>I cleaned and explored the processed data, built the working measures and created a formula-driven workbook that can be checked rather than a pasted report.</span></div><div class="tool-chip"><strong>SQL — calculate repeatably</strong><span>I wrote reusable queries for the main measures, company performance, repeat repairs, appointments, costs and likely causes.</span></div><div class="tool-chip"><strong>Python — test fairness and uncertainty</strong><span>I adjusted the company comparison for differences in job type, tested whether changes were likely to be random and checked that conclusions held under alternative assumptions.</span></div><div class="tool-chip"><strong>Power BI — plan the management view</strong><span>I designed the data model, measures and page layouts for a future dashboard. This is a complete build specification, not yet a live Power BI workspace.</span></div></div>
   </div>
 </section>
 <section id="distributions" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">5. Why This Analysis Uses Medians, Not Averages</span>
-      <h2>Completion time and cost both have a long tail</h2>
-      <p>Both distributions are right-skewed — a small share of repairs take much longer or cost much more than the typical case — so a simple average is misleading on its own. That's why medians and percentiles are used throughout this page.</p>
+      <span class="eyebrow">5. Describing a typical repair</span>
+      <h2>The middle value is more useful than the average here</h2>
+      <p>Most repairs finish quickly and cost a moderate amount, while a small number take much longer or cost much more. Those unusual jobs pull the average upwards. I therefore use the median—the middle repair when all repairs are placed in order—to describe a typical case.</p>
     </div>
     <div class="two-col">
       <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Repair completion time is right-skewed</span></div>
+  <div class="chart-head"><span class="chart-title">Most repairs finish quickly; a smaller number take much longer</span></div>
   <div data-chart="c3-data" data-chart-type="histogram"></div>
   <script type="application/json" id="c3-data">{"binEdges": [0.34, 0.97, 1.61, 2.24, 2.88, 3.51, 4.15, 4.78, 5.41, 6.05, 6.68, 7.32, 7.95, 8.58, 9.22, 9.85, 10.49, 11.12, 11.75, 12.39, 13.02, 13.66, 14.29, 14.93, 15.56, 16.19, 16.83, 17.46, 18.1, 18.73, 19.36, 20.0, 20.63, 21.27, 21.9, 22.54, 23.17, 23.8, 24.44, 25.07, 25.71, 26.34, 26.97, 27.61, 28.24, 28.88, 29.51, 30.14, 30.78, 31.41, 32.05, 32.68, 33.32, 33.95, 34.58, 35.22, 35.85, 36.49, 37.12, 37.75, 38.39], "counts": [2560, 1447, 585, 1252, 1397, 1427, 1388, 1128, 951, 386, 380, 334, 422, 436, 433, 429, 522, 505, 509, 508, 485, 523, 471, 549, 480, 501, 480, 498, 536, 513, 403, 404, 424, 366, 308, 292, 322, 155, 93, 83, 90, 82, 95, 72, 63, 63, 55, 68, 49, 12, 9, 9, 9, 8, 5, 8, 15, 8, 11, 10], "options": {"valueFormat": "days", "meanLine": 9.69, "medianLine": 7.2}}</script>
-  <div class="chart-caption">Mean completion time (9.69 days) sits well above the median (7.2 days) — most repairs finish quickly, with a long tail of slower ones, which is why this analysis uses medians and percentiles rather than the mean.</div>
+  <div class="chart-caption">The average is 9.69 days, but the middle repair finishes in 7.2 days. The middle value better represents the experience of a typical repair.</div>
 </div>
       <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Repair cost is right-skewed</span></div>
+  <div class="chart-head"><span class="chart-title">Most repairs cost much less than the highest-cost cases</span></div>
   <div data-chart="c4-data" data-chart-type="histogram"></div>
   <script type="application/json" id="c4-data">{"binEdges": [0.0, 16.67, 33.33, 50.0, 66.67, 83.33, 100.0, 116.67, 133.33, 150.0, 166.67, 183.33, 200.0, 216.67, 233.33, 250.0, 266.67, 283.33, 300.0, 316.67, 333.33, 350.0, 366.67, 383.33, 400.0, 416.67, 433.33, 450.0, 466.67, 483.33, 500.0, 516.67, 533.33, 550.0, 566.67, 583.33, 600.0, 616.67, 633.33, 650.0, 666.67, 683.33, 700.0, 716.67, 733.33, 750.0, 766.67, 783.33, 800.0, 816.67, 833.33, 850.0, 866.67, 883.33, 900.0, 916.67, 933.33, 950.0, 966.67, 983.33, 1000.0], "counts": [348, 0, 611, 2106, 2615, 2619, 2344, 2040, 2110, 1939, 1628, 1433, 1036, 964, 718, 648, 553, 460, 354, 253, 225, 217, 202, 86, 82, 68, 60, 43, 35, 29, 30, 15, 18, 16, 15, 11, 6, 15, 11, 2, 5, 6, 3, 2, 1, 1, 2, 4, 0, 1, 0, 2, 0, 1, 0, 1, 0, 2, 0, 4], "options": {"valueFormat": "gbp", "meanLine": 154.63, "medianLine": 135.96}}</script>
-  <div class="chart-caption">Mean cost (£154.63) sits well above the median (£135.96) — most repairs are modest, with a long tail of expensive ones. Distribution clipped at £1,000 for readability; a small number of larger repairs extend beyond this.</div>
+  <div class="chart-caption">The average is £154.63, while the middle repair costs £135.96. The chart stops at £1,000 so the common repair costs remain readable; a small number cost more.</div>
 </div>
     </div>
   </div>
@@ -376,7 +383,9 @@
 <section id="casemix">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">6. Contractor <button type="button" class="term" data-term="case-mix adjustment">Case-Mix <svg
+      <span class="eyebrow">6. Making the comparison fair</span>
+      <h2>Each company was compared as if it had received the same mix of jobs</h2>
+      <p>A company handling more emergency or specialist repairs could appear worse even if the company itself was not the reason. I therefore adjusted each result for repair urgency, repair type and operating area. Analysts call this a <button type="button" class="term" data-term="case-mix adjustment">case-mix adjustment <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
   height="24"
@@ -391,82 +400,83 @@
   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
   <path d="M12 17h.01" />
 </svg>
-</button> Analysis</span>
-      <h2>Testing the contractors' own objection, using their data</h2>
-      <p>The interactive chart above (Headline Numbers) shows the raw vs adjusted comparison directly. The table below spells out exactly what changed — and what didn't.</p>
+</button>. The table shows that the fairer adjustment barely changes the rates and does not change the order.</p>
     </div>
     <table class="data-table">
-      <thead><tr><th>Contractor</th><th>Raw SLA rate</th><th>Case-mix-adjusted rate</th><th>Rank (raw / adjusted)</th></tr></thead>
+      <thead><tr><th>Repair company</th><th>Simple on-time rate</th><th>On-time rate after allowing for job difficulty</th><th>Position before / after</th></tr></thead>
       <tbody><tr><td>Keystone Maintenance Ltd</td><td>99.78%</td><td>99.78%</td><td>1 / 1</td></tr><tr><td>Orion Facilities</td><td>88.69%</td><td>88.59%</td><td>2 / 2</td></tr><tr><td>Vertex Property Care</td><td>74.59%</td><td>74.47%</td><td>3 / 3</td></tr><tr><td>Apex Property Solutions</td><td>63.56%</td><td>63.37%</td><td>4 / 4</td></tr><tr><td>Nexus Building Services</td><td>56.03%</td><td>57.22%</td><td>5 / 5</td></tr><tr><td>Pinnacle Repairs</td><td>45.26%</td><td>45.09%</td><td>6 / 6</td></tr></tbody>
     </table>
+    <p class="table-takeaway"><strong>Conclusion:</strong> Keystone stays 1st, Pinnacle stays 6th and every other company keeps its original position. Job mix does not explain the large performance differences in this dataset.</p>
   </div>
 </section>
 <section id="ftf" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">7. Operational vs Verified First-Time Fix</span>
-      <h2>Does confirmed rework change the first-time-fix picture?</h2>
+      <span class="eyebrow">7. Checking for hidden repeat work</span>
+      <h2>A second check found very little unrecorded rework</h2>
+      <p>“Completed on the first visit” can be overstated if a resident later reports that the same repair needed more work. I compared the recorded first-visit result with a stricter version that checks later repeat and rework records.</p>
     </div>
     <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Operational vs Verified First-Time Fix rate</span></div>
+  <div class="chart-head"><span class="chart-title">Recorded first-visit completion compared with the stricter check</span></div>
   <div data-chart="c2-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c2-data">{"categories": ["Operational (self-reported)", "Verified (independently checked)"], "series": [{"label": "First-time fix rate", "values": [74.52, 73.9]}], "options": {"valueFormat": "percent", "categoryLabel": "Definition"}}</script>
-  <div class="chart-caption">The gap between the two definitions is small — only 158 repairs, 0.6 percentage points — confirming that confirmed repeat/rework repairs are not a large driver of apparent first-time-fix performance.</div>
+  <script type="application/json" id="c2-data">{"categories": ["Recorded as completed first visit", "After checking later repeat work"], "series": [{"label": "Repairs completed without a confirmed return visit", "values": [74.52, 73.9]}], "options": {"valueFormat": "percent", "categoryLabel": "How the measure was checked"}}</script>
+  <div class="chart-caption">The stricter check lowers the result by only 0.6 percentage points, covering 158 repairs. Hidden repeat or rework jobs are therefore not a major reason for the reported first-visit performance.</div>
 </div>
   </div>
 </section>
 <section id="apex">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">8. The Apex Episode</span>
-      <h2>Finding the one contractor behind a portfolio-wide dip</h2>
-      <p>The monthly trend chart above (Headline Numbers) shows the dip itself. Portfolio SLA compliance fell sharply for four consecutive months, July-October 2025 (65.4%-68.1%, against a 70%-75% band in every other month) — breaking it down by contractor shows this is very largely one contractor's episode, not a general deterioration.</p>
+      <span class="eyebrow">8. Explaining the four-month decline</span>
+      <h2>Apex caused most of the fall in on-time performance</h2>
+      <p>Hearthstead's overall on-time rate fell for four consecutive months from July to October 2025. Separating the figures by repair company showed that Apex fell sharply during exactly this period, while the other companies remained close to their usual performance.</p>
     </div>
     <figure class="chart-figure">
-    <img src="../assets/images/hearthstead/06_apex_july_october_2025_episode.png" alt="Bar chart comparing each provider's full-period SLA compliance to its July-October 2025 rate">
-    <figcaption>Every provider except Apex Property Solutions stayed within a few points of its own full-period average across July-October 2025 (e.g. Keystone 99.8% → 100.0%, Orion 88.7% → 88.1%). Apex alone collapsed from a 63.6% full-period average to 29.4% during exactly those four months.</figcaption>
+    <img src="../assets/images/hearthstead/06_apex_july_october_2025_episode.png" alt="Bar chart comparing each repair provider's usual on-time completion rate with its rate from July to October 2025">
+    <figcaption>Every provider except Apex stayed within a few percentage points of its usual on-time rate. Apex fell from 63.6% across the full period to 29.4% during these four months.</figcaption>
   </figure>
   </div>
 </section>
 <section id="cost" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">9. Cost Concentration</span>
-      <h2>Where the £4.02m actually goes</h2>
+      <span class="eyebrow">9. Where the money goes</span>
+      <h2>Four repair types account for 40% of total cost</h2>
+      <p>Instead of applying a general cost-cutting target, Hearthstead can focus investigation on the repair types where spending is most concentrated.</p>
     </div>
     <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Net repair cost by category</span></div>
+  <div class="chart-head"><span class="chart-title">Total repair cost, from highest-cost category to lowest</span></div>
   <div data-chart="c6-data" data-chart-type="bar"></div>
   <script type="application/json" id="c6-data">{"categories": ["Roof Leak", "Boiler Breakdown", "No Hot Water", "No Heating", "Guttering Fault", "Water Ingress", "Power Loss", "Internal Wall/Ceiling", "Radiator Fault", "Internal Flooring", "External Drain Blockage", "Leaking Pipe", "Communal Door Fault", "Window Fault", "Bath/Shower Fault", "Fencing/Gates", "Broken Glazing", "Door/Lock Fault", "Extractor Fan Fault", "Socket Fault", "Blocked Toilet", "Leaking Tap", "Lighting Fault", "Blocked Sink"], "series": [{"label": "Net cost", "values": [478473.63, 464631.08, 360574.5, 318454.17, 216820.39, 205156.23, 180828.38, 171338.99, 169187.95, 156799.94, 148701.47, 134653.08, 128192.65, 108034.0, 107070.63, 103759.98, 95408.27, 82845.22, 77937.98, 74207.54, 70141.1, 63399.24, 51941.34, 51729.05]}], "options": {"horizontal": true, "valueFormat": "gbp", "categoryLabel": "Repair category"}}</script>
-  <div class="chart-caption">The top 4 of 24 repair categories (Roof Leak, Boiler Breakdown, No Hot Water, No Heating) already account for 40.3% of total net operational cost — hover any bar for its exact cumulative share.</div>
+  <div class="chart-caption">Roof leaks, boiler breakdowns, no hot water and no heating together account for 40.3% of total cost. Hover over a bar to see the exact amount and running share.</div>
 </div>
   </div>
 </section>
 <section id="recommendations">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">10. Management Recommendations</span>
-      <h2>What follows from the evidence</h2>
+      <span class="eyebrow">10. What management should do</span>
+      <h2>Five actions, each linked to a finding</h2>
     </div>
-    <ol class="rec-list"><li><strong>Open a specific, time-bounded conversation with Apex Property Solutions about July–October 2025.</strong> This isolated four-month episode is a far more tractable issue than a vague “did performance decline” question, and likely has a concrete operational cause worth asking about directly.</li><li><strong>Escalate Pinnacle Repairs for contract review</strong>, on the basis of consistent underperformance across four independent measures that survives fairly adjusting for job difficulty — the weak position is not an artefact of a harder caseload.</li><li><strong>Verify Keystone Maintenance Ltd's reported SLA compliance against source system data before relying on it operationally.</strong> A 99.8% result should be confirmed, not simply celebrated, before it's used in supplier scorecards or contract renewals.</li><li><strong>Investigate missed-appointment root causes as a service-wide lever</strong>, not a single-contractor issue — a process-level fix such as scheduling or access coordination could plausibly benefit every contractor simultaneously.</li><li><strong>Prioritise category-level cost review over broad cost-cutting.</strong> Roof Leak and Boiler Breakdown alone justify a targeted process/procurement review given their disproportionate share of the £4.02m cost base, whereas rework reduction has limited headroom (already only 3.0% of direct cost).</li></ol>
+    <ol class="rec-list"><li><strong>Ask Apex what changed between July and October 2025.</strong> The problem is limited to a clear four-month period, making it possible to investigate staffing, scheduling, access or recording changes rather than discussing a vague overall decline.</li><li><strong>Review Pinnacle's contract performance.</strong> Pinnacle is weak across four separate measures, and the fairer comparison shows that a harder mix of jobs does not explain its position.</li><li><strong>Check Keystone's 99.8% result against the source system.</strong> The figure is unusually high compared with every other company and Hearthstead's own teams. It should be verified before it affects a supplier scorecard, renewal or reward.</li><li><strong>Investigate why appointments are missed across the whole service.</strong> Better scheduling, access arrangements or resident communication could improve on-time completion across several companies.</li><li><strong>Review the highest-cost repair types before considering broad cuts.</strong> Roof leaks and heating-related work offer more potential than repeat-work reduction, which currently represents only 3.0% of direct cost.</li></ol>
   </div>
 </section>
 <section id="limitations" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">11. Limitations &amp; Debugging Lessons</span>
-      <h2>What this analysis does not claim — and two things caught before they shipped</h2>
+      <span class="eyebrow">11. What to treat carefully</span>
+      <h2>Limits, checks and two data problems fixed before reporting</h2>
     </div>
-    <ul class="limit-list"><li><strong>An early version of the repair-cost data looked completely broken — the vast majority of cost rows contained garbled text instead of numbers.</strong> The root cause turned out to be a lookup keyed on trade rather than repair category: several repair categories share the same trade (e.g. four different categories are all classed as “Heating”), so the lookup returned multiple rows instead of one clean number. Re-keying the lookup on the always-unique repair category fixed it — zero non-numeric rows remained afterwards.</li><li><strong>First-time-fix performance appeared to collapse in the dataset's final month.</strong> Rather than reporting it as a real service collapse, the near-total overlap with the dataset's still-open repairs prompted a cross-check against a different metric (SLA compliance) for that same month — which came back completely normal, confirming the apparent collapse was a data cut-off artefact, not a genuine deterioration.</li></ul>
-    <ul class="limit-list"><li><strong>Made-up data throughout</strong> — every figure describes patterns in a generated dataset built for this portfolio, not a real housing association.</li><li><strong>Association, not proof of cause</strong> — the missed-appointment link to lower SLA compliance is adjusted for priority and trade, but doesn't prove a missed appointment directly causes the shortfall; repairs that are already complex may simply be more likely to have both a missed appointment and a longer job.</li><li><strong>Keystone Maintenance Ltd's anomalous result is flagged, not resolved</strong> — this analysis does not determine whether it reflects genuine performance, a data-generation artefact, or something else.</li><li><strong>The December 2025 boundary effect could only be identified and excluded, not corrected</strong> — a live operational dataset without a fixed extraction date would not have this issue.</li><li><strong>39 repairs with no valid property link and 26 repairs with an implausible timestamp</strong> are correctly excluded from the relevant measures rather than guessed at — a small amount of information that could not be used.</li><li><strong>A “deliberately multi-stage” repair flag currently mirrors a separate “planned follow-on” flag</strong>, with no independent source signal yet distinguishing them — the two concepts can't be told apart in this version of the data.</li></ul>
+    <ul class="limit-list"><li><strong>Cost values were initially corrupted by the wrong lookup.</strong> Several repair types share the same broad trade, such as Heating. Looking up cost by trade returned multiple possible matches instead of one number. Changing the lookup to use the unique repair type fixed the problem; no non-numeric cost values remained.</li><li><strong>The final month initially looked like a collapse in first-visit completion.</strong> Almost all unfinished repairs were reported in that same month, showing that the data had been taken before those jobs had time to finish. A separate on-time measure remained normal, so December 2025 was excluded from year-to-year comparisons.</li></ul>
+    <ul class="limit-list"><li><strong>All organisations and figures are fictional.</strong> The dataset was generated for this portfolio and does not describe a real housing association or supplier.</li><li><strong>A relationship does not prove a cause.</strong> Missed appointments and late repairs occur together, but this analysis cannot prove that the missed appointment caused the delay. More complex repairs may be more likely to have both.</li><li><strong>Keystone's unusual result is not explained.</strong> The analysis identifies the 99.8% result as something to verify, but it cannot tell whether the figure reflects excellent service, a recording issue or the generated data.</li><li><strong>The incomplete final month could be identified but not repaired.</strong> Excluding December 2025 is more honest than estimating outcomes for repairs that had not yet had enough time to finish.</li><li><strong>A small number of invalid records were excluded.</strong> This affects 39 repairs with no valid property link and 26 with an impossible time sequence. Their missing values were not guessed.</li><li><strong>Two repair flags cannot yet be separated.</strong> “Deliberately multi-stage” and “planned follow-on” currently contain the same signal, so this version of the data cannot distinguish them.</li></ul>
   </div>
 </section>
 <section id="technical">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">12. Technical Evidence</span>
-      <h2>Source deliverables</h2>
-      <p>Source files for this project are organised as shown below (not yet published to a public GitHub repository). Every deliverable reconciles to the same figures shown on this page.</p>
+      <span class="eyebrow">12. How the work can be checked</span>
+      <h2>Technical files and reproducible outputs</h2>
+      <p>The source files below contain the workbook, queries, Python analysis and Power BI build specification. They all reproduce or reconcile to the figures shown on this page. The files are not yet in a public project repository.</p>
     </div>
     <div class="tech-grid"><div class="tech-card"><h4>03_excel/</h4><ul><li>build_excel_workbook.py — reproducible build script</li><li>hearthstead_repairs_analysis.xlsx — 10 visible sheets (33 total), 13 charts, 3 PivotTables</li></ul></div><div class="tech-card"><h4>04_sql/</h4><ul><li>01_kpi_analysis.sql &middot; 02_contractor_analysis.sql</li><li>03_repeat_repairs.sql &middot; 04_appointments.sql</li><li>05_cost_analysis.sql &middot; 06_root_cause_analysis.sql</li></ul></div><div class="tech-card"><h4>07_python/</h4><ul><li>hearthstead_repairs_analysis.py — full analysis script</li><li>hearthstead_repairs_analysis.ipynb — narrated notebook</li><li>results/hearthstead_results.json — machine-readable results</li></ul></div><div class="tech-card"><h4>05_power_bi/documentation/</h4><ul><li>dashboard_specification.md — dashboard design</li><li>dax_measures.md — full DAX measure library</li><li>data_model.md — data model design</li></ul></div></div>
     <p class="tech-note">See also: <code>08_outputs/executive_summary/</code> for the full written analysis and <code>09_case_study/portfolio_case_study.md</code> for the source of this page.</p>

@@ -390,6 +390,93 @@
   line-height: 1.72;
 }
 
+.story-explainer h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin-bottom: 1.35rem;
+  color: #123448;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+}
+
+.story-steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.story-step {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-content: start;
+  gap: 0.15rem 0.75rem;
+  border: 1px solid rgba(22, 125, 164, 0.15);
+  border-radius: 13px;
+  padding: 17px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.story-step > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 1 / span 2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #166b8f;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.story-step strong {
+  color: #13374a;
+  font-size: 0.91rem;
+}
+
+.hearthstead-case-study .story-step p {
+  margin: 0.25rem 0 0;
+  color: #536975;
+  font-size: 0.84rem;
+  line-height: 1.58;
+}
+
+.plain-answer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
+  margin-top: 14px;
+  border-radius: 13px;
+  padding: 18px;
+  background: #10394e;
+}
+
+.plain-answer > span {
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  background: var(--hearth-gold);
+  color: #173044;
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hearthstead-case-study .plain-answer p {
+  margin: 0;
+  color: #d5e5eb;
+  font-size: 0.91rem;
+  line-height: 1.62;
+}
+
+.hearthstead-case-study .plain-answer strong { color: #fff; }
+
 .hearthstead-case-study .kpi-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
@@ -638,6 +725,18 @@
 
 .hearthstead-case-study table.data-table tbody tr:nth-child(even) td { background: #f8fbfc; }
 
+.table-takeaway {
+  max-width: 900px;
+  margin: 1.2rem 0 0;
+  border-left: 4px solid var(--hearth-gold);
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.15rem;
+  background: #f3f8fa;
+  color: #445b67;
+}
+
+.table-takeaway strong { color: #17384a; }
+
 #distributions .two-col { gap: 22px; }
 
 #apex .chart-figure {
@@ -809,6 +908,9 @@
   .hearthstead-case-study .short-version { padding: 25px 22px; }
   .hearthstead-case-study .short-version::after { display: none; }
   .hearthstead-case-study .short-version p { font-size: 0.94rem; }
+  .story-steps { grid-template-columns: 1fr; }
+  .plain-answer { grid-template-columns: 1fr; }
+  .plain-answer > span { justify-self: start; }
   .hearthstead-case-study .kpi-grid,
   .findings-grid,
   .hearthstead-case-study .tool-grid,
