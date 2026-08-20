@@ -27,7 +27,7 @@
   border-top: 1px solid var(--line);
   margin-top: 12px;
 }
-.chart-block svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart-block svg { width: 100%; height: auto; display: block; overflow: hidden; }
 .chart-block .chart-canvas { position: relative; }
 
 /* filter toggle (e.g. Albion supplier-type) */
@@ -51,8 +51,8 @@
 .chart-filter button.active { background: var(--navy); color: #fff; }
 
 /* axes / bars / lines */
-.chart-axis line, .chart-axis path { stroke: var(--line); stroke-width: 1; }
-.chart-axis text { fill: var(--muted); font-size: 11px; font-family: inherit; }
+line.chart-axis, path.chart-axis, .chart-axis line, .chart-axis path { stroke: var(--line); stroke-width: 1; }
+text.chart-axis, .chart-axis text { fill: var(--muted); font-size: 11px; font-family: inherit; }
 .chart-gridline { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 3; }
 
 .chart-bar { fill: var(--teal); }
@@ -75,7 +75,7 @@
 .chart-comparison-line { stroke: var(--line); stroke-width: 2; }
 .chart-comparison-dot.is-before { fill: var(--muted); }
 .chart-comparison-dot.is-after { fill: var(--teal); }
-.chart-comparison-label { fill: var(--ink); font-size: 11.5px; }
+text.chart-comparison-label, .chart-comparison-label { fill: var(--ink); font-size: 11.5px; font-family: inherit; }
 
 .chart-histogram-bar { fill: var(--teal-light); stroke: var(--teal); stroke-width: 1; }
 .chart-histogram-marker { stroke: var(--navy); stroke-width: 1.5; stroke-dasharray: 4 3; }

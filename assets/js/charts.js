@@ -346,6 +346,26 @@
     return s.length > max ? s.slice(0, max - 1) + '…' : s;
   }
 
+  function formatPeriodLabel(label) {
+    var value = String(label);
+    var match = value.match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{4})$/i);
+    return match ? match[1] + ' \u2019' + match[2].slice(-2) : value;
+  }
+
+  function evenlySpacedIndices(count, maxTicks) {
+    if (count <= 0) return [];
+    if (count <= maxTicks) {
+      return Array.from({ length: count }, function (_, index) { return index; });
+    }
+    var last = count - 1;
+    var indices = [];
+    for (var i = 0; i < maxTicks; i++) {
+      var index = Math.round(i * last / (maxTicks - 1));
+      if (indices.indexOf(index) === -1) indices.push(index);
+    }
+    return indices;
+  }
+
   function appendLegend(container, series) {
     var legend = document.createElement('div');
     legend.className = 'chart-legend';
@@ -409,11 +429,10 @@
       }
     }
 
-    var xTickEvery = Math.max(1, Math.round(n / 8));
-    xLabels.forEach(function (lbl, i) {
-      if (i % xTickEvery === 0 || i === n - 1) {
-        svg.appendChild(textEl(xScale(i), plot.bottom + 18, lbl, { 'text-anchor': 'middle', class: 'chart-axis' }));
-      }
+    var xTickIndices = evenlySpacedIndices(n, opts.maxXTicks || 6);
+    xTickIndices.forEach(function (i) {
+      var anchor = i === 0 ? 'start' : (i === n - 1 ? 'end' : 'middle');
+      svg.appendChild(textEl(xScale(i), plot.bottom + 18, formatPeriodLabel(xLabels[i]), { 'text-anchor': anchor, class: 'chart-axis' }));
     });
     svg.appendChild(svgEl('line', { class: 'chart-axis', x1: plot.left, x2: plot.right, y1: plot.bottom, y2: plot.bottom }));
 
@@ -546,7 +565,11 @@
       var svgWrap = document.createElement('div');
       var root = buildChartRoot(svgWrap, height);
       var svg = root.svg;
-      var plot = { left: PAD.left + 100, right: VB_W - PAD.right - 10, top: PAD.top, bottom: height - PAD.bottom };
+      var longestLabel = shown.reduce(function (longest, row) {
+        return Math.max(longest, String(row.label).length);
+      }, 0);
+      var labelSpace = Math.min(190, Math.max(120, longestLabel * 6.2));
+      var plot = { left: PAD.left + labelSpace, right: VB_W - PAD.right - 10, top: PAD.top, bottom: height - PAD.bottom };
       var allVals = [];
       shown.forEach(function (r) { allVals.push(r.before, r.after); });
       var maxV = niceMax(Math.max.apply(null, allVals.concat([0])));
@@ -563,7 +586,7 @@
       var band = (plot.bottom - plot.top) / n;
       shown.forEach(function (r, i) {
         var y = plot.top + i * band + band / 2;
-        svg.appendChild(textEl(plot.left - 10, y + 4, truncateLabel(r.label, 20), { 'text-anchor': 'end', class: 'chart-axis' }));
+        svg.appendChild(textEl(plot.left - 10, y + 4, r.label, { 'text-anchor': 'end', class: 'chart-comparison-label' }));
         var x0 = xScale(r.before), x1 = xScale(r.after);
         svg.appendChild(svgEl('line', { class: 'chart-comparison-line', x1: x0, x2: x1, y1: y, y2: y }));
         var dotBefore = svgEl('circle', { cx: x0, cy: y, r: 4.5, class: 'chart-comparison-dot is-before' });
