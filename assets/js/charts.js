@@ -576,12 +576,14 @@
       var plot = { left: PAD.left + labelSpace, right: VB_W - PAD.right - 10, top: PAD.top, bottom: height - PAD.bottom };
       var allVals = [];
       shown.forEach(function (r) { allVals.push(r.before, r.after); });
-      var maxV = niceMax(Math.max.apply(null, allVals.concat([0])));
-      var xScale = linearScale([0, maxV], [plot.left, plot.right]);
+      var minV = opts.minValue == null ? 0 : opts.minValue;
+      var maxV = opts.maxValue == null ? niceMax(Math.max.apply(null, allVals.concat([0]))) : opts.maxValue;
+      if (maxV <= minV) maxV = minV + 1;
+      var xScale = linearScale([minV, maxV], [plot.left, plot.right]);
 
       var ticks = 4;
       for (var t = 0; t <= ticks; t++) {
-        var v = (t / ticks) * maxV;
+        var v = minV + (t / ticks) * (maxV - minV);
         var gx = xScale(v);
         svg.appendChild(svgEl('line', { class: 'chart-gridline', x1: gx, x2: gx, y1: plot.top, y2: plot.bottom }));
         svg.appendChild(textEl(gx, plot.bottom + 18, valueFmt(v), { 'text-anchor': 'middle', class: 'chart-axis' }));

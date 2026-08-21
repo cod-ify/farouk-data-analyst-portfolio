@@ -1,0 +1,433 @@
+/* ==========================================================================
+   AeroVista case study — decision-first aviation operations treatment.
+   Page-specific overrides keep the other case studies untouched.
+   ========================================================================== */
+
+.aerovista-case-study {
+  --aero-navy: #0a2639;
+  --aero-navy-mid: #123e56;
+  --aero-blue: #0c82b2;
+  --aero-sky: #64c7df;
+  --aero-orange: #f1b24b;
+  --aero-paper: #f3f8fb;
+  --aero-line: #d6e5ec;
+  --aero-shadow: 0 22px 60px rgba(10, 38, 57, 0.10);
+  --teal: #0c82b2;
+  --teal-light: #dff4f9;
+  --navy: #183b52;
+  background: var(--aero-paper);
+}
+
+.aerovista-case-study .container { max-width: 1220px; }
+.aerovista-case-study section[id] { scroll-margin-top: 138px; }
+
+.aerovista-case-study .site-header {
+  border-bottom-color: rgba(10, 38, 57, 0.09);
+  box-shadow: 0 8px 30px rgba(10, 38, 57, 0.04);
+}
+
+.aerovista-case-study .disclaimer-strip {
+  padding-block: 0.5rem;
+  background: #061c2a;
+  letter-spacing: 0.01em;
+}
+
+.aerovista-case-study .nav-toggle:focus-visible,
+.aerovista-case-study a:focus-visible,
+.aerovista-case-study button:focus-visible,
+.aerovista-case-study summary:focus-visible {
+  outline: 3px solid var(--aero-orange);
+  outline-offset: 3px;
+}
+
+/* ---------- Hero ---------- */
+
+.aerovista-case-study .cs-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 54px 0 92px;
+  background:
+    radial-gradient(circle at 84% 15%, rgba(100, 199, 223, 0.23), transparent 28%),
+    radial-gradient(circle at 8% 105%, rgba(241, 178, 75, 0.13), transparent 34%),
+    linear-gradient(135deg, #061b29 0%, var(--aero-navy) 55%, #14516b 100%);
+}
+
+.aerovista-case-study .cs-hero::after {
+  content: "";
+  position: absolute;
+  right: -7%;
+  bottom: 4%;
+  width: 62%;
+  height: 1px;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 -18px rgba(255, 255, 255, 0.06), 0 18px rgba(255, 255, 255, 0.06);
+  transform: rotate(-7deg);
+}
+
+.aerovista-case-study .cs-hero .container { position: relative; z-index: 1; }
+
+.aerovista-case-study .cs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 42px;
+  color: #9eb9c5;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.aerovista-case-study .cs-breadcrumb a { color: #dfedf2; }
+
+.aerovista-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 6.5rem);
+}
+
+.case-hero-copy { min-width: 0; }
+
+.case-hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.aerovista-case-study .case-hero-meta .eyebrow { margin: 0; color: #83d6e8; }
+
+.case-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0.33rem 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #dcebf0;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.case-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--aero-orange);
+  box-shadow: 0 0 0 4px rgba(241, 178, 75, 0.14);
+}
+
+.aerovista-case-study .cs-hero h1 {
+  max-width: 790px;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.7rem, 5.7vw, 5.15rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.case-question {
+  max-width: 760px;
+  margin: 0 0 1.2rem;
+  border-left: 3px solid var(--aero-orange);
+  padding-left: 1rem;
+  color: #f4f8fa;
+  font-size: clamp(1.12rem, 2vw, 1.38rem);
+  font-weight: 650;
+  line-height: 1.48;
+}
+
+.case-question span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #9ebac6;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.aerovista-case-study .cs-hero .cs-sub {
+  max-width: 690px;
+  margin: 0;
+  color: #bad0d9;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.aerovista-case-study .cs-hero .hero-ctas { margin-top: 2rem; }
+.aerovista-case-study .cs-hero .btn-primary { background: var(--aero-orange); color: #112b39; }
+.aerovista-case-study .cs-hero .btn-primary:hover { background: #f8cb7d; }
+
+.aerovista-case-study .cs-hero .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+
+.project-brief {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 22px;
+  padding: 1.45rem;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.project-brief::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--aero-orange), var(--aero-sky));
+}
+
+.project-brief > .eyebrow { color: #91dce9; }
+
+.brief-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 0 1.1rem;
+}
+
+.brief-stats div { min-width: 0; border-top: 1px solid rgba(255, 255, 255, 0.12); padding: 0.9rem; }
+.brief-stats div:nth-child(odd) { border-right: 1px solid rgba(255, 255, 255, 0.12); }
+.brief-stats div:nth-child(-n + 2) { border-top: 0; }
+.brief-stats dt { margin-bottom: 0.22rem; color: #9fb9c5; font-size: 0.68rem; font-weight: 700; }
+.brief-stats dd { margin: 0; color: #fff; font-size: 1.14rem; font-weight: 800; letter-spacing: -0.025em; }
+
+.brief-tools { display: flex; flex-wrap: wrap; gap: 0.45rem; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 1.1rem; }
+.brief-tools span { border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; padding: 0.3rem 0.62rem; background: rgba(255, 255, 255, 0.07); color: #e7f1f4; font-size: 0.72rem; font-weight: 700; }
+.brief-outcome { margin: 1.15rem 0 0; border-radius: 12px; padding: 0.9rem 1rem; background: rgba(6, 27, 41, 0.58); color: #c6d8df; font-size: 0.82rem; line-height: 1.55; }
+.brief-outcome strong { color: #fff; }
+
+/* ---------- Disclaimer and compact navigation ---------- */
+
+.aerovista-case-study .disclaimer-box {
+  position: relative;
+  z-index: 2;
+  margin: -30px 0 20px;
+  border-color: #ecd7a3;
+  border-radius: 14px;
+  padding: 15px 18px;
+  background: #fffaf0;
+  box-shadow: 0 15px 38px rgba(10, 38, 57, 0.09);
+  color: #5e4a1f;
+  font-size: 0.84rem;
+}
+
+.case-nav-shell {
+  position: sticky;
+  top: 63px;
+  z-index: 35;
+  border-block: 1px solid var(--aero-line);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(10, 38, 57, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.aerovista-case-study .anchor-nav { display: flex; flex-wrap: nowrap; align-items: center; gap: 0; margin: 0 auto; overflow-x: auto; scrollbar-width: none; }
+.aerovista-case-study .anchor-nav::-webkit-scrollbar { display: none; }
+.aerovista-case-study .anchor-nav > span { flex: 0 0 auto; margin-right: 0.55rem; color: #8798a1; font-size: 0.67rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.aerovista-case-study .anchor-nav a { flex: 0 0 auto; border: 0; border-radius: 0; padding: 0.92rem 0.78rem 0.82rem; background: transparent; color: #4a5d67; font-size: 0.76rem; font-weight: 700; }
+.aerovista-case-study .anchor-nav a:hover { box-shadow: inset 0 -2px var(--aero-blue); color: var(--aero-blue); }
+
+/* ---------- Executive summary ---------- */
+
+.aerovista-case-study section { padding-block: 92px; }
+.aerovista-case-study .section-head { max-width: 790px; margin-bottom: 42px; }
+.aerovista-case-study .section-head h2 { max-width: 790px; color: #102b3d; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.08; text-wrap: balance; }
+.aerovista-case-study .section-head p { max-width: 720px; color: #5e717c; font-size: 1rem; line-height: 1.72; }
+
+#findings { padding-top: 76px; background: radial-gradient(circle at 100% 4%, rgba(100, 199, 223, 0.11), transparent 24%), #fff; }
+
+.aerovista-case-study .short-version {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 26px;
+  border: 0;
+  border-radius: 18px;
+  padding: 30px clamp(24px, 4vw, 42px);
+  background: linear-gradient(135deg, #e7f7fb 0%, #f7fbfc 100%);
+  box-shadow: inset 4px 0 var(--aero-blue);
+}
+
+.story-explainer h3 { max-width: 720px; margin-bottom: 1.35rem; color: #123449; font-size: clamp(1.35rem, 2.5vw, 1.9rem); }
+.story-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.story-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-content: start; gap: 0.15rem 0.75rem; border: 1px solid rgba(12, 130, 178, 0.15); border-radius: 13px; padding: 17px; background: rgba(255, 255, 255, 0.72); }
+.story-step > span { display: inline-flex; align-items: center; justify-content: center; grid-row: 1 / span 2; width: 30px; height: 30px; border-radius: 50%; background: var(--aero-blue); color: #fff; font-size: 0.76rem; font-weight: 800; }
+.story-step strong { color: #13374a; font-size: 0.91rem; }
+.aerovista-case-study .story-step p { margin: 0.25rem 0 0; color: #526a76; font-size: 0.84rem; line-height: 1.58; }
+
+.plain-answer { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 1rem; margin-top: 14px; border-radius: 13px; padding: 18px; background: #103b52; }
+.plain-answer > span { border-radius: 999px; padding: 0.35rem 0.65rem; background: var(--aero-orange); color: #173044; font-size: 0.66rem; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+.aerovista-case-study .plain-answer p { margin: 0; color: #d6e6ec; font-size: 0.91rem; line-height: 1.62; }
+.aerovista-case-study .plain-answer strong { color: #fff; }
+
+.aerovista-case-study .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0 0 36px; }
+.aerovista-case-study .kpi-tile { position: relative; overflow: hidden; min-height: 172px; border-color: var(--aero-line); border-radius: 16px; padding: 24px 20px 20px; text-align: left; box-shadow: 0 12px 35px rgba(10, 38, 57, 0.05); }
+.aerovista-case-study .kpi-tile::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--aero-blue), var(--aero-sky)); }
+.aerovista-case-study .kpi-tile:nth-child(2)::before { background: linear-gradient(90deg, #da8e43, var(--aero-orange)); }
+.aerovista-case-study .kpi-tile:nth-child(3)::before { background: linear-gradient(90deg, #4b90ad, #8bc9d8); }
+.aerovista-case-study .kpi-tile .kpi-num { margin-bottom: 0.55rem; color: #102f42; font-size: clamp(1.5rem, 2.6vw, 2.05rem); line-height: 1.08; letter-spacing: -0.04em; }
+.aerovista-case-study .kpi-tile .kpi-lbl { display: block; color: #5b6c75; font-size: 0.78rem; line-height: 1.5; }
+.aerovista-case-study .kpi-tile .tag { margin-top: 0.75rem; }
+
+.aerovista-case-study .chart-block { border-color: var(--aero-line); border-radius: 18px; padding: 20px; box-shadow: var(--aero-shadow); }
+.aerovista-case-study .chart-title { color: #173448; font-size: 0.9rem; font-weight: 800; }
+.aerovista-case-study .chart-caption { color: #687981; line-height: 1.58; }
+
+.findings-heading { max-width: 730px; margin: 66px 0 28px; }
+.findings-heading h3 { color: #112c3d; font-size: clamp(1.65rem, 3.3vw, 2.45rem); line-height: 1.13; text-wrap: balance; }
+.findings-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.aerovista-case-study .finding-card { display: flex; flex-direction: column; min-width: 0; margin: 0; border: 1px solid var(--aero-line); border-radius: 16px; padding: 25px; box-shadow: 0 10px 32px rgba(10, 38, 57, 0.045); }
+.aerovista-case-study .finding-card h4 { margin-bottom: 0.75rem; color: #173448; font-size: 1.06rem; line-height: 1.32; }
+.aerovista-case-study .finding-card p { color: #52656f; font-size: 0.89rem; line-height: 1.62; }
+.aerovista-case-study .finding-card .finding-num { align-self: flex-start; margin-bottom: 0.75rem; border: 1px solid #c9e4ed; border-radius: 999px; padding: 0.3rem 0.58rem; background: #eef9fc; font-size: 0.65rem; letter-spacing: 0.1em; }
+.aerovista-case-study .finding-card .figure-line { margin: auto 0 0; padding-top: 1rem; color: #143c52; font-size: 0.82rem; line-height: 1.55; }
+.aerovista-case-study details.detail { margin-top: 0.75rem; }
+.aerovista-case-study details.detail summary { color: var(--aero-blue); font-size: 0.78rem; }
+
+/* ---------- Report body ---------- */
+
+#problem, #dataset, #decomposition, #casemix, #limitations { background: #edf4f7; }
+#stakeholders, #approach, #propagation, #recovery { background: #fff; }
+
+#problem .container { max-width: 940px; }
+#problem .container > p { color: #40555f; font-size: 1.05rem; line-height: 1.8; }
+#problem .container > p:last-child { margin-top: 1.5rem; border-left: 4px solid var(--aero-orange); border-radius: 0 12px 12px 0; padding: 1.1rem 1.25rem; background: #fff; color: #17384a; box-shadow: 0 12px 30px rgba(10, 38, 57, 0.05); }
+
+.aerovista-case-study .stakeholder-grid { gap: 18px; }
+.aerovista-case-study .stakeholder-card, .aerovista-case-study .tool-chip { position: relative; overflow: hidden; border-color: var(--aero-line); border-radius: 16px; padding: 23px; box-shadow: 0 12px 34px rgba(10, 38, 57, 0.05); }
+.aerovista-case-study .stakeholder-card::before, .aerovista-case-study .tool-chip::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--aero-sky); }
+.aerovista-case-study .stakeholder-card strong, .aerovista-case-study .tool-chip strong { color: #14384c; font-size: 0.96rem; }
+.aerovista-case-study .stakeholder-card span, .aerovista-case-study .tool-chip span { color: #64757e; line-height: 1.58; }
+.aerovista-case-study .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.aerovista-case-study .tool-chip { min-height: 172px; }
+
+.aerovista-case-study table.data-table { overflow: hidden; border: 1px solid var(--aero-line); border-radius: 14px; box-shadow: 0 16px 38px rgba(10, 38, 57, 0.06); }
+.aerovista-case-study table.data-table th, .aerovista-case-study table.data-table td { border-color: #dfebf0; padding: 13px 15px; }
+.aerovista-case-study table.data-table th { background: #e5f0f4; color: #17384a; }
+.aerovista-case-study table.data-table tbody tr:nth-child(even) td { background: #f8fbfc; }
+#dataset .data-table th { width: 31%; }
+#dataset .data-table td { text-align: right; line-height: 1.55; }
+
+#decomposition .two-col, .cost-chart-grid { gap: 22px; align-items: stretch; }
+#decomposition .chart-block, .cost-chart-grid .chart-block { margin: 0; }
+
+.route-comparison-card { max-width: 980px; margin-inline: auto; }
+.route-review-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; margin-top: 22px; }
+.route-review-grid article { border: 1px solid var(--aero-line); border-radius: 15px; padding: 21px; background: #fff; }
+.route-review-grid article.is-priority { border-color: #edc776; background: #fffaf0; }
+.route-review-grid article > span { display: inline-block; margin-bottom: 0.7rem; color: var(--aero-blue); font-size: 0.67rem; font-weight: 850; letter-spacing: 0.1em; text-transform: uppercase; }
+.route-review-grid article.is-priority > span { color: #9a641f; }
+.route-review-grid h3 { margin-bottom: 0.45rem; color: #163448; font-size: 1rem; }
+.route-review-grid p { margin: 0; color: #5d707a; font-size: 0.84rem; line-height: 1.62; }
+.model-caution { max-width: 920px; margin: 18px auto 0; border-left: 4px solid var(--aero-orange); border-radius: 0 12px 12px 0; padding: 1rem 1.15rem; background: #fff; color: #536771; line-height: 1.65; }
+
+.cost-reconciliation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.65rem; margin: -12px 0 24px; border: 1px solid #d7e9ef; border-radius: 14px; padding: 14px 18px; background: #f0f9fb; color: #36515f; font-size: 0.84rem; }
+.cost-reconciliation span, .cost-reconciliation strong { border-radius: 999px; padding: 0.35rem 0.7rem; background: #fff; }
+.cost-reconciliation strong { color: #8d5b1d; }
+
+/* ---------- Recommendations, limitations, evidence ---------- */
+
+#recommendations { position: relative; overflow: hidden; background: radial-gradient(circle at 95% 0%, rgba(100, 199, 223, 0.18), transparent 30%), var(--aero-navy); }
+#recommendations .section-head .eyebrow { color: #86d7e7; }
+#recommendations .section-head h2 { color: #fff; }
+.aerovista-case-study .rec-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.aerovista-case-study .rec-list li { min-height: 180px; border: 1px solid rgba(255, 255, 255, 0.13); border-radius: 15px; padding: 24px 24px 24px 70px; background: rgba(255, 255, 255, 0.07); color: #c6d6dc; font-size: 0.88rem; line-height: 1.65; }
+.aerovista-case-study .rec-list li:first-child { grid-column: 1 / -1; min-height: auto; }
+.aerovista-case-study .rec-list li strong { color: #fff; }
+.aerovista-case-study .rec-list li::before { left: 24px; top: 25px; width: 31px; height: 31px; background: var(--aero-orange); color: #173044; }
+
+.aerovista-case-study .limit-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0 0 18px; padding: 0; list-style: none; }
+.aerovista-case-study .limit-list li { margin: 0; border: 1px solid var(--aero-line); border-radius: 14px; padding: 20px; background: #fff; color: #607079; font-size: 0.84rem; line-height: 1.63; }
+.aerovista-case-study .limit-list:first-of-type li { border-color: #ead8ad; background: #fffaf0; }
+.aerovista-case-study .limit-list li strong { display: block; margin-bottom: 0.38rem; color: #17384a; }
+
+#technical { background: #061c2a; }
+#technical .section-head .eyebrow { color: #84d6e7; }
+#technical .section-head h2 { color: #fff; }
+#technical .section-head p { color: #aec3cc; }
+.aerovista-case-study .tech-grid { gap: 16px; }
+.aerovista-case-study .tech-card { border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 15px; background: rgba(255, 255, 255, 0.06); }
+.aerovista-case-study .tech-card h4 { color: #8ad9e8; }
+.aerovista-case-study .tech-card li { color: #bdced5; }
+.aerovista-case-study .tech-note { color: #94abb5; }
+.aerovista-case-study .tech-note code { color: #dbe8ed; }
+
+.aerovista-case-study .case-next { padding-block: 68px; background: #fff; }
+.case-next-card { display: flex; align-items: center; justify-content: space-between; gap: 3rem; border: 1px solid var(--aero-line); border-radius: 20px; padding: clamp(28px, 5vw, 54px); background: linear-gradient(135deg, #eaf8fb 0%, #fbfdfe 70%); box-shadow: var(--aero-shadow); }
+.case-next-card > div:first-child { max-width: 700px; }
+.case-next-card h2 { color: #102f42; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.case-next-card p { margin: 0; color: #61727a; }
+.case-next-actions { display: flex; flex: 0 0 auto; flex-direction: column; gap: 0.75rem; }
+.case-next-actions .btn { justify-content: center; }
+.aerovista-case-study .site-footer { background: #f3f7f9; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1020px) {
+  .aerovista-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .project-brief { max-width: 760px; }
+  .aerovista-case-study .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .aerovista-case-study .kpi-tile { min-height: 150px; }
+}
+
+@media (max-width: 760px) {
+  .aerovista-case-study .container { padding-inline: 20px; }
+  .aerovista-case-study .cs-hero { padding: 36px 0 72px; }
+  .aerovista-case-study .cs-breadcrumb { margin-bottom: 30px; }
+  .aerovista-case-study .cs-hero h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .case-question { font-size: 1.08rem; }
+  .aerovista-case-study .cs-hero .hero-ctas { align-items: stretch; flex-direction: column; }
+  .aerovista-case-study .cs-hero .btn { justify-content: center; }
+  .project-brief { padding: 1.15rem; }
+  .brief-stats div { padding-inline: 0.55rem; }
+  .brief-stats dd { font-size: 1rem; }
+  .case-nav-shell { top: 69px; }
+  .aerovista-case-study section { padding-block: 70px; }
+  .aerovista-case-study section[id] { scroll-margin-top: 126px; }
+  #findings { padding-top: 58px; }
+  .aerovista-case-study .section-head { margin-bottom: 30px; }
+  .aerovista-case-study .short-version { padding: 25px 22px; }
+  .story-steps, .findings-grid, .route-review-grid, .aerovista-case-study .tool-grid, .aerovista-case-study .rec-list, .aerovista-case-study .limit-list { grid-template-columns: 1fr; }
+  .plain-answer { grid-template-columns: 1fr; }
+  .plain-answer > span { justify-self: start; }
+  .aerovista-case-study .rec-list li:first-child { grid-column: auto; }
+  .aerovista-case-study .kpi-tile { min-height: auto; }
+  .aerovista-case-study .finding-card { padding: 22px; }
+  .findings-heading { margin-top: 52px; }
+  .aerovista-case-study table.data-table { display: block; width: 100%; max-width: 100%; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+  .aerovista-case-study .rec-list li { min-height: auto; padding: 68px 22px 22px; }
+  .aerovista-case-study .rec-list li::before { left: 22px; top: 22px; }
+  .aerovista-case-study #decomposition text.chart-axis { font-size: 14px; }
+  .cost-reconciliation { align-items: stretch; flex-direction: column; text-align: center; }
+  .case-next-card { align-items: flex-start; flex-direction: column; gap: 1.5rem; }
+  .case-next-actions { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .aerovista-case-study .disclaimer-strip { font-size: 0.68rem; }
+  .case-hero-meta { align-items: flex-start; flex-direction: column; }
+  .brief-stats { grid-template-columns: 1fr; }
+  .brief-stats div, .brief-stats div:nth-child(odd), .brief-stats div:nth-child(-n + 2) { border-top: 1px solid rgba(255, 255, 255, 0.12); border-right: 0; }
+  .brief-stats div:first-child { border-top: 0; }
+  .aerovista-case-study .kpi-grid { grid-template-columns: 1fr; }
+  .aerovista-case-study .anchor-nav > span { display: none; }
+  .aerovista-case-study .anchor-nav a:first-of-type { padding-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aerovista-case-study *, .aerovista-case-study *::before, .aerovista-case-study *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
