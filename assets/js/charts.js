@@ -407,8 +407,9 @@
 
     function seriesScale(s) {
       var fmt = resolveFormatter(s.valueFormat);
-      var vMax = niceMax(Math.max.apply(null, s.values));
-      var vMin = Math.min(0, Math.min.apply(null, s.values));
+      var vMax = s.maxValue == null ? niceMax(Math.max.apply(null, s.values)) : s.maxValue;
+      var vMin = s.minValue == null ? Math.min(0, Math.min.apply(null, s.values)) : s.minValue;
+      if (vMax <= vMin) vMax = vMin + 1;
       return { scale: linearScale([vMin, vMax], [plot.bottom, plot.top]), min: vMin, max: vMax, fmt: fmt };
     }
 

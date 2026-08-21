@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Albion General Insurance Case Study — Farouk Yusuf</title>
-<meta name="description" content="Claims cost, settlement & operational performance analytics case study: Excel, SQL, Python and Power BI analysis of a synthetic general insurer's claims-cost growth, supplier/regional fairness and reserve-accuracy data.">
+<meta name="description" content="A decision-focused insurance analytics case study explaining claims-cost growth, reserve accuracy, reopened claims and fair supplier comparisons for a fictional general insurer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,18 +14,16 @@
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/charts.css">
 <link rel="stylesheet" href="../assets/css/case-study.css">
+<link rel="stylesheet" href="../assets/css/albion.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f374d'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EFY%3C/text%3E%3C/svg%3E">
 </head>
-<body>
+<body class="albion-case-study">
 
-<div class="disclaimer-strip">Albion General Insurance is fictional. All data on this page is synthetically generated for portfolio purposes — see the disclaimer below for detail.</div>
+<div class="disclaimer-strip">Portfolio project · Albion General Insurance and every figure on this page are fictional.</div>
 
 <header class="site-header">
   <div class="container nav">
-    <a href="../index.html" class="brand">
-      <span class="brand-mark">FY</span>
-      Farouk Yusuf
-    </a>
+    <a href="../index.html" class="brand"><span class="brand-mark">FY</span>Farouk Yusuf</a>
     <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="../index.html#case-studies">Case Studies</a></li>
@@ -39,473 +37,304 @@
 <section class="cs-hero">
   <div class="container">
     <div class="cs-breadcrumb"><a href="../index.html">Home</a> / Case Studies / Albion General Insurance</div>
-    <span class="eyebrow">Case Study</span>
-    <h1>Claims Cost, Settlement &amp; Operational Performance Analytics</h1>
-    <p class="cs-sub">Is a fictional insurer's rising claims bill down to more claims happening, or each claim costing more? And do the suppliers and regions that look expensive still look expensive once you account for how hard their claims actually were? An end-to-end analysis across Excel, SQL, Python and Power BI on 9,263 claims from a two-year book of business.</p>
-    <nav class="anchor-nav"><a href="#findings">Key Findings</a><a href="#problem">Business Problem</a><a href="#dataset">Dataset</a><a href="#approach">Approach &amp; Tools</a><a href="#decomposition">Cost-Growth Decomposition</a><a href="#duration">Settlement Duration &amp; Reopens</a><a href="#casemix">Case-Mix Analysis</a><a href="#reserves">Reserve Accuracy</a><a href="#recommendations">Recommendations</a><a href="#limitations">Limitations &amp; Debugging</a><a href="#gallery">More Charts</a><a href="#technical">Technical Evidence</a></nav>
+    <div class="albion-hero-grid">
+      <div class="case-hero-copy">
+        <div class="case-hero-meta"><span class="eyebrow">Insurance operations</span><span class="case-status">End-to-end analysis</span></div>
+        <h1>Why did claims cost rise by £3.13m?</h1>
+        <p class="case-question"><span>Business question</span>Is Albion paying more because more claims are happening, because each claim is becoming more expensive, or because the mix of claims has changed—and where should Claims Operations act?</p>
+        <p class="cs-sub">I analysed two years of synthetic policy, claim, payment, reserve, supplier and lifecycle-event data. The work decomposes the increase exactly enough for management decisions, then follows the pressure into high-cost claim types, under-reserving, reopened claims and fair supplier comparisons.</p>
+        <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Management actions</a></div>
+      </div>
+      <aside class="project-brief" aria-label="Project brief">
+        <span class="eyebrow">Project brief</span>
+        <dl class="brief-stats">
+          <div><dt>Period</dt><dd>24 months</dd></div>
+          <div><dt>Claims</dt><dd>9,263</dd></div>
+          <div><dt>Policies</dt><dd>25,000</dd></div>
+          <div><dt>Suppliers</dt><dd>30</dd></div>
+        </dl>
+        <div class="brief-tools"><span>Excel</span><span>SQL</span><span>Python</span><span>Power BI</span></div>
+        <p class="brief-outcome"><strong>Main conclusion:</strong> 94.7% of the £3.13m increase is explained by more claims. Average cost per claim barely changed overall, but that headline hides genuine within-type inflation offset by a shift toward cheaper claim types.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
 <div class="container">
   <div class="disclaimer-box">
     <span class="dot">i</span>
-    <div><strong>Synthetic-data disclaimer:</strong> Albion General Insurance is a fictional insurer. Every policy, claim, supplier, region and figure on this page was generated for data-analytics portfolio purposes — none of it describes a real insurer, and no figure should be read as representing an actual insurer. No individual policyholder or claimant is identified, ranked or scored anywhere in this project.</div>
+    <div><strong>Synthetic-data disclaimer:</strong> Albion General Insurance is a fictional insurer. Every policy, claim, claimant, supplier, region and figure was generated for portfolio purposes. No person is identifiable or scored, and no result should be read as describing a real insurer or service provider.</div>
   </div>
 </div>
 
-<section id="findings" style="padding-top:0;">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">At a Glance</span>
-      <h2>Headline Numbers</h2>
-      <p>Every figure below is <button type="button" class="term" data-term="reconciled">reconciled <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> exactly across the Excel workbook, every SQL script and the Python notebook.</p>
-    </div>
-    <div class="short-version">
-      <span class="eyebrow">The Short Version</span>
-      <p>Albion is a made-up general insurer, used here to practise a real analytics workflow end to end. Its claims bill grew by a fifth in a year — and the data shows that's almost entirely because <strong>more claims are happening</strong>, not because each claim costs more.</p><p>Along the way, the same analysis found two suppliers whose reputations flip once you account for how hard their jobs really were, a reserve-setting habit that's backwards (cheap claims are over-funded, expensive ones are under-funded), and one claim type that gets reopened three times more often than any other.</p>
-    </div>
-    <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">+21.10%</span><span class="kpi-lbl">Total claims paid growth, 2024 → 2025</span></div><div class="kpi-tile"><span class="kpi-num">+19.87%</span><span class="kpi-lbl">Claim frequency growth — the main driver</span><span class="tag tag-significant">Statistically significant</span></div><div class="kpi-tile"><span class="kpi-num">+1.03%</span><span class="kpi-lbl">Average cost per claim (severity)</span><span class="tag tag-not-significant">Not statistically significant</span></div><div class="kpi-tile"><span class="kpi-num">£3.13m</span><span class="kpi-lbl">Cost increase, fully broken down into its parts</span></div></div>
-    <div class="two-col" style="margin-top:32px;">
-      <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Monthly claims cost and claim count, 2024–2025</span></div>
-  <div data-chart="c1-data" data-chart-type="line"></div>
-  <script type="application/json" id="c1-data">{"xLabels": ["Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025"], "series": [{"label": "Total paid", "values": [1096377.44, 1186609.06, 1208793.19, 1188932.93, 1208883.44, 1142469.31, 1127824.75, 1129484.92, 1138223.63, 1452230.01, 1465212.79, 1500447.36, 2123255.0, 1383244.4, 1262943.46, 1148816.76, 1724143.16, 1291525.5, 1523091.09, 1325935.66, 1379318.42, 1630358.75, 1543879.7, 1641098.8], "valueFormat": "gbp"}, {"label": "Claim count", "values": [319, 345, 319, 314, 331, 361, 365, 378, 350, 373, 382, 376, 585, 392, 382, 391, 362, 426, 429, 424, 375, 408, 410, 466], "valueFormat": "number", "axis": "secondary"}], "options": {"annotations": [{"x": "Jan 2025", "label": "Storm Edwina"}]}}</script>
-  <div class="chart-caption">A sharp spike in January 2025 (Storm Edwina) sits on top of a steadier, more gradual rise across the full two years — two different patterns, visible in one chart.</div>
+<div class="case-nav-shell">
+  <nav class="container anchor-nav" aria-label="Case study sections">
+    <span>Explore</span>
+    <a href="#findings">Start here</a><a href="#context">The data</a><a href="#growth">Cost growth</a><a href="#costfocus">Cost focus</a><a href="#operations">Rework</a><a href="#fairness">Fair comparison</a><a href="#reserves">Reserves</a><a href="#recommendations">Actions</a><a href="#technical">Evidence</a>
+  </nav>
 </div>
-      <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Raw vs case-mix-adjusted average cost by supplier</span></div>
-  <div data-chart="c4-data" data-chart-type="comparison"></div>
-  <script type="application/json" id="c4-data">{"rows": [{"label": "Nightingale Restoration Services", "before": 5950.68, "after": 3012.14, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 50.5, "n_claims": 188}}, {"label": "Hartley Building Contractors", "before": 5702.45, "after": 3480.92, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 42.6, "n_claims": 197}}, {"label": "Rosewood Building Contractors", "before": 3606.62, "after": 3280.34, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 19.5, "n_claims": 200}}, {"label": "Elmstead Property Repairs", "before": 3497.35, "after": 3117.08, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 23.0, "n_claims": 244}}, {"label": "Draymoor Restoration Services", "before": 3360.42, "after": 3133.88, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 21.6, "n_claims": 264}}, {"label": "Kestrel Property Repairs", "before": 3286.45, "after": 3101.64, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 17.9, "n_claims": 246}}, {"label": "Fenchurch Property Repairs", "before": 3168.61, "after": 3318.18, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 18.5, "n_claims": 249}}, {"label": "Foxglove Building Contractors", "before": 2610.44, "after": 3485.73, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 12.9, "n_claims": 225}}, {"label": "Copperfield Building Contractors", "before": 2522.88, "after": 3115.13, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 17.7, "n_claims": 226}}, {"label": "Clearview Property Repairs", "before": 2479.17, "after": 3170.9, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 12.4, "n_claims": 258}}, {"label": "Bramwell Building Contractors", "before": 2357.27, "after": 2876.37, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 14.1, "n_claims": 234}}, {"label": "Thornbury Property Repairs", "before": 1966.93, "after": 2748.89, "meta": {"supplier_type": "Home Contractor", "pct_major_or_total_loss": 13.8, "n_claims": 261}}, {"label": "Blackfriar Body Repair Centre", "before": 7599.36, "after": 4168.39, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 42.0, "n_claims": 219}}, {"label": "Wrenfield Motor Repairs", "before": 6694.24, "after": 4209.51, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 43.1, "n_claims": 232}}, {"label": "Cobblestone Motor Repairs", "before": 5560.59, "after": 3180.16, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 41.0, "n_claims": 222}}, {"label": "Hollowbrook Body Repair Centre", "before": 3875.33, "after": 4364.36, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 17.4, "n_claims": 310}}, {"label": "Sterling Accident Repair", "before": 3286.79, "after": 3612.33, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 16.3, "n_claims": 313}}, {"label": "Kingfisher Accident Repair", "before": 3269.22, "after": 3800.46, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 15.5, "n_claims": 304}}, {"label": "Silverline Motor Repairs", "before": 3247.55, "after": 3883.05, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 16.3, "n_claims": 332}}, {"label": "Corville Accident Repair", "before": 3210.08, "after": 3701.35, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 15.9, "n_claims": 271}}, {"label": "Ashcombe Body Repair Centre", "before": 2932.22, "after": 3257.45, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 15.2, "n_claims": 270}}, {"label": "Larkspur Motor Repairs", "before": 2857.47, "after": 4023.98, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 15.4, "n_claims": 299}}, {"label": "Farrier Motor Repairs", "before": 2743.99, "after": 3021.39, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 17.1, "n_claims": 281}}, {"label": "Millstone Accident Repair", "before": 2722.44, "after": 3713.36, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 14.2, "n_claims": 302}}, {"label": "Amberley Motor Repairs", "before": 2706.3, "after": 3686.07, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 16.0, "n_claims": 294}}, {"label": "Northgate Body Repair Centre", "before": 2649.79, "after": 3233.61, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 16.4, "n_claims": 274}}, {"label": "Oakstone Accident Repair", "before": 2593.57, "after": 3338.34, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 15.1, "n_claims": 279}}, {"label": "Redwood Motor Repairs", "before": 2562.82, "after": 2954.0, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 13.9, "n_claims": 310}}, {"label": "Greybourne Accident Repair", "before": 2397.65, "after": 3199.8, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 13.0, "n_claims": 308}}, {"label": "Vantage Motor Repairs", "before": 2375.16, "after": 3130.69, "meta": {"supplier_type": "Motor Repairer", "pct_major_or_total_loss": 14.2, "n_claims": 282}}], "options": {"valueFormat": "gbp", "beforeLabel": "Raw average cost", "afterLabel": "Case-mix adjusted", "categoryLabel": "Supplier", "limit": 15, "filterKey": "supplier_type", "filterValues": ["Motor Repairer", "Home Contractor"], "filterDefault": "Motor Repairer", "metaColumns": [{"key": "pct_major_or_total_loss", "label": "% Major/Total Loss", "numeric": true, "format": "percent"}, {"key": "n_claims", "label": "Claims", "numeric": true, "format": "number"}]}}</script>
-  <div class="chart-caption">Cobblestone Motor Repairs (3rd most expensive raw → 15th adjusted) and Foxglove Building Contractors (8th cheapest raw → most expensive adjusted) show the two clearest, opposite case-mix stories in the network. Use the toggle to switch supplier type.</div>
-</div>
-    </div>
-    <h3 style="margin-top:8px;">Eight strongest findings</h3>
-    <div class="finding-card">
-      <span class="finding-num">FINDING 1</span>
-      <h4>Claims are rising because there are more of them — not because each one costs more.</h4>
-      <p>The total Albion paid out grew by a fifth in a year. Almost all of that came from more claims happening, not from each claim getting pricier.</p>
-      <div class="figure-line">+21.10% total paid &middot; +19.87% claim frequency &middot; +1.03% average cost per claim</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Two-proportion z-test on claim frequency: z=9.64, <button type="button" class="term" data-term="p-value">p&lt;0.0001 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> (<button type="button" class="term" data-term="statistically significant">significant <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>). Welch's t-test on average severity: t=0.24, <button type="button" class="term" data-term="p-value">p=0.809 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> (<button type="button" class="term" data-term="statistically significant">not significant <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>).</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 2</span>
-      <h4>A closer look shows two opposite effects hiding inside that flat severity number.</h4>
-      <p>Splitting the £3.13m cost increase into its exact parts shows claim mix shifted toward cheaper claim types (pulling the average down) while genuine severity inflation pushed it back up — they nearly cancel out, which is exactly why the headline severity number looked like nothing was happening.</p>
-      <div class="figure-line">Frequency +£2.96m &middot; Mix &minus;£0.75m &middot; Within-type severity +£0.91m</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Exact LMDI (Logarithmic Mean Divisia Index) <button type="button" class="term" data-term="decomposition">decomposition <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> of cost into frequency × severity, followed by a Bennet shift-share split of the severity effect into mix and within-type components. All parts sum exactly to the £3,132,122 total change.</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 3</span>
-      <h4>A small number of claim types create most of the cost.</h4>
-      <p>Theft and Fire make up only about one claim in seven, but together they account for nearly half of everything Albion pays out. Accidental Damage is the single most common claim type, but it's comparatively cheap per claim.</p>
-      <div class="figure-line">Theft + Fire: 14.5% of claims, 43.5% of cost &middot; Accidental Damage: 40.1% of claims, 15.6% of cost</div>
-      
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 4</span>
-      <h4>A single storm explains part of the rise — but not most of it.</h4>
-      <p>A severe storm hit three regions for five days in January 2025, adding hundreds of claims and a meaningful chunk of cost. But even without it, claims were still rising by more than one in ten — this is mostly a genuine underlying trend, not one bad week.</p>
-      <div class="figure-line">Storm Edwina: 267 claims, £789,607 &middot; Without it, frequency growth falls from 19.87% to 13.53%</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Sensitivity check excluding all storm-window claims (20–24 Jan 2025, regions RG02/RG06/RG07): cost growth falls from 21.10% to 15.78%.</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 5</span>
-      <h4>Albion is reserving money backwards — cautious on cheap claims, optimistic on expensive ones.</h4>
-      <p>When a claim first comes in, Albion sets aside money for it before knowing the full picture. For small claims, it sets aside far more than it ends up paying. For the most serious claims, it sets aside far less — the opposite of what careful reserving should look like.</p>
-      <div class="figure-line">Minor claims: reserved at 224% of what's eventually paid &middot; Total Loss claims: reserved at just 28%</div>
-      
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 6</span>
-      <h4>One claim type gets reopened three times more often than any other — and reopening adds real delay.</h4>
-      <p>Escape of Water claims (burst pipes, leaks) get reopened far more often than any other type, most likely because more damage is found after the first repair. Every reopened claim also takes noticeably longer to finally settle.</p>
-      <div class="figure-line">Escape of Water reopen rate: 14.13% vs 5.44% network average &middot; A reopen adds 43.7 days to settlement time</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Overall reopen rate 5.44% (Wilson 95% <button type="button" class="term" data-term="confidence interval">CI <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> 4.98%–5.95%). <button type="button" class="term" data-term="regression">Regression <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> of settlement duration on severity band, claim type and reopen status: reopening adds 43.7 days, <button type="button" class="term" data-term="r-squared">R² <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>=0.770.</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 7</span>
-      <h4>Two suppliers tell opposite stories once you account for how hard their jobs actually were.</h4>
-      <p>Cobblestone Motor Repairs looks expensive at first glance — but its caseload is genuinely much harder than average, and once that's accounted for, its cost position looks normal. Foxglove Building Contractors looks cheap at first glance — but it's actually been handling an easy caseload, and once that's accounted for, it becomes the single most expensive supplier in its category.</p>
-      <div class="figure-line">Cobblestone: raw rank 3rd &rarr; adjusted rank 15th &middot; Foxglove: raw rank 8th cheapest &rarr; adjusted rank most expensive</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Per-supplier-type log-cost <button type="button" class="term" data-term="regression">regression <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> with Duan's smearing correction — this is the <button type="button" class="term" data-term="case-mix adjustment">case-mix adjustment <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> referenced throughout this page. Bootstrap 95% <button type="button" class="term" data-term="confidence interval">CI <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> on the best-vs-worst Motor Repairer cost gap: £3,500.34–£7,029.80 (excludes zero, i.e. the gap is real).</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 8</span>
-      <h4>The same pattern shows up geographically — one region looks cheap but isn't.</h4>
-      <p>Regional cost differences shrink once you account for how difficult each region's claims tend to be, but they don't disappear. One region, Bellcross, looks like one of the cheapest areas on a raw basis — but it has the easiest claims of any region, and once that's accounted for, it's actually the most expensive.</p>
-      <div class="figure-line">Raw regional cost gap £1,499.78 &rarr; adjusted gap £1,252.19 (16.5% narrower) &middot; Bellcross: raw rank 9th cheapest &rarr; adjusted rank most expensive</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Single OLS log-cost <button type="button" class="term" data-term="regression">regression <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> across all regions, controlling for severity-band mix and policy type (<button type="button" class="term" data-term="r-squared">R² <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>=0.753, n=7,943), with Duan's smearing correction (factor 1.3428).</div></details>
-    </div>
-  </div>
-</section>
-<section id="problem" class="section-alt">
+
+<section id="findings">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">1. Business Problem</span>
-      <h2>What management wanted answered</h2>
+      <span class="eyebrow">Read this first</span>
+      <h2>The claims bill rose mainly because 837 more claims occurred—not because the typical claim became much more expensive</h2>
+      <p>The £3.13m increase combines a dominant volume effect with two smaller forces that almost cancel each other. Separating them changes the management response.</p>
     </div>
-    <p>Albion is a fictional general insurer whose claims costs and settlement times have been creeping up. Management wanted a straight answer to a simple-sounding question: is this happening because more people are claiming, or because each claim costs more? They also wanted to know what's driving long settlement times, which claim types cost the most, whether some suppliers and regions really do cost more once you account for how hard their work is, whether the money set aside for claims at the start is realistic, and how much reopened claims cost in wasted time.</p><p>One rule was non-negotiable: <strong>no supplier or region comparison could be presented as a simple ranking</strong> without first checking whether it still held up once claim difficulty was taken into account.</p>
+
+    <div class="story-panel">
+      <span class="eyebrow">The story in four questions</span>
+      <h3>From a 21.1% headline increase to specific operational decisions</h3>
+      <div class="story-steps">
+        <article class="story-step"><span>1</span><strong>What changed?</strong><p>Total paid rose from £14.85m to £17.98m as claim count increased from 4,213 to 5,050.</p></article>
+        <article class="story-step"><span>2</span><strong>Was each claim much more expensive?</strong><p>No clear evidence. Average paid rose only 1.03%, from £3,523.73 to £3,559.92, and the difference was not statistically significant.</p></article>
+        <article class="story-step"><span>3</span><strong>Did one storm explain the rise?</strong><p>Only partly. Removing Storm Edwina reduces cost growth to 15.78%, so a substantial underlying increase remains.</p></article>
+        <article class="story-step"><span>4</span><strong>Where can operations act?</strong><p>High-cost Theft and Fire claims, inaccurate Major/Total Loss reserves, and reopened Escape of Water claims are the clearest levers.</p></article>
+      </div>
+      <div class="plain-answer"><span>Plain-English answer</span><p><strong>Treat this first as a claims-volume problem.</strong> Plan enough handling capacity for the underlying increase, investigate what is driving non-storm frequency, and separately target the smaller but actionable cost and rework problems revealed deeper in the data.</p></div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-tile"><span class="kpi-num">£14.85m → £17.98m</span><span class="kpi-lbl">Total paid from 2024 to 2025, an increase of £3.13m or 21.10%</span></div>
+      <div class="kpi-tile"><span class="kpi-num">+837 claims</span><span class="kpi-lbl">Claim count increased 19.87%, from 4,213 to 5,050</span></div>
+      <div class="kpi-tile"><span class="kpi-num">94.7%</span><span class="kpi-lbl">Of the cost increase explained by the frequency effect</span></div>
+      <div class="kpi-tile"><span class="kpi-num">+43.7 days</span><span class="kpi-lbl">Adjusted settlement delay associated with a reopened claim</span></div>
+    </div>
   </div>
 </section>
-<section id="stakeholders">
+
+<section id="context">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">2. Stakeholders &amp; Business Decision</span>
-      <h2>Who this was for, and what they needed to decide</h2>
+      <span class="eyebrow">1. The decision and data</span>
+      <h2>Three simple terms explain the claims-cost story</h2>
+      <p>Total claims cost is driven by how many claims occur, what kinds of claims they are, and how much each kind costs. The analysis keeps those effects separate.</p>
     </div>
-    <div class="stakeholder-grid"><div class="stakeholder-card"><strong>Director of Claims Operations</strong><span>Needed to know whether rising cost is a “more claims” problem or a “pricier claims” problem, to decide between hiring more claims handlers or reviewing pricing.</span></div><div class="stakeholder-card"><strong>Reserving &amp; Actuarial</strong><span>Needed to know how accurate the money set aside for claims turns out to be, by how serious the claim is.</span></div><div class="stakeholder-card"><strong>Supplier &amp; Network Management</strong><span>Needed a fair basis for supplier and regional conversations that doesn't punish a supplier simply for getting harder jobs.</span></div><div class="stakeholder-card"><strong>Claims Operations / Finance</strong><span>Needed to know where cost concentrates and which claim type wastes the most time through reopened cases.</span></div></div>
+
+    <div class="metric-explainer">
+      <article><span>F</span><h3>Frequency</h3><p>How many claims occur relative to the policy book. Albion had the same 25,000-policy base in both years, so the 19.87% frequency increase is also the increase in claim count.</p></article>
+      <article><span>S</span><h3>Severity</h3><p>The average amount paid per claim. A 1.03% increase means the typical claim did not become materially more expensive at the headline level.</p></article>
+      <article><span>M</span><h3>Mix</h3><p>The proportions of different claim types. A year with more Windscreen claims and fewer Fire claims can have a lower average cost even if each type becomes dearer.</p></article>
+    </div>
+
+    <div class="context-grid">
+      <article class="context-card"><h3>Coverage</h3><p>January 2024 to December 2025: 25,000 policies, 9,263 cleaned claims, 30 suppliers, 10 regions, seven claim types and four severity bands.</p></article>
+      <article class="context-card"><h3>Operational evidence</h3><p>Claims were linked to 18,216 payments, 54,442 lifecycle events, reserve movements and 458 reopen records so cost, timing and rework could be analysed together.</p></article>
+      <article class="context-card"><h3>Fairness rule</h3><p>No supplier or region was judged from raw average cost alone. The comparison also allowed for severity and policy-type differences in the claims each one handled.</p></article>
+      <article class="context-card"><h3>Data-quality rule</h3><p>111 duplicate claim rows were removed. The £407,785.73 attached to those duplicates explains why the raw and cleaned paid totals initially differed; no legitimate claims were lost.</p></article>
+    </div>
   </div>
 </section>
-<section id="dataset" class="section-alt">
+
+<section id="growth">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">3. Dataset Overview</span>
-      <h2>What the data covers</h2>
+      <span class="eyebrow">2. Cost-growth explanation</span>
+      <h2>More claims added £2.96m; claim mix and within-type cost moved in opposite directions</h2>
+      <p>The headline severity change looks almost flat because a shift toward cheaper claim types offset higher costs within individual claim types.</p>
     </div>
-    <table class="data-table"><tbody><tr><th>Coverage</th><td>10 regions, 30 repair/restoration suppliers, 10 claim types, 4 severity bands</td></tr><tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr><tr><th>Policies</th><td class="num">25,000</td></tr><tr><th>Claims</th><td class="num">9,263 (a small number of duplicate records were found and removed during cleaning)</td></tr><tr><th>Claim-handling events</th><td class="num">54,442 (from first notice of loss through to settlement)</td></tr><tr><th>Payments</th><td class="num">18,216</td></tr><tr><th>Reopened claims</th><td class="num">458</td></tr></tbody></table>
+
+    <div class="analysis-grid">
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">How the £3.13m increase is built up</span></div>
+        <div data-chart="growth-waterfall-data" data-chart-type="waterfall"></div>
+        <script type="application/json" id="growth-waterfall-data">{"steps":[{"label":"2024 total","value":14845488.83,"isTotal":true},{"label":"More claims","value":2964941.56},{"label":"Cheaper mix","value":-746812.57},{"label":"Cost within type","value":913993.03},{"label":"2025 total","value":17977610.70,"isTotal":true}],"options":{"valueFormat":"gbp","height":340}}</script>
+        <div class="chart-caption">More claims explain £2.96m, or 94.7%, of the increase. A cheaper claim-type mix reduced cost by £0.75m, while higher cost within claim types added £0.91m. Those two severity components largely cancel.</div>
+      </div>
+
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">The increase remains substantial after removing Storm Edwina</span></div>
+        <div data-chart="storm-sensitivity-data" data-chart-type="bar"></div>
+        <script type="application/json" id="storm-sensitivity-data">{"categories":["Cost growth","Claim count"],"series":[{"label":"Headline","values":[21.10,19.87]},{"label":"Without storm","values":[15.78,13.53]}],"options":{"valueFormat":"percent","categoryLabel":"Measure","maxValue":25,"height":340}}</script>
+        <div class="chart-caption">The five-day January 2025 storm added 267 claims and £789,607. Excluding it lowers both measures by roughly five to six percentage points, but does not remove the underlying upward trend.</div>
+      </div>
+    </div>
+
+    <div class="chart-block" style="margin-top:20px;">
+      <div class="chart-head"><span class="chart-title">Monthly claims paid and claim count, January 2024 to December 2025</span></div>
+      <div data-chart="monthly-trend-data" data-chart-type="line"></div>
+      <script type="application/json" id="monthly-trend-data">{"xLabels":["Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025"],"series":[{"label":"Total paid","values":[1096377.44,1186609.06,1208793.19,1188932.93,1208883.44,1142469.31,1127824.75,1129484.92,1138223.63,1452230.01,1465212.79,1500447.36,2123255.00,1383244.40,1262943.46,1148816.76,1724143.16,1291525.50,1523091.09,1325935.66,1379318.42,1630358.75,1543879.70,1641098.80],"valueFormat":"gbp","maxValue":3000000},{"label":"Claim count","values":[319,345,319,314,331,361,365,378,350,373,382,376,585,392,382,391,362,426,429,424,375,408,410,466],"valueFormat":"number","axis":"secondary","maxValue":700}],"options":{"annotations":[{"x":"Jan 2025","label":"Storm Edwina"}],"maxXTicks":7,"height":350,"xLabel":"Month"}}</script>
+      <div class="chart-caption">January 2025 is the clearest spike in both claims and paid cost, but later 2025 months also tend to sit above early 2024. This is why the storm is material without being the whole explanation.</div>
+    </div>
+
+    <p class="rounding-note"><strong>Reconciliation note:</strong> the separately calculated decomposition components total £3,132,122.02, while the actual year-to-year increase is £3,132,121.87—a 15p difference created by rounding intermediate averages. The old page's “to the penny” wording was therefore too strong; the management result is unchanged.</p>
   </div>
 </section>
-<section id="approach">
+
+<section id="costfocus">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">4. Analytical Approach &amp; Tools Used</span>
-      <h2>Four tools, one reconciled set of numbers</h2>
-      <p>Each tool answers a different part of the brief, but every headline number reconciles exactly across all of them.</p>
+      <span class="eyebrow">3. Where cost concentrates</span>
+      <h2>The most frequent claims are not the claims creating the most financial pressure</h2>
+      <p>Claim volume and claim cost point to different priorities. Theft and Fire are relatively uncommon but account for almost half of paid cost.</p>
     </div>
-    <div class="tool-grid"><div class="tool-chip"><strong>Excel</strong><span>A 10-sheet workbook where every number that can be calculated live is a real formula or PivotTable — not typed in by hand.</span></div><div class="tool-chip"><strong>SQL</strong><span>Six database queries covering costs, settlement times, suppliers and regions — checked against a real database.</span></div><div class="tool-chip"><strong>Python</strong><span>The statistical work: splitting the cost increase into its exact causes, testing whether patterns are real or just chance, and checking two fairness comparisons for suppliers and regions.</span></div><div class="tool-chip"><strong>Power BI</strong><span>A full dashboard design — the data model, the formulas and the page layouts — ready to build, including a check for two ways the numbers could accidentally be counted twice.</span></div></div>
+
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Share of claims compared with share of total paid</span></div>
+      <div data-chart="claim-type-data" data-chart-type="bar"></div>
+      <script type="application/json" id="claim-type-data">{"categories":["Theft","Fire","Escape of Water","Third-party injury","Accidental damage","Storm damage","Windscreen"],"series":[{"label":"Share of claims","values":[11.10,3.39,10.58,4.30,40.12,10.51,20.00]},{"label":"Share of total paid","values":[21.98,21.47,19.95,15.67,15.57,4.31,1.04]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Claim type","maxValue":50,"height":360}}</script>
+      <div class="chart-caption">Theft and Fire represent only 14.5% of claims but 43.5% of paid cost. Accidental Damage is 40.1% of claims yet 15.6% of cost; Windscreen is 20.0% of claims and only 1.0% of cost.</div>
+    </div>
+
+    <div class="cost-grid" style="margin-top:20px;">
+      <article class="insight-card"><span>£14.26m</span><h3>Theft and Fire combined</h3><p>These two claim types offer the most concentrated financial review opportunity. The response should focus on indemnity controls, fraud, repair strategy and supplier pathways relevant to each type.</p></article>
+      <article class="insight-card"><span>15.6%</span><h3>Accidental Damage cost share</h3><p>Its high volume creates workload, but not equivalent financial severity. It is primarily a capacity and process-efficiency issue rather than the first cost-containment target.</p></article>
+    </div>
   </div>
 </section>
-<section id="decomposition" class="section-alt">
+
+<section id="operations">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">5. Claims-Cost Growth Decomposition</span>
-      <h2>Frequency, mix and severity — exactly broken down</h2>
-      <p>Every part below is calculated so it sums exactly to the real £3.13m change — nothing is rounded to fit.</p>
+      <span class="eyebrow">4. Reopened claims and delay</span>
+      <h2>Escape of Water is the clearest operational rework problem</h2>
+      <p>Reopened claims take longer to finish, and one claim type reopens far more often than the rest. That combination makes it a focused process-improvement opportunity.</p>
     </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Claims-cost growth decomposition, 2024 → 2025</span></div>
-  <div data-chart="c2-data" data-chart-type="waterfall"></div>
-  <script type="application/json" id="c2-data">{"steps": [{"label": "2024 Total", "value": 14845488.83, "isTotal": true}, {"label": "Frequency", "value": 2964941.56}, {"label": "Mix", "value": -746812.57}, {"label": "Within-Type Severity", "value": 913993.03}, {"label": "2025 Total", "value": 17977610.7, "isTotal": true}], "options": {"valueFormat": "gbp"}}</script>
-  <div class="chart-caption">Frequency, mix and within-type severity effects sum exactly to the £3.13m change — the mix and severity effects mostly cancel out, which is why the raw severity change looked negligible on its own.</div>
-</div>
+
+    <div class="analysis-grid">
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">Reopen rate by claim type</span></div>
+        <div data-chart="reopen-rate-data" data-chart-type="bar"></div>
+        <script type="application/json" id="reopen-rate-data">{"categories":["Escape of Water","Fire","Accidental Damage","Storm Damage","Third-party injury","Theft","Windscreen"],"series":[{"label":"Reopen rate","values":[14.13,7.33,6.34,4.94,4.67,2.75,1.08]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Claim type","maxValue":16,"height":340}}</script>
+        <div class="chart-caption">Escape of Water reopens at 14.13%, compared with a 5.44% overall rate among claims included in this analysis. That is almost three times the network average.</div>
+      </div>
+
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">Average total settlement duration</span></div>
+        <div data-chart="reopen-duration-data" data-chart-type="bar"></div>
+        <script type="application/json" id="reopen-duration-data">{"categories":["Not reopened","Reopened"],"series":[{"label":"Average settlement duration","values":[26.7,80.1]}],"options":{"valueFormat":"days","categoryLabel":"Claim status","maxValue":90,"height":340}}</script>
+        <div class="chart-caption">The raw gap is 53.4 days. After allowing for claim type and severity, reopening is still associated with an extra 43.7 days (95% confidence interval: 42.1–45.3 days).</div>
+      </div>
+    </div>
+
+    <p class="interpretation-note"><strong>Operational interpretation:</strong> start with first-visit diagnosis, moisture tracing, repair scope and post-repair checks for Escape of Water claims. The analysis identifies where rework concentrates; process review is needed to determine why.</p>
   </div>
 </section>
-<section id="duration">
+
+<section id="fairness">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">6. Settlement Duration &amp; Reopened Claims</span>
-      <h2>What drives long settlement times</h2>
+      <span class="eyebrow">5. Fair supplier and region comparison</span>
+      <h2>Raw average cost can reward an easy caseload and punish a difficult one</h2>
+      <p>The adjusted figure estimates each supplier or region's expected average cost if it had handled the same mix of severity bands and policy types as its comparison group.</p>
     </div>
-    <div class="two-col">
-      <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Average settlement duration by claim-handling stage</span></div>
-  <div data-chart="c3-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c3-data">{"categories": ["Inspection Completed", "Payment Issued", "Repair Authorised", "Claim Declined", "Claim Withdrawn", "Claim Settled", "Triaged"], "series": [{"label": "Avg days", "values": [8.8, 8.2, 7.9, 5.1, 4.9, 3.6, 2.7]}], "options": {"horizontal": true, "valueFormat": "days", "categoryLabel": "Stage"}}</script>
-  <div class="chart-caption">Settlement duration is built from summed claim-lifecycle stage days, reconciling exactly to the total — no stage is double-counted.</div>
-</div>
-      <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Reopen rate by claim type</span></div>
-  <div data-chart="c6-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c6-data">{"categories": ["Escape of Water", "Fire", "Accidental Damage", "Storm Damage", "Third Party Injury", "Theft", "Windscreen"], "series": [{"label": "Reopen rate", "values": [14.13, 7.33, 6.34, 4.94, 4.67, 2.75, 1.08]}], "options": {"horizontal": true, "valueFormat": "percent", "categoryLabel": "Claim type"}}</script>
-  <div class="chart-caption">Escape of Water reopens at 14.13% — nearly 3x the 5.44% network average — consistent with further water damage being found after an initial repair.</div>
-</div>
+
+    <div class="metric-explainer">
+      <article><span>1</span><h3>Start with the raw figure</h3><p>This reports what was actually paid. It is necessary, but it combines provider performance with the difficulty of the work received.</p></article>
+      <article><span>2</span><h3>Make the comparison fairer</h3><p>The model holds observed claim complexity constant, revealing which favourable or unfavourable raw results are mostly explained by case mix.</p></article>
+      <article><span>3</span><h3>Use it for review, not verdicts</h3><p>An adjusted outlier warrants deeper claims-file and operational review. It does not prove that a supplier or region caused higher cost.</p></article>
     </div>
+
+    <div class="analysis-grid">
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">Four suppliers whose story changes after adjustment</span></div>
+        <div data-chart="supplier-fairness-data" data-chart-type="comparison"></div>
+        <script type="application/json" id="supplier-fairness-data">{"rows":[{"label":"Nightingale · home","before":5950.68,"after":3012.14,"meta":{"type":"Home contractor","rank":"1 → 10","claims":188}},{"label":"Cobblestone · motor","before":5560.59,"after":3180.16,"meta":{"type":"Motor repairer","rank":"3 → 15","claims":222}},{"label":"Hollowbrook · motor","before":3875.33,"after":4364.36,"meta":{"type":"Motor repairer","rank":"4 → 1","claims":310}},{"label":"Foxglove · home","before":2610.44,"after":3485.73,"meta":{"type":"Home contractor","rank":"8 → 1","claims":225}}],"options":{"valueFormat":"gbp","beforeLabel":"Raw average cost","afterLabel":"Adjusted average cost","categoryLabel":"Supplier","minValue":2000,"maxValue":6500,"metaColumns":[{"key":"type","label":"Supplier type"},{"key":"rank","label":"Cost rank raw → adjusted"},{"key":"claims","label":"Claims","numeric":true,"format":"number"}]}}</script>
+        <div class="chart-caption">Cobblestone's high raw motor-repair cost is largely explained by its difficult caseload; Foxglove's low raw home-contractor cost is flattered by an easy mix. Each supplier is ranked only within its own supplier type, not directly against the other type.</div>
+      </div>
+
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">Regions where claim mix changes the interpretation</span></div>
+        <div data-chart="region-fairness-data" data-chart-type="comparison"></div>
+        <script type="application/json" id="region-fairness-data">{"rows":[{"label":"Rowanmere","before":3708.70,"after":3637.51,"meta":{"rank":"1 → 4","claims":716}},{"label":"Camberwick","before":3666.87,"after":3648.94,"meta":{"rank":"2 → 3","claims":1397}},{"label":"Thistledown","before":3427.27,"after":2980.73,"meta":{"rank":"4 → 10","claims":649}},{"label":"Kirkstane","before":3324.08,"after":4120.69,"meta":{"rank":"6 → 2","claims":503}},{"label":"Bellcross","before":2378.56,"after":4232.92,"meta":{"rank":"9 → 1","claims":200}}],"options":{"valueFormat":"gbp","beforeLabel":"Raw average cost","afterLabel":"Adjusted average cost","categoryLabel":"Region","minValue":2000,"maxValue":4500,"metaColumns":[{"key":"rank","label":"Cost rank raw → adjusted"},{"key":"claims","label":"Claims","numeric":true,"format":"number"}]}}</script>
+        <div class="chart-caption">Bellcross moves from the second-cheapest raw region to the highest adjusted average cost because it handled the easiest severity mix. Its smaller 200-claim sample makes review appropriate, not an automatic conclusion.</div>
+      </div>
+    </div>
+
+    <div class="comparison-cards">
+      <article><span>False positive</span><h3>Cobblestone Motor Repairs</h3><p>41.0% of its claims were Major or Total Loss. Adjustment moves it from the third-highest raw motor-repair cost to 15th, so a punitive conversation based on raw cost would be misleading.</p></article>
+      <article><span>Hidden outlier</span><h3>Foxglove Building Contractors</h3><p>Only 12.9% of its claims were Major or Total Loss. Adjustment moves it from eighth-highest raw home-contractor cost to the highest adjusted cost, warranting claims-file review.</p></article>
+    </div>
+
+    <p class="interpretation-note"><strong>Management interpretation:</strong> use adjusted results to select files and suppliers for investigation. Decisions should still consider repair quality, geography, specialism, customer outcome and contractual context that are not captured by the model.</p>
   </div>
 </section>
-<section id="casemix" class="section-alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">7. Supplier &amp; Regional <button type="button" class="term" data-term="case-mix adjustment">Case-Mix <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> Analysis</span>
-      <h2>Testing whether raw supplier and regional comparisons are fair</h2>
-      <p>The interactive chart above (Headline Numbers) lets you switch between Motor Repairers and Home Contractors. The table below names the specific outliers.</p>
-    </div>
-    <table class="data-table">
-      <thead><tr><th>Supplier / Region</th><th>Raw rank</th><th>Adjusted rank</th><th>Interpretation</th></tr></thead>
-      <tbody><tr><td>Cobblestone Motor Repairs</td><td>3rd most expensive</td><td>15th</td><td>Explained by a genuinely harder caseload — 41.0% Major/Total Loss claims, more than double the supplier average</td></tr><tr><td>Foxglove Building Contractors</td><td>8th cheapest</td><td>Most expensive</td><td>A genuine outlier — not explained by caseload; only 12.9% Major/Total Loss claims (one of the easiest)</td></tr><tr><td>Bellcross (region)</td><td>9th cheapest</td><td>Most expensive</td><td>A genuine outlier — easiest severity mix of any region (10.0% Major/Total Loss)</td></tr></tbody>
-    </table>
-  </div>
-</section>
+
 <section id="reserves">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">8. Reserve Accuracy</span>
-      <h2>How accurate is the money set aside for claims?</h2>
+      <span class="eyebrow">6. Reserve accuracy</span>
+      <h2>Initial reserves are too cautious for cheap claims and too optimistic for expensive ones</h2>
+      <p>The money set aside at first notification moves in the right direction by severity, but not nearly enough. That creates excess capital usage at the low end and later strengthening at the high end.</p>
     </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Initial reserve vs eventual paid, by severity band</span></div>
-  <div data-chart="c5-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c5-data">{"categories": ["Minor", "Moderate", "Major", "Total Loss"], "series": [{"label": "Initial reserve", "values": [1204.91, 3153.41, 3871.78, 6252.87]}, {"label": "Eventual paid", "values": [438.41, 2252.17, 9007.25, 21564.59]}], "options": {"valueFormat": "gbp", "categoryLabel": "Severity band"}}</script>
-  <div class="chart-caption">Reserves cross over from heavily over-reserved (Minor, 224% of eventual paid) to severely under-reserved (Total Loss, 28%) — a textbook reserve-accuracy pattern.</div>
-</div>
+
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Average initial reserve compared with eventual paid cost</span></div>
+      <div data-chart="reserve-data" data-chart-type="bar"></div>
+      <script type="application/json" id="reserve-data">{"categories":["Minor","Moderate","Major","Total Loss"],"series":[{"label":"Initial reserve","values":[1204.91,3153.41,3871.78,6252.87]},{"label":"Eventual paid","values":[438.41,2252.17,9007.25,21564.59]}],"options":{"valueFormat":"gbp","categoryLabel":"Severity band","maxValue":25000,"height":350}}</script>
+      <div class="chart-caption">Minor claims are initially reserved at 224% of eventual paid, while Major and Total Loss claims are reserved at only 39% and 28% respectively. Moderate claims are also over-reserved at 123%.</div>
+    </div>
+
+    <div class="cost-grid" style="margin-top:20px;">
+      <article class="insight-card"><span>224%</span><h3>Minor claims</h3><p>Initial reserves average £1,204.91 against £438.41 eventually paid. The pattern ties up more capital than the observed outcome requires.</p></article>
+      <article class="insight-card"><span>28%</span><h3>Total Loss claims</h3><p>Initial reserves average £6,252.87 against £21,564.59 eventually paid. This creates predictable reserve strengthening as claim facts develop.</p></article>
+    </div>
   </div>
 </section>
-<section id="recommendations" class="section-alt">
+
+<section id="recommendations">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">9. Management Recommendations</span>
-      <h2>What follows from the evidence</h2>
+      <span class="eyebrow">7. Management actions</span>
+      <h2>Plan for higher volume, then address the concentrated cost and rework problems</h2>
+      <p>The actions are deliberately different because the evidence points to capacity, financial control and operational quality—not one universal “claims cost” problem.</p>
     </div>
-    <ol class="rec-list"><li><strong>Treat this as a “more claims are happening” problem, not a “claims are getting pricier” problem</strong>, in both claims-handling and pricing conversations.</li><li><strong>Focus cost-control effort on Theft and Fire claims</strong> — a far more concentrated lever than the higher-volume but comparatively cheap Accidental Damage claims.</li><li><strong>Revisit how much money gets set aside for Major and Total Loss claims at first notice</strong> — they're currently under-funded, while small claims are over-funded and tying up money unnecessarily.</li><li><strong>Use Cobblestone Motor Repairs and Foxglove Building Contractors as the test case for fairer supplier conversations</strong> — one's raw cost is explained by a harder caseload, the other's isn't.</li><li><strong>Start a focused effort to reduce reopened Escape of Water claims</strong> — the single most tractable operational-delay lever identified in this analysis.</li></ol>
+
+    <ol class="rec-list">
+      <li><strong>Plan claims-handling capacity around sustained frequency growth.</strong> The storm does not explain the majority of the increase. Monitor monthly non-storm claim frequency and investigate changes in exposure, reporting behavior, product mix and regional risk.</li>
+      <li><strong>Prioritise Theft and Fire for cost review.</strong> Together they are only 14.5% of claims but 43.5% of paid cost. Review indemnity controls, fraud indicators and supplier pathways specific to those claim types.</li>
+      <li><strong>Reset first-notification reserve guidance by severity.</strong> Reduce systematic over-reserving on Minor claims and strengthen early Major/Total Loss estimates, then back-test the revised rules quarterly.</li>
+      <li><strong>Launch an Escape of Water rework review.</strong> Examine diagnosis, repair scoping and completion controls, with the 14.13% reopen rate and adjusted 43.7-day delay as the baseline measures.</li>
+      <li><strong>Use fair comparisons in supplier governance.</strong> Review Foxglove and Bellcross files, while avoiding punitive action against Cobblestone based on raw average cost that is largely explained by harder claims.</li>
+      <li><strong>Keep mix and within-type severity visible in monthly reporting.</strong> The 1.03% headline severity change hides a £0.91m within-type increase. Reporting only average severity would miss that pressure.</li>
+    </ol>
   </div>
 </section>
+
 <section id="limitations">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">10. Limitations &amp; Debugging Lessons</span>
-      <h2>What this analysis does not claim — and two things caught before they shipped</h2>
+      <span class="eyebrow">8. What the analysis does not claim</span>
+      <h2>Adjusted comparisons and statistical tests support decisions; they do not replace investigation</h2>
+      <p>The limits are stated alongside the findings so the recommendations remain proportionate.</p>
     </div>
-    <ul class="limit-list"><li><strong>An early version of the data generator produced an unrealistic 36% year-on-year rise in claims.</strong> The code wasn't broken, but the number didn't make business sense for a general insurer — so the growth trend was dialled back to a more defensible 20% before it was treated as a real finding.</li><li><strong>A data check that looked like a bug turned out to be correct behaviour.</strong> The raw and cleaned claim totals didn't match, which in every prior project has meant a real data-loss bug. Investigating first showed the gap was exactly explained by 111 duplicate records the cleaning process had rightly removed — so the fix was to how the check was worded, not to the data.</li></ul>
-    <ul class="limit-list"><li><strong>Made-up data throughout</strong> — every figure describes patterns in a generated dataset built for this portfolio, not a real insurer.</li><li><strong>Association, not proof of cause</strong> — the supplier and region comparisons account for known differences in claim difficulty, but don't prove a supplier or region directly causes higher cost.</li><li><strong>The fairness adjustment uses a statistical model, not an exact recalculation</strong> (a log-cost regression with a right-skew correction) — adjusted figures are a considered estimate.</li><li><strong>The model for predicting which claims get reopened only explains a modest part of the pattern</strong> (pseudo-R²=0.063) — claim type, severity and supplier rating matter, but plenty is left unexplained.</li><li><strong>15 claim-handling records out of 54,442 were excluded</strong> from one duration check because of a known data-quality issue — nothing else is affected.</li><li><strong>A reopened claim has two lifecycle-event chains under the same claim ID</strong> (documented in the Power BI data model's grain-consistency check) — any duration analysis has to account for this or risk double-counting.</li></ul>
+
+    <ul class="limit-list">
+      <li><strong>Synthetic data</strong>Every figure describes a generated portfolio dataset, not a real insurer, claimant, supplier or region.</li>
+      <li><strong>Association, not cause</strong>The supplier and region models allow for observed complexity but cannot prove that a provider or location caused higher cost.</li>
+      <li><strong>Modelled adjusted costs</strong>The estimates use log-cost regression and a right-skew correction. They are directional comparison tools, not exact recalculations.</li>
+      <li><strong>Different sample sizes</strong>Bellcross has only 200 modelled claims, so its large movement deserves file review but carries more uncertainty than a high-volume region.</li>
+      <li><strong>Reopen prediction remains incomplete</strong>The reopen driver model explains a modest share of the pattern (pseudo-R² 0.063); unobserved claim-level factors still matter.</li>
+      <li><strong>Lifecycle-event grain requires care</strong>Reopened claims create two event chains under one claim ID. Fifteen orphaned event records were excluded from one duration reconciliation check.</li>
+    </ul>
   </div>
 </section>
-<section id="gallery" class="section-alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">11. More Charts</span>
-      <h2>Supporting visuals</h2>
-    </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Distribution of claim cost</span></div>
-  <div data-chart="c7-data" data-chart-type="histogram"></div>
-  <script type="application/json" id="c7-data">{"binEdges": [80.0, 478.4, 876.8, 1275.2, 1673.6, 2072.0, 2470.4, 2868.8, 3267.2, 3665.6, 4064.0, 4462.4, 4860.8, 5259.2, 5657.6, 6056.0, 6454.4, 6852.8, 7251.2, 7649.6, 8048.0, 8446.4, 8844.8, 9243.2, 9641.6, 10040.0, 10438.4, 10836.8, 11235.2, 11633.6, 12032.0, 12430.4, 12828.8, 13227.2, 13625.6, 14024.0, 14422.4, 14820.8, 15219.2, 15617.6, 16016.0, 16414.4, 16812.8, 17211.2, 17609.6, 18008.0, 18406.4, 18804.8, 19203.2, 19601.6, 20000.0], "counts": [2961, 1551, 691, 572, 319, 238, 199, 154, 146, 146, 112, 107, 103, 67, 71, 50, 62, 63, 51, 45, 43, 35, 37, 32, 41, 40, 24, 38, 38, 30, 37, 19, 23, 19, 28, 27, 28, 21, 19, 21, 18, 26, 18, 15, 25, 16, 13, 12, 12, 406], "options": {"valueFormat": "gbp", "meanLine": 3206.28, "medianLine": 848.77}}</script>
-  <div class="chart-caption">Claim cost is right-skewed — most claims settle for modest amounts, with a long tail of large losses (values above £20,000 are grouped into the final bar).</div>
-</div>
-  </div>
-</section>
+
 <section id="technical">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">12. Technical Evidence</span>
-      <h2>Source deliverables</h2>
-      <p>Source files for this project are organised as shown below (not yet published to a public GitHub repository). Every deliverable reconciles to the same figures shown on this page.</p>
+      <span class="eyebrow">9. Technical evidence</span>
+      <h2>One governed claims dataset, reconciled across four analytical tools</h2>
+      <p>The page is the management layer. The underlying project retains the calculations, statistical models, cleaning validation and dashboard specification.</p>
     </div>
-    <div class="tech-grid"><div class="tech-card"><h4>03_excel/</h4><ul><li>build_excel_workbook.py — reproducible build script</li><li>albion_claims_analysis.xlsx — 10 sheets, 4 charts, 1 PivotTable, 24 Excel Tables</li></ul></div><div class="tech-card"><h4>04_sql/</h4><ul><li>01_kpi_analysis.sql &middot; 02_frequency_severity_mix_analysis.sql</li><li>03_settlement_duration_analysis.sql &middot; 04_supplier_performance_analysis.sql</li><li>05_reserve_accuracy_reopen_analysis.sql &middot; 06_geographic_cost_concentration_analysis.sql</li></ul></div><div class="tech-card"><h4>07_python/</h4><ul><li>albion_claims_analysis.py — full analysis script</li><li>albion_claims_analysis.ipynb — narrated notebook</li><li>results/albion_results.json — machine-readable results</li></ul></div><div class="tech-card"><h4>05_power_bi/documentation/</h4><ul><li>dashboard_specification.md — 4-page dashboard design</li><li>dax_measures.md — full DAX measure library</li><li>data_model.md — data model design, incl. grain-consistency check</li></ul></div></div>
-    <p class="tech-note">See also: <code>08_outputs/executive_summary/</code> for the full written analysis and <code>09_case_study/portfolio_case_study.md</code> for the source of this page.</p>
+
+    <div class="evidence-grid">
+      <article class="evidence-card"><h3>Excel</h3><p>A 10-sheet formula and PivotTable workbook built reproducibly from the processed claims layer and validated programmatically.</p></article>
+      <article class="evidence-card"><h3>SQL</h3><p>Six CTE and window-function scripts covering KPIs, frequency/severity/mix, settlement, suppliers, reserves, reopens and geography.</p></article>
+      <article class="evidence-card"><h3>Python and statistics</h3><p>LMDI and Bennet decomposition, significance tests, supplier and region case-mix models, reopen modelling and sensitivity analysis.</p></article>
+      <article class="evidence-card"><h3>Power BI build pack</h3><p>A four-page dashboard specification, DAX measure library and data model with explicit grain-consistency checks.</p></article>
+      <article class="evidence-card"><h3>Reconciliation</h3><p><code>9,263 claims</code>, <code>£32,823,099.53 total paid</code> and the yearly totals agree after documented duplicate removal.</p></article>
+      <article class="evidence-card"><h3>Quality controls</h3><p>Six controlled data-quality issues, duplicate-impact reporting, plausible-trend review and event-grain validation are documented rather than hidden.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="case-next">
+  <div class="container">
+    <div class="case-next-card">
+      <div><span class="eyebrow">Portfolio complete</span><h2>Explore the full case-study collection</h2><p>Return to the portfolio to compare the business questions, analytical methods and management recommendations across all five projects.</p></div>
+      <div class="case-next-actions"><a class="btn btn-primary" href="../index.html#case-studies">All case studies</a><a class="btn btn-secondary" href="../index.html#contact">Get in touch</a></div>
+    </div>
   </div>
 </section>
 
@@ -516,11 +345,9 @@
   </div>
 </footer>
 
-<script type="application/json" id="glossary-data">{"p-value": "A measure of how likely a result this size would happen by chance alone. Small (under 0.05) usually means the pattern is probably real; large means it could easily be random noise.", "statistically significant": "The difference is unlikely to be down to chance. \u201cNot significant\u201d doesn't mean \u201cno difference\u201d \u2014 it means the data can't rule out chance as the explanation.", "case-mix adjustment": "A fair way of comparing suppliers, regions or providers that accounts for how hard their jobs actually were, instead of just comparing raw averages.", "r-squared": "How much of the variation in an outcome a model explains, from 0 (none) to 1 (all of it). A low value means other, unmeasured factors matter too.", "regression": "A statistical method for estimating how one factor relates to an outcome while holding other factors constant \u2014 the main tool used here for fair before/after comparisons.", "decomposition": "Splitting a total change into its exact contributing parts (e.g. more cases happening vs. each case costing more), so they add up precisely to the real figure.", "confidence interval": "A range that's likely to contain the true value. A narrow range means a precise estimate; a wide one means more uncertainty.", "reconciled": "Checked and confirmed to match exactly across every tool used (Excel, SQL, Python) \u2014 no figure is reported unless it agrees everywhere it's calculated."}</script>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/tooltip.js"></script>
 <script src="../assets/js/charts.js"></script>
 <script src="../assets/js/main.js"></script>
-
 </body>
 </html>
