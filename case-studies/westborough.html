@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Westborough Council Case Study — Farouk Yusuf</title>
-<meta name="description" content="Adult social-care demand & financial sustainability analytics case study: Excel, SQL, Python and Power BI analysis of a fictional council's expenditure-growth decomposition and provider/locality cost fairness, on a synthetic, ethically-constrained social-care dataset.">
+<meta name="description" content="A decision-focused adult social-care analytics case study explaining an £8.25m expenditure increase, fair provider and locality comparisons, and practical management actions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,18 +14,16 @@
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/charts.css">
 <link rel="stylesheet" href="../assets/css/case-study.css">
+<link rel="stylesheet" href="../assets/css/westborough.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231f374d'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EFY%3C/text%3E%3C/svg%3E">
 </head>
-<body>
+<body class="westborough-case-study">
 
-<div class="disclaimer-strip">Westborough Council is fictional. All data on this page is synthetically generated for portfolio purposes — see the disclaimer below for detail.</div>
+<div class="disclaimer-strip">Portfolio project · Westborough Council and every figure on this page are fictional.</div>
 
 <header class="site-header">
   <div class="container nav">
-    <a href="../index.html" class="brand">
-      <span class="brand-mark">FY</span>
-      Farouk Yusuf
-    </a>
+    <a href="../index.html" class="brand"><span class="brand-mark">FY</span>Farouk Yusuf</a>
     <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="../index.html#case-studies">Case Studies</a></li>
@@ -39,442 +37,270 @@
 <section class="cs-hero">
   <div class="container">
     <div class="cs-breadcrumb"><a href="../index.html">Home</a> / Case Studies / Westborough Council</div>
-    <span class="eyebrow">Case Study</span>
-    <h1>Adult Social Care Demand &amp; Financial Sustainability Analytics</h1>
-    <p class="cs-sub">Is a fictional council's rising adult social-care bill down to more people needing care, or care itself costing more? And do the care providers and areas that look expensive still look expensive once you account for how hard their caseloads really are — without ever ranking a single person? An end-to-end analysis across Excel, SQL, Python and Power BI on two years of synthetic social-care data.</p>
-    <nav class="anchor-nav"><a href="#findings">Key Findings</a><a href="#problem">Business Problem</a><a href="#stakeholders">Stakeholders</a><a href="#dataset">Dataset</a><a href="#approach">Approach &amp; Tools</a><a href="#decomposition">Expenditure Growth Decomposition</a><a href="#providers">Provider Case-Mix Analysis</a><a href="#localities">Locality Case-Mix Analysis</a><a href="#caseload">New vs Continuing Users</a><a href="#recommendations">Recommendations</a><a href="#limitations">Limitations &amp; Debugging</a><a href="#gallery">More Charts</a><a href="#technical">Technical Evidence</a></nav>
+    <div class="westborough-hero-grid">
+      <div class="case-hero-copy">
+        <div class="case-hero-meta"><span class="eyebrow">Public-service finance</span><span class="case-status">End-to-end analysis</span></div>
+        <h1>Adult Social Care: What Is Driving the £8.25m Spending Increase?</h1>
+        <p class="case-question"><span>Business question</span>Is the rising bill mainly because more people need support, or because care is becoming more expensive—and which pressures can management act on?</p>
+        <p class="cs-sub">I analysed two years of synthetic service, package, provider and locality data. The work separates demand growth from price, intensity, service mix and calendar effects, then tests whether apparently high-cost providers and areas still look unusual after allowing for differences in need.</p>
+        <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Management actions</a></div>
+      </div>
+      <aside class="project-brief" aria-label="Project brief">
+        <span class="eyebrow">Project brief</span>
+        <dl class="brief-stats">
+          <div><dt>Period</dt><dd>24 months</dd></div>
+          <div><dt>2025 caseload</dt><dd>3,940 people</dd></div>
+          <div><dt>Providers</dt><dd>32</dd></div>
+          <div><dt>Localities</dt><dd>6</dd></div>
+        </dl>
+        <div class="brief-tools"><span>Excel</span><span>SQL</span><span>Python</span><span>Power BI</span></div>
+        <p class="brief-outcome"><strong>Main conclusion:</strong> most of the increase reflects more people receiving support. The clearest controllable pressures are weekly care fees and the amount of hourly care delivered—not a statistically reliable rise in average annual cost per person.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
 <div class="container">
   <div class="disclaimer-box">
     <span class="dot">i</span>
-    <div><strong>Synthetic-data disclaimer:</strong> Westborough Council is a fictional local authority. Every service user, care package, provider, locality and figure on this page was generated for data-analytics portfolio purposes — none of it describes a real council, and no figure should be read as representing an actual local authority. No individual service user, referral or care package is identified, ranked or scored anywhere in this project.</div>
+    <div><strong>Synthetic-data disclaimer:</strong> Westborough Council is a fictional local authority. Every service user, package, provider, locality and figure was generated for portfolio purposes. No individual is identified, ranked or scored, and no result should be read as describing a real council or care provider.</div>
   </div>
 </div>
 
-<section id="findings" style="padding-top:0;">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">At a Glance</span>
-      <h2>Headline Numbers</h2>
-      <p>Every figure below is <button type="button" class="term" data-term="reconciled">reconciled <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> exactly across the Excel workbook, every SQL script and the Python notebook.</p>
-    </div>
-    <div class="short-version">
-      <span class="eyebrow">The Short Version</span>
-      <p>Westborough is a made-up local council, used here to practise a real analytics workflow on a sensitive, ethically-constrained dataset. Its adult social-care bill grew by 11% in a year — a real but modest amount faster than the 9.2% growth in the number of people receiving care — and the data shows that gap is the net result of <strong>six different effects pulling in different directions</strong>, not one runaway cause.</p><p>Along the way, the same analysis found two care homes whose cost position flips once you account for how hard their caseloads really are, two areas of the council that stay genuinely more expensive even after accounting for case difficulty, and a data-generation bug that briefly made spending look like it was falling by almost a third before it was caught and fixed.</p>
-    </div>
-    <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">+11.0%</span><span class="kpi-lbl">Total adult social-care expenditure growth, 2024 → 2025</span></div><div class="kpi-tile"><span class="kpi-num">+9.2%</span><span class="kpi-lbl">Growth in people receiving care — the main driver</span></div><div class="kpi-tile"><span class="kpi-num">+1.65%</span><span class="kpi-lbl">Average cost per person served</span><span class="tag tag-not-significant">Not statistically significant</span></div><div class="kpi-tile"><span class="kpi-num">£8.25m</span><span class="kpi-lbl">Expenditure increase, fully broken into six exact drivers</span></div></div>
-    <div class="two-col" style="margin-top:32px;">
-      <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Expenditure growth decomposition, 2024 → 2025</span></div>
-  <div data-chart="c1-preview-data" data-chart-type="waterfall"></div>
-  <script type="application/json" id="c1-preview-data">{"steps": [{"label": "2024 Total", "value": 75045800.16, "isTotal": true}, {"label": "Volume", "value": 6963024.62}, {"label": "Duration", "value": -5304774.99}, {"label": "Service Mix", "value": -1065834.35}, {"label": "Price (Hourly)", "value": 997911.03}, {"label": "Intensity (Hourly)", "value": 2533701.35}, {"label": "Banded Fee (Res./Nursing)", "value": 4129686.33}, {"label": "2025 Total", "value": 83299514.15, "isTotal": true}], "options": {"valueFormat": "gbp"}}</script>
-  <div class="chart-caption">Volume, duration, service mix, price, intensity and the residential/nursing banded-fee change sum exactly to the £8.25m change — no single driver dominates, and the negative duration effect is a measurement artefact (see Finding 3), not a real cut in care.</div>
+<div class="case-nav-shell">
+  <nav class="container anchor-nav" aria-label="Case study sections">
+    <span>Explore</span>
+    <a href="#findings">Start here</a><a href="#problem">The decision</a><a href="#decomposition">Spend drivers</a><a href="#providers">Provider review</a><a href="#localities">Localities</a><a href="#caseload">New referrals</a><a href="#recommendations">Actions</a><a href="#technical">Evidence</a>
+  </nav>
 </div>
-      <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Raw vs case-mix-adjusted average rate by provider</span></div>
-  <div data-chart="c2-preview-data" data-chart-type="comparison"></div>
-  <script type="application/json" id="c2-preview-data">{"rows": [{"label": "Woodbine Care Agency", "before": 21.48, "after": 21.48, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 47.2, "n": 1099, "cqc_rating": "Requires Improvement"}}, {"label": "Thornfield Home Care Services", "before": 18.87, "after": 18.87, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 13.3, "n": 1123, "cqc_rating": "Good"}}, {"label": "Farrow Support Services", "before": 18.11, "after": 18.11, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 24.5, "n": 1210, "cqc_rating": "Inadequate"}}, {"label": "Beechwood Care Agency", "before": 17.83, "after": 17.83, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 13.5, "n": 1194, "cqc_rating": "Requires Improvement"}}, {"label": "Sycamore Care Agency", "before": 17.54, "after": 17.54, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 24.8, "n": 1051, "cqc_rating": "Good"}}, {"label": "Greenhaven Home Care Services", "before": 16.85, "after": 16.85, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 14.7, "n": 1417, "cqc_rating": "Good"}}, {"label": "Bramblewood Care Agency", "before": 21.02, "after": 21.02, "meta": {"service_type_name": "Direct Payments", "pct_substantial_or_critical": 63.7, "n": 2292, "cqc_rating": "Outstanding"}}, {"label": "Cedar Grange Support Services", "before": 20.7, "after": 20.7, "meta": {"service_type_name": "Direct Payments", "pct_substantial_or_critical": 24.3, "n": 2507, "cqc_rating": "Outstanding"}}, {"label": "Kingfisher Care Agency", "before": 18.61, "after": 18.6, "meta": {"service_type_name": "Direct Payments", "pct_substantial_or_critical": 20.6, "n": 2586, "cqc_rating": "Requires Improvement"}}, {"label": "Amberley Care Agency", "before": 25.45, "after": 25.45, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 27.2, "n": 3708, "cqc_rating": "Good"}}, {"label": "Bramblewood Care Agency", "before": 23.2, "after": 23.2, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 66.5, "n": 3436, "cqc_rating": "Outstanding"}}, {"label": "Maple Grange Home Care Services", "before": 22.93, "after": 22.94, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 59.7, "n": 3370, "cqc_rating": "Outstanding"}}, {"label": "Primrose Home Care Services", "before": 22.49, "after": 22.48, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 21.1, "n": 3805, "cqc_rating": "Requires Improvement"}}, {"label": "Farrow Support Services", "before": 21.1, "after": 21.1, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 22.9, "n": 3729, "cqc_rating": "Inadequate"}}, {"label": "Millstone Care Agency", "before": 20.81, "after": 20.8, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 26.5, "n": 3862, "cqc_rating": "Outstanding"}}, {"label": "Fernleigh Manor Care Home", "before": 1732.76, "after": 1703.36, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 92.2, "n": 1042, "cqc_rating": "Good"}}, {"label": "Nightingale Care Home", "before": 1627.76, "after": 1622.02, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 97.0, "n": 1076, "cqc_rating": "Requires Improvement"}}, {"label": "Elmstead Manor Care Home", "before": 1582.01, "after": 1671.11, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 88.9, "n": 920, "cqc_rating": "Good"}}, {"label": "Meadowcroft House", "before": 1417.09, "after": 1415.99, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 97.5, "n": 1976, "cqc_rating": "Good"}}, {"label": "Oakfield Manor Care Home", "before": 1282.51, "after": 1333.74, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 86.1, "n": 1168, "cqc_rating": "Good"}}, {"label": "Copperfield Support Services", "before": 715.21, "after": 711.52, "meta": {"service_type_name": "Reablement", "pct_substantial_or_critical": 23.4, "n": 1267, "cqc_rating": "Good"}}, {"label": "Thornfield Home Care Services", "before": 593.37, "after": 612.16, "meta": {"service_type_name": "Reablement", "pct_substantial_or_critical": 19.2, "n": 1659, "cqc_rating": "Good"}}, {"label": "Northgate Care Agency", "before": 578.78, "after": 594.3, "meta": {"service_type_name": "Reablement", "pct_substantial_or_critical": 20.7, "n": 1272, "cqc_rating": "Good"}}, {"label": "Nightingale Care Home", "before": 1066.02, "after": 1169.55, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 55.4, "n": 1432, "cqc_rating": "Requires Improvement"}}, {"label": "Hollybank Manor Care Home", "before": 1052.97, "after": 1000.82, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 87.9, "n": 2846, "cqc_rating": "Good"}}, {"label": "Foxglove Care Home", "before": 1035.94, "after": 1023.32, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 88.1, "n": 2680, "cqc_rating": "Outstanding"}}, {"label": "Rosewood Care Home", "before": 946.3, "after": 1012.65, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 61.9, "n": 1854, "cqc_rating": "Good"}}, {"label": "Silverbirch Manor Care Home", "before": 852.56, "after": 915.77, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 53.7, "n": 1741, "cqc_rating": "Good"}}, {"label": "Riverside Care Home", "before": 1201.55, "after": 1229.69, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 78.3, "n": 808, "cqc_rating": "Good"}}, {"label": "Rosewood Care Home", "before": 1010.79, "after": 1073.63, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 61.8, "n": 945, "cqc_rating": "Good"}}, {"label": "Chestnut Care Home", "before": 998.2, "after": 1016.96, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 79.3, "n": 792, "cqc_rating": "Good"}}, {"label": "Oakfield Manor Care Home", "before": 990.37, "after": 966.28, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 74.1, "n": 888, "cqc_rating": "Good"}}, {"label": "Hartley Support Services", "before": 25.31, "after": 25.3, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 52.0, "n": 1438, "cqc_rating": "Outstanding"}}, {"label": "Ashgrove Support Services", "before": 24.29, "after": 24.29, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 40.0, "n": 1390, "cqc_rating": "Good"}}, {"label": "Larkspur Home Care Services", "before": 24.09, "after": 24.09, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 43.9, "n": 1217, "cqc_rating": "Good"}}, {"label": "Vantage Support Services", "before": 23.78, "after": 23.78, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 81.7, "n": 1585, "cqc_rating": "Inadequate"}}, {"label": "Clearwater Care Agency", "before": 23.71, "after": 23.71, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 45.3, "n": 1294, "cqc_rating": "Good"}}, {"label": "Willowmead Support Services", "before": 22.07, "after": 22.07, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 44.2, "n": 1448, "cqc_rating": "Requires Improvement"}}], "options": {"valueFormat": "gbp", "beforeLabel": "Raw average rate", "afterLabel": "Case-mix adjusted", "categoryLabel": "Provider", "limit": 15, "filterKey": "service_type_name", "filterValues": ["Residential Care", "Day Care", "Direct Payments", "Domiciliary Care", "Nursing Care", "Reablement", "Respite/Short Break Care", "Supported Living"], "filterDefault": "Residential Care", "metaColumns": [{"key": "pct_substantial_or_critical", "label": "% Substantial/Critical needs", "numeric": true, "format": "percent"}, {"key": "n", "label": "Records", "numeric": true, "format": "number"}, {"key": "cqc_rating", "label": "CQC rating", "numeric": false}]}}</script>
-  <div class="chart-caption">Hollybank Manor Care Home (2nd most expensive raw → 4th adjusted) and Rosewood Care Home (4th raw → 3rd adjusted) show the clearest, opposite case-mix stories in Residential Care. Use the toggle to switch service type — 33 of the 38 provider comparisons across all service types don't change rank at all once adjusted. Rates are £/hour for hourly services and £/week for residential and other block-contract services.</div>
-</div>
-    </div>
-    <h3 style="margin-top:8px;">Eight strongest findings</h3>
-    <div class="finding-card">
-      <span class="finding-num">FINDING 1</span>
-      <h4>Spending on adult social care grew faster than the number of people receiving it — but only by a little.</h4>
-      <p>In a year, total spending went up by just over a tenth, while the number of people getting care went up by under a tenth. That's a real gap between the two, but it's a modest one — not a runaway trend.</p>
-      <div class="figure-line">+11.0% total expenditure (£75.0m &rarr; £83.3m) &middot; +9.2% people served (3,608 &rarr; 3,940)</div>
-      
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 2</span>
-      <h4>The extra £8.25m in spending splits exactly into six separate reasons — no single one explains all of it.</h4>
-      <p>Instead of guessing at one cause, the entire increase was traced, penny by penny, into six distinct effects — from more people needing care, to how long people needed it for, to changes in care-home fees.</p>
-      <div class="figure-line">More people needing care +£6.96m &middot; Care lasting less time per person, on average &minus;£5.30m &middot; Shift away from residential care &minus;£1.07m &middot; Hourly-care rates rising +£1.00m &middot; Hourly care getting slightly more intensive +£2.53m &middot; Care-home fee changes +£4.13m</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">An exact three-level <button type="button" class="term" data-term="decomposition">decomposition <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> (Logarithmic Mean Divisia Index, then two Bennet shift-share splits) of expenditure into users × average weeks per user × average weekly cost, then rate into service-mix and within-type effects, then within-type into price and intensity for hourly services. All six components sum exactly to the £8,253,713.99 total change.</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 3</span>
-      <h4>One of the six reasons looks like care is getting shorter — but that's a quirk of the calendar, not a real cut in care.</h4>
-      <p>People who join partway through a year only receive care for part of that year, which mechanically drags the average down — even though no one's actual care package got shorter. Far more people joined newly in 2025 than in 2024, which is what's really behind this effect.</p>
-      <div class="figure-line">New-in-year average cost: £9,266 (2024) &rarr; £12,059 (2025) &middot; Continuing recipients: around £23,000 in both years &middot; New referrals: 962 (2024) &rarr; 1,594 (2025)</div>
-      
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 4</span>
-      <h4>The typical person's care didn't get meaningfully more expensive.</h4>
-      <p>The average yearly cost per person barely moved, and a statistical check can't rule out that even this small rise is just down to chance rather than a genuine change.</p>
-      <div class="figure-line">£20,800 &rarr; £21,142 average cost per person per year (+1.65%)</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Welch's t-test on mean annual cost per person: t=0.68, <button type="button" class="term" data-term="p-value">p=0.495 <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> (<button type="button" class="term" data-term="statistically significant">not significant <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>).</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 5</span>
-      <h4>Most provider cost comparisons hold up fairly as they stand — but two residential care homes tell opposite stories once you account for how hard their caseloads are.</h4>
-      <p>Providers were only ever compared against others delivering the exact same kind of care, and adjusted for how complex their caseload was. Most rankings didn't move at all. One care home looks like the second most expensive in its category — but it also handles the hardest cases, and once that's accounted for it drops down the ranking. Another looks mid-priced — but it has an easier caseload than most, and once accounted for, becomes one of the most expensive.</p>
-      <div class="figure-line">33 of 38 provider comparisons unchanged after adjustment &middot; Hollybank Manor Care Home: raw rank 2nd &rarr; adjusted rank 4th (87.9% high-complexity cases) &middot; Rosewood Care Home: raw rank 4th &rarr; adjusted rank 3rd</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Separate OLS log-rate <button type="button" class="term" data-term="regression">regression <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> per service type (never blending £/hour and £/week rates), controlling for complexity-tier mix — this is the <button type="button" class="term" data-term="case-mix adjustment">case-mix adjustment <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> referenced throughout this page. Average <button type="button" class="term" data-term="r-squared">R² <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>=0.79 across 8 service-type models (n=69,127).</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 6</span>
-      <h4>Cost differences between areas of the council shrink once you account for how complex people's needs are — but a real gap remains in two areas.</h4>
-      <p>Some areas cost more partly because they have harder cases and more residential care. Adjusting for that narrows the gap by around a third — but two areas still cost noticeably more than the rest even after adjusting, which is worth investigating on the ground.</p>
-      <div class="figure-line">Raw gap £3,205 (16.6%): Westborough Central highest, Rural Downlands lowest &middot; Adjusted gap £1,876 (about a third narrower): Northfield highest, Ashcombe Vale lowest</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">OLS <button type="button" class="term" data-term="regression">regression <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> of log annual cost per person on locality, dominant complexity tier and % of cost delivered in a Residential setting (<button type="button" class="term" data-term="r-squared">R² <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button>=0.34, n=7,548), with Duan's smearing correction (factor 1.407) applied when converting back to £ — the <button type="button" class="term" data-term="case-mix adjustment">case-mix adjustment <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> used throughout this page.</div></details>
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 7</span>
-      <h4>The areas that cost more also tend to have harder cases and more referrals — which is part of the explanation, but not proof on its own.</h4>
-      <p>Westborough Central and Northfield, the two busiest areas, also have the highest share of people assessed as having substantial or critical needs. That lines up with them costing more, though it doesn't by itself prove that's the only reason.</p>
-      <div class="figure-line">Highest complexity share: Westborough Central 53.8%, Northfield 49.9% &middot; Lowest: Rural Downlands 43.1%</div>
-      
-    </div>
-<div class="finding-card">
-      <span class="finding-num">FINDING 8</span>
-      <h4>A data-setup quirk briefly made the first three months of the analysis look unusual — but it doesn't change the headline figures.</h4>
-      <p>The very start of the two-year window shows a small, artificial dip-and-recovery pattern, a known side-effect of how the underlying data was generated rather than anything real. Removing that period and recalculating shifts the headline growth figure by only a fraction of a percentage point.</p>
-      <div class="figure-line">Growth excluding Jan&ndash;Mar 2024: 10.91% vs the reported 11.0%</div>
-      <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Sensitivity check: re-annualising 2024 expenditure from April&ndash;December only, then comparing to 2025, changes the headline growth figure from 11.0% to 10.91%.</div></details>
-    </div>
-  </div>
-</section>
-<section id="problem" class="section-alt">
+
+<section id="findings">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">1. Business Problem</span>
-      <h2>What management wanted answered</h2>
+      <span class="eyebrow">Read this first</span>
+      <h2>The bill rose mainly because more people received care—not because the typical person became much more expensive</h2>
+      <p>The headline increase is real, but it combines legitimate demand growth, controllable pressures and two effects that reduced the total. Reading those separately changes the management response.</p>
     </div>
-    <p>Westborough is a fictional local authority whose adult social-care spending has been rising faster than the number of people receiving services. Senior management wanted a straight answer to a wide brief: is the pressure caused by more people needing care, harder cases, more intensive care packages, longer service duration, rising provider prices, a shift between residential and home-based care, geography, or specific providers — and, critically, whether raw provider and locality cost comparisons would hold up once case difficulty was properly accounted for.</p><p>One rule was non-negotiable throughout: <strong>this analysis must never produce a “high-cost person” ranking or a simplistic provider league table</strong>. No individual service user, referral or care package is ranked, scored or singled out anywhere in this project — every comparison sits at group level (provider, locality, service type or complexity tier), and every raw comparison is presented alongside its case-mix-adjusted counterpart rather than on its own.</p>
+
+    <div class="short-version story-explainer">
+      <span class="eyebrow">The story in four questions</span>
+      <h3>From an £8.25m headline increase to specific decisions</h3>
+      <div class="story-steps">
+        <article class="story-step"><span>1</span><strong>What changed?</strong><p>Expenditure rose from £75.0m to £83.3m, while the number of people receiving care rose from 3,608 to 3,940.</p></article>
+        <article class="story-step"><span>2</span><strong>Was care per person the main cause?</strong><p>No clear evidence. Mean annual cost per person rose 1.65%, but the difference was not statistically significant.</p></article>
+        <article class="story-step"><span>3</span><strong>Which pressures can management influence?</strong><p>Weekly residential and nursing fees added £4.13m; additional hourly-care intensity added £2.53m.</p></article>
+        <article class="story-step"><span>4</span><strong>Where should review start?</strong><p>Commissioning records, two residential-provider comparisons, and the remaining adjusted premium in Northfield and Central.</p></article>
+      </div>
+      <div class="plain-answer"><span>Plain answer</span><p><strong>Do not manage the 11% rise as one cost problem.</strong> Plan for genuine demand growth, review fee banding and hourly-care intensity, and use case-mix-adjusted comparisons as prompts for investigation—not verdicts.</p></div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-tile"><span class="kpi-num">+11.0%</span><span class="kpi-lbl">Total expenditure growth, from £75.0m to £83.3m</span></div>
+      <div class="kpi-tile"><span class="kpi-num">+9.2%</span><span class="kpi-lbl">Growth in people receiving care—the largest demand pressure</span></div>
+      <div class="kpi-tile"><span class="kpi-num">+£4.13m</span><span class="kpi-lbl">Weekly residential and nursing fee effect—the largest identifiable controllable pressure</span></div>
+      <div class="kpi-tile"><span class="kpi-num">+1.65%</span><span class="kpi-lbl">Change in mean annual cost per person</span><span class="tag tag-not-significant">Not statistically significant</span></div>
+    </div>
+
+    <div class="findings-heading"><span class="eyebrow">Eight evidence-led findings</span><h3>What the analysis found, in plain English</h3></div>
+    <div class="findings-grid">
+      <article class="finding-card"><span class="finding-num">FINDING 1</span><h4>Spending grew faster than caseload, but the gap is modest.</h4><p>Expenditure rose by 11.0%, compared with 9.2% growth in people receiving care. That 1.8-point difference warrants explanation, but it is not evidence of runaway cost per person.</p><div class="figure-line">£75.0m → £83.3m · 3,608 → 3,940 people</div></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 2</span><h4>Six effects account for the full £8.25m increase.</h4><p>More people, partial-year timing, service mix, hourly rates, care intensity and weekly fees reconcile exactly to the reported change. No unexplained remainder is hidden in the headline.</p><div class="figure-line">Positive pressures +£14.62m · Offsetting effects −£6.37m · Net +£8.25m</div><details class="detail"><summary>Show the method</summary><div class="detail-body">An exact three-level decomposition first separates users, average weeks and average weekly cost; it then splits weekly cost into service mix and within-service effects, and separates hourly price from hours delivered.</div></details></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 3</span><h4>The negative “duration” effect is a calendar effect—not evidence that care packages were cut.</h4><p>People starting during the year only contribute part of a year’s care. The much larger 2025 intake reduced the observed average weeks per person even though the analysis found no shortening of existing packages.</p><div class="figure-line">New referrals: 962 in 2024 → 1,594 in 2025</div></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 4</span><h4>The data does not show a statistically reliable increase in mean annual cost per person.</h4><p>The mean rose from £20,800 to £21,142. A statistical test could not distinguish that 1.65% movement from normal variation in this sample.</p><div class="figure-line">Welch test: p = 0.495 · Decision threshold: 0.05</div><details class="detail"><summary>What that means</summary><div class="detail-body">This does not prove the average stayed exactly the same. It means the evidence is too weak to treat the observed change as a reliable underlying shift.</div></details></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 5</span><h4>Most provider positions survive a fairer comparison, but two residential homes need different interpretations.</h4><p>Providers were compared only with others delivering the same service type, after allowing for complexity mix. Hollybank’s apparently high fee position softens; Rosewood’s apparently favourable position becomes less favourable.</p><div class="figure-line">33 of 38 provider-by-service comparisons kept the same rank</div></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 6</span><h4>Differences in need explain part—but not all—of the locality cost gap.</h4><p>The highest-to-lowest gap narrows after allowing for complexity and residential-care share. Northfield and Westborough Central remain relatively high and warrant operational review.</p><div class="figure-line">Raw gap £3,205 · Adjusted gap £1,876 · 41% narrower</div></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 7</span><h4>Higher-cost areas also handle more complex need, but that pattern is not proof of cause.</h4><p>Central and Northfield have the highest shares of substantial or critical need. That supports the case-mix explanation, while the remaining adjusted difference points to other factors worth investigating.</p><div class="figure-line">High-complexity share: Central 53.8% · Northfield 49.9% · Rural Downlands 43.1%</div></article>
+
+      <article class="finding-card"><span class="finding-num">FINDING 8</span><h4>The unusual first quarter does not drive the headline result.</h4><p>A known synthetic-data settling pattern affects January to March 2024. Excluding that period and re-annualising 2024 barely changes the result.</p><div class="figure-line">Sensitivity result: 10.91% growth vs reported 11.0%</div></article>
+    </div>
   </div>
 </section>
-<section id="stakeholders">
+
+<section id="problem">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">2. Stakeholders &amp; Business Decision</span>
-      <h2>Who this was for, and what they needed to decide</h2>
+    <div class="section-head"><span class="eyebrow">1. The management decision</span><h2>Separate pressures that need different responses</h2><p>Senior leaders needed to distinguish unavoidable demand growth from pressures that commissioning and operations could influence, while avoiding unfair provider comparisons.</p></div>
+    <div class="stakeholder-grid">
+      <div class="stakeholder-card"><strong>Adult Social Care leadership</strong><span>Decide whether the priority is capacity planning, service redesign or cost control.</span></div>
+      <div class="stakeholder-card"><strong>Finance and budget setting</strong><span>Understand exactly how the £8.25m increase was created and which effects may continue.</span></div>
+      <div class="stakeholder-card"><strong>Commissioning and contracts</strong><span>Review provider fees without penalising organisations that support people with greater needs.</span></div>
+      <div class="stakeholder-card"><strong>Locality managers</strong><span>Identify areas that remain relatively costly after known differences in need are allowed for.</span></div>
     </div>
-    <div class="stakeholder-grid"><div class="stakeholder-card"><strong>Director of Adult Social Care</strong><span>Needed to know whether rising spend is a “more people need care” problem or a “care itself costs more” problem, to decide where to focus commissioning and budget conversations.</span></div><div class="stakeholder-card"><strong>Finance &amp; Budget Setting</strong><span>Needed the expenditure increase broken into its exact drivers, to separate legitimate demand growth from controllable cost pressures like provider fee changes.</span></div><div class="stakeholder-card"><strong>Provider &amp; Contracts Management</strong><span>Needed a fair basis for provider conversations that never blames a care home simply for taking on harder cases — and never ranks any individual.</span></div><div class="stakeholder-card"><strong>Locality &amp; Operations Managers</strong><span>Needed to know which areas of the council genuinely cost more once case difficulty is accounted for, versus which just have harder caseloads.</span></div></div>
+    <p class="decision-rule"><strong>Ethical rule:</strong> the analysis never ranks an individual service user. Provider and locality comparisons are group-level screening tools, adjusted for observed case mix and accompanied by clear limitations.</p>
   </div>
 </section>
-<section id="dataset" class="section-alt">
+
+<section id="context">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">3. Dataset Overview</span>
-      <h2>What the data covers</h2>
+    <div class="section-head"><span class="eyebrow">2. Evidence and approach</span><h2>Two years of linked service and finance data</h2><p>The analysis joins service users, care packages, delivery, provider rates, complexity and locality reference data into one reconciled view.</p></div>
+    <table class="data-table"><tbody>
+      <tr><th>Coverage</th><td>6 localities, 32 providers, 8 service types and 4 complexity tiers</td></tr>
+      <tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr>
+      <tr><th>People receiving care</th><td>3,608 in 2024; 3,940 in 2025</td></tr>
+      <tr><th>Care packages</th><td>5,674</td></tr>
+      <tr><th>Monthly service-delivery records</th><td>69,149</td></tr>
+      <tr><th>New referrals</th><td>962 in 2024; 1,594 in 2025</td></tr>
+    </tbody></table>
+    <div class="tool-grid">
+      <div class="tool-chip"><strong>Excel</strong><span>A 10-sheet workbook with live formulas and PivotTables for operational review.</span></div>
+      <div class="tool-chip"><strong>SQL</strong><span>Six scripts covering KPIs, referral flow, providers, localities, service mix and decomposition inputs.</span></div>
+      <div class="tool-chip"><strong>Python</strong><span>Exact expenditure decomposition, statistical testing, case-mix models and sensitivity checks.</span></div>
+      <div class="tool-chip"><strong>Power BI</strong><span>A four-page dashboard specification, DAX measure library and governed data-model design.</span></div>
     </div>
-    <table class="data-table"><tbody><tr><th>Coverage</th><td>6 localities, 32 care providers, 8 service types, 4 complexity tiers</td></tr><tr><th>Period</th><td>January 2024 – December 2025 (24 months)</td></tr><tr><th>Service users (synthetic population)</th><td class="num">~6,000</td></tr><tr><th>Distinct users receiving care</th><td class="num">3,608 in 2024, 3,940 in 2025</td></tr><tr><th>Care packages</th><td class="num">5,674</td></tr><tr><th>Monthly service-delivery records</th><td class="num">69,149</td></tr><tr><th>New referrals</th><td class="num">962 in 2024, 1,594 in 2025</td></tr></tbody></table>
   </div>
 </section>
-<section id="approach">
+
+<section id="decomposition">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">4. Analytical Approach &amp; Tools Used</span>
-      <h2>Four tools, one reconciled set of numbers</h2>
-      <p>Each tool answers a different part of the brief, but every headline number reconciles exactly across all of them.</p>
+    <div class="section-head"><span class="eyebrow">3. Spend drivers</span><h2>The £8.25m increase is the balance of four upward pressures and two offsets</h2><p>This split prevents a negative timing effect from being mistaken for reduced care and keeps controllable pressures separate from caseload growth.</p></div>
+    <div class="driver-chart-grid">
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">Pressures that increased expenditure</span></div>
+        <div data-chart="west-positive-drivers" data-chart-type="bar"></div>
+        <script type="application/json" id="west-positive-drivers">{"categories":["More people served","Weekly care fees","More care hours","Hourly rates"],"series":[{"label":"Increase","values":[6963024.62,4129686.33,2533701.35,997911.03]}],"options":{"horizontal":true,"height":300,"valueFormat":"gbp","categoryLabel":"Pressure","maxValue":8000000}}</script>
+        <div class="chart-caption">Demand growth is largest overall. Among the more controllable pressures, weekly residential/nursing fees and the amount of hourly care delivered deserve priority.</div>
+      </div>
+      <div class="chart-block offset-chart">
+        <div class="chart-head"><span class="chart-title">Effects that offset the increase</span></div>
+        <div data-chart="west-offset-drivers" data-chart-type="bar"></div>
+        <script type="application/json" id="west-offset-drivers">{"categories":["Partial-year timing","Service mix"],"series":[{"label":"Reduction","values":[5304774.99,1065834.35]}],"options":{"horizontal":true,"height":240,"valueFormat":"gbp","categoryLabel":"Offset","maxValue":6000000}}</script>
+        <div class="chart-caption">The £5.30m timing effect reflects more people joining partway through 2025; it is not evidence that existing care packages were shortened.</div>
+      </div>
     </div>
-    <div class="tool-grid"><div class="tool-chip"><strong>Excel</strong><span>A 10-sheet workbook where every KPI is a live formula or PivotTable over the processed data — not typed in by hand.</span></div><div class="tool-chip"><strong>SQL</strong><span>Six CTE/window-function-based scripts covering KPIs, referrals, providers, localities and service mix — including an independent rebuild of the decomposition inputs as a cross-check.</span></div><div class="tool-chip"><strong>Python</strong><span>The statistical work: an exact three-level expenditure-growth decomposition, two separate case-mix regressions (provider and locality), confidence intervals, significance testing and sensitivity checks.</span></div><div class="tool-chip"><strong>Power BI</strong><span>A full build specification, DAX measure library and 4-page dashboard design, with explicit documentation of what a live DAX model can and can't reproduce from a Python regression.</span></div></div>
+    <div class="growth-reconciliation"><span>Upward pressures <strong>+£14.62m</strong></span><span>minus</span><span>Offsets <strong>−£6.37m</strong></span><span>equals</span><strong>Net increase +£8.25m</strong></div>
+    <p class="model-caution"><strong>Data limitation:</strong> for weekly-fee services, routine data combines the base price and complexity band in one fee. The £4.13m effect is therefore reported as a combined fee-and-banding pressure rather than separated with false precision.</p>
   </div>
 </section>
-<section id="decomposition" class="section-alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">5. Expenditure Growth Decomposition</span>
-      <h2>Volume, duration, mix, price, intensity and fees — exactly broken down</h2>
-      <p>Every part below is calculated so it sums exactly to the real £8,253,713.99 change — nothing is rounded to fit. Price and complexity-banding cannot be separated for weekly-fee services (Residential, Nursing, Respite, Reablement), so that effect is reported as a single bundled term.</p>
-    </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Expenditure growth decomposition, 2024 → 2025</span></div>
-  <div data-chart="c1-data" data-chart-type="waterfall"></div>
-  <script type="application/json" id="c1-data">{"steps": [{"label": "2024 Total", "value": 75045800.16, "isTotal": true}, {"label": "Volume", "value": 6963024.62}, {"label": "Duration", "value": -5304774.99}, {"label": "Service Mix", "value": -1065834.35}, {"label": "Price (Hourly)", "value": 997911.03}, {"label": "Intensity (Hourly)", "value": 2533701.35}, {"label": "Banded Fee (Res./Nursing)", "value": 4129686.33}, {"label": "2025 Total", "value": 83299514.15, "isTotal": true}], "options": {"valueFormat": "gbp"}}</script>
-  <div class="chart-caption">Volume, duration, service mix, price, intensity and the residential/nursing banded-fee change sum exactly to the £8.25m change — no single driver dominates, and the negative duration effect is a measurement artefact (see Finding 3), not a real cut in care.</div>
-</div>
-  </div>
-</section>
+
 <section id="providers">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">6. Provider <button type="button" class="term" data-term="case-mix adjustment">Case-Mix <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> Analysis</span>
-      <h2>Testing whether raw provider comparisons are fair</h2>
-      <p>Providers are only ever compared against others delivering the same service type, on a consistent rate unit. The interactive chart above (Headline Numbers) lets you switch service type. The table below names the two Residential Care outliers.</p>
+    <div class="section-head"><span class="eyebrow">4. Provider review</span><h2>A fair comparison changes how two residential providers should be discussed</h2><p>“Case-mix adjustment” means comparing providers as if they supported a similar mix of need. It does not declare a provider good or bad; it checks whether a raw fee comparison is fair enough to investigate.</p></div>
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Residential care: observed weekly fee versus fee after allowing for need</span></div>
+      <div data-chart="west-provider-data" data-chart-type="comparison"></div>
+      <script type="application/json" id="west-provider-data">{"rows":[{"label":"Nightingale Care Home","before":1066.02,"after":1169.55},{"label":"Hollybank Manor Care Home","before":1052.97,"after":1000.82},{"label":"Foxglove Care Home","before":1035.94,"after":1023.32},{"label":"Rosewood Care Home","before":946.30,"after":1012.65},{"label":"Silverbirch Manor Care Home","before":852.56,"after":915.77}],"options":{"valueFormat":"gbp","beforeLabel":"Observed weekly fee","afterLabel":"After allowing for needs","categoryLabel":"Residential provider","minValue":800,"maxValue":1200}}</script>
+      <div class="chart-caption">Across all eight service types, 33 of 38 provider-by-service positions do not change after adjustment. Residential care contains the clearest examples of why the remaining changes matter.</div>
     </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Raw vs case-mix-adjusted average rate by provider</span></div>
-  <div data-chart="c2-data" data-chart-type="comparison"></div>
-  <script type="application/json" id="c2-data">{"rows": [{"label": "Woodbine Care Agency", "before": 21.48, "after": 21.48, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 47.2, "n": 1099, "cqc_rating": "Requires Improvement"}}, {"label": "Thornfield Home Care Services", "before": 18.87, "after": 18.87, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 13.3, "n": 1123, "cqc_rating": "Good"}}, {"label": "Farrow Support Services", "before": 18.11, "after": 18.11, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 24.5, "n": 1210, "cqc_rating": "Inadequate"}}, {"label": "Beechwood Care Agency", "before": 17.83, "after": 17.83, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 13.5, "n": 1194, "cqc_rating": "Requires Improvement"}}, {"label": "Sycamore Care Agency", "before": 17.54, "after": 17.54, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 24.8, "n": 1051, "cqc_rating": "Good"}}, {"label": "Greenhaven Home Care Services", "before": 16.85, "after": 16.85, "meta": {"service_type_name": "Day Care", "pct_substantial_or_critical": 14.7, "n": 1417, "cqc_rating": "Good"}}, {"label": "Bramblewood Care Agency", "before": 21.02, "after": 21.02, "meta": {"service_type_name": "Direct Payments", "pct_substantial_or_critical": 63.7, "n": 2292, "cqc_rating": "Outstanding"}}, {"label": "Cedar Grange Support Services", "before": 20.7, "after": 20.7, "meta": {"service_type_name": "Direct Payments", "pct_substantial_or_critical": 24.3, "n": 2507, "cqc_rating": "Outstanding"}}, {"label": "Kingfisher Care Agency", "before": 18.61, "after": 18.6, "meta": {"service_type_name": "Direct Payments", "pct_substantial_or_critical": 20.6, "n": 2586, "cqc_rating": "Requires Improvement"}}, {"label": "Amberley Care Agency", "before": 25.45, "after": 25.45, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 27.2, "n": 3708, "cqc_rating": "Good"}}, {"label": "Bramblewood Care Agency", "before": 23.2, "after": 23.2, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 66.5, "n": 3436, "cqc_rating": "Outstanding"}}, {"label": "Maple Grange Home Care Services", "before": 22.93, "after": 22.94, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 59.7, "n": 3370, "cqc_rating": "Outstanding"}}, {"label": "Primrose Home Care Services", "before": 22.49, "after": 22.48, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 21.1, "n": 3805, "cqc_rating": "Requires Improvement"}}, {"label": "Farrow Support Services", "before": 21.1, "after": 21.1, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 22.9, "n": 3729, "cqc_rating": "Inadequate"}}, {"label": "Millstone Care Agency", "before": 20.81, "after": 20.8, "meta": {"service_type_name": "Domiciliary Care", "pct_substantial_or_critical": 26.5, "n": 3862, "cqc_rating": "Outstanding"}}, {"label": "Fernleigh Manor Care Home", "before": 1732.76, "after": 1703.36, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 92.2, "n": 1042, "cqc_rating": "Good"}}, {"label": "Nightingale Care Home", "before": 1627.76, "after": 1622.02, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 97.0, "n": 1076, "cqc_rating": "Requires Improvement"}}, {"label": "Elmstead Manor Care Home", "before": 1582.01, "after": 1671.11, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 88.9, "n": 920, "cqc_rating": "Good"}}, {"label": "Meadowcroft House", "before": 1417.09, "after": 1415.99, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 97.5, "n": 1976, "cqc_rating": "Good"}}, {"label": "Oakfield Manor Care Home", "before": 1282.51, "after": 1333.74, "meta": {"service_type_name": "Nursing Care", "pct_substantial_or_critical": 86.1, "n": 1168, "cqc_rating": "Good"}}, {"label": "Copperfield Support Services", "before": 715.21, "after": 711.52, "meta": {"service_type_name": "Reablement", "pct_substantial_or_critical": 23.4, "n": 1267, "cqc_rating": "Good"}}, {"label": "Thornfield Home Care Services", "before": 593.37, "after": 612.16, "meta": {"service_type_name": "Reablement", "pct_substantial_or_critical": 19.2, "n": 1659, "cqc_rating": "Good"}}, {"label": "Northgate Care Agency", "before": 578.78, "after": 594.3, "meta": {"service_type_name": "Reablement", "pct_substantial_or_critical": 20.7, "n": 1272, "cqc_rating": "Good"}}, {"label": "Nightingale Care Home", "before": 1066.02, "after": 1169.55, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 55.4, "n": 1432, "cqc_rating": "Requires Improvement"}}, {"label": "Hollybank Manor Care Home", "before": 1052.97, "after": 1000.82, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 87.9, "n": 2846, "cqc_rating": "Good"}}, {"label": "Foxglove Care Home", "before": 1035.94, "after": 1023.32, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 88.1, "n": 2680, "cqc_rating": "Outstanding"}}, {"label": "Rosewood Care Home", "before": 946.3, "after": 1012.65, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 61.9, "n": 1854, "cqc_rating": "Good"}}, {"label": "Silverbirch Manor Care Home", "before": 852.56, "after": 915.77, "meta": {"service_type_name": "Residential Care", "pct_substantial_or_critical": 53.7, "n": 1741, "cqc_rating": "Good"}}, {"label": "Riverside Care Home", "before": 1201.55, "after": 1229.69, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 78.3, "n": 808, "cqc_rating": "Good"}}, {"label": "Rosewood Care Home", "before": 1010.79, "after": 1073.63, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 61.8, "n": 945, "cqc_rating": "Good"}}, {"label": "Chestnut Care Home", "before": 998.2, "after": 1016.96, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 79.3, "n": 792, "cqc_rating": "Good"}}, {"label": "Oakfield Manor Care Home", "before": 990.37, "after": 966.28, "meta": {"service_type_name": "Respite/Short Break Care", "pct_substantial_or_critical": 74.1, "n": 888, "cqc_rating": "Good"}}, {"label": "Hartley Support Services", "before": 25.31, "after": 25.3, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 52.0, "n": 1438, "cqc_rating": "Outstanding"}}, {"label": "Ashgrove Support Services", "before": 24.29, "after": 24.29, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 40.0, "n": 1390, "cqc_rating": "Good"}}, {"label": "Larkspur Home Care Services", "before": 24.09, "after": 24.09, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 43.9, "n": 1217, "cqc_rating": "Good"}}, {"label": "Vantage Support Services", "before": 23.78, "after": 23.78, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 81.7, "n": 1585, "cqc_rating": "Inadequate"}}, {"label": "Clearwater Care Agency", "before": 23.71, "after": 23.71, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 45.3, "n": 1294, "cqc_rating": "Good"}}, {"label": "Willowmead Support Services", "before": 22.07, "after": 22.07, "meta": {"service_type_name": "Supported Living", "pct_substantial_or_critical": 44.2, "n": 1448, "cqc_rating": "Requires Improvement"}}], "options": {"valueFormat": "gbp", "beforeLabel": "Raw average rate", "afterLabel": "Case-mix adjusted", "categoryLabel": "Provider", "limit": 15, "filterKey": "service_type_name", "filterValues": ["Residential Care", "Day Care", "Direct Payments", "Domiciliary Care", "Nursing Care", "Reablement", "Respite/Short Break Care", "Supported Living"], "filterDefault": "Residential Care", "metaColumns": [{"key": "pct_substantial_or_critical", "label": "% Substantial/Critical needs", "numeric": true, "format": "percent"}, {"key": "n", "label": "Records", "numeric": true, "format": "number"}, {"key": "cqc_rating", "label": "CQC rating", "numeric": false}]}}</script>
-  <div class="chart-caption">Hollybank Manor Care Home (2nd most expensive raw → 4th adjusted) and Rosewood Care Home (4th raw → 3rd adjusted) show the clearest, opposite case-mix stories in Residential Care. Use the toggle to switch service type — 33 of the 38 provider comparisons across all service types don't change rank at all once adjusted. Rates are £/hour for hourly services and £/week for residential and other block-contract services.</div>
-</div>
-    <table class="data-table">
-      <thead><tr><th>Provider</th><th>Raw rank</th><th>Adjusted rank</th><th>Interpretation</th></tr></thead>
-      <tbody><tr><td>Hollybank Manor Care Home</td><td>2nd most expensive</td><td>4th</td><td>Explained by a genuinely harder caseload — 87.9% Substantial/Critical needs, the highest of the five Residential Care providers compared</td></tr><tr><td>Rosewood Care Home</td><td>4th most expensive</td><td>3rd</td><td>A mirror pattern to Hollybank's — its comparatively easier caseload was flattering its raw position</td></tr></tbody>
-    </table>
+    <div class="review-grid">
+      <article><span>Context changes the interpretation</span><h3>Hollybank Manor Care Home</h3><p>Its observed position is 2nd highest, but it moves to 4th after allowing for its unusually complex caseload. The raw figure alone would overstate the case for scrutiny.</p></article>
+      <article class="is-priority"><span>Review with context</span><h3>Rosewood Care Home</h3><p>Its observed position is 4th, but it moves to 3rd after adjustment. Its easier caseload had made the raw comparison look more favourable.</p></article>
+    </div>
+    <p class="model-caution"><strong>Management use:</strong> these results support better questions for contract review. They do not prove efficiency, quality or causation, and they should be considered with outcomes, capacity and inspection evidence.</p>
   </div>
 </section>
-<section id="localities" class="section-alt">
+
+<section id="localities">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">7. Locality <button type="button" class="term" data-term="case-mix adjustment">Case-Mix <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-  <path d="M12 17h.01" />
-</svg>
-</button> Analysis</span>
-      <h2>Testing whether raw locality comparisons are fair</h2>
+    <div class="section-head"><span class="eyebrow">5. Locality review</span><h2>Allowing for need narrows the area cost gap by 41%</h2><p>Complexity and residential-care use explain a meaningful part of the difference between areas, but they do not explain everything.</p></div>
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Highest-to-lowest annual cost gap across localities</span></div>
+      <div data-chart="west-locality-gap" data-chart-type="bar"></div>
+      <script type="application/json" id="west-locality-gap">{"categories":["Before adjustment","After adjustment"],"series":[{"label":"Highest-to-lowest gap","values":[3205.28,1875.59]}],"options":{"horizontal":true,"height":230,"valueFormat":"gbp","categoryLabel":"Comparison","maxValue":4000}}</script>
+      <div class="chart-caption">The gap falls from £3,205 to £1,876 after allowing for dominant complexity tier and the share of cost delivered in residential care.</div>
     </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Raw vs case-mix-adjusted average annual cost per person, by locality</span></div>
-  <div data-chart="c3-data" data-chart-type="comparison"></div>
-  <script type="application/json" id="c3-data">{"rows": [{"label": "Westborough Central", "before": 22570.4, "after": 17634.92, "meta": {"pct_substantial_or_critical": 53.8, "avg_pct_residential_cost": 32.3, "n": 1627}}, {"label": "Northfield", "before": 21813.05, "after": 17919.87, "meta": {"pct_substantial_or_critical": 49.9, "avg_pct_residential_cost": 30.5, "n": 1586}}, {"label": "Redgate", "before": 20554.0, "after": 17365.93, "meta": {"pct_substantial_or_critical": 46.1, "avg_pct_residential_cost": 28.9, "n": 1143}}, {"label": "Millbrook", "before": 20360.51, "after": 16610.81, "meta": {"pct_substantial_or_critical": 47.3, "avg_pct_residential_cost": 30.6, "n": 1107}}, {"label": "Ashcombe Vale", "before": 19914.04, "after": 16044.28, "meta": {"pct_substantial_or_critical": 44.6, "avg_pct_residential_cost": 29.0, "n": 1128}}, {"label": "Rural Downlands", "before": 19365.12, "after": 16098.71, "meta": {"pct_substantial_or_critical": 43.1, "avg_pct_residential_cost": 29.1, "n": 957}}], "options": {"valueFormat": "gbp", "beforeLabel": "Raw avg annual cost/person", "afterLabel": "Case-mix adjusted", "categoryLabel": "Locality", "metaColumns": [{"key": "pct_substantial_or_critical", "label": "% Substantial/Critical needs", "numeric": true, "format": "percent"}, {"key": "avg_pct_residential_cost", "label": "% cost in Residential care", "numeric": true, "format": "percent"}, {"key": "n", "label": "People", "numeric": true, "format": "number"}]}}</script>
-  <div class="chart-caption">Raw locality cost gap of £3,205 (16.6%) narrows to £1,876 once each locality's complexity-tier mix and share of residential care are accounted for — about a third smaller, but Westborough Central and Northfield remain the two highest-cost areas even after adjustment.</div>
-</div>
-    <table class="data-table">
-      <thead><tr><th>Locality</th><th>Raw rank</th><th>Adjusted rank</th><th>Interpretation</th></tr></thead>
-      <tbody><tr><td>Westborough Central</td><td>Most expensive</td><td>2nd most expensive</td><td>Still relatively higher-cost after adjustment — remains worth operational investigation</td></tr><tr><td>Northfield</td><td>2nd most expensive</td><td>Most expensive</td><td>Becomes the highest-cost locality once adjusted — complexity-tier mix alone doesn't fully explain its position</td></tr></tbody>
-    </table>
+    <div class="review-grid">
+      <article class="is-priority"><span>Highest after adjustment</span><h3>Northfield · £17,920 per person</h3><p>Moves from 2nd highest before adjustment to highest afterwards. Known differences in need do not fully explain its position.</p></article>
+      <article><span>Still relatively high</span><h3>Westborough Central · £17,635 per person</h3><p>Moves from highest to 2nd highest. Its harder case mix explains part of the raw premium, but a residual difference remains.</p></article>
+    </div>
+    <p class="model-caution"><strong>What to investigate next:</strong> local provider availability, travel and logistics, commissioning practice and service pathways. The model explains about 34% of cost variation, so this is a screening result—not a complete explanation.</p>
   </div>
 </section>
+
 <section id="caseload">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">8. New vs Continuing Users</span>
-      <h2>Why the “duration” effect isn't a real cut in care</h2>
+    <div class="section-head"><span class="eyebrow">6. New referrals</span><h2>Why the duration effect should not be read as a cut in care</h2><p>The annual reporting window treats someone joining in October differently from someone receiving care throughout the year. A larger intake therefore lowers observed annual duration and cost per new person.</p></div>
+    <div class="caseload-chart-grid">
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">New referrals increased sharply in 2025</span></div>
+        <div data-chart="west-referrals" data-chart-type="bar"></div>
+        <script type="application/json" id="west-referrals">{"categories":["2024","2025"],"series":[{"label":"New referrals","values":[962,1594]}],"options":{"height":290,"valueFormat":"number","categoryLabel":"Year"}}</script>
+        <div class="chart-caption">The 2025 intake was 66% larger. More people therefore contributed only part of a year to the annual measures.</div>
+      </div>
+      <div class="chart-block">
+        <div class="chart-head"><span class="chart-title">Average annual cost: new versus continuing recipients</span></div>
+        <div data-chart="west-new-continuing" data-chart-type="bar"></div>
+        <script type="application/json" id="west-new-continuing">{"categories":["2024","2025"],"series":[{"label":"New in year","values":[9265.77,12059.39]},{"label":"Continuing","values":[22962.54,23266.83]}],"options":{"height":290,"valueFormat":"gbp","categoryLabel":"Year","maxValue":30000}}</script>
+        <div class="chart-caption">New recipients cost less within the year because they are observed for fewer months, not because their eventual support is necessarily less intensive.</div>
+      </div>
     </div>
-    <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Average annual cost per person, new vs continuing users</span></div>
-  <div data-chart="c4-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c4-data">{"categories": ["2024", "2025"], "series": [{"label": "New in year", "values": [9265.77, 12059.39]}, {"label": "Continuing from before", "values": [22962.54, 23266.83]}], "options": {"valueFormat": "gbp", "categoryLabel": "Year"}}</script>
-  <div class="chart-caption">New referrals cost roughly half as much per person as continuing recipients in both years — because they only receive care for part of the year they join — and 2025 saw far more new referrals (1,594) than 2024 (962), which is what pulls the average duration/cost metrics down (Finding 3).</div>
-</div>
+    <p class="calendar-explainer"><strong>Better management measure:</strong> track new-referral volume and partial-year cost separately from the continuing caseload. That avoids turning a reporting-window effect into an incorrect operational conclusion.</p>
   </div>
 </section>
-<section id="recommendations" class="section-alt">
+
+<section id="recommendations">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">9. Management Recommendations</span>
-      <h2>What follows from the evidence</h2>
-    </div>
-    <ol class="rec-list"><li><strong>Don't treat the expenditure/caseload gap as a single problem to solve</strong> — it's the net of six offsetting drivers; prioritise the two actionable, non-mechanical ones (the residential/nursing fee effect and the hourly-care intensity effect) over the volume and duration effects, which mostly reflect legitimate demand growth and a calendar artefact.</li><li><strong>Review commissioning and banding practice for Residential and Nursing Care specifically</strong> — it's where the single largest driver sits, and where price and case complexity currently can't be told apart from routine data; consider capturing them as separate fields going forward.</li><li><strong>Use Hollybank Manor Care Home and Rosewood Care Home as the test case for fairer, case-mix-aware provider conversations</strong> — one's raw cost is explained by a genuinely harder caseload, the other's favourable raw position isn't.</li><li><strong>Investigate Westborough Central and Northfield's remaining cost premium</strong> after case-mix adjustment — since complexity mix doesn't fully explain it, provider availability, travel/logistics and local commissioning practice are worth a direct operational look.</li><li><strong>Track new-referral volume and its partial-year cost pattern as a standing planning input</strong>, not just total caseload — it materially affects year-on-year duration and average-cost metrics in ways that are easy to misread as service changes.</li></ol>
+    <div class="section-head"><span class="eyebrow">7. Management actions</span><h2>Five actions that follow directly from the evidence</h2><p>Each action is tied to a specific result and keeps investigation separate from judgement.</p></div>
+    <ol class="rec-list">
+      <li><strong>Manage demand growth and controllable cost pressure separately.</strong> Build the 9.2% caseload increase into capacity and budget planning, while reviewing fees and intensity through distinct workstreams.</li>
+      <li><strong>Review weekly fee banding for residential and nursing care.</strong> The combined £4.13m effect is the largest identifiable controllable pressure; capture base price and complexity band separately in future data.</li>
+      <li><strong>Review hourly-care intensity before assuming the issue is price.</strong> Additional hours contributed £2.53m, compared with £1.00m from hourly rates.</li>
+      <li><strong>Use Hollybank and Rosewood to establish a case-mix-aware provider-review method.</strong> Combine fee, need, outcomes, quality and capacity evidence before drawing conclusions.</li>
+      <li><strong>Investigate Northfield and Central’s remaining adjusted premium.</strong> Test provider supply, travel, local pathways and commissioning practice rather than attributing the gap to case complexity alone.</li>
+    </ol>
   </div>
 </section>
+
+<section id="validation">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">8. Sense-checking the result</span><h2>The monthly pattern supports the annual conclusion</h2><p>The first quarter contains a known synthetic-data settling pattern. The remaining months show expenditure running at a higher level in 2025 while active caseload stays comparatively stable.</p></div>
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Monthly expenditure and active recipients, January 2024 – December 2025</span></div>
+      <div data-chart="west-monthly-trend" data-chart-type="line"></div>
+      <script type="application/json" id="west-monthly-trend">{"xLabels":["Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025"],"series":[{"label":"Monthly expenditure","values":[6613734.24,5908900.32,6191973.83,6007981.88,6262072.44,6094099.50,6340029.37,6329378.18,6185030.38,6441112.13,6248856.07,6422631.82,7009734.20,6362784.20,7106514.41,6877344.03,7101553.63,6820827.56,7041490.95,7071165.04,6872898.33,7171358.13,6856803.20,7007040.47],"valueFormat":"gbp"},{"label":"Active recipients","values":[2888,2809,2702,2725,2740,2747,2771,2791,2811,2833,2830,2836,2836,2844,2876,2885,2881,2862,2865,2884,2879,2868,2867,2855],"axis":"secondary","valueFormat":"number"}],"options":{"height":330,"maxXTicks":7,"xLabel":"Month"}}</script>
+      <div class="chart-caption">Re-annualising 2024 from April to December changes the calculated growth rate from 11.0% to 10.91%. The opening pattern therefore does not materially drive the headline.</div>
+    </div>
+  </div>
+</section>
+
 <section id="limitations">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">10. Limitations &amp; Debugging Lessons</span>
-      <h2>What this analysis does not claim — and three things caught before they shipped</h2>
-    </div>
-    <ul class="limit-list"><li><strong>An early version of the data generator made spending look like it was falling by more than 30%, the opposite of the intended trend.</strong> Every pre-existing service user's care package was accidentally started on day one of the two-year window with a freshly-drawn full duration — since durations cluster around a typical length, almost the entire pre-existing caseload appeared to end care at the same time, producing an artificial mass drop-off. This was traced by checking the monthly active-caseload trend, and fixed by giving existing care packages a staggered, already-partway-through duration instead of a fresh one.</li><li><strong>A statistical bug initially made every locality's case-mix-adjusted cost look like roughly half its raw cost — a suspiciously uniform gap that didn't look like genuine adjustment.</strong> The first version of the locality model converted its statistical predictions back into pounds in a way that systematically understates the true average for this kind of right-skewed cost data. The fix (a standard correction called Duan's smearing estimator) brought raw and adjusted figures back into the same plausible range.</li><li><strong>An early version of the provider comparison blended every service type onto one rate, which broke down for providers who only ever deliver one kind of care.</strong> Comparing an hourly home-care rate and a weekly care-home fee on the same basis isn't just statistically unstable, it's the wrong comparison to make — and it risked implying a home-care agency should be judged against a care home's fee. The fix was to compare providers only within the service type(s) they actually deliver.</li></ul>
-    <ul class="limit-list"><li><strong>Made-up data throughout</strong> — every figure describes patterns in a generated dataset built for this portfolio, not a real council.</li><li><strong>Association, not proof of cause</strong> — the provider and locality case-mix adjustments control for known differences in complexity and setting, but don't prove a provider or locality directly causes higher cost.</li><li><strong>A known simulation settling pattern affects the first quarter of the time series</strong> (January–March 2024) — documented and shown to shift the headline growth figure only marginally (Finding 8), rather than hidden.</li><li><strong>Price and case complexity can't be fully separated for weekly-fee services</strong> (Residential, Nursing, Respite, Reablement) using routine data alone — the banded weekly fee bundles both, stated explicitly rather than forced apart.</li><li><strong>The case-mix adjustment is less precise for providers with a narrow, small caseload</strong> — provider models are fitted separately per service type, so a provider offering only one service type to a small number of people has a wider margin of uncertainty on its adjusted figure.</li><li><strong>Who counts as a “new” referral is based on care-package start date only</strong>, not a full multi-year history — someone whose package started just before the two-year window began is treated as “continuing from before” even without visibility into how long they'd actually been receiving care.</li></ul>
+    <div class="section-head"><span class="eyebrow">9. Limits and quality checks</span><h2>What the analysis can—and cannot—support</h2><p>The conclusions are useful for prioritising management review, but they are not causal findings or performance verdicts.</p></div>
+    <ul class="limit-list">
+      <li><strong>Synthetic data</strong>Every record and result is generated for this portfolio and describes no real council, provider or person.</li>
+      <li><strong>Association, not causation</strong>Case-mix models allow for observed need and setting; they cannot prove why a provider or locality costs more.</li>
+      <li><strong>Weekly-fee limitation</strong>Base price and complexity band are bundled for residential, nursing, respite and reablement services.</li>
+      <li><strong>Partial history</strong>New-versus-continuing status uses package start date, not a person’s complete multi-year service history.</li>
+    </ul>
+    <h3 class="quality-heading">Three checks that materially improved the work</h3>
+    <ul class="limit-list quality-checks">
+      <li><strong>Corrected a synthetic-cohort timing bug</strong>An early generator version synchronised the end of many legacy packages and falsely made expenditure appear to fall by more than 30%.</li>
+      <li><strong>Corrected conversion back from the statistical scale</strong>Duan’s smearing estimator fixed adjusted locality costs that initially appeared implausibly close to half their observed values.</li>
+      <li><strong>Stopped blending incompatible provider rates</strong>Providers are now compared within service type, so hourly home-care prices are never mixed with weekly care-home fees.</li>
+    </ul>
   </div>
 </section>
-<section id="gallery" class="section-alt">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">11. More Charts</span>
-      <h2>Supporting visuals</h2>
-    </div>
-    <div class="chart-gallery"><figure class="chart-figure">
-        <img src="../assets/images/westborough/01_distribution_shape.png" alt="Histogram showing annual cost per service user is right-skewed">
-        <figcaption>Annual cost per service user is right-skewed — most people's care costs a modest amount, with a long tail of high-cost care packages (mean £20,978 vs median £12,274).</figcaption>
-      </figure><figure class="chart-figure">
-        <img src="../assets/images/westborough/02_expenditure_caseload_trend.png" alt="Monthly expenditure and active caseload trend, 2024–2025">
-        <figcaption>Monthly expenditure and active caseload both trend upward across the two years, with a modest dip-then-recovery in Jan–Mar 2024 — a known data-generation settling pattern that doesn't materially affect the headline growth figure (Finding 8).</figcaption>
-      </figure></div>
-  </div>
-</section>
+
 <section id="technical">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">12. Technical Evidence</span>
-      <h2>Source deliverables</h2>
-      <p>Source files for this project are organised as shown below (not yet published to a public GitHub repository). Every deliverable reconciles to the same figures shown on this page.</p>
+    <div class="section-head"><span class="eyebrow">10. Technical evidence</span><h2>Reproducible work behind the conclusions</h2><p>Every headline figure is reconciled across the project outputs, with methods and limitations documented alongside the results.</p></div>
+    <div class="tech-grid">
+      <div class="tech-card"><h4>03_excel/</h4><ul><li>10-sheet analytical workbook</li><li>Reproducible workbook builder</li><li>Automated validation report</li></ul></div>
+      <div class="tech-card"><h4>04_sql/</h4><ul><li>KPI and referral-flow analysis</li><li>Provider and locality analysis</li><li>Independent decomposition inputs</li></ul></div>
+      <div class="tech-card"><h4>07_python/</h4><ul><li>Full statistical analysis script and notebook</li><li>Machine-readable result set</li><li>Case-mix models and sensitivity checks</li></ul></div>
+      <div class="tech-card"><h4>05_power_bi/</h4><ul><li>Four-page dashboard specification</li><li>DAX measure library</li><li>Governed data-model documentation</li></ul></div>
     </div>
-    <div class="tech-grid"><div class="tech-card"><h4>03_excel/</h4><ul><li>workbook/westborough_asc_analysis.xlsx — 10 sheets, live formulas and PivotTables</li><li>documentation/build_excel_workbook.py — reproducible build script</li><li>documentation/validate_workbook.py &amp; excel_workbook_validation.json — automated validation</li></ul></div><div class="tech-card"><h4>04_sql/</h4><ul><li>01_kpi_analysis.sql &middot; 02_referral_assessment_flow.sql</li><li>03_provider_analysis.sql &middot; 04_locality_complexity_analysis.sql</li><li>05_service_mix_duration_analysis.sql &middot; 06_expenditure_decomposition_support.sql</li></ul></div><div class="tech-card"><h4>07_python/</h4><ul><li>westborough_asc_analysis.py — full analysis script</li><li>westborough_asc_analysis.ipynb — narrated notebook</li><li>results/westborough_results.json — machine-readable results</li></ul></div><div class="tech-card"><h4>05_power_bi/documentation/</h4><ul><li>dashboard_specification.md — 4-page dashboard design</li><li>dax_measures.md — full DAX measure library</li><li>data_model.md — data model design, incl. what DAX can/can't reproduce from the Python regression</li></ul></div></div>
-    <p class="tech-note">See also: <code>08_outputs/executive_summary/</code> for the full written analysis and <code>09_case_study/portfolio_case_study.md</code> for the source of this page.</p>
+    <p class="tech-note">The Power BI work is a build specification rather than a deployed report. Case-mix-adjusted values are produced in Python and imported, rather than inaccurately recreated in DAX.</p>
+  </div>
+</section>
+
+<section class="case-next" aria-label="Continue exploring projects">
+  <div class="container">
+    <div class="case-next-card">
+      <div><span class="eyebrow">Continue exploring</span><h2>Next: airline disruption and recovery analytics</h2><p>See how the AeroVista project separates a genuine punctuality decline from a short-lived cancellation event.</p></div>
+      <div class="case-next-actions"><a class="btn btn-primary" href="aerovista.html">Next: AeroVista <span aria-hidden="true">→</span></a><a class="btn btn-secondary" href="../index.html#case-studies">All case studies</a></div>
+    </div>
   </div>
 </section>
 
 <footer class="site-footer">
-  <div class="container">
-    <p>© 2026 Farouk Yusuf. Westborough Council is fictional; all data is synthetic. No individual is represented or identifiable.</p>
-    <p><a href="../index.html">← Back to portfolio home</a></p>
-  </div>
+  <div class="container"><p>© 2026 Farouk Yusuf. Westborough Council is fictional; all data is synthetic.</p><p><a href="../index.html">← Back to portfolio home</a></p></div>
 </footer>
 
-<script type="application/json" id="glossary-data">{"p-value": "A measure of how likely a result this size would happen by chance alone. Small (under 0.05) usually means the pattern is probably real; large means it could easily be random noise.", "statistically significant": "The difference is unlikely to be down to chance. \u201cNot significant\u201d doesn't mean \u201cno difference\u201d \u2014 it means the data can't rule out chance as the explanation.", "case-mix adjustment": "A fair way of comparing suppliers, regions or providers that accounts for how hard their jobs actually were, instead of just comparing raw averages.", "r-squared": "How much of the variation in an outcome a model explains, from 0 (none) to 1 (all of it). A low value means other, unmeasured factors matter too.", "regression": "A statistical method for estimating how one factor relates to an outcome while holding other factors constant \u2014 the main tool used here for fair before/after comparisons.", "decomposition": "Splitting a total change into its exact contributing parts (e.g. more cases happening vs. each case costing more), so they add up precisely to the real figure.", "confidence interval": "A range that's likely to contain the true value. A narrow range means a precise estimate; a wide one means more uncertainty.", "reconciled": "Checked and confirmed to match exactly across every tool used (Excel, SQL, Python) \u2014 no figure is reported unless it agrees everywhere it's calculated."}</script>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/tooltip.js"></script>
 <script src="../assets/js/charts.js"></script>

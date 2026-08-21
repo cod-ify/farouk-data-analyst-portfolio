@@ -248,8 +248,9 @@
     var svg = root.svg;
     var allVals = [];
     series.forEach(function (s) { allVals = allVals.concat(s.values); });
-    var maxV = niceMax(Math.max.apply(null, allVals.concat([0])));
-    var minV = Math.min(0, Math.min.apply(null, allVals.concat([0])));
+    var maxV = opts.maxValue == null ? niceMax(Math.max.apply(null, allVals.concat([0]))) : opts.maxValue;
+    var minV = opts.minValue == null ? Math.min(0, Math.min.apply(null, allVals.concat([0]))) : opts.minValue;
+    if (maxV <= minV) maxV = minV + 1;
 
     var longestCategory = categories.reduce(function (longest, category) {
       return Math.max(longest, String(category).length);
