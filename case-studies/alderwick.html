@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alderwick Reporting Council Case Study — Farouk Yusuf</title>
-<meta name="description" content="A decision-focused regulatory analytics case study showing how a fictional audit regulator could use firm, quality-management, inspection and remediation signals to target limited supervisory capacity.">
+<meta name="description" content="A decision-focused regulatory analytics case study showing how an audit regulator could use firm, quality-management, inspection and remediation signals to target limited supervisory capacity.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body class="alderwick-case-study">
 
-<div class="disclaimer-strip">Independent portfolio project · Alderwick Reporting Council and every firm, audit and case-level figure are fictional.</div>
+<div class="disclaimer-strip">Independent portfolio project · synthetic audit-supervision data · detailed disclaimer below.</div>
 
 <header class="site-header">
   <div class="container nav">
@@ -41,7 +41,7 @@
       <div class="case-hero-copy">
         <div class="case-hero-meta"><span class="eyebrow">Audit supervision</span><span class="case-status">Risk-based regulatory analytics</span></div>
         <h1>Where should an audit regulator look first?</h1>
-        <p class="case-question"><span>Business question</span>Alderwick oversees twelve fictional audit firms but cannot inspect every audit. Which firms, quality-management areas and audit engagements should receive attention first?</p>
+        <p class="case-question"><span>Business question</span>Alderwick oversees twelve audit firms but cannot inspect every audit. Which firms, quality-management areas and audit engagements should receive attention first?</p>
         <p class="cs-sub">I combined three years of synthetic firm metrics, Systems of Quality Management assessments, engagement characteristics, inspection outcomes and remediation records. The result is a transparent triage model that directs human review without pretending to grade an audit before it has been inspected.</p>
         <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Supervisory actions</a></div>
       </div>
@@ -91,7 +91,7 @@
         <article class="story-step"><span>3</span><strong>Where does risk cluster?</strong><p>Three firms account for 25 of the 38 highest-priority files. Resources and Monitoring &amp; Remediation are the two most frequent high-risk quality-system components.</p></article>
         <article class="story-step"><span>4</span><strong>What does the score not mean?</strong><p>It is not an audit-quality grade, a league table or proof of failure. It decides where a trained supervisor should look more closely.</p></article>
       </div>
-      <div class="plain-answer"><span>Plain-English answer</span><p><strong>Inspect where independent warning signals overlap.</strong> Begin focused work at three firms, run a cross-firm thematic review of resourcing and remediation, and keep the underlying evidence visible so supervisors can override the model when qualitative information points elsewhere.</p></div>
+      <div class="plain-answer"><span>Clear answer</span><p><strong>Inspect where independent warning signals overlap.</strong> Begin focused work at three firms, run a cross-firm thematic review of resourcing and remediation, and keep the underlying evidence visible so supervisors can override the model when qualitative information points elsewhere.</p></div>
     </div>
 
     <div class="kpi-grid">
@@ -137,16 +137,21 @@
       <p>No signal is allowed to make the decision alone. The score is explainable, capped at 100 and followed by a documented human review before a supervisory plan is approved.</p>
     </div>
 
+    <div class="analysis-purpose">
+      <div><strong>Why this analysis</strong><p>Limited inspection capacity makes a simple firm league table unsafe. The evidence needs to be combined consistently while preserving the reason each file was selected.</p></div>
+      <div><strong>Decision supported</strong><p>Route firms to proportionate supervisory work and reduce 960 engagements to a defensible shortlist for expert review.</p></div>
+    </div>
+
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">How the 100-point priority score is weighted</span></div>
+        <div class="chart-head"><span class="chart-title">Engagement and firm-level evidence carry 75% of the priority score</span></div>
         <div data-chart="risk-weight-data" data-chart-type="bar"></div>
         <script type="application/json" id="risk-weight-data">{"categories":["Engagement inherent risk","Firm and SoQM signals","Inspection and remediation","Market or systemic interest"],"series":[{"label":"Maximum points","values":[40,35,15,10]}],"options":{"horizontal":true,"valueFormat":"number","categoryLabel":"Evidence group","maxValue":40,"height":300}}</script>
         <div class="chart-caption">Engagement characteristics carry 40 points; firm and quality-system signals carry 35. Inspection history and market importance matter, but cannot overwhelm the current evidence.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Proposed firm-level supervisory routes</span></div>
+        <div class="chart-head"><span class="chart-title">Three firms warrant focused corroboratory inspection</span></div>
         <div data-chart="triage-route-data" data-chart-type="bar"></div>
         <script type="application/json" id="triage-route-data">{"categories":["Routine monitoring","Information request","Thematic review","Corroboratory inspection"],"series":[{"label":"Firms","values":[2,3,4,3]}],"options":{"horizontal":true,"valueFormat":"number","categoryLabel":"Supervisory route","maxValue":4,"height":300}}</script>
         <div class="chart-caption">The plan directs the most intensive route to three firms, while nine receive a lighter response. This is a prioritisation decision, not a publication or enforcement decision.</div>
@@ -172,16 +177,21 @@
       <p>The firm-level view is useful because a repeated system weakness can affect many engagements. It also avoids assuming that one weak file automatically represents the whole firm.</p>
     </div>
 
+    <div class="analysis-purpose">
+      <div><strong>Why this analysis</strong><p>A weak engagement may be isolated, but repeated capacity or remediation signals can reveal a system issue affecting several audits.</p></div>
+      <div><strong>Decision supported</strong><p>Choose between a firm-specific response and a cross-firm thematic review of shared quality-management risks.</p></div>
+    </div>
+
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Share of component assessments rated high risk</span></div>
+        <div class="chart-head"><span class="chart-title">Resources and remediation are the most frequent system risks</span></div>
         <div data-chart="soqm-component-data" data-chart-type="bar"></div>
         <script type="application/json" id="soqm-component-data">{"categories":["Resources","Monitoring and remediation","Information and communication","Engagement performance","Risk-assessment process","Acceptance and continuance","Governance and leadership","Ethical requirements"],"series":[{"label":"High-risk assessments","values":[31,27,24,19,15,11,9,8]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"SoQM component","maxValue":35,"height":390}}</script>
         <div class="chart-caption">Resources is high risk in 31% of synthetic component assessments, followed by Monitoring &amp; Remediation at 27% and Information &amp; Communication at 24%.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Historical grade 3–4 rate among inspected engagements with selected signals</span></div>
+        <div class="chart-head"><span class="chart-title">Inspection concerns are most common where risk signals overlap</span></div>
         <div data-chart="risk-signal-data" data-chart-type="bar"></div>
         <script type="application/json" id="risk-signal-data">{"categories":["Related remediation overdue","Complex estimate and IT dependency","First-year PIE audit","Busy-season workload above threshold","Low partner involvement","All inspected engagements"],"series":[{"label":"Grade 3–4 rate","values":[36,34,31,29,27,20]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Observed signal","maxValue":40,"height":350}}</script>
         <div class="chart-caption">Historical inspection outcomes are less favourable where several pressure signals appear. These are observed associations within a risk-selected sample, not estimates of cause or market-wide failure rates.</div>
@@ -203,16 +213,21 @@
       <p>Inspection categories describe work already reviewed. They are kept separate from the forward-looking priority score so the model cannot silently convert risk into a quality verdict.</p>
     </div>
 
+    <div class="analysis-purpose">
+      <div><strong>Why this analysis</strong><p>Historical outcomes test whether the screening signals align with inspected quality and reveal recurring themes that deserve expert attention.</p></div>
+      <div><strong>Decision supported</strong><p>Define what inspectors should test next without presenting a risk-selected sample as a market-wide failure rate.</p></div>
+    </div>
+
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Latest-cycle inspection outcomes: 142 synthetic reviews</span></div>
+        <div class="chart-head"><span class="chart-title">Four in five inspected audits required no more than limited improvement</span></div>
         <div data-chart="inspection-grade-data" data-chart-type="bar"></div>
         <script type="application/json" id="inspection-grade-data">{"categories":["Good (1)","Limited improvements (2)","Improvements required (3)","Significant improvements (4)"],"series":[{"label":"Share of inspections","values":[43.7,36.6,12.0,7.7]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Inspection category","maxValue":50,"height":300}}</script>
         <div class="chart-caption">The generated split gives 114 reviews in categories 1–2, 17 in category 3 and 11 in category 4. Only the combined 80% / 12% / 8% calibration is drawn from the public FRC aggregate.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">What drove the synthetic inspection findings</span></div>
+        <div class="chart-head"><span class="chart-title">Audit evidence and complex estimates account for 48% of findings</span></div>
         <div data-chart="finding-theme-data" data-chart-type="bar"></div>
         <script type="application/json" id="finding-theme-data">{"categories":["Audit evidence","Complex estimates and bias","Planning and risk assessment","Engagement quality review","Group and component oversight","IT controls"],"series":[{"label":"Share of findings","values":[26,22,15,14,12,11]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Finding theme","maxValue":30,"height":330}}</script>
         <div class="chart-caption">Audit evidence and complex estimates account for 48% of generated findings. The themes are informed by public inspection material; the frequencies are synthetic.</div>
@@ -231,11 +246,23 @@
       <p>Closing an action in a tracker is not enough. Alderwick records whether evidence was validated and whether a similar issue appeared again, giving supervisors a more useful view of whether remediation is embedded.</p>
     </div>
 
+    <div class="analysis-purpose">
+      <div><strong>Why this analysis</strong><p>A closed status does not prove that a weakness has been fixed. Timeliness, validation and recurrence need to be examined together.</p></div>
+      <div><strong>Decision supported</strong><p>Identify actions requiring evidence review, accountable-owner discussion or escalation instead of another automatic deadline.</p></div>
+    </div>
+
     <div class="chart-block">
-      <div class="chart-head"><span class="chart-title">Overdue actions and median closure time over six quarters</span></div>
+      <div class="chart-head"><span class="chart-title">Remediation is closing faster, but 18% of actions remain overdue</span></div>
       <div data-chart="remediation-trend-data" data-chart-type="line"></div>
       <script type="application/json" id="remediation-trend-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026"],"series":[{"label":"Actions overdue","values":[31,30,27,24,21,18],"valueFormat":"percent","maxValue":40},{"label":"Median closure time","values":[123,118,110,102,91,81],"valueFormat":"days","axis":"secondary","maxValue":140}],"options":{"maxXTicks":6,"height":350,"xLabel":"Reporting quarter"}}</script>
       <div class="chart-caption">The overdue share falls from 31% to 18%, while median closure time falls from 123 to 81 days. This is an operational improvement in the synthetic series, not proof that follow-up activity alone caused the change.</div>
+    </div>
+
+    <div class="chart-block" style="margin-top:20px;">
+      <div class="chart-head"><span class="chart-title">If recent improvement continues, overdue remediation could fall below 15% by year-end</span></div>
+      <div data-chart="remediation-scenario-data" data-chart-type="line"></div>
+      <script type="application/json" id="remediation-scenario-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026","Q3 2026","Q4 2026"],"series":[{"label":"Actions overdue","values":[31,30,27,24,21,18,15.5,13.5],"valueFormat":"percent","maxValue":40}],"options":{"annotations":[{"x":"Q3 2026","label":"Planning scenario begins"}],"maxXTicks":8,"height":320,"xLabel":"Reporting quarter"}}</script>
+      <div class="chart-caption">The final two points extend the recent rate of improvement as a planning scenario. They are not a promise or a causal forecast; supervisors should refresh the estimate as new evidence arrives.</div>
     </div>
 
     <div class="insight-grid" style="margin-top:20px;">
@@ -320,7 +347,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© 2026 Farouk Yusuf. Alderwick Reporting Council is fictional; all firm- and case-level data is synthetic.</p>
+    <p>© 2026 Farouk Yusuf. Synthetic-data portfolio project.</p>
     <p><a href="../index.html">← Back to portfolio home</a></p>
   </div>
 </footer>

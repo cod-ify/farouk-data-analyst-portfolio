@@ -240,6 +240,11 @@
     var series = cfg.series || [];
     var opts = cfg.options || {};
     var horizontal = !!opts.horizontal;
+    // Horizontal bars are normally used for ranked comparisons, so label their
+    // values directly by default. Individual charts can opt out when crowded.
+    var showValues = opts.showValues == null ? horizontal : !!opts.showValues;
+    var highlightCategories = opts.highlightCategories || [];
+    var hasHighlights = highlightCategories.length > 0;
     var valueFmt = resolveFormatter(opts.valueFormat);
     var n = categories.length;
     var height = opts.height || (horizontal ? Math.max(220, n * 26 + 60) : 320);
@@ -258,8 +263,8 @@
     var horizontalLabelSpace = Math.min(176, Math.max(72, longestCategory * 6.2));
     var plot = {
       left: PAD.left + (horizontal ? horizontalLabelSpace : 0),
-      right: VB_W - PAD.right - (horizontal ? 26 : 0),
-      top: PAD.top,
+      right: VB_W - PAD.right - (horizontal ? (showValues ? 76 : 26) : 0),
+      top: PAD.top + (!horizontal && showValues ? 16 : 0),
       bottom: height - PAD.bottom
     };
 
@@ -287,12 +292,18 @@
           var x0 = xScale(Math.min(0, val)), x1 = xScale(Math.max(0, val));
           var rect = svgEl('rect', {
             x: x0, y: y, width: Math.max(1, x1 - x0), height: Math.max(1, barW - 2),
-            class: 'chart-bar ' + seriesClass(si), fill: s.color || ''
+            class: 'chart-bar ' + seriesClass(si), fill: s.color || '',
+            opacity: hasHighlights && highlightCategories.indexOf(cat) === -1 ? 0.38 : 1
           });
           wireHover(rect, function () {
             return '<span class="tt-label">' + cat + '</span><br>' + (s.label ? s.label + ': ' : '') + valueFmt(val);
           });
           svg.appendChild(rect);
+          if (showValues) {
+            svg.appendChild(textEl(x1 + 6, y + barW / 2 + 3.5, valueFmt(val), {
+              'text-anchor': 'start', class: 'chart-value-label'
+            }));
+          }
         });
       });
       svg.appendChild(svgEl('line', { class: 'chart-axis', x1: plot.left, x2: plot.left, y1: plot.top, y2: plot.bottom }));
@@ -314,12 +325,18 @@
           var yTop = yScale(Math.max(0, val)), yBase = yScale(Math.min(0, val));
           var rect = svgEl('rect', {
             x: x, y: Math.min(yTop, yBase), width: Math.max(1, barW - 2), height: Math.max(1, Math.abs(yBase - yTop)),
-            class: 'chart-bar ' + seriesClass(si)
+            class: 'chart-bar ' + seriesClass(si),
+            opacity: hasHighlights && highlightCategories.indexOf(cat) === -1 ? 0.38 : 1
           });
           wireHover(rect, function () {
             return '<span class="tt-label">' + cat + '</span><br>' + (s.label ? s.label + ': ' : '') + valueFmt(val);
           });
           svg.appendChild(rect);
+          if (showValues) {
+            svg.appendChild(textEl(x + (barW - 2) / 2, Math.min(yTop, yBase) - 5, valueFmt(val), {
+              'text-anchor': 'middle', class: 'chart-value-label'
+            }));
+          }
         });
       });
       svg.appendChild(svgEl('line', { class: 'chart-axis', x1: plot.left, x2: plot.right, y1: plot.bottom, y2: plot.bottom }));

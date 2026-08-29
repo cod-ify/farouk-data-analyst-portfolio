@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Albion General Insurance Case Study — Farouk Yusuf</title>
-<meta name="description" content="A decision-focused insurance analytics case study explaining claims-cost growth, reserve accuracy, reopened claims and fair supplier comparisons for a fictional general insurer.">
+<meta name="description" content="A decision-focused insurance analytics case study explaining claims-cost growth, reserve accuracy, reopened claims and fair supplier comparisons.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body class="albion-case-study">
 
-<div class="disclaimer-strip">Portfolio project · Albion General Insurance and every figure on this page are fictional.</div>
+<div class="disclaimer-strip">Independent portfolio project · synthetic insurance data · detailed disclaimer below.</div>
 
 <header class="site-header">
   <div class="container nav">
@@ -91,7 +91,7 @@
         <article class="story-step"><span>3</span><strong>Did one storm explain the rise?</strong><p>Only partly. Removing Storm Edwina reduces cost growth to 15.78%, so a substantial underlying increase remains.</p></article>
         <article class="story-step"><span>4</span><strong>Where can operations act?</strong><p>High-cost Theft and Fire claims, inaccurate Major/Total Loss reserves, and reopened Escape of Water claims are the clearest levers.</p></article>
       </div>
-      <div class="plain-answer"><span>Plain-English answer</span><p><strong>Treat this first as a claims-volume problem.</strong> Plan enough handling capacity for the underlying increase, investigate what is driving non-storm frequency, and separately target the smaller but actionable cost and rework problems revealed deeper in the data.</p></div>
+      <div class="plain-answer"><span>Clear answer</span><p><strong>Treat this first as a claims-volume problem.</strong> Plan enough handling capacity for the underlying increase, investigate what is driving non-storm frequency, and separately target the smaller but actionable cost and rework problems revealed deeper in the data.</p></div>
     </div>
 
     <div class="kpi-grid">
@@ -134,9 +134,11 @@
       <p>The headline severity change looks almost flat because a shift toward cheaper claim types offset higher costs within individual claim types.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>A single percentage increase cannot show whether workload, claim mix or claim handling cost created the pressure.</p></div><div><strong>Decision supported</strong><p>Separate the capacity response from targeted cost control and test whether the storm explains the underlying change.</p></div></div>
+
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">How the £3.13m increase is built up</span></div>
+        <div class="chart-head"><span class="chart-title">More claims explain 94.7% of the £3.13m increase</span></div>
         <div data-chart="growth-waterfall-data" data-chart-type="waterfall"></div>
         <script type="application/json" id="growth-waterfall-data">{"steps":[{"label":"2024 total","value":14845488.83,"isTotal":true},{"label":"More claims","value":2964941.56},{"label":"Cheaper mix","value":-746812.57},{"label":"Cost within type","value":913993.03},{"label":"2025 total","value":17977610.70,"isTotal":true}],"options":{"valueFormat":"gbp","height":340}}</script>
         <div class="chart-caption">More claims explain £2.96m, or 94.7%, of the increase. A cheaper claim-type mix reduced cost by £0.75m, while higher cost within claim types added £0.91m. Those two severity components largely cancel.</div>
@@ -151,7 +153,7 @@
     </div>
 
     <div class="chart-block" style="margin-top:20px;">
-      <div class="chart-head"><span class="chart-title">Monthly claims paid and claim count, January 2024 to December 2025</span></div>
+      <div class="chart-head"><span class="chart-title">Claims remained elevated after the January 2025 storm</span></div>
       <div data-chart="monthly-trend-data" data-chart-type="line"></div>
       <script type="application/json" id="monthly-trend-data">{"xLabels":["Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025"],"series":[{"label":"Total paid","values":[1096377.44,1186609.06,1208793.19,1188932.93,1208883.44,1142469.31,1127824.75,1129484.92,1138223.63,1452230.01,1465212.79,1500447.36,2123255.00,1383244.40,1262943.46,1148816.76,1724143.16,1291525.50,1523091.09,1325935.66,1379318.42,1630358.75,1543879.70,1641098.80],"valueFormat":"gbp","maxValue":3000000},{"label":"Claim count","values":[319,345,319,314,331,361,365,378,350,373,382,376,585,392,382,391,362,426,429,424,375,408,410,466],"valueFormat":"number","axis":"secondary","maxValue":700}],"options":{"annotations":[{"x":"Jan 2025","label":"Storm Edwina"}],"maxXTicks":7,"height":350,"xLabel":"Month"}}</script>
       <div class="chart-caption">January 2025 is the clearest spike in both claims and paid cost, but later 2025 months also tend to sit above early 2024. This is why the storm is material without being the whole explanation.</div>
@@ -169,8 +171,10 @@
       <p>Claim volume and claim cost point to different priorities. Theft and Fire are relatively uncommon but account for almost half of paid cost.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>High-volume claims consume handling capacity, while low-volume severe claims may dominate financial exposure.</p></div><div><strong>Decision supported</strong><p>Direct process improvement and indemnity review to the claim types where each intervention has the greatest value.</p></div></div>
+
     <div class="chart-block">
-      <div class="chart-head"><span class="chart-title">Share of claims compared with share of total paid</span></div>
+      <div class="chart-head"><span class="chart-title">Theft and Fire create 43.5% of cost from 14.5% of claims</span></div>
       <div data-chart="claim-type-data" data-chart-type="bar"></div>
       <script type="application/json" id="claim-type-data">{"categories":["Theft","Fire","Escape of Water","Third-party injury","Accidental damage","Storm damage","Windscreen"],"series":[{"label":"Share of claims","values":[11.10,3.39,10.58,4.30,40.12,10.51,20.00]},{"label":"Share of total paid","values":[21.98,21.47,19.95,15.67,15.57,4.31,1.04]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Claim type","maxValue":50,"height":360}}</script>
       <div class="chart-caption">Theft and Fire represent only 14.5% of claims but 43.5% of paid cost. Accidental Damage is 40.1% of claims yet 15.6% of cost; Windscreen is 20.0% of claims and only 1.0% of cost.</div>
@@ -191,16 +195,18 @@
       <p>Reopened claims take longer to finish, and one claim type reopens far more often than the rest. That combination makes it a focused process-improvement opportunity.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Rework delays customers and consumes capacity twice, but a high raw reopen rate can reflect the type of cases handled.</p></div><div><strong>Decision supported</strong><p>Prioritise a process review only where excess delay and reopen risk remain after allowing for case differences.</p></div></div>
+
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Reopen rate by claim type</span></div>
+        <div class="chart-head"><span class="chart-title">Escape of Water reopens almost three times as often as average</span></div>
         <div data-chart="reopen-rate-data" data-chart-type="bar"></div>
         <script type="application/json" id="reopen-rate-data">{"categories":["Escape of Water","Fire","Accidental Damage","Storm Damage","Third-party injury","Theft","Windscreen"],"series":[{"label":"Reopen rate","values":[14.13,7.33,6.34,4.94,4.67,2.75,1.08]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Claim type","maxValue":16,"height":340}}</script>
         <div class="chart-caption">Escape of Water reopens at 14.13%, compared with a 5.44% overall rate among claims included in this analysis. That is almost three times the network average.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Average total settlement duration</span></div>
+        <div class="chart-head"><span class="chart-title">Reopened claims remain 43.7 days slower after adjustment</span></div>
         <div data-chart="reopen-duration-data" data-chart-type="bar"></div>
         <script type="application/json" id="reopen-duration-data">{"categories":["Not reopened","Reopened"],"series":[{"label":"Average settlement duration","values":[26.7,80.1]}],"options":{"valueFormat":"days","categoryLabel":"Claim status","maxValue":90,"height":340}}</script>
         <div class="chart-caption">The raw gap is 53.4 days. After allowing for claim type and severity, reopening is still associated with an extra 43.7 days (95% confidence interval: 42.1–45.3 days).</div>
@@ -219,6 +225,8 @@
       <p>The adjusted figure estimates each supplier or region's expected average cost if it had handled the same mix of severity bands and policy types as its comparison group.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Raw average cost can penalise suppliers and regions assigned more severe claims, creating an unfair performance signal.</p></div><div><strong>Decision supported</strong><p>Select files and providers for review without treating case-mix-adjusted risk as a quality verdict.</p></div></div>
+
     <div class="metric-explainer">
       <article><span>1</span><h3>Start with the raw figure</h3><p>This reports what was actually paid. It is necessary, but it combines provider performance with the difficulty of the work received.</p></article>
       <article><span>2</span><h3>Make the comparison fairer</h3><p>The model holds observed claim complexity constant, revealing which favourable or unfavourable raw results are mostly explained by case mix.</p></article>
@@ -227,14 +235,14 @@
 
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Four suppliers whose story changes after adjustment</span></div>
+        <div class="chart-head"><span class="chart-title">Adjustment clears Cobblestone but flags Foxglove for review</span></div>
         <div data-chart="supplier-fairness-data" data-chart-type="comparison"></div>
         <script type="application/json" id="supplier-fairness-data">{"rows":[{"label":"Nightingale · home","before":5950.68,"after":3012.14,"meta":{"type":"Home contractor","rank":"1 → 10","claims":188}},{"label":"Cobblestone · motor","before":5560.59,"after":3180.16,"meta":{"type":"Motor repairer","rank":"3 → 15","claims":222}},{"label":"Hollowbrook · motor","before":3875.33,"after":4364.36,"meta":{"type":"Motor repairer","rank":"4 → 1","claims":310}},{"label":"Foxglove · home","before":2610.44,"after":3485.73,"meta":{"type":"Home contractor","rank":"8 → 1","claims":225}}],"options":{"valueFormat":"gbp","beforeLabel":"Raw average cost","afterLabel":"Adjusted average cost","categoryLabel":"Supplier","minValue":2000,"maxValue":6500,"metaColumns":[{"key":"type","label":"Supplier type"},{"key":"rank","label":"Cost rank raw → adjusted"},{"key":"claims","label":"Claims","numeric":true,"format":"number"}]}}</script>
         <div class="chart-caption">Cobblestone's high raw motor-repair cost is largely explained by its difficult caseload; Foxglove's low raw home-contractor cost is flattered by an easy mix. Each supplier is ranked only within its own supplier type, not directly against the other type.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Regions where claim mix changes the interpretation</span></div>
+        <div class="chart-head"><span class="chart-title">Bellcross becomes the highest adjusted-cost region</span></div>
         <div data-chart="region-fairness-data" data-chart-type="comparison"></div>
         <script type="application/json" id="region-fairness-data">{"rows":[{"label":"Rowanmere","before":3708.70,"after":3637.51,"meta":{"rank":"1 → 4","claims":716}},{"label":"Camberwick","before":3666.87,"after":3648.94,"meta":{"rank":"2 → 3","claims":1397}},{"label":"Thistledown","before":3427.27,"after":2980.73,"meta":{"rank":"4 → 10","claims":649}},{"label":"Kirkstane","before":3324.08,"after":4120.69,"meta":{"rank":"6 → 2","claims":503}},{"label":"Bellcross","before":2378.56,"after":4232.92,"meta":{"rank":"9 → 1","claims":200}}],"options":{"valueFormat":"gbp","beforeLabel":"Raw average cost","afterLabel":"Adjusted average cost","categoryLabel":"Region","minValue":2000,"maxValue":4500,"metaColumns":[{"key":"rank","label":"Cost rank raw → adjusted"},{"key":"claims","label":"Claims","numeric":true,"format":"number"}]}}</script>
         <div class="chart-caption">Bellcross moves from the second-cheapest raw region to the highest adjusted average cost because it handled the easiest severity mix. Its smaller 200-claim sample makes review appropriate, not an automatic conclusion.</div>
@@ -258,8 +266,10 @@
       <p>The money set aside at first notification moves in the right direction by severity, but not nearly enough. That creates excess capital usage at the low end and later strengthening at the high end.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>The gap between the first estimate and eventual payment reveals where reserve guidance is systematically too cautious or optimistic.</p></div><div><strong>Decision supported</strong><p>Reset initial reserve bands to reduce unnecessary capital use and late reserve strengthening.</p></div></div>
+
     <div class="chart-block">
-      <div class="chart-head"><span class="chart-title">Average initial reserve compared with eventual paid cost</span></div>
+      <div class="chart-head"><span class="chart-title">Major and Total Loss claims are materially under-reserved</span></div>
       <div data-chart="reserve-data" data-chart-type="bar"></div>
       <script type="application/json" id="reserve-data">{"categories":["Minor","Moderate","Major","Total Loss"],"series":[{"label":"Initial reserve","values":[1204.91,3153.41,3871.78,6252.87]},{"label":"Eventual paid","values":[438.41,2252.17,9007.25,21564.59]}],"options":{"valueFormat":"gbp","categoryLabel":"Severity band","maxValue":25000,"height":350}}</script>
       <div class="chart-caption">Minor claims are initially reserved at 224% of eventual paid, while Major and Total Loss claims are reserved at only 39% and 28% respectively. Moderate claims are also over-reserved at 123%.</div>
@@ -340,7 +350,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© 2026 Farouk Yusuf. Albion General Insurance is fictional; all data is synthetic.</p>
+    <p>© 2026 Farouk Yusuf. Synthetic-data portfolio project.</p>
     <p><a href="../index.html">← Back to portfolio home</a></p>
   </div>
 </footer>

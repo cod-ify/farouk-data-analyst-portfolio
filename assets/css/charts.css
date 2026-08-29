@@ -66,6 +66,7 @@ text.chart-axis, .chart-axis text { fill: var(--muted); font-size: 11px; font-fa
 .chart-line-dot:hover, .chart-line-dot.is-active { fill: var(--navy-deep); r: 5; }
 .chart-annotation-line { stroke: var(--bad); stroke-width: 1; stroke-dasharray: 4 3; }
 .chart-annotation-label { fill: var(--bad); font-size: 10.5px; font-weight: 600; }
+.chart-value-label { fill: var(--ink); font-size: 10.5px; font-weight: 750; font-family: inherit; }
 
 .chart-waterfall-bar.is-positive { fill: var(--good); }
 .chart-waterfall-bar.is-negative { fill: var(--bad); }

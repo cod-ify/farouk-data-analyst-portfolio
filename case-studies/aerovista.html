@@ -19,7 +19,7 @@
 </head>
 <body class="aerovista-case-study">
 
-<div class="disclaimer-strip">Portfolio project · AeroVista Travel Group and every figure on this page are fictional.</div>
+<div class="disclaimer-strip">Independent portfolio project · synthetic operational data · detailed disclaimer below.</div>
 
 <header class="site-header">
   <div class="container nav">
@@ -108,7 +108,7 @@
         <div class="story-step"><span>3</span><strong>Where can management intervene?</strong><p>Almost every cancellation came from an airline-controlled cause, and the schedule absorbs inbound delays only until its 15-minute cushion runs out.</p></div>
         <div class="story-step"><span>4</span><strong>Which locations warrant review?</strong><p>After allowing for route and airport difficulty, Northgate–Bellhaven, Porthaven and Millbeck remain the clearest operational concerns.</p></div>
       </div>
-      <div class="plain-answer"><span>The answer</span><p><strong>Use two separate responses.</strong> Review network capacity for the underlying punctuality decline, but treat the cancellation rise as a concentrated fleet-maintenance episode. Then target the route, airports and aircraft rotations that still look weak after a fair comparison.</p></div>
+      <div class="plain-answer"><span>Clear answer</span><p><strong>Use two separate responses.</strong> Review network capacity for the underlying punctuality decline, but treat the cancellation rise as a concentrated fleet-maintenance episode. Then target the route, airports and aircraft rotations that still look weak after a fair comparison.</p></div>
     </div>
     <div class="kpi-grid"><div class="kpi-tile"><span class="kpi-num">87.72% → 86.18%</span><span class="kpi-lbl">Flights arriving on time, 2024 → 2025</span><span class="tag tag-significant">Unlikely to be random</span></div><div class="kpi-tile"><span class="kpi-num">−0.03 points</span><span class="kpi-lbl">Cancellation-rate change after the three major disruption periods are removed</span><span class="tag tag-caution">Broad rise disappears</span></div><div class="kpi-tile"><span class="kpi-num">15 minutes</span><span class="kpi-lbl">Inbound lateness the turnaround cushion can usually absorb before delay spreads</span></div><div class="kpi-tile"><span class="kpi-num">£20.40m</span><span class="kpi-lbl">Net passenger recovery cost across the two-year dataset</span></div></div>
     <div class="two-col" style="margin-top:32px;">
@@ -440,6 +440,7 @@
       <h2>Delay and cancellation have very different causes</h2>
       <p>Delay minutes are split between outside conditions, airline-controlled problems and lateness inherited from an earlier flight. Cancellations are different: 99.4% are linked to airline-controlled causes in this dataset.</p>
     </div>
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Delay and cancellation look like one reliability problem in a headline rate, but their causes—and available remedies—are different.</p></div><div><strong>Decision supported</strong><p>Separate network resilience work from maintenance, crew and ground-handling actions.</p></div></div>
     <div class="two-col">
       <div class="chart-block ">
   <div class="chart-head"><span class="chart-title">Half of delay minutes come from outside the airline</span></div>
@@ -463,8 +464,9 @@
       <h2>The turnaround cushion absorbs the first 15 minutes of lateness</h2>
       <p>An aircraft arriving late does not automatically make its next flight late. Ground teams can shorten part of the planned turnaround, but once that spare time is used up, the remaining delay carries forward.</p>
     </div>
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Knowing when lateness starts to spread identifies the operational threshold at which local delay becomes a network problem.</p></div><div><strong>Decision supported</strong><p>Prioritise rotation protection and recovery resources once inbound lateness exceeds the available turnaround cushion.</p></div></div>
     <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Average delay passed to the next flight</span></div>
+  <div class="chart-head"><span class="chart-title">Delay begins to spread once inbound lateness exceeds 15 minutes</span></div>
   <div data-chart="c3-data" data-chart-type="bar"></div>
   <script type="application/json" id="c3-data">{"categories": ["Arrived early", "0–15 min late", "15–30 min late", "30–60 min late", "Over 60 min late"], "series": [{"label": "Minutes passed to next flight", "values": [0.0, 0.0, 3.8, 22.5, 63.7]}], "options": {"categoryLabel": "Inbound aircraft arrival"}}</script>
   <div class="chart-caption">Nothing carries forward on average when the inbound aircraft is less than 15 minutes late. More than an hour of inbound lateness passes through almost minute for minute: 63.7 minutes reaches the next departure.</div>
@@ -506,8 +508,9 @@
       <h2>The worst-looking route is not the largest unexplained problem</h2>
       <p>Longer routes and busier airports naturally face more opportunities for weather and air-traffic delay. I therefore compared each result with the performance expected for its distance, haul type and congestion. The gap between actual and expected performance shows where difficulty does—and does not—explain the raw result.</p>
     </div>
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Raw route rankings can mistake distance and airport congestion for an avoidable operational failure.</p></div><div><strong>Decision supported</strong><p>Identify routes and airports whose shortfall remains unusually large after accounting for operating difficulty.</p></div></div>
     <div class="chart-block route-comparison-card">
-      <div class="chart-head"><span class="chart-title">Two routes show why the fairer comparison matters</span></div>
+      <div class="chart-head"><span class="chart-title">Northgate–Bellhaven is the largest unexplained route problem</span></div>
       <div data-chart="route-compare-data" data-chart-type="comparison"></div>
       <script type="application/json" id="route-compare-data">{"rows": [{"label": "Northgate–Solmara-Vantage", "before": 69.67, "after": 70.33}, {"label": "Northgate–Bellhaven Intl", "before": 72.25, "after": 77.7}], "options": {"valueFormat": "percent", "beforeLabel": "Actual on-time rate", "afterLabel": "Expected for route difficulty", "categoryLabel": "Route", "minValue": 65, "maxValue": 80}}</script>
       <div class="chart-caption">Northgate–Solmara looks worst in the raw figures, but its result is close to what its very long distance predicts. Northgate–Bellhaven performs 5.5 percentage points below expectation, making it the clearer route for management review.</div>
@@ -528,16 +531,17 @@
       <h2>Medium-haul drives total cost; long-haul costs most each time</h2>
       <p>The total bill and the cost of an individual disruption answer different questions. Medium-haul creates the largest overall bill because there are many events. Long-haul events are rare, but each one is far more expensive.</p>
     </div>
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Total cost shows where the budget is consumed; cost per event shows where one failure carries the greatest exposure.</p></div><div><strong>Decision supported</strong><p>Balance broad medium-haul prevention with contingency planning for rare, high-cost long-haul disruption.</p></div></div>
     <div class="cost-reconciliation"><span>£20.51m gross recovery cost</span><strong>− £116,376 credits and reversals</strong><span>= £20.40m net cost</span></div>
     <div class="two-col cost-chart-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Gross recovery cost by haul type</span></div>
+        <div class="chart-head"><span class="chart-title">Medium-haul creates the largest total recovery bill</span></div>
         <div data-chart="cost-total-data" data-chart-type="bar"></div>
         <script type="application/json" id="cost-total-data">{"categories": ["Short haul", "Medium haul", "Long haul"], "series": [{"label": "Gross recovery cost", "values": [4743310.5, 12376278.83, 3394168.47]}], "options": {"valueFormat": "gbp", "categoryLabel": "Haul type"}}</script>
         <div class="chart-caption">Medium-haul accounts for £12.38m of the £20.51m gross bill because it combines a high event count with substantial passenger costs.</div>
       </div>
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Average gross cost for one disruption</span></div>
+        <div class="chart-head"><span class="chart-title">One long-haul disruption costs over eight times a short-haul event</span></div>
         <div data-chart="cost-average-data" data-chart-type="bar"></div>
         <script type="application/json" id="cost-average-data">{"categories": ["Short haul", "Medium haul", "Long haul"], "series": [{"label": "Average cost per event", "values": [19126.25, 52890.08, 161627.07]}], "options": {"valueFormat": "gbp", "categoryLabel": "Haul type"}}</script>
         <div class="chart-caption">Only 21 of 503 costed disruption events are long-haul, but each costs £161,627 on average—more than eight times the short-haul average.</div>
@@ -599,7 +603,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© 2026 Farouk Yusuf. AeroVista Travel Group is fictional; all data is synthetic.</p>
+    <p>© 2026 Farouk Yusuf. Synthetic-data portfolio project.</p>
     <p><a href="../index.html">← Back to portfolio home</a></p>
   </div>
 </footer>

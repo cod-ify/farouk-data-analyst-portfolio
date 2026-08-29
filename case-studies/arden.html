@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arden Automotive Group Case Study — Farouk Yusuf</title>
-<meta name="description" content="A decision-focused supply-chain analytics case study explaining supplier reliability, shortage risk, inventory exposure and expedited-freight cost for a fictional automotive manufacturer.">
+<meta name="description" content="A decision-focused supply-chain analytics case study explaining supplier reliability, shortage risk, inventory exposure and expedited-freight cost.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
 </head>
 <body class="arden-case-study">
 
-<div class="disclaimer-strip">Portfolio project · Arden Automotive Group and every figure on this page are fictional.</div>
+<div class="disclaimer-strip">Independent portfolio project · synthetic supply-chain data · detailed disclaimer below.</div>
 
 <header class="site-header">
   <div class="container nav">
@@ -91,7 +91,7 @@
         <article class="story-step"><span>3</span><strong>Is there a recent problem hidden by the average?</strong><p>Yes. Ashcombe's OTIF fell to 20%–40% in the final five months while the portfolio stayed near 70%.</p></article>
         <article class="story-step"><span>4</span><strong>What is the operational consequence?</strong><p>Supplier and logistics delays explain 87.1% of recorded shortage events, while expedited freight costs 3.56 times more per shipment.</p></article>
       </div>
-      <div class="plain-answer"><span>Plain-English answer</span><p><strong>Do not launch a network-wide supplier reset.</strong> Review the small number of suppliers whose poor record survives a fairer comparison, investigate Ashcombe's recent episode, and target the supplier and logistics failures that trigger shortages and expediting.</p></div>
+      <div class="plain-answer"><span>Clear answer</span><p><strong>Do not launch a network-wide supplier reset.</strong> Review the small number of suppliers whose poor record survives a fairer comparison, investigate Ashcombe's recent episode, and target the supplier and logistics failures that trigger shortages and expediting.</p></div>
     </div>
 
     <div class="kpi-grid">
@@ -133,6 +133,8 @@
       <p>A raw rate answers what happened. The adjusted rate asks a second question: what would each supplier's OTIF look like if every supplier had the network's average mix of component criticality and commodity groups?</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Suppliers handling difficult, safety-critical parts may look weaker even when the assignment mix—not execution—creates part of the gap.</p></div><div><strong>Decision supported</strong><p>Distinguish suppliers needing performance review from those whose raw score mainly reflects a harder portfolio.</p></div></div>
+
     <div class="comparison-explainer">
       <article><strong>Why adjust?</strong><p>A supplier handling mostly critical powertrain parts may face a harder task than one delivering standard fasteners. Raw rates alone cannot separate job mix from reliability.</p></article>
       <article><strong>What the model does</strong><p>It holds the observed part mix constant and recalculates each supplier's expected OTIF on the same basis. Some suppliers move substantially, so the adjustment is meaningful.</p></article>
@@ -141,7 +143,7 @@
 
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">What the fairer comparison changes around the bottom tier</span></div>
+        <div class="chart-head"><span class="chart-title">Adjustment changes the bottom tier—but Kestrel and Solmar remain weak</span></div>
         <div data-chart="supplier-adjustment-data" data-chart-type="comparison"></div>
         <script type="application/json" id="supplier-adjustment-data">{"rows":[{"label":"Ravensworth Chassis","before":80.0,"after":83.3,"meta":{"orders":461,"rank":"15 → 8"}},{"label":"Solmar Fasteners","before":50.9,"after":47.9,"meta":{"orders":900,"rank":"26 → 27"}},{"label":"Larchmont Tooling","before":50.8,"after":46.0,"meta":{"orders":591,"rank":"27 → 30"}},{"label":"Norwood Castings","before":49.3,"after":46.4,"meta":{"orders":665,"rank":"28 → 29"}},{"label":"Kestrel Precision","before":49.2,"after":47.4,"meta":{"orders":1427,"rank":"29 → 28"}},{"label":"Cliffgate Logistics","before":46.8,"after":51.7,"meta":{"orders":600,"rank":"30 → 26"}}],"options":{"valueFormat":"percent","beforeLabel":"Raw OTIF","afterLabel":"Adjusted OTIF","categoryLabel":"Supplier","minValue":40,"maxValue":90,"metaColumns":[{"key":"orders","label":"Orders","numeric":true,"format":"number"},{"key":"rank","label":"Raw → adjusted rank"}]}}</script>
         <div class="chart-caption"><strong>How to read this:</strong> Cliffgate improves once its job mix is allowed for, while Ravensworth moves seven places. Kestrel and Solmar do not improve; both remain among the weakest adjusted performers. The exact order changes, so “bottom tier” is the defensible conclusion—not “the same two remain last.”</div>
@@ -173,6 +175,8 @@
       <p>These are different management problems. A stable portfolio average does not cancel a severe supplier episode, and one supplier episode does not justify calling the whole network worse.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>An annual network average can hide a recent collapse at one supplier and encourage an unnecessarily broad response.</p></div><div><strong>Decision supported</strong><p>Choose between targeted supplier recovery and a network-wide intervention.</p></div></div>
+
     <div class="analysis-grid">
       <div class="chart-block">
         <div class="chart-head"><span class="chart-title">Ashcombe fell far below the portfolio in the final five months</span></div>
@@ -199,16 +203,18 @@
       <p>The operational records point upstream: supplier lateness and logistics delay dominate shortage causes, while expedited shipments consume more than half of freight spend.</p>
     </div>
 
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>A shortage count describes the symptom. Linking cause codes, shipment mode and cost reveals the process generating it.</p></div><div><strong>Decision supported</strong><p>Prioritise supplier recovery and logistics controls that reduce both line risk and emergency-freight spend.</p></div></div>
+
     <div class="driver-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Recorded primary cause of 334 shortage events</span></div>
+        <div class="chart-head"><span class="chart-title">Supplier lateness and logistics explain 87.1% of shortages</span></div>
         <div data-chart="shortage-data" data-chart-type="bar"></div>
         <script type="application/json" id="shortage-data">{"categories":["Supplier late","Logistics delay","Demand spike","Unknown","Quality reject"],"series":[{"label":"Events","values":[173,118,31,11,1]}],"options":{"horizontal":true,"categoryLabel":"Primary cause","maxValue":200,"height":300}}</script>
         <div class="chart-caption">Supplier lateness accounts for 51.8% of events and logistics delay for 35.3%—87.1% combined. Demand spikes account for 9.3%, so the evidence does not support forecasting error as the main explanation.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Average cost per shipment</span></div>
+        <div class="chart-head"><span class="chart-title">Expediting costs 3.56 times as much as standard freight</span></div>
         <div data-chart="freight-cost-data" data-chart-type="bar"></div>
         <script type="application/json" id="freight-cost-data">{"categories":["Standard","Expedited"],"series":[{"label":"Average shipment cost","values":[173.04,616.66]}],"options":{"valueFormat":"gbp","categoryLabel":"Freight type","maxValue":700,"height":300}}</script>
         <div class="chart-caption">An expedited shipment averages £616.66, compared with £173.04 for standard freight—a 3.56× premium. This makes expediting a practical cost-reduction target, but the upstream trigger still needs to be fixed.</div>
@@ -222,7 +228,7 @@
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Purchase-order value is concentrated in powertrain and two other groups</span></div>
+        <div class="chart-head"><span class="chart-title">Three commodity groups hold 79.7% of purchase-order value</span></div>
         <div data-chart="commodity-data" data-chart-type="bar"></div>
         <script type="application/json" id="commodity-data">{"categories":["Powertrain","Chassis & suspension","Electronics & electrical","Body & exterior","Braking","Interior & trim","Fasteners & hardware"],"series":[{"label":"Purchase-order value","values":[483473767.89,181435825.82,177021285.90,79049252.43,68707545.21,62720807.50,4281951.44]}],"options":{"horizontal":true,"valueFormat":"gbp","categoryLabel":"Commodity group","maxValue":500000000,"height":330}}</script>
         <div class="chart-caption">Powertrain alone represents 45.8% of purchase-order value; the top three groups represent 79.7%. This is commitment exposure, not freight spend, and it helps prioritise where disruption would have the greatest financial consequence.</div>
@@ -238,6 +244,8 @@
       <h2>Inventory risk is concentrated, so a targeted watchlist is more useful than a blanket stock increase</h2>
       <p>After excluding the documented simulation warm-up period, low cover is uncommon across all snapshots. The remaining risk sits in a small group of components and is slightly higher at one plant.</p>
     </div>
+
+    <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Increasing stock everywhere would tie up cash without addressing the small number of components creating real exposure.</p></div><div><strong>Decision supported</strong><p>Create a component-and-plant watchlist and reserve blanket inventory increases for evidence of wider risk.</p></div></div>
 
     <div class="watchlist">
       <article class="watch-card"><span>1.5%</span><h3>Low-cover snapshots</h3><p>The aggregate rate after excluding January–February 2024. A low overall rate means the answer is not a portfolio-wide safety-stock increase.</p></article>
@@ -309,7 +317,7 @@
 <section class="case-next">
   <div class="container">
     <div class="case-next-card">
-      <div><span class="eyebrow">Continue exploring</span><h2>Next case study: Albion Fashion House</h2><p>Customer analytics, segmentation and commercial decision support for a fictional fashion retailer.</p></div>
+      <div><span class="eyebrow">Continue exploring</span><h2>Next case study: Albion General Insurance</h2><p>Claims growth, operational rework, reserve accuracy and fair supplier comparison.</p></div>
       <div class="case-next-actions"><a class="btn btn-primary" href="albion.html">View Albion</a><a class="btn btn-secondary" href="../index.html#case-studies">All case studies</a></div>
     </div>
   </div>
@@ -317,7 +325,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© 2026 Farouk Yusuf. Arden Automotive Group is fictional; all data is synthetic.</p>
+    <p>© 2026 Farouk Yusuf. Synthetic-data portfolio project.</p>
     <p><a href="../index.html">← Back to portfolio home</a></p>
   </div>
 </footer>
