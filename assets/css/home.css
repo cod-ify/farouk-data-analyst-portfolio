@@ -352,6 +352,10 @@
   grid-column: span 6;
 }
 
+.project-card:nth-child(n+3) {
+  grid-column: span 3;
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   border-color: #c7dce7;
@@ -385,6 +389,8 @@
   object-position: center;
   transition: transform 260ms ease;
 }
+
+.project-visual img.alderwick-project-image { object-position: center 54%; }
 
 .project-card:hover .project-visual img {
   transform: scale(1.025);
@@ -716,12 +722,9 @@
 
   .project-card,
   .project-card:nth-child(1),
-  .project-card:nth-child(2) {
+  .project-card:nth-child(2),
+  .project-card:nth-child(n+3) {
     grid-column: span 6;
-  }
-
-  .project-card:nth-child(5) {
-    grid-column: 4 / span 6;
   }
 
   .approach-grid {
@@ -777,7 +780,7 @@
   .project-card,
   .project-card:nth-child(1),
   .project-card:nth-child(2),
-  .project-card:nth-child(5) {
+  .project-card:nth-child(n+3) {
     grid-column: 1 / -1;
   }
 

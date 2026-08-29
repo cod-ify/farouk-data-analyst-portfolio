@@ -16,7 +16,7 @@ This is a **plain static website**. There is no build step and Python is not req
 - `assets/css/tokens.css` — site-wide colours and design variables
 - `assets/css/layout.css` — shared navigation
 - `assets/css/case-study.css` — case-study layouts
-- `case-studies/*.html` — the five case studies
+- `case-studies/*.html` — the six case studies
 - `assets/illustrations/` — lightweight industry illustrations used on the homepage cards
 - `assets/images/` — detailed case-study charts and visuals
 - `assets/docs/Farouk_Yusuf_Resume_Data_Analyst.pdf` — résumé linked from the homepage
