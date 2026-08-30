@@ -36,7 +36,7 @@
 .problem-card-wide,
 .problem-card:last-child {
   grid-column: auto;
-  min-height: 285px;
+  min-height: 220px;
   padding: 22px;
 }
 
@@ -227,7 +227,7 @@
   .proof-item,
   .proof-item:first-child,
   .proof-item:nth-child(2n),
-  .proof-item:nth-last-child(-n+2),
+  .proof-item:nth-last-child(-n + 2),
   .proof-item:last-child {
     grid-column: auto;
     text-align: left;
