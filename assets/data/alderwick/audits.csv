@@ -1,0 +1,961 @@
+audit_id,firm_id,sector,year,priority_score,current_audit_risk,firm_staffing_quality,past_inspections_fixes,market_importance,band,complexity,it_reliance,group_structure,estimate_heavy,red_flags
+AU-0001,F01,Public interest entity,2025,30,13,9,4,4,routine,Low,Low,False,False,
+AU-0002,F01,Listed manufacturing,2025,45,16,22,3,4,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0003,F01,Technology,2025,39,11,11,9,8,ask,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0004,F01,Asset management,2025,65,31,22,8,4,deep-dive,High,High,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Heavy reliance on client IT systems; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0005,F01,Retail group,2025,39,17,12,5,5,ask,Medium,Medium,False,False,
+AU-0006,F01,Insurance,2025,33,17,11,0,5,routine,Medium,Low,False,False,
+AU-0007,F01,Public interest entity,2025,31,10,13,5,3,routine,Low,Low,False,False,
+AU-0008,F01,Insurance,2025,41,14,19,5,3,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0009,F01,Real estate,2025,53,16,27,7,3,group,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0010,F01,Technology,2025,39,15,17,5,2,ask,Low,Medium,False,False,
+AU-0011,F01,Healthcare,2025,57,17,32,4,4,group,Medium,Low,True,False,Multi-component group audit; Audit team below planned staffing
+AU-0012,F01,Insurance,2025,25,8,12,2,3,routine,Low,Low,False,False,
+AU-0013,F01,Energy & utilities,2025,31,10,9,5,7,routine,Low,Low,False,False,
+AU-0014,F01,Retail group,2025,75,37,25,7,6,deep-dive,High,High,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0015,F01,Banking,2025,74,34,32,3,5,deep-dive,High,Medium,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Audit team below planned staffing
+AU-0016,F01,Insurance,2025,49,17,18,10,4,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0017,F01,Public interest entity,2025,52,19,18,10,5,group,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0018,F01,Energy & utilities,2025,67,32,30,2,3,deep-dive,High,High,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Heavy reliance on client IT systems; Audit team below planned staffing; Partner involvement hours below plan
+AU-0019,F01,Banking,2025,32,6,19,0,7,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0020,F01,Technology,2025,32,9,13,5,5,routine,Low,Medium,False,False,
+AU-0021,F01,Real estate,2025,41,17,17,4,3,ask,Medium,Low,False,False,
+AU-0022,F01,Banking,2025,42,13,21,4,4,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0023,F01,Retail group,2025,19,5,2,7,5,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0024,F01,Public interest entity,2025,36,10,14,6,6,ask,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0025,F01,Healthcare,2025,47,20,19,4,4,ask,Medium,Low,False,False,
+AU-0026,F01,Real estate,2025,32,9,15,4,4,routine,Low,Low,False,False,
+AU-0027,F01,Retail group,2025,39,11,23,4,1,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0028,F01,Public interest entity,2025,38,21,14,0,3,ask,Medium,Low,False,False,
+AU-0029,F01,Insurance,2025,88,36,35,10,7,deep-dive,High,High,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0030,F01,Technology,2025,41,20,13,4,4,ask,Medium,Low,False,False,
+AU-0031,F01,Technology,2025,39,17,14,5,3,ask,Medium,Low,False,False,
+AU-0032,F01,Public interest entity,2025,78,38,22,12,6,deep-dive,High,Medium,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Partner involvement hours below plan
+AU-0033,F01,Energy & utilities,2025,50,12,27,10,1,group,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0034,F01,Listed manufacturing,2025,14,0,5,5,4,routine,Low,Medium,False,False,
+AU-0035,F01,Energy & utilities,2025,45,12,25,5,3,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0036,F01,Technology,2025,68,27,26,9,6,deep-dive,Medium,High,False,True,Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Audit team below planned staffing; Partner involvement hours below plan
+AU-0037,F01,Insurance,2025,34,14,8,5,7,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0038,F01,Banking,2025,43,22,12,5,4,ask,Medium,Low,False,False,
+AU-0039,F01,Insurance,2025,40,8,25,7,0,ask,Low,High,False,False,Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0040,F01,Listed manufacturing,2025,39,8,20,11,0,ask,Low,Medium,False,False,Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0041,F01,Retail group,2025,47,24,14,5,4,ask,Medium,Medium,False,False,
+AU-0042,F01,Real estate,2025,53,12,24,10,7,group,Low,High,False,False,Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0043,F01,Insurance,2025,38,6,23,6,3,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0044,F01,Insurance,2025,37,18,14,3,2,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0045,F01,Technology,2025,29,16,12,0,1,routine,Low,Low,False,False,
+AU-0046,F01,Public interest entity,2025,38,0,21,10,7,ask,Low,Low,True,False,Multi-component group audit; Partner involvement hours below plan
+AU-0047,F01,Technology,2025,37,20,12,4,1,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0048,F01,Energy & utilities,2025,34,7,10,10,7,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0049,F01,Healthcare,2025,29,9,14,4,2,routine,Low,Medium,False,False,
+AU-0050,F01,Real estate,2025,38,13,15,4,6,ask,Low,Medium,False,False,
+AU-0051,F01,Asset management,2025,27,10,10,7,0,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0052,F01,Retail group,2025,36,7,23,5,1,ask,Low,Low,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0053,F01,Healthcare,2025,42,21,14,5,2,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0054,F01,Healthcare,2025,33,9,15,5,4,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0055,F01,Listed manufacturing,2025,45,15,24,4,2,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Audit team below planned staffing
+AU-0056,F01,Public interest entity,2025,37,16,8,9,4,ask,Low,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0057,F01,Energy & utilities,2025,28,1,20,3,4,routine,Low,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0058,F01,Technology,2025,29,14,9,3,3,routine,Low,Low,False,False,
+AU-0059,F01,Technology,2025,42,15,14,7,6,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0060,F01,Asset management,2025,33,7,14,6,6,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0061,F01,Public interest entity,2025,37,13,15,2,7,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0062,F01,Healthcare,2025,29,17,5,3,4,routine,Medium,Medium,False,False,
+AU-0063,F01,Banking,2025,30,11,6,12,1,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0064,F01,Technology,2025,45,18,18,6,3,ask,Medium,Low,False,False,
+AU-0065,F01,Public interest entity,2025,28,13,10,5,0,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0066,F01,Retail group,2025,56,27,19,5,5,group,Medium,High,True,True,Complex accounting estimates; Goodwill or asset impairment risk
+AU-0067,F01,Energy & utilities,2025,40,13,16,6,5,ask,Low,Medium,False,False,
+AU-0068,F01,Insurance,2025,28,13,12,1,2,routine,Low,Low,False,False,
+AU-0069,F01,Asset management,2025,13,1,10,0,2,routine,Low,Low,False,False,
+AU-0070,F01,Asset management,2025,33,10,8,9,6,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0071,F01,Real estate,2025,31,14,10,2,5,routine,Low,Medium,False,False,
+AU-0072,F01,Energy & utilities,2025,50,25,23,1,1,group,Medium,Medium,False,False,Partner involvement hours below plan
+AU-0073,F01,Retail group,2025,19,3,8,6,2,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0074,F01,Banking,2025,37,14,13,7,3,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0075,F01,Energy & utilities,2025,29,8,15,2,4,routine,Low,Low,False,False,
+AU-0076,F01,Real estate,2025,30,6,13,6,5,routine,Low,Low,False,False,
+AU-0077,F01,Asset management,2025,27,9,10,5,3,routine,Low,Low,False,False,
+AU-0078,F01,Energy & utilities,2025,38,8,20,0,10,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0079,F01,Retail group,2025,42,13,18,6,5,ask,Low,Medium,False,False,
+AU-0080,F01,Energy & utilities,2025,27,13,11,1,2,routine,Low,Medium,False,False,
+AU-0081,F01,Listed manufacturing,2025,45,14,18,9,4,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0082,F01,Banking,2025,65,30,21,8,6,deep-dive,High,Medium,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0083,F01,Listed manufacturing,2025,48,13,25,6,4,ask,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0084,F01,Asset management,2025,50,18,20,2,10,group,Medium,Low,False,False,Partner involvement hours below plan
+AU-0085,F01,Asset management,2025,42,14,21,2,5,ask,Low,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0086,F01,Retail group,2025,62,27,20,9,6,group,Medium,Medium,False,True,Complex accounting estimates; Goodwill or asset impairment risk
+AU-0087,F01,Energy & utilities,2025,75,31,27,11,6,deep-dive,High,High,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Multi-component group audit
+AU-0088,F01,Retail group,2025,23,11,10,2,0,routine,Low,Medium,False,False,
+AU-0089,F01,Energy & utilities,2025,26,6,18,1,1,routine,Low,High,True,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0090,F01,Energy & utilities,2025,25,4,10,8,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0091,F01,Insurance,2025,31,6,15,6,4,routine,Low,Low,False,False,
+AU-0092,F01,Asset management,2025,46,14,22,8,2,ask,Low,Low,False,False,Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0093,F01,Real estate,2025,46,23,17,1,5,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0094,F01,Real estate,2025,42,20,14,3,5,ask,Medium,Low,False,False,
+AU-0095,F01,Healthcare,2025,76,28,35,9,4,deep-dive,High,Medium,True,True,Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Audit team below planned staffing; Partner involvement hours below plan
+AU-0096,F01,Asset management,2025,43,20,8,11,4,ask,Medium,Medium,True,False,Multi-component group audit; Repeat finding from a prior inspection
+AU-0097,F01,Real estate,2025,29,13,8,5,3,routine,Low,Medium,False,False,
+AU-0098,F01,Insurance,2025,55,25,24,3,3,group,Medium,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0099,F01,Energy & utilities,2025,57,15,24,11,7,group,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0100,F01,Asset management,2025,32,8,15,9,0,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0101,F01,Public interest entity,2025,25,1,14,7,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0102,F01,Real estate,2025,32,13,15,4,0,routine,Low,Medium,False,False,
+AU-0103,F01,Retail group,2025,26,8,14,1,3,routine,Low,Medium,False,False,
+AU-0104,F01,Healthcare,2025,30,9,13,5,3,routine,Low,Medium,False,False,
+AU-0105,F01,Technology,2025,45,24,14,4,3,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0106,F02,Technology,2025,37,15,15,5,2,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0107,F02,Banking,2025,68,35,20,6,7,deep-dive,High,High,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0108,F02,Insurance,2025,29,10,13,4,2,routine,Low,Low,True,False,Multi-component group audit
+AU-0109,F02,Listed manufacturing,2025,32,4,18,6,4,routine,Low,Medium,False,False,
+AU-0110,F02,Retail group,2025,40,13,20,4,3,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0111,F02,Real estate,2025,32,5,15,5,7,routine,Low,Medium,False,False,
+AU-0112,F02,Healthcare,2025,44,20,11,7,6,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0113,F02,Technology,2025,32,11,10,1,10,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0114,F02,Banking,2025,20,0,8,3,9,routine,Low,Medium,False,False,
+AU-0115,F02,Retail group,2025,40,21,11,8,0,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0116,F02,Banking,2025,22,8,10,3,1,routine,Low,Medium,False,False,
+AU-0117,F02,Listed manufacturing,2025,34,11,20,1,2,routine,Low,Low,False,False,Partner involvement hours below plan
+AU-0118,F02,Real estate,2025,80,32,33,10,5,deep-dive,High,Medium,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Audit team below planned staffing
+AU-0119,F02,Retail group,2025,42,18,14,9,1,ask,Medium,Medium,True,False,Multi-component group audit; Repeat finding from a prior inspection
+AU-0120,F02,Banking,2025,44,19,9,13,3,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0121,F02,Technology,2025,39,13,18,2,6,ask,Low,Low,False,False,
+AU-0122,F02,Insurance,2025,49,16,17,11,5,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0123,F02,Real estate,2025,25,9,11,4,1,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0124,F02,Public interest entity,2025,71,32,28,5,6,deep-dive,High,Medium,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Audit team below planned staffing; Partner involvement hours below plan
+AU-0125,F02,Energy & utilities,2025,36,4,19,7,6,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0126,F02,Public interest entity,2025,41,19,16,0,6,ask,Medium,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0127,F02,Insurance,2025,43,20,11,7,5,ask,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0128,F02,Asset management,2025,26,9,9,4,4,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0129,F02,Asset management,2025,44,16,24,1,3,ask,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0130,F02,Banking,2025,51,25,15,6,5,group,Medium,Low,False,False,
+AU-0131,F02,Healthcare,2025,42,17,18,6,1,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0132,F02,Asset management,2025,22,3,14,0,5,routine,Low,Medium,True,False,Multi-component group audit
+AU-0133,F02,Real estate,2025,49,23,17,7,2,ask,Medium,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0134,F02,Listed manufacturing,2025,43,17,11,9,6,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0135,F02,Real estate,2025,38,17,17,2,2,ask,Medium,Low,False,False,
+AU-0136,F02,Retail group,2025,30,7,15,5,3,routine,Low,Medium,False,False,
+AU-0137,F02,Technology,2025,27,2,19,0,6,routine,Low,Low,False,False,
+AU-0138,F02,Insurance,2025,38,10,11,9,8,ask,Low,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0139,F02,Healthcare,2025,34,13,10,6,5,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0140,F02,Technology,2025,34,8,21,5,0,routine,Low,Medium,False,False,Partner involvement hours below plan
+AU-0141,F02,Insurance,2025,51,19,19,7,6,group,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0142,F02,Public interest entity,2025,29,14,8,7,0,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0143,F02,Technology,2025,53,27,17,6,3,group,Medium,Low,False,False,Complex accounting estimates
+AU-0144,F02,Insurance,2025,43,11,18,8,6,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0145,F02,Asset management,2025,33,13,12,3,5,routine,Low,Low,False,False,
+AU-0146,F02,Healthcare,2025,27,3,9,8,7,routine,Low,Low,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0147,F02,Asset management,2025,33,7,15,4,7,routine,Low,Low,False,False,
+AU-0148,F02,Retail group,2025,33,4,16,8,5,routine,Low,Medium,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0149,F02,Public interest entity,2025,31,14,7,5,5,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0150,F02,Banking,2025,29,11,9,8,1,routine,Low,Low,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0151,F02,Healthcare,2025,37,11,16,4,6,ask,Low,Low,False,False,
+AU-0152,F02,Insurance,2025,41,18,16,6,1,ask,Medium,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0153,F02,Listed manufacturing,2025,41,13,22,2,4,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0154,F02,Listed manufacturing,2025,46,21,18,3,4,ask,Medium,Medium,False,False,
+AU-0155,F02,Real estate,2025,44,13,18,6,7,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0156,F02,Technology,2025,25,5,16,1,3,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0157,F02,Banking,2025,40,19,10,6,5,ask,Medium,Low,False,False,
+AU-0158,F02,Insurance,2025,69,29,27,7,6,deep-dive,High,Medium,True,False,Complex accounting estimates; Multi-component group audit; Audit team below planned staffing; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0159,F02,Asset management,2025,25,8,11,1,5,routine,Low,Medium,False,False,
+AU-0160,F02,Technology,2025,28,10,11,3,4,routine,Low,Low,True,False,Multi-component group audit
+AU-0161,F02,Asset management,2025,39,16,15,4,4,ask,Low,Medium,False,False,
+AU-0162,F02,Technology,2025,76,32,29,7,8,deep-dive,High,Medium,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Audit team below planned staffing; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0163,F02,Listed manufacturing,2025,38,15,16,4,3,ask,Low,Medium,False,False,
+AU-0164,F02,Asset management,2025,75,27,31,10,7,deep-dive,Medium,High,False,True,Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Audit team below planned staffing; Partner involvement hours below plan
+AU-0165,F02,Public interest entity,2025,29,12,13,1,3,routine,Low,Low,False,False,
+AU-0166,F02,Real estate,2025,47,20,19,4,4,ask,Medium,Low,False,False,
+AU-0167,F02,Public interest entity,2025,61,21,31,5,4,group,Medium,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0168,F02,Asset management,2025,42,18,16,5,3,ask,Medium,Low,False,False,
+AU-0169,F02,Energy & utilities,2025,33,14,12,2,5,routine,Low,Medium,False,False,
+AU-0170,F02,Retail group,2025,29,13,6,5,5,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0171,F02,Listed manufacturing,2025,39,3,24,8,4,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0172,F02,Insurance,2025,35,17,7,6,5,ask,Medium,Medium,False,False,
+AU-0173,F02,Healthcare,2025,66,29,21,9,7,deep-dive,High,Low,False,True,Complex accounting estimates; Goodwill or asset impairment risk; Partner involvement hours below plan; Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0174,F02,Technology,2025,53,24,21,8,0,group,Medium,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0175,F02,Listed manufacturing,2025,54,15,31,4,4,group,Low,High,False,False,Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0176,F02,Banking,2025,42,16,18,7,1,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0177,F02,Energy & utilities,2025,38,14,14,5,5,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0178,F02,Real estate,2025,43,13,18,5,7,ask,Low,Medium,True,False,Multi-component group audit
+AU-0179,F02,Retail group,2025,33,12,14,3,4,routine,Low,Low,False,False,
+AU-0180,F02,Public interest entity,2025,29,10,14,3,2,routine,Low,Low,False,False,
+AU-0181,F02,Insurance,2025,26,7,13,1,5,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0182,F02,Public interest entity,2025,33,8,22,1,2,routine,Low,Medium,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0183,F02,Listed manufacturing,2025,37,8,21,7,1,ask,Low,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0184,F02,Energy & utilities,2025,48,23,18,3,4,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0185,F02,Banking,2025,21,0,14,3,4,routine,Low,Medium,False,False,
+AU-0186,F02,Healthcare,2025,41,17,12,7,5,ask,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0187,F02,Healthcare,2025,35,11,18,4,2,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0188,F02,Energy & utilities,2025,47,20,18,7,2,ask,Medium,Low,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0189,F02,Asset management,2025,70,24,28,10,8,deep-dive,Medium,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan; Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0190,F02,Listed manufacturing,2025,48,18,15,12,3,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0191,F02,Technology,2025,33,16,14,1,2,routine,Low,Low,True,False,Multi-component group audit
+AU-0192,F02,Insurance,2025,39,4,24,7,4,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0193,F02,Real estate,2025,26,6,12,2,6,routine,Low,Low,True,False,Multi-component group audit
+AU-0194,F02,Real estate,2025,29,0,14,9,6,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0195,F02,Technology,2025,44,14,18,7,5,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0196,F02,Listed manufacturing,2025,22,8,8,3,3,routine,Low,Low,False,False,
+AU-0197,F02,Public interest entity,2025,35,15,9,6,5,ask,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0198,F02,Real estate,2025,66,26,24,10,6,deep-dive,Medium,High,True,True,Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Multi-component group audit; Audit team below planned staffing
+AU-0199,F02,Public interest entity,2025,26,3,14,6,3,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0200,F02,Banking,2025,36,6,23,6,1,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0201,F02,Public interest entity,2025,36,17,10,4,5,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0202,F02,Public interest entity,2025,43,22,9,5,7,ask,Medium,Medium,False,False,
+AU-0203,F02,Technology,2025,44,20,19,2,3,ask,Medium,Low,False,False,
+AU-0204,F03,Energy & utilities,2025,35,13,18,1,3,ask,Low,Low,False,False,
+AU-0205,F03,Real estate,2025,24,2,16,4,2,routine,Low,Low,True,False,Multi-component group audit
+AU-0206,F03,Healthcare,2025,40,8,16,9,7,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0207,F03,Insurance,2025,73,33,29,6,5,deep-dive,High,Medium,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Audit team below planned staffing
+AU-0208,F03,Asset management,2025,55,27,19,7,2,group,Medium,High,False,False,Complex accounting estimates; Heavy reliance on client IT systems
+AU-0209,F03,Insurance,2025,76,30,23,13,10,deep-dive,High,Medium,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0210,F03,Real estate,2025,44,20,13,7,4,ask,Medium,Low,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0211,F03,Banking,2025,40,13,16,6,5,ask,Low,Low,False,False,
+AU-0212,F03,Energy & utilities,2025,38,7,19,6,6,ask,Low,Low,False,False,
+AU-0213,F03,Public interest entity,2025,33,17,9,4,3,routine,Medium,Low,False,False,
+AU-0214,F03,Technology,2025,76,36,23,9,8,deep-dive,High,Medium,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Partner involvement hours below plan
+AU-0215,F03,Healthcare,2025,40,15,9,9,7,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0216,F03,Energy & utilities,2025,48,23,15,4,6,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0217,F03,Banking,2025,36,12,15,4,5,ask,Low,Low,False,False,
+AU-0218,F03,Real estate,2025,23,9,13,1,0,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0219,F03,Insurance,2025,40,17,21,1,1,ask,Medium,Low,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0220,F03,Real estate,2025,42,15,20,2,5,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0221,F03,Public interest entity,2025,40,20,9,7,4,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0222,F03,Energy & utilities,2025,32,2,24,1,5,routine,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0223,F03,Energy & utilities,2025,35,10,13,5,7,ask,Low,Low,False,False,
+AU-0224,F03,Energy & utilities,2025,24,10,8,2,4,routine,Low,Medium,False,False,
+AU-0225,F03,Energy & utilities,2025,47,19,20,0,8,ask,Medium,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0226,F03,Public interest entity,2025,62,27,18,11,6,group,Medium,Medium,False,False,Complex accounting estimates; Repeat finding from a prior inspection
+AU-0227,F03,Public interest entity,2025,43,12,21,5,5,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0228,F03,Public interest entity,2025,45,14,19,7,5,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0229,F03,Energy & utilities,2025,33,16,15,1,1,routine,Low,Medium,False,False,
+AU-0230,F03,Banking,2025,40,9,21,6,4,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0231,F03,Real estate,2025,38,16,13,6,3,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0232,F03,Technology,2025,50,17,23,7,3,group,Medium,Low,False,False,Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0233,F03,Retail group,2025,44,9,30,2,3,ask,Low,High,False,False,Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0234,F03,Energy & utilities,2025,31,15,11,4,1,routine,Low,Medium,True,False,Multi-component group audit
+AU-0235,F03,Insurance,2025,32,4,12,8,8,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0236,F03,Real estate,2025,39,11,16,8,4,ask,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0237,F03,Banking,2025,26,13,3,3,7,routine,Low,Low,False,False,
+AU-0238,F03,Insurance,2025,34,10,10,7,7,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0239,F03,Asset management,2025,19,4,6,4,5,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0240,F03,Asset management,2025,38,6,21,9,2,ask,Low,Medium,False,False,Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0241,F03,Public interest entity,2025,35,15,14,1,5,ask,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0242,F03,Asset management,2025,36,16,13,3,4,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0243,F03,Public interest entity,2025,24,0,16,4,4,routine,Low,Low,False,False,
+AU-0244,F03,Banking,2025,25,2,17,4,2,routine,Low,Medium,False,False,
+AU-0245,F03,Energy & utilities,2025,32,5,19,4,4,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0246,F03,Healthcare,2025,30,4,20,6,0,routine,Low,Medium,False,False,Partner involvement hours below plan
+AU-0247,F03,Technology,2025,28,0,19,4,5,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0248,F03,Energy & utilities,2025,62,27,26,4,5,group,Medium,High,False,False,Complex accounting estimates; Heavy reliance on client IT systems
+AU-0249,F03,Retail group,2025,28,4,17,2,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0250,F03,Banking,2025,49,22,12,9,6,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0251,F03,Banking,2025,35,13,17,2,3,ask,Low,Medium,False,False,
+AU-0252,F03,Asset management,2025,40,9,17,6,8,ask,Low,Low,False,False,
+AU-0253,F03,Retail group,2025,37,10,21,4,2,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0254,F03,Public interest entity,2025,30,9,17,1,3,routine,Low,Medium,False,False,
+AU-0255,F03,Listed manufacturing,2025,27,0,15,9,3,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0256,F03,Real estate,2025,37,12,18,3,4,ask,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0257,F03,Insurance,2025,44,20,12,9,3,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0258,F03,Asset management,2025,48,23,10,9,6,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0259,F03,Technology,2025,37,15,15,6,1,ask,Low,Medium,False,False,
+AU-0260,F03,Retail group,2025,44,9,25,5,5,ask,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0261,F03,Technology,2025,26,10,8,3,5,routine,Low,Low,False,False,
+AU-0262,F03,Technology,2025,39,11,19,7,2,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0263,F03,Asset management,2025,38,18,13,2,5,ask,Medium,Low,False,False,
+AU-0264,F03,Technology,2025,33,8,13,7,5,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0265,F03,Listed manufacturing,2025,48,12,24,9,3,ask,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0266,F03,Insurance,2025,54,18,20,8,8,group,Medium,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0267,F03,Banking,2025,40,21,12,5,2,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0268,F03,Banking,2025,48,14,20,9,5,ask,Low,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0269,F03,Healthcare,2025,49,21,15,9,4,ask,Medium,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0270,F03,Technology,2025,34,18,5,6,5,routine,Medium,Low,False,False,
+AU-0271,F03,Insurance,2025,40,12,20,3,5,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0272,F03,Banking,2025,21,6,7,5,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0273,F03,Public interest entity,2025,34,12,13,7,2,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0274,F03,Energy & utilities,2025,41,17,13,9,2,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0275,F03,Healthcare,2025,47,19,11,12,5,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0276,F03,Healthcare,2025,67,33,25,4,5,deep-dive,High,High,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Audit team below planned staffing
+AU-0277,F03,Healthcare,2025,73,30,24,13,6,deep-dive,High,Medium,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Audit team below planned staffing; Partner involvement hours below plan
+AU-0278,F03,Energy & utilities,2025,34,13,17,2,2,routine,Low,Medium,False,False,
+AU-0279,F03,Healthcare,2025,37,14,10,6,7,ask,Low,Low,False,False,
+AU-0280,F03,Listed manufacturing,2025,46,20,19,6,1,ask,Medium,Low,False,False,
+AU-0281,F03,Listed manufacturing,2025,33,13,11,5,4,routine,Low,Low,False,False,
+AU-0282,F03,Asset management,2025,41,18,18,2,3,ask,Medium,Low,True,False,Multi-component group audit
+AU-0283,F03,Retail group,2025,29,9,12,3,5,routine,Low,Low,True,False,Multi-component group audit
+AU-0284,F03,Healthcare,2025,33,10,14,4,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0285,F03,Asset management,2025,39,12,19,6,2,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0286,F03,Technology,2025,75,31,28,6,10,deep-dive,High,Medium,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Audit team below planned staffing; Partner involvement hours below plan
+AU-0287,F03,Retail group,2025,32,7,17,7,1,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0288,F03,Retail group,2025,32,9,15,3,5,routine,Low,Medium,False,False,
+AU-0289,F03,Listed manufacturing,2025,38,11,19,6,2,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0290,F03,Insurance,2025,30,10,9,8,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0291,F03,Healthcare,2025,31,17,7,2,5,routine,Medium,Medium,False,False,
+AU-0292,F03,Healthcare,2025,39,14,13,8,4,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0293,F03,Retail group,2025,24,3,13,1,7,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0294,F03,Technology,2025,29,10,11,4,4,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0295,F03,Asset management,2025,44,19,14,7,4,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0296,F04,Healthcare,2025,27,5,17,2,3,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0297,F04,Public interest entity,2025,34,15,11,7,1,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0298,F04,Insurance,2025,25,6,13,1,5,routine,Low,Low,False,False,
+AU-0299,F04,Public interest entity,2025,46,18,13,9,6,ask,Medium,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0300,F04,Healthcare,2025,45,17,17,7,4,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0301,F04,Energy & utilities,2025,32,5,17,7,3,routine,Low,Low,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0302,F04,Real estate,2025,26,13,3,6,4,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0303,F04,Insurance,2025,41,20,17,0,4,ask,Medium,Low,False,False,
+AU-0304,F04,Insurance,2025,29,6,20,1,2,routine,Low,Medium,False,False,Partner involvement hours below plan
+AU-0305,F04,Asset management,2025,29,11,8,5,5,routine,Low,Low,False,False,
+AU-0306,F04,Public interest entity,2025,47,17,16,7,7,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0307,F04,Real estate,2025,46,15,16,7,8,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0308,F04,Real estate,2025,50,20,19,8,3,group,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0309,F04,Listed manufacturing,2025,38,11,12,10,5,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0310,F04,Public interest entity,2025,27,14,6,5,2,routine,Low,Medium,False,False,
+AU-0311,F04,Insurance,2025,32,16,8,5,3,routine,Low,Medium,False,False,
+AU-0312,F04,Insurance,2025,30,12,5,5,8,routine,Low,Low,False,False,
+AU-0313,F04,Asset management,2025,26,0,18,5,3,routine,Low,Medium,False,False,
+AU-0314,F04,Energy & utilities,2025,32,11,10,6,5,routine,Low,Low,True,False,Multi-component group audit
+AU-0315,F04,Insurance,2025,31,10,10,7,4,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0316,F04,Listed manufacturing,2025,46,20,18,4,4,ask,Medium,Low,False,False,
+AU-0317,F04,Energy & utilities,2025,41,13,20,7,1,ask,Low,Medium,False,False,Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0318,F04,Technology,2025,34,9,9,10,6,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0319,F04,Technology,2025,22,6,14,0,2,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0320,F04,Energy & utilities,2025,31,19,5,0,7,routine,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0321,F04,Insurance,2025,32,9,18,2,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0322,F04,Healthcare,2025,26,5,5,12,4,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0323,F04,Technology,2025,49,16,19,8,6,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0324,F04,Retail group,2025,69,30,25,9,5,deep-dive,High,Medium,True,False,Significant judgement in revenue recognition; Complex accounting estimates; Multi-component group audit; Audit team below planned staffing; Partner involvement hours below plan
+AU-0325,F04,Real estate,2025,36,11,13,7,5,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0326,F04,Healthcare,2025,43,22,12,9,0,ask,Medium,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0327,F04,Listed manufacturing,2025,51,22,17,7,5,group,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0328,F04,Retail group,2025,27,7,6,9,5,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0329,F04,Insurance,2025,28,11,10,1,6,routine,Low,High,True,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0330,F04,Public interest entity,2025,29,8,9,8,4,routine,Low,Low,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0331,F04,Retail group,2025,24,5,7,3,9,routine,Low,Low,False,False,
+AU-0332,F04,Real estate,2025,24,6,11,5,2,routine,Low,Low,False,False,
+AU-0333,F04,Technology,2025,31,10,14,4,3,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0334,F04,Insurance,2025,45,21,19,2,3,ask,Medium,Medium,False,False,
+AU-0335,F04,Public interest entity,2025,37,15,12,5,5,ask,Low,Low,False,False,
+AU-0336,F04,Insurance,2025,28,14,7,1,6,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0337,F04,Insurance,2025,29,9,12,6,2,routine,Low,Low,False,False,
+AU-0338,F04,Asset management,2025,39,11,17,7,4,ask,Low,Low,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0339,F04,Listed manufacturing,2025,24,9,9,5,1,routine,Low,Low,False,False,
+AU-0340,F04,Energy & utilities,2025,23,7,12,0,4,routine,Low,Low,False,False,
+AU-0341,F04,Asset management,2025,33,13,10,7,3,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0342,F04,Insurance,2025,24,8,8,4,4,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0343,F04,Banking,2025,72,35,17,12,8,deep-dive,High,Low,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0344,F04,Healthcare,2025,37,7,13,9,8,ask,Low,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0345,F04,Banking,2025,40,14,16,7,3,ask,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0346,F04,Energy & utilities,2025,53,18,20,12,3,group,Medium,Low,False,False,Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0347,F04,Real estate,2025,38,9,18,7,4,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0348,F04,Listed manufacturing,2025,38,2,22,10,4,ask,Low,Medium,False,False,Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0349,F04,Banking,2025,42,19,12,5,6,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0350,F04,Banking,2025,27,13,7,5,2,routine,Low,Low,False,False,
+AU-0351,F04,Technology,2025,38,16,12,5,5,ask,Low,Low,False,False,
+AU-0352,F04,Banking,2025,22,3,14,2,3,routine,Low,Medium,False,False,
+AU-0353,F04,Technology,2025,65,24,25,8,8,deep-dive,Medium,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0354,F04,Listed manufacturing,2025,39,11,16,7,5,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0355,F04,Insurance,2025,33,8,13,7,5,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0356,F04,Listed manufacturing,2025,49,22,17,3,7,ask,Medium,Medium,False,False,
+AU-0357,F04,Banking,2025,40,17,14,3,6,ask,Medium,Medium,False,False,
+AU-0358,F04,Insurance,2025,37,24,9,1,3,ask,Medium,Low,True,False,Multi-component group audit
+AU-0359,F04,Insurance,2025,48,24,13,7,4,ask,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0360,F04,Listed manufacturing,2025,28,9,10,5,4,routine,Low,Low,False,False,
+AU-0361,F04,Healthcare,2025,49,23,17,6,3,ask,Medium,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0362,F04,Energy & utilities,2025,37,16,7,9,5,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0363,F04,Real estate,2025,27,10,13,2,2,routine,Low,Medium,False,False,
+AU-0364,F04,Public interest entity,2025,43,18,14,6,5,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0365,F04,Public interest entity,2025,26,18,0,6,2,routine,Medium,Medium,False,False,
+AU-0366,F04,Real estate,2025,40,11,16,9,4,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0367,F04,Banking,2025,30,3,10,13,4,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0368,F04,Listed manufacturing,2025,15,14,0,0,1,routine,Low,Low,False,False,
+AU-0369,F04,Asset management,2025,43,17,18,7,1,ask,Medium,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0370,F04,Real estate,2025,33,6,9,8,10,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0371,F04,Listed manufacturing,2025,36,15,12,5,4,ask,Low,Medium,False,False,
+AU-0372,F04,Listed manufacturing,2025,33,11,15,7,0,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0373,F04,Insurance,2025,27,15,2,10,0,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0374,F04,Technology,2025,40,10,16,10,4,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0375,F04,Listed manufacturing,2025,47,20,24,3,0,ask,Medium,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0376,F04,Asset management,2025,33,6,18,4,5,routine,Low,Low,False,False,
+AU-0377,F04,Listed manufacturing,2025,48,21,13,12,2,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0378,F04,Technology,2025,34,12,14,3,5,routine,Low,Medium,False,False,
+AU-0379,F04,Healthcare,2025,32,9,13,5,5,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0380,F04,Real estate,2025,34,7,14,7,6,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0381,F04,Banking,2025,29,15,6,5,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0382,F05,Asset management,2025,37,16,13,2,6,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0383,F05,Banking,2025,43,26,11,4,2,ask,Medium,Medium,False,False,Complex accounting estimates
+AU-0384,F05,Energy & utilities,2025,44,16,14,7,7,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0385,F05,Insurance,2025,34,12,14,2,6,routine,Low,Medium,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0386,F05,Insurance,2025,36,11,19,3,3,ask,Low,Low,False,False,
+AU-0387,F05,Healthcare,2025,30,10,12,6,2,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0388,F05,Energy & utilities,2025,49,18,22,3,6,ask,Medium,Low,False,False,Partner involvement hours below plan
+AU-0389,F05,Asset management,2025,29,10,11,5,3,routine,Low,Medium,False,False,
+AU-0390,F05,Asset management,2025,35,13,14,2,6,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0391,F05,Asset management,2025,43,18,8,11,6,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0392,F05,Retail group,2025,30,9,6,9,6,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0393,F05,Energy & utilities,2025,45,17,16,8,4,ask,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0394,F05,Public interest entity,2025,36,9,19,5,3,ask,Low,Medium,False,False,
+AU-0395,F05,Listed manufacturing,2025,65,30,23,9,3,deep-dive,High,Medium,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0396,F05,Public interest entity,2025,25,6,9,6,4,routine,Low,Low,False,False,
+AU-0397,F05,Healthcare,2025,39,22,5,5,7,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0398,F05,Real estate,2025,43,18,17,5,3,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0399,F05,Insurance,2025,45,24,7,10,4,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0400,F05,Asset management,2025,38,17,11,3,7,ask,Medium,Medium,False,False,
+AU-0401,F05,Banking,2025,34,11,9,6,8,routine,Low,Medium,False,False,
+AU-0402,F05,Banking,2025,31,9,12,4,6,routine,Low,Low,False,False,
+AU-0403,F05,Retail group,2025,50,19,21,5,5,group,Medium,Low,True,False,Multi-component group audit; Partner involvement hours below plan
+AU-0404,F05,Asset management,2025,37,11,21,1,4,ask,Low,Low,True,False,Multi-component group audit; Partner involvement hours below plan
+AU-0405,F05,Insurance,2025,21,0,16,1,4,routine,Low,Low,False,False,
+AU-0406,F05,Retail group,2025,42,12,17,7,6,ask,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0407,F05,Listed manufacturing,2025,43,12,17,10,4,ask,Low,Medium,True,False,Multi-component group audit; Repeat finding from a prior inspection
+AU-0408,F05,Healthcare,2025,37,12,12,5,8,ask,Low,Low,False,False,
+AU-0409,F05,Asset management,2025,35,22,6,3,4,ask,Medium,Low,False,False,
+AU-0410,F05,Energy & utilities,2025,38,19,16,2,1,ask,Medium,Low,False,False,
+AU-0411,F05,Energy & utilities,2025,26,10,7,4,5,routine,Low,Low,False,False,
+AU-0412,F05,Technology,2025,44,16,18,5,5,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0413,F05,Banking,2025,14,9,5,0,0,routine,Low,Low,False,False,
+AU-0414,F05,Real estate,2025,12,0,4,6,2,routine,Low,Medium,False,False,
+AU-0415,F05,Insurance,2025,65,39,18,2,6,deep-dive,High,High,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0416,F05,Insurance,2025,22,3,14,4,1,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0417,F05,Real estate,2025,39,14,16,7,2,ask,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0418,F05,Public interest entity,2025,34,17,7,8,2,routine,Medium,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0419,F05,Technology,2025,43,20,17,2,4,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0420,F05,Real estate,2025,33,6,16,8,3,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0421,F05,Asset management,2025,39,4,25,5,5,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0422,F05,Real estate,2025,65,36,16,8,5,deep-dive,High,High,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0423,F05,Retail group,2025,37,12,13,6,6,ask,Low,Low,False,False,
+AU-0424,F05,Public interest entity,2025,34,14,12,5,3,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0425,F05,Technology,2025,28,10,10,6,2,routine,Low,Low,False,False,
+AU-0426,F05,Healthcare,2025,41,5,15,12,9,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0427,F05,Banking,2025,40,17,12,7,4,ask,Medium,Low,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0428,F05,Banking,2025,31,7,17,6,1,routine,Low,Medium,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0429,F05,Banking,2025,37,16,13,4,4,ask,Low,Low,False,False,
+AU-0430,F05,Insurance,2025,36,10,19,4,3,ask,Low,Medium,False,False,
+AU-0431,F05,Public interest entity,2025,27,5,11,4,7,routine,Low,Medium,False,False,
+AU-0432,F05,Real estate,2025,39,19,11,4,5,ask,Medium,Medium,False,False,
+AU-0433,F05,Insurance,2025,27,13,12,2,0,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0434,F05,Energy & utilities,2025,27,13,10,4,0,routine,Low,Medium,False,False,
+AU-0435,F05,Insurance,2025,33,10,13,5,5,routine,Low,Low,False,False,
+AU-0436,F05,Real estate,2025,54,21,17,11,5,group,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0437,F05,Real estate,2025,36,18,11,5,2,ask,Medium,Low,True,False,Multi-component group audit
+AU-0438,F05,Banking,2025,38,12,17,8,1,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0439,F05,Asset management,2025,52,24,11,10,7,group,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0440,F05,Real estate,2025,38,9,15,9,5,ask,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0441,F05,Asset management,2025,44,18,15,7,4,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0442,F05,Healthcare,2025,34,12,8,11,3,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0443,F05,Asset management,2025,28,11,9,2,6,routine,Low,Low,False,False,
+AU-0444,F05,Real estate,2025,50,21,14,8,7,group,Medium,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0445,F05,Insurance,2025,37,11,16,4,6,ask,Low,Medium,False,False,
+AU-0446,F05,Banking,2025,22,3,14,0,5,routine,Low,Low,True,False,Multi-component group audit
+AU-0447,F05,Energy & utilities,2025,42,18,15,5,4,ask,Medium,Low,False,False,
+AU-0448,F05,Real estate,2025,32,19,8,3,2,routine,Medium,Low,False,False,
+AU-0449,F05,Retail group,2025,30,8,19,1,2,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0450,F05,Listed manufacturing,2025,33,19,12,1,1,routine,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0451,F05,Healthcare,2025,21,2,12,5,2,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0452,F05,Asset management,2025,48,15,21,6,6,ask,Low,Medium,True,False,Multi-component group audit; Partner involvement hours below plan
+AU-0453,F05,Banking,2025,47,22,19,1,5,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0454,F05,Listed manufacturing,2025,19,7,10,0,2,routine,Low,Medium,False,False,
+AU-0455,F05,Asset management,2025,30,13,9,2,6,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0456,F05,Healthcare,2025,43,22,8,4,9,ask,Medium,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0457,F05,Public interest entity,2025,13,3,6,0,4,routine,Low,Medium,False,False,
+AU-0458,F05,Listed manufacturing,2025,26,10,10,3,3,routine,Low,Low,False,False,
+AU-0459,F05,Healthcare,2025,25,4,12,4,5,routine,Low,Low,False,False,
+AU-0460,F05,Healthcare,2025,13,7,3,0,3,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0461,F05,Banking,2025,50,18,18,7,7,group,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0462,F05,Public interest entity,2025,27,11,8,5,3,routine,Low,Medium,True,False,Multi-component group audit
+AU-0463,F05,Banking,2025,32,20,6,3,3,routine,Medium,Medium,False,False,
+AU-0464,F05,Energy & utilities,2025,44,18,10,13,3,ask,Medium,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0465,F05,Technology,2025,48,17,22,7,2,ask,Medium,Low,False,False,Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0466,F06,Listed manufacturing,2025,30,13,9,5,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0467,F06,Banking,2025,33,13,9,7,4,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0468,F06,Asset management,2025,38,8,19,6,5,ask,Low,Low,True,False,Multi-component group audit
+AU-0469,F06,Listed manufacturing,2025,32,16,8,6,2,routine,Low,Low,False,False,
+AU-0470,F06,Technology,2025,27,3,11,7,6,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0471,F06,Banking,2025,39,11,16,9,3,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0472,F06,Technology,2025,44,17,15,5,7,ask,Medium,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0473,F06,Technology,2025,35,5,18,7,5,ask,Low,Medium,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0474,F06,Insurance,2025,23,6,11,2,4,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0475,F06,Healthcare,2025,52,20,23,5,4,group,Medium,Low,False,False,Partner involvement hours below plan
+AU-0476,F06,Insurance,2025,32,15,9,8,0,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0477,F06,Public interest entity,2025,28,13,9,2,4,routine,Low,Low,True,False,Multi-component group audit
+AU-0478,F06,Healthcare,2025,50,23,16,8,3,group,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0479,F06,Insurance,2025,21,10,7,2,2,routine,Low,Medium,False,False,
+AU-0480,F06,Healthcare,2025,37,9,17,4,7,ask,Low,Medium,False,False,
+AU-0481,F06,Public interest entity,2025,28,6,17,1,4,routine,Low,Low,False,False,
+AU-0482,F06,Banking,2025,41,11,19,3,8,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0483,F06,Energy & utilities,2025,25,6,10,5,4,routine,Low,Medium,False,False,
+AU-0484,F06,Listed manufacturing,2025,43,15,20,5,3,ask,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0485,F06,Public interest entity,2025,47,15,21,6,5,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0486,F06,Technology,2025,30,6,14,5,5,routine,Low,Low,False,False,
+AU-0487,F06,Technology,2025,36,7,18,5,6,ask,Low,Low,False,False,
+AU-0488,F06,Banking,2025,23,9,9,2,3,routine,Low,Low,False,False,
+AU-0489,F06,Technology,2025,34,9,20,4,1,routine,Low,Low,False,False,Partner involvement hours below plan
+AU-0490,F06,Energy & utilities,2025,34,18,8,3,5,routine,Medium,Medium,False,False,
+AU-0491,F06,Banking,2025,32,15,10,3,4,routine,Low,High,True,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0492,F06,Energy & utilities,2025,33,18,6,7,2,routine,Medium,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0493,F06,Energy & utilities,2025,12,0,7,0,5,routine,Low,Low,False,False,
+AU-0494,F06,Asset management,2025,46,18,16,7,5,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0495,F06,Listed manufacturing,2025,24,9,4,6,5,routine,Low,Medium,False,False,
+AU-0496,F06,Banking,2025,27,12,6,4,5,routine,Low,Medium,True,False,Multi-component group audit
+AU-0497,F06,Technology,2025,24,9,7,6,2,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0498,F06,Healthcare,2025,52,26,20,3,3,group,Medium,Medium,False,False,Complex accounting estimates; Partner involvement hours below plan
+AU-0499,F06,Public interest entity,2025,21,10,8,2,1,routine,Low,Medium,False,False,
+AU-0500,F06,Real estate,2025,30,4,17,2,7,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0501,F06,Insurance,2025,35,14,14,4,3,ask,Low,Low,False,False,
+AU-0502,F06,Healthcare,2025,27,10,8,4,5,routine,Low,Medium,False,False,
+AU-0503,F06,Banking,2025,33,15,12,3,3,routine,Low,Medium,True,False,Multi-component group audit
+AU-0504,F06,Energy & utilities,2025,48,20,22,2,4,ask,Medium,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0505,F06,Listed manufacturing,2025,33,17,11,2,3,routine,Medium,Medium,False,False,
+AU-0506,F06,Real estate,2025,33,16,3,7,7,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0507,F06,Healthcare,2025,31,11,11,4,5,routine,Low,Low,False,False,
+AU-0508,F06,Insurance,2025,39,17,6,8,8,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0509,F06,Healthcare,2025,47,20,16,8,3,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0510,F06,Healthcare,2025,32,7,11,9,5,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0511,F06,Retail group,2025,38,7,19,10,2,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0512,F06,Banking,2025,31,15,11,2,3,routine,Low,Low,True,False,Multi-component group audit
+AU-0513,F06,Listed manufacturing,2025,34,10,11,9,4,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0514,F06,Healthcare,2025,32,6,15,5,6,routine,Low,Medium,False,False,
+AU-0515,F06,Energy & utilities,2025,28,13,7,6,2,routine,Low,Low,False,False,
+AU-0516,F06,Listed manufacturing,2025,21,4,8,4,5,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0517,F06,Healthcare,2025,41,19,16,6,0,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0518,F06,Retail group,2025,37,14,12,6,5,ask,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0519,F06,Asset management,2025,28,7,17,4,0,routine,Low,Low,False,False,
+AU-0520,F06,Public interest entity,2025,51,23,15,7,6,group,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0521,F06,Retail group,2025,31,13,13,2,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0522,F06,Retail group,2025,17,4,1,7,5,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0523,F06,Technology,2025,24,3,11,6,4,routine,Low,Low,False,False,
+AU-0524,F06,Listed manufacturing,2025,42,7,20,6,9,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0525,F06,Public interest entity,2025,36,11,13,7,5,ask,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0526,F06,Real estate,2025,24,16,6,2,0,routine,Low,Medium,False,False,
+AU-0527,F06,Retail group,2025,19,8,2,7,2,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0528,F06,Retail group,2025,31,11,9,2,9,routine,Low,Medium,True,False,Multi-component group audit
+AU-0529,F06,Retail group,2025,36,12,17,5,2,ask,Low,Medium,False,False,
+AU-0530,F06,Retail group,2025,39,17,10,9,3,ask,Medium,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0531,F06,Insurance,2025,37,16,10,6,5,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0532,F06,Asset management,2025,17,9,5,1,2,routine,Low,Medium,True,False,Multi-component group audit
+AU-0533,F06,Public interest entity,2025,40,8,22,8,2,ask,Low,Low,False,False,Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0534,F06,Public interest entity,2025,35,12,15,4,4,ask,Low,Medium,False,False,
+AU-0535,F06,Banking,2025,66,25,28,9,4,deep-dive,Medium,Low,False,True,Goodwill or asset impairment risk; Audit team below planned staffing; Partner involvement hours below plan; Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0536,F06,Retail group,2025,35,17,12,3,3,ask,Medium,Medium,False,False,
+AU-0537,F06,Technology,2025,45,11,25,4,5,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0538,F06,Energy & utilities,2025,36,16,9,6,5,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0539,F06,Banking,2025,31,16,6,6,3,routine,Low,Medium,False,False,
+AU-0540,F06,Energy & utilities,2025,48,16,17,11,4,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0541,F06,Insurance,2025,74,30,29,9,6,deep-dive,High,Low,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Multi-component group audit; Audit team below planned staffing
+AU-0542,F06,Insurance,2025,30,8,13,3,6,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0543,F06,Energy & utilities,2025,30,8,18,2,2,routine,Low,Medium,False,False,
+AU-0544,F06,Listed manufacturing,2025,29,7,18,0,4,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0545,F06,Insurance,2025,37,19,7,8,3,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0546,F07,Technology,2025,29,10,16,2,1,routine,Low,Medium,False,False,
+AU-0547,F07,Energy & utilities,2025,26,13,6,3,4,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0548,F07,Public interest entity,2025,43,22,9,7,5,ask,Medium,Low,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0549,F07,Healthcare,2025,41,23,15,0,3,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0550,F07,Technology,2025,38,11,16,4,7,ask,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0551,F07,Public interest entity,2025,30,16,9,0,5,routine,Low,Medium,False,False,
+AU-0552,F07,Energy & utilities,2025,39,17,18,2,2,ask,Medium,Medium,False,False,
+AU-0553,F07,Banking,2025,38,19,9,5,5,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0554,F07,Real estate,2025,46,24,12,7,3,ask,Medium,Medium,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0555,F07,Public interest entity,2025,37,10,20,6,1,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0556,F07,Retail group,2025,27,9,13,4,1,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0557,F07,Energy & utilities,2025,17,2,11,2,2,routine,Low,Low,False,False,
+AU-0558,F07,Asset management,2025,32,3,17,6,6,routine,Low,Medium,False,False,
+AU-0559,F07,Listed manufacturing,2025,38,8,12,10,8,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0560,F07,Real estate,2025,25,11,4,5,5,routine,Low,Medium,False,False,
+AU-0561,F07,Healthcare,2025,40,20,12,6,2,ask,Medium,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0562,F07,Retail group,2025,48,19,14,7,8,ask,Medium,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0563,F07,Retail group,2025,37,1,21,5,10,ask,Low,Low,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0564,F07,Public interest entity,2025,27,4,13,4,6,routine,Low,Medium,True,False,Multi-component group audit
+AU-0565,F07,Retail group,2025,44,18,16,4,6,ask,Medium,Low,False,False,
+AU-0566,F07,Banking,2025,65,31,18,9,7,deep-dive,High,Low,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0567,F07,Asset management,2025,20,5,8,4,3,routine,Low,Medium,False,False,
+AU-0568,F07,Insurance,2025,36,5,23,5,3,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0569,F07,Retail group,2025,45,16,15,10,4,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0570,F07,Public interest entity,2025,40,19,13,5,3,ask,Medium,Low,False,False,
+AU-0571,F07,Public interest entity,2025,33,12,9,6,6,routine,Low,Medium,False,False,
+AU-0572,F07,Public interest entity,2025,39,17,17,0,5,ask,Medium,Medium,False,False,
+AU-0573,F07,Public interest entity,2025,39,10,14,11,4,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0574,F07,Technology,2025,28,15,9,3,1,routine,Low,Low,False,False,
+AU-0575,F07,Real estate,2025,51,19,16,10,6,group,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0576,F07,Banking,2025,32,14,13,3,2,routine,Low,Medium,False,False,
+AU-0577,F07,Insurance,2025,42,8,17,11,6,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0578,F07,Banking,2025,27,5,13,2,7,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0579,F07,Insurance,2025,33,15,8,6,4,routine,Low,Low,False,False,
+AU-0580,F07,Public interest entity,2025,39,16,14,4,5,ask,Low,Medium,False,False,
+AU-0581,F07,Insurance,2025,34,13,7,8,6,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0582,F07,Technology,2025,38,15,15,3,5,ask,Low,Low,False,False,
+AU-0583,F07,Technology,2025,42,19,8,11,4,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0584,F07,Real estate,2025,28,7,8,6,7,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0585,F07,Banking,2025,36,13,12,7,4,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0586,F07,Public interest entity,2025,36,12,15,5,4,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0587,F07,Asset management,2025,25,5,12,4,4,routine,Low,Medium,False,False,
+AU-0588,F07,Technology,2025,39,13,16,4,6,ask,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0589,F07,Energy & utilities,2025,31,14,9,7,1,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0590,F07,Healthcare,2025,45,24,14,1,6,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0591,F07,Healthcare,2025,29,3,17,6,3,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0592,F07,Healthcare,2025,43,20,14,3,6,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0593,F07,Technology,2025,41,23,10,4,4,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0594,F07,Listed manufacturing,2025,48,20,15,8,5,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0595,F07,Public interest entity,2025,32,14,6,6,6,routine,Low,Medium,False,False,
+AU-0596,F07,Healthcare,2025,34,13,14,5,2,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0597,F07,Real estate,2025,33,10,14,3,6,routine,Low,Medium,False,False,
+AU-0598,F07,Insurance,2025,26,8,8,7,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0599,F07,Insurance,2025,43,15,13,12,3,ask,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0600,F07,Public interest entity,2025,38,11,17,3,7,ask,Low,Low,False,False,
+AU-0601,F07,Banking,2025,30,3,13,8,6,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0602,F07,Insurance,2025,40,13,14,6,7,ask,Low,Low,False,False,
+AU-0603,F07,Healthcare,2025,34,9,15,8,2,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0604,F07,Listed manufacturing,2025,41,14,17,6,4,ask,Low,Low,False,False,
+AU-0605,F07,Real estate,2025,46,18,24,1,3,ask,Medium,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0606,F07,Public interest entity,2025,33,10,14,3,6,routine,Low,Medium,False,False,
+AU-0607,F07,Energy & utilities,2025,38,13,14,5,6,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0608,F07,Retail group,2025,40,14,17,4,5,ask,Low,Medium,False,False,
+AU-0609,F07,Listed manufacturing,2025,29,6,15,3,5,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0610,F07,Healthcare,2025,23,5,8,5,5,routine,Low,Medium,False,False,
+AU-0611,F07,Insurance,2025,58,29,12,9,8,group,High,High,False,False,Complex accounting estimates; Heavy reliance on client IT systems
+AU-0612,F07,Energy & utilities,2025,48,18,21,5,4,ask,Medium,Low,False,False,Partner involvement hours below plan
+AU-0613,F07,Listed manufacturing,2025,27,0,16,10,1,routine,Low,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0614,F07,Banking,2025,48,30,14,2,2,ask,High,Medium,False,False,Significant judgement in revenue recognition; Complex accounting estimates
+AU-0615,F07,Healthcare,2025,30,7,18,1,4,routine,Low,Medium,False,False,
+AU-0616,F07,Healthcare,2025,31,10,12,5,4,routine,Low,Medium,True,False,Multi-component group audit
+AU-0617,F07,Asset management,2025,45,15,19,6,5,ask,Low,Low,False,False,
+AU-0618,F07,Healthcare,2025,27,8,12,3,4,routine,Low,Low,True,False,Multi-component group audit
+AU-0619,F07,Banking,2025,31,12,7,9,3,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0620,F07,Banking,2025,25,6,11,5,3,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0621,F07,Energy & utilities,2025,24,6,10,4,4,routine,Low,Low,False,False,
+AU-0622,F07,Real estate,2025,28,7,13,4,4,routine,Low,Medium,False,False,
+AU-0623,F07,Technology,2025,47,19,15,7,6,ask,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0624,F08,Listed manufacturing,2025,42,16,18,5,3,ask,Low,Medium,False,False,
+AU-0625,F08,Public interest entity,2025,33,12,9,7,5,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0626,F08,Listed manufacturing,2025,28,10,10,4,4,routine,Low,Low,False,False,
+AU-0627,F08,Energy & utilities,2025,67,31,23,8,5,deep-dive,High,Medium,False,False,Significant judgement in revenue recognition; Complex accounting estimates; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0628,F08,Real estate,2025,32,11,10,6,5,routine,Low,Medium,False,False,
+AU-0629,F08,Insurance,2025,34,12,12,7,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0630,F08,Listed manufacturing,2025,34,12,12,7,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0631,F08,Insurance,2025,52,18,18,11,5,group,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0632,F08,Public interest entity,2025,47,19,14,7,7,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0633,F08,Healthcare,2025,35,16,17,0,2,ask,Low,Low,False,False,
+AU-0634,F08,Technology,2025,30,17,4,6,3,routine,Medium,Medium,False,False,
+AU-0635,F08,Insurance,2025,22,6,11,4,1,routine,Low,Low,False,False,
+AU-0636,F08,Public interest entity,2025,32,4,13,13,2,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0637,F08,Listed manufacturing,2025,27,6,9,9,3,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0638,F08,Retail group,2025,36,16,10,5,5,ask,Low,Low,False,False,
+AU-0639,F08,Retail group,2025,28,20,0,3,5,routine,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0640,F08,Technology,2025,31,11,8,7,5,routine,Low,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0641,F08,Real estate,2025,35,8,19,4,4,ask,Low,Low,False,False,
+AU-0642,F08,Technology,2025,35,22,8,3,2,ask,Medium,Medium,False,False,
+AU-0643,F08,Public interest entity,2025,26,2,14,6,4,routine,Low,Medium,False,False,
+AU-0644,F08,Energy & utilities,2025,24,9,11,3,1,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0645,F08,Insurance,2025,32,16,8,2,6,routine,Low,Low,False,False,
+AU-0646,F08,Retail group,2025,32,20,6,4,2,routine,Medium,Low,False,False,
+AU-0647,F08,Retail group,2025,34,5,19,4,6,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0648,F08,Public interest entity,2025,40,19,9,8,4,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0649,F08,Retail group,2025,35,11,16,5,3,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0650,F08,Asset management,2025,25,12,7,4,2,routine,Low,Low,False,False,
+AU-0651,F08,Energy & utilities,2025,35,17,9,6,3,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0652,F08,Energy & utilities,2025,31,10,9,6,6,routine,Low,Medium,False,False,
+AU-0653,F08,Technology,2025,44,16,15,9,4,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0654,F08,Public interest entity,2025,43,11,24,6,2,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0655,F08,Listed manufacturing,2025,29,10,13,1,5,routine,Low,Low,True,False,Multi-component group audit
+AU-0656,F08,Retail group,2025,15,9,2,2,2,routine,Low,Low,False,False,
+AU-0657,F08,Real estate,2025,19,11,5,0,3,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0658,F08,Asset management,2025,34,17,14,2,1,routine,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0659,F08,Real estate,2025,46,13,17,8,8,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0660,F08,Listed manufacturing,2025,42,20,13,3,6,ask,Medium,Low,False,False,
+AU-0661,F08,Real estate,2025,27,7,12,5,3,routine,Low,Medium,True,False,Multi-component group audit
+AU-0662,F08,Asset management,2025,27,8,15,2,2,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0663,F08,Asset management,2025,23,0,18,2,3,routine,Low,Medium,False,False,
+AU-0664,F08,Healthcare,2025,31,15,10,3,3,routine,Low,Low,False,False,
+AU-0665,F08,Insurance,2025,37,16,13,7,1,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0666,F08,Real estate,2025,32,14,15,1,2,routine,Low,Medium,False,False,
+AU-0667,F08,Energy & utilities,2025,24,7,11,3,3,routine,Low,Medium,False,False,
+AU-0668,F08,Public interest entity,2025,35,25,6,4,0,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0669,F08,Technology,2025,33,10,13,4,6,routine,Low,Medium,True,False,Multi-component group audit
+AU-0670,F08,Healthcare,2025,44,17,15,8,4,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0671,F08,Healthcare,2025,28,7,16,3,2,routine,Low,Low,False,False,
+AU-0672,F08,Real estate,2025,58,25,26,4,3,group,Medium,Low,True,False,Multi-component group audit; Audit team below planned staffing
+AU-0673,F08,Asset management,2025,16,4,1,6,5,routine,Low,Medium,False,False,
+AU-0674,F08,Healthcare,2025,37,21,9,2,5,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0675,F08,Technology,2025,24,7,8,6,3,routine,Low,Medium,False,False,
+AU-0676,F08,Public interest entity,2025,33,15,12,2,4,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0677,F08,Real estate,2025,49,30,11,6,2,ask,High,Low,False,True,Significant judgement in revenue recognition; Complex accounting estimates
+AU-0678,F08,Technology,2025,18,7,7,3,1,routine,Low,Medium,False,False,
+AU-0679,F08,Energy & utilities,2025,29,12,12,0,5,routine,Low,Medium,False,False,
+AU-0680,F08,Real estate,2025,37,13,13,9,2,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0681,F08,Listed manufacturing,2025,65,34,19,7,5,deep-dive,High,High,True,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Heavy reliance on client IT systems; Multi-component group audit
+AU-0682,F08,Insurance,2025,23,1,12,5,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0683,F08,Retail group,2025,14,3,5,5,1,routine,Low,Low,False,False,
+AU-0684,F08,Listed manufacturing,2025,25,2,13,7,3,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0685,F08,Asset management,2025,30,18,5,2,5,routine,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0686,F08,Energy & utilities,2025,22,12,7,2,1,routine,Low,Low,False,False,
+AU-0687,F08,Public interest entity,2025,24,0,14,7,3,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0688,F08,Banking,2025,36,14,11,8,3,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0689,F08,Energy & utilities,2025,43,19,16,1,7,ask,Medium,Medium,False,False,
+AU-0690,F08,Asset management,2025,32,13,14,3,2,routine,Low,Medium,False,False,
+AU-0691,F08,Insurance,2025,21,14,6,1,0,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0692,F08,Banking,2025,41,16,12,8,5,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0693,F08,Insurance,2025,24,11,11,0,2,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0694,F08,Insurance,2025,43,20,16,1,6,ask,Medium,Medium,False,False,
+AU-0695,F08,Healthcare,2025,24,11,8,0,5,routine,Low,Medium,False,False,
+AU-0696,F08,Healthcare,2025,22,10,5,5,2,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0697,F08,Asset management,2025,37,12,14,7,4,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0698,F09,Energy & utilities,2025,48,16,17,8,7,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0699,F09,Banking,2025,34,15,13,3,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0700,F09,Real estate,2025,42,21,9,5,7,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0701,F09,Real estate,2025,24,7,13,4,0,routine,Low,Low,False,False,
+AU-0702,F09,Insurance,2025,46,18,16,8,4,ask,Medium,Low,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0703,F09,Public interest entity,2025,33,5,19,2,7,routine,Low,Medium,False,False,
+AU-0704,F09,Insurance,2025,46,19,13,7,7,ask,Medium,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0705,F09,Healthcare,2025,36,18,8,5,5,ask,Medium,Low,False,False,
+AU-0706,F09,Banking,2025,44,20,14,4,6,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0707,F09,Public interest entity,2025,32,10,16,4,2,routine,Low,Low,False,False,
+AU-0708,F09,Asset management,2025,45,18,17,6,4,ask,Medium,Low,False,False,
+AU-0709,F09,Real estate,2025,47,22,14,6,5,ask,Medium,Low,False,False,
+AU-0710,F09,Insurance,2025,25,4,6,10,5,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0711,F09,Asset management,2025,30,15,7,8,0,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0712,F09,Energy & utilities,2025,30,8,11,7,4,routine,Low,Low,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0713,F09,Insurance,2025,39,17,16,4,2,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0714,F09,Insurance,2025,29,15,5,4,5,routine,Low,High,True,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0715,F09,Listed manufacturing,2025,28,11,6,4,7,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0716,F09,Real estate,2025,21,8,7,0,6,routine,Low,Medium,True,False,Multi-component group audit
+AU-0717,F09,Public interest entity,2025,30,11,11,6,2,routine,Low,Low,False,False,
+AU-0718,F09,Retail group,2025,43,21,11,11,0,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0719,F09,Banking,2025,34,12,15,6,1,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0720,F09,Insurance,2025,43,18,14,6,5,ask,Medium,Medium,False,False,
+AU-0721,F09,Real estate,2025,27,12,1,7,7,routine,Low,Medium,True,False,Multi-component group audit; Overdue remediation on this engagement
+AU-0722,F09,Insurance,2025,32,9,10,6,7,routine,Low,Low,False,False,
+AU-0723,F09,Healthcare,2025,46,14,17,7,8,ask,Low,Low,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0724,F09,Energy & utilities,2025,49,21,21,2,5,ask,Medium,Low,False,False,Partner involvement hours below plan
+AU-0725,F09,Listed manufacturing,2025,36,14,14,5,3,ask,Low,Low,False,False,
+AU-0726,F09,Asset management,2025,31,13,8,5,5,routine,Low,Medium,False,False,
+AU-0727,F09,Real estate,2025,51,25,10,10,6,group,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0728,F09,Asset management,2025,39,11,20,5,3,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0729,F09,Public interest entity,2025,45,26,8,8,3,ask,Medium,Low,False,False,Complex accounting estimates; Overdue remediation on this engagement
+AU-0730,F09,Public interest entity,2025,37,20,13,0,4,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0731,F09,Banking,2025,25,13,4,3,5,routine,Low,Low,False,False,
+AU-0732,F09,Listed manufacturing,2025,24,8,13,3,0,routine,Low,Medium,True,False,Multi-component group audit
+AU-0733,F09,Insurance,2025,33,17,8,6,2,routine,Medium,Medium,False,False,
+AU-0734,F09,Asset management,2025,30,6,17,3,4,routine,Low,Medium,False,False,
+AU-0735,F09,Technology,2025,36,16,4,10,6,ask,Low,Medium,True,False,Multi-component group audit; Repeat finding from a prior inspection
+AU-0736,F09,Insurance,2025,33,15,10,2,6,routine,Low,Low,False,False,
+AU-0737,F09,Asset management,2025,24,3,9,7,5,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0738,F09,Healthcare,2025,31,19,6,5,1,routine,Medium,Low,False,False,
+AU-0739,F09,Public interest entity,2025,36,13,14,3,6,ask,Low,Medium,False,False,
+AU-0740,F09,Retail group,2025,35,18,9,2,6,ask,Medium,Medium,False,False,
+AU-0741,F09,Energy & utilities,2025,44,18,9,11,6,ask,Medium,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0742,F09,Public interest entity,2025,41,16,14,6,5,ask,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0743,F09,Retail group,2025,36,19,10,1,6,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0744,F09,Public interest entity,2025,33,17,7,3,6,routine,Medium,Medium,False,False,
+AU-0745,F09,Real estate,2025,33,17,7,4,5,routine,Medium,Medium,False,False,
+AU-0746,F09,Listed manufacturing,2025,34,10,15,6,3,routine,Low,Low,False,False,
+AU-0747,F09,Retail group,2025,34,12,8,11,3,routine,Low,Medium,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0748,F09,Technology,2025,79,39,30,5,5,deep-dive,High,Medium,True,False,Significant judgement in revenue recognition; Complex accounting estimates; Multi-component group audit; Audit team below planned staffing; Partner involvement hours below plan
+AU-0749,F09,Real estate,2025,34,16,12,0,6,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0750,F09,Energy & utilities,2025,25,15,0,7,3,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0751,F09,Real estate,2025,36,8,13,13,2,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0752,F09,Asset management,2025,33,11,14,4,4,routine,Low,Medium,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0753,F09,Energy & utilities,2025,34,17,7,6,4,routine,Medium,Medium,False,False,
+AU-0754,F09,Real estate,2025,38,14,14,8,2,ask,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0755,F09,Technology,2025,41,10,18,11,2,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0756,F09,Real estate,2025,34,12,13,4,5,routine,Low,Low,False,False,
+AU-0757,F09,Healthcare,2025,27,13,7,3,4,routine,Low,Medium,False,False,
+AU-0758,F09,Insurance,2025,47,18,17,7,5,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0759,F09,Real estate,2025,38,20,9,5,4,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0760,F09,Energy & utilities,2025,26,11,4,6,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0761,F09,Real estate,2025,29,16,8,2,3,routine,Low,Low,True,False,Multi-component group audit
+AU-0762,F09,Energy & utilities,2025,46,19,17,5,5,ask,Medium,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0763,F09,Real estate,2025,19,0,13,3,3,routine,Low,Medium,False,False,
+AU-0764,F09,Listed manufacturing,2025,43,24,11,2,6,ask,Medium,Low,False,False,
+AU-0765,F09,Technology,2025,40,8,21,6,5,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0766,F09,Asset management,2025,38,18,13,4,3,ask,Medium,Low,False,False,
+AU-0767,F09,Technology,2025,29,13,6,9,1,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0768,F10,Listed manufacturing,2025,30,8,11,6,5,routine,Low,Low,False,False,
+AU-0769,F10,Public interest entity,2025,40,16,14,5,5,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0770,F10,Listed manufacturing,2025,27,18,5,3,1,routine,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0771,F10,Technology,2025,38,19,9,4,6,ask,Medium,Medium,False,False,
+AU-0772,F10,Energy & utilities,2025,39,15,16,5,3,ask,Low,Low,False,False,
+AU-0773,F10,Healthcare,2025,43,15,14,9,5,ask,Low,Medium,True,False,Multi-component group audit; Repeat finding from a prior inspection
+AU-0774,F10,Insurance,2025,37,16,13,6,2,ask,Low,Low,True,False,Multi-component group audit
+AU-0775,F10,Technology,2025,37,13,13,6,5,ask,Low,Medium,False,False,
+AU-0776,F10,Asset management,2025,36,16,13,5,2,ask,Low,Medium,False,False,
+AU-0777,F10,Energy & utilities,2025,45,13,18,8,6,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0778,F10,Real estate,2025,51,18,19,10,4,group,Medium,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0779,F10,Retail group,2025,31,8,17,0,6,routine,Low,Low,False,False,
+AU-0780,F10,Technology,2025,65,32,21,8,4,deep-dive,High,Medium,False,True,Significant judgement in revenue recognition; Complex accounting estimates; Goodwill or asset impairment risk; Partner involvement hours below plan; Overdue remediation on this engagement
+AU-0781,F10,Energy & utilities,2025,29,11,6,8,4,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0782,F10,Real estate,2025,23,9,3,5,6,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0783,F10,Insurance,2025,41,18,10,9,4,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0784,F10,Technology,2025,34,17,15,2,0,routine,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0785,F10,Energy & utilities,2025,30,18,11,0,1,routine,Medium,Low,False,False,
+AU-0786,F10,Asset management,2025,21,14,4,1,2,routine,Low,Medium,False,False,
+AU-0787,F10,Retail group,2025,44,30,7,3,4,ask,High,Medium,False,False,Significant judgement in revenue recognition; Complex accounting estimates
+AU-0788,F10,Healthcare,2025,31,11,10,6,4,routine,Low,Low,False,False,
+AU-0789,F10,Real estate,2025,29,9,9,4,7,routine,Low,Medium,False,False,
+AU-0790,F10,Public interest entity,2025,28,14,9,3,2,routine,Low,Low,False,False,
+AU-0791,F10,Real estate,2025,51,23,13,11,4,group,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0792,F10,Listed manufacturing,2025,26,11,12,0,3,routine,Low,Low,False,False,
+AU-0793,F10,Real estate,2025,34,11,17,5,1,routine,Low,Medium,False,False,
+AU-0794,F10,Technology,2025,20,1,13,2,4,routine,Low,Medium,False,False,
+AU-0795,F10,Asset management,2025,36,14,8,9,5,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0796,F10,Retail group,2025,48,25,14,4,5,ask,Medium,Low,False,False,
+AU-0797,F10,Banking,2025,34,13,19,0,2,routine,Low,Low,False,False,
+AU-0798,F10,Real estate,2025,28,11,12,3,2,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0799,F10,Retail group,2025,12,0,4,3,5,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0800,F10,Real estate,2025,33,9,17,5,2,routine,Low,Medium,False,False,
+AU-0801,F10,Asset management,2025,20,2,2,10,6,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0802,F10,Insurance,2025,31,9,14,5,3,routine,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0803,F10,Energy & utilities,2025,24,6,10,3,5,routine,Low,Low,False,False,
+AU-0804,F10,Listed manufacturing,2025,33,6,15,6,6,routine,Low,Medium,False,False,
+AU-0805,F10,Real estate,2025,33,19,7,3,4,routine,Medium,Medium,False,False,
+AU-0806,F10,Banking,2025,38,12,19,7,0,ask,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0807,F10,Technology,2025,29,7,11,6,5,routine,Low,Medium,False,False,
+AU-0808,F10,Asset management,2025,27,21,4,1,1,routine,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0809,F10,Healthcare,2025,38,13,16,5,4,ask,Low,Medium,False,False,
+AU-0810,F10,Public interest entity,2025,30,1,17,6,6,routine,Low,Low,False,False,
+AU-0811,F10,Asset management,2025,50,18,21,8,3,group,Medium,Low,False,True,Goodwill or asset impairment risk; Partner involvement hours below plan
+AU-0812,F10,Listed manufacturing,2025,40,12,14,11,3,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0813,F10,Public interest entity,2025,39,14,18,3,4,ask,Low,Medium,False,False,
+AU-0814,F10,Healthcare,2025,45,13,22,5,5,ask,Low,Medium,False,False,Partner involvement hours below plan
+AU-0815,F10,Healthcare,2025,30,16,4,7,3,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0816,F10,Retail group,2025,38,13,19,2,4,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0817,F10,Asset management,2025,46,25,10,8,3,ask,Medium,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0818,F10,Healthcare,2025,45,23,14,5,3,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0819,F10,Healthcare,2025,39,7,24,1,7,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0820,F10,Energy & utilities,2025,54,28,13,11,2,group,High,Low,False,False,Complex accounting estimates; Repeat finding from a prior inspection
+AU-0821,F10,Banking,2025,50,16,22,9,3,group,Low,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0822,F10,Healthcare,2025,35,13,14,6,2,ask,Low,Medium,False,False,
+AU-0823,F10,Public interest entity,2025,35,21,6,7,1,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0824,F10,Listed manufacturing,2025,29,12,7,6,4,routine,Low,Medium,False,False,
+AU-0825,F10,Listed manufacturing,2025,39,17,12,4,6,ask,Medium,Low,False,False,
+AU-0826,F10,Asset management,2025,32,18,6,6,2,routine,Medium,Medium,False,False,
+AU-0827,F10,Asset management,2025,34,18,4,6,6,routine,Medium,Low,False,False,
+AU-0828,F10,Retail group,2025,51,15,24,9,3,group,Low,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0829,F10,Listed manufacturing,2025,48,12,22,9,5,ask,Low,Medium,False,False,Partner involvement hours below plan; Repeat finding from a prior inspection
+AU-0830,F10,Insurance,2025,33,16,11,4,2,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0831,F10,Healthcare,2025,42,14,15,10,3,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0832,F10,Listed manufacturing,2025,36,18,7,7,4,ask,Medium,Medium,False,False,Overdue remediation on this engagement
+AU-0833,F10,Insurance,2025,54,29,14,5,6,group,High,Low,False,False,Complex accounting estimates
+AU-0834,F10,Asset management,2025,38,16,12,3,7,ask,Low,Medium,False,False,
+AU-0835,F10,Asset management,2025,40,13,14,8,5,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0836,F11,Listed manufacturing,2025,26,10,3,9,4,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0837,F11,Listed manufacturing,2025,38,21,11,3,3,ask,Medium,Medium,False,False,
+AU-0838,F11,Energy & utilities,2025,45,21,16,3,5,ask,Medium,Low,False,False,
+AU-0839,F11,Technology,2025,26,13,1,4,8,routine,Low,Medium,False,False,
+AU-0840,F11,Real estate,2025,30,10,13,5,2,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0841,F11,Real estate,2025,39,16,13,5,5,ask,Low,Low,False,False,
+AU-0842,F11,Insurance,2025,37,18,13,4,2,ask,Medium,Medium,False,False,
+AU-0843,F11,Asset management,2025,38,11,15,4,8,ask,Low,Medium,False,False,
+AU-0844,F11,Real estate,2025,61,18,29,10,4,group,Medium,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0845,F11,Insurance,2025,23,7,3,9,4,routine,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0846,F11,Asset management,2025,41,15,10,10,6,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0847,F11,Asset management,2025,32,10,8,9,5,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0848,F11,Asset management,2025,48,21,19,6,2,ask,Medium,Medium,False,False,
+AU-0849,F11,Listed manufacturing,2025,41,9,15,8,9,ask,Low,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0850,F11,Energy & utilities,2025,24,8,15,1,0,routine,Low,Low,False,False,
+AU-0851,F11,Healthcare,2025,37,20,8,4,5,ask,Medium,Low,False,False,
+AU-0852,F11,Healthcare,2025,25,5,13,1,6,routine,Low,Medium,False,False,
+AU-0853,F11,Public interest entity,2025,46,19,15,9,3,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0854,F11,Listed manufacturing,2025,26,8,8,4,6,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0855,F11,Public interest entity,2025,30,11,8,5,6,routine,Low,Medium,False,False,
+AU-0856,F11,Insurance,2025,48,18,15,9,6,ask,Medium,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0857,F11,Healthcare,2025,31,13,11,5,2,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0858,F11,Listed manufacturing,2025,31,17,9,2,3,routine,Medium,Medium,False,False,
+AU-0859,F11,Healthcare,2025,39,14,14,7,4,ask,Low,Medium,False,True,Goodwill or asset impairment risk; Overdue remediation on this engagement
+AU-0860,F11,Real estate,2025,34,16,14,0,4,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0861,F11,Insurance,2025,34,9,21,2,2,routine,Low,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0862,F11,Listed manufacturing,2025,36,14,13,5,4,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0863,F11,Real estate,2025,19,9,8,1,1,routine,Low,Low,False,False,
+AU-0864,F11,Real estate,2025,34,10,13,9,2,routine,Low,Low,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0865,F11,Healthcare,2025,22,10,10,0,2,routine,Low,Low,True,False,Multi-component group audit
+AU-0866,F11,Real estate,2025,42,25,11,5,1,ask,Medium,Medium,False,False,
+AU-0867,F11,Banking,2025,27,3,11,11,2,routine,Low,High,False,True,Goodwill or asset impairment risk; Heavy reliance on client IT systems
+AU-0868,F11,Technology,2025,39,8,14,11,6,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0869,F11,Asset management,2025,36,7,14,8,7,ask,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0870,F11,Healthcare,2025,30,18,10,0,2,routine,Medium,Medium,False,False,
+AU-0871,F11,Asset management,2025,38,24,10,3,1,ask,Medium,Medium,False,False,
+AU-0872,F11,Healthcare,2025,47,15,19,8,5,ask,Low,Low,False,False,Overdue remediation on this engagement
+AU-0873,F11,Listed manufacturing,2025,42,20,10,5,7,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0874,F11,Public interest entity,2025,43,18,21,0,4,ask,Medium,Low,True,False,Multi-component group audit; Partner involvement hours below plan
+AU-0875,F11,Listed manufacturing,2025,39,14,16,3,6,ask,Low,Low,False,False,
+AU-0876,F11,Insurance,2025,31,20,4,4,3,routine,Medium,Low,False,False,
+AU-0877,F11,Listed manufacturing,2025,35,23,11,0,1,ask,Medium,Low,False,False,
+AU-0878,F11,Insurance,2025,19,5,5,6,3,routine,Low,Low,False,False,
+AU-0879,F11,Banking,2025,41,16,16,6,3,ask,Low,Low,False,False,
+AU-0880,F11,Technology,2025,43,13,21,3,6,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0881,F11,Healthcare,2025,26,10,9,5,2,routine,Low,Medium,False,False,
+AU-0882,F11,Public interest entity,2025,34,25,5,0,4,routine,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0883,F11,Listed manufacturing,2025,37,15,11,2,9,ask,Low,Low,True,False,Multi-component group audit
+AU-0884,F11,Healthcare,2025,30,15,11,2,2,routine,Low,Medium,False,False,
+AU-0885,F11,Public interest entity,2025,37,20,7,8,2,ask,Medium,Low,False,False,Overdue remediation on this engagement
+AU-0886,F11,Real estate,2025,27,10,10,1,6,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0887,F11,Technology,2025,19,9,2,6,2,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0888,F11,Energy & utilities,2025,33,6,17,8,2,routine,Low,Medium,False,False,Overdue remediation on this engagement
+AU-0889,F11,Energy & utilities,2025,23,3,11,5,4,routine,Low,Medium,False,False,
+AU-0890,F11,Banking,2025,20,10,0,6,4,routine,Low,Low,False,False,
+AU-0891,F11,Asset management,2025,20,14,0,1,5,routine,Low,Low,False,False,
+AU-0892,F11,Asset management,2025,13,1,8,2,2,routine,Low,Medium,False,False,
+AU-0893,F11,Technology,2025,21,9,5,3,4,routine,Low,Low,False,False,
+AU-0894,F11,Retail group,2025,30,10,13,2,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0895,F11,Real estate,2025,27,8,14,1,4,routine,Low,Medium,False,False,
+AU-0896,F11,Public interest entity,2025,2,0,0,2,0,routine,Low,Medium,False,True,Goodwill or asset impairment risk
+AU-0897,F11,Real estate,2025,52,20,18,8,6,group,Medium,High,True,False,Heavy reliance on client IT systems; Multi-component group audit
+AU-0898,F11,Technology,2025,31,16,13,0,2,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0899,F12,Listed manufacturing,2025,35,11,11,7,6,ask,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement
+AU-0900,F12,Real estate,2025,51,18,17,11,5,group,Medium,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0901,F12,Technology,2025,43,21,12,6,4,ask,Medium,Medium,False,False,
+AU-0902,F12,Real estate,2025,25,14,6,4,1,routine,Low,Medium,False,False,
+AU-0903,F12,Healthcare,2025,29,11,10,5,3,routine,Low,Medium,False,False,
+AU-0904,F12,Banking,2025,30,12,13,3,2,routine,Low,Low,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0905,F12,Asset management,2025,17,3,8,4,2,routine,Low,Low,False,False,
+AU-0906,F12,Public interest entity,2025,25,3,10,9,3,routine,Low,Medium,False,True,Goodwill or asset impairment risk; Repeat finding from a prior inspection
+AU-0907,F12,Public interest entity,2025,36,14,13,6,3,ask,Low,Medium,False,False,
+AU-0908,F12,Public interest entity,2025,33,8,9,11,5,routine,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0909,F12,Insurance,2025,38,11,16,6,5,ask,Low,Low,False,False,
+AU-0910,F12,Energy & utilities,2025,51,21,22,5,3,group,Medium,High,False,False,Heavy reliance on client IT systems; Partner involvement hours below plan
+AU-0911,F12,Retail group,2025,32,9,15,3,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0912,F12,Technology,2025,44,14,19,5,6,ask,Low,Medium,False,False,
+AU-0913,F12,Asset management,2025,26,7,13,2,4,routine,Low,Low,False,False,
+AU-0914,F12,Public interest entity,2025,23,11,9,0,3,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0915,F12,Public interest entity,2025,51,18,25,0,8,group,Medium,Medium,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0916,F12,Real estate,2025,30,13,12,0,5,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0917,F12,Energy & utilities,2025,28,12,16,0,0,routine,Low,High,False,False,Heavy reliance on client IT systems
+AU-0918,F12,Public interest entity,2025,42,22,14,3,3,ask,Medium,Low,False,True,Goodwill or asset impairment risk
+AU-0919,F12,Energy & utilities,2025,49,25,12,6,6,ask,Medium,Medium,False,False,
+AU-0920,F12,Technology,2025,44,22,11,4,7,ask,Medium,Low,False,False,
+AU-0921,F12,Healthcare,2025,44,22,13,5,4,ask,Medium,Medium,False,False,
+AU-0922,F12,Public interest entity,2025,19,4,9,2,4,routine,Low,Low,False,False,
+AU-0923,F12,Technology,2025,42,24,14,3,1,ask,Medium,Low,False,False,
+AU-0924,F12,Banking,2025,30,4,18,8,0,routine,Low,Low,False,False,Overdue remediation on this engagement
+AU-0925,F12,Energy & utilities,2025,38,13,13,4,8,ask,Low,Low,True,False,Multi-component group audit
+AU-0926,F12,Asset management,2025,40,15,9,13,3,ask,Low,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0927,F12,Public interest entity,2025,37,14,15,6,2,ask,Low,High,False,False,Heavy reliance on client IT systems
+AU-0928,F12,Listed manufacturing,2025,41,16,20,3,2,ask,Low,Low,False,False,Partner involvement hours below plan
+AU-0929,F12,Public interest entity,2025,43,13,18,6,6,ask,Low,Medium,False,False,
+AU-0930,F12,Technology,2025,22,6,7,5,4,routine,Low,Low,False,False,
+AU-0931,F12,Retail group,2025,30,0,19,4,7,routine,Low,Medium,False,False,
+AU-0932,F12,Banking,2025,47,26,15,2,4,ask,Medium,Low,False,False,Complex accounting estimates
+AU-0933,F12,Insurance,2025,31,17,12,2,0,routine,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0934,F12,Energy & utilities,2025,25,11,10,0,4,routine,Low,Medium,False,False,
+AU-0935,F12,Insurance,2025,44,13,18,10,3,ask,Low,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0936,F12,Banking,2025,25,14,5,5,1,routine,Low,Medium,True,True,Goodwill or asset impairment risk; Multi-component group audit
+AU-0937,F12,Asset management,2025,27,4,19,3,1,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0938,F12,Healthcare,2025,27,11,11,3,2,routine,Low,Low,False,True,Goodwill or asset impairment risk
+AU-0939,F12,Asset management,2025,42,14,19,5,4,ask,Low,Low,False,False,
+AU-0940,F12,Banking,2025,45,20,16,5,4,ask,Medium,Medium,False,True,Goodwill or asset impairment risk
+AU-0941,F12,Healthcare,2025,30,11,11,5,3,routine,Low,Medium,False,False,
+AU-0942,F12,Public interest entity,2025,29,5,13,6,5,routine,Low,Low,False,False,
+AU-0943,F12,Technology,2025,44,23,10,3,8,ask,Medium,Medium,False,False,
+AU-0944,F12,Public interest entity,2025,39,9,25,1,4,ask,Low,Low,False,False,Audit team below planned staffing; Partner involvement hours below plan
+AU-0945,F12,Real estate,2025,36,17,8,6,5,ask,Medium,High,False,False,Heavy reliance on client IT systems
+AU-0946,F12,Healthcare,2025,13,7,0,3,3,routine,Low,Medium,False,False,
+AU-0947,F12,Retail group,2025,37,12,14,10,1,ask,Low,Medium,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0948,F12,Healthcare,2025,26,9,13,0,4,routine,Low,Medium,False,False,
+AU-0949,F12,Retail group,2025,55,20,26,4,5,group,Medium,Low,True,False,Multi-component group audit; Audit team below planned staffing
+AU-0950,F12,Energy & utilities,2025,16,4,4,0,8,routine,Low,Low,False,False,
+AU-0951,F12,Banking,2025,27,12,8,3,4,routine,Low,Low,False,False,
+AU-0952,F12,Technology,2025,27,15,10,1,1,routine,Low,Low,False,False,
+AU-0953,F12,Insurance,2025,36,16,5,13,2,ask,Low,High,False,False,Heavy reliance on client IT systems; Repeat finding from a prior inspection
+AU-0954,F12,Healthcare,2025,52,22,19,6,5,group,Medium,Medium,False,False,
+AU-0955,F12,Technology,2025,42,17,11,9,5,ask,Medium,Low,False,False,Repeat finding from a prior inspection; Overdue remediation on this engagement
+AU-0956,F12,Insurance,2025,42,13,19,5,5,ask,Low,Medium,False,False,
+AU-0957,F12,Technology,2025,25,15,3,4,3,routine,Low,Low,False,False,
+AU-0958,F12,Energy & utilities,2025,28,6,12,4,6,routine,Low,Medium,False,False,
+AU-0959,F12,Retail group,2025,22,6,9,6,1,routine,Low,Low,False,False,
+AU-0960,F12,Listed manufacturing,2025,34,9,15,8,2,routine,Low,High,False,False,Heavy reliance on client IT systems; Overdue remediation on this engagement

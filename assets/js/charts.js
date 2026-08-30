@@ -7,6 +7,7 @@
      renderWaterfall(el, {steps, options})
      renderComparison(el, {rows, options})
      renderHistogram(el, {binEdges, counts, options})
+     renderStackedBar(el, {segments, options})
      autoInit()  — scans the page for [data-chart][data-chart-type] elements,
                    reads the adjacent <script type="application/json"> data
                    block, and dispatches to the matching renderer. Called
@@ -245,6 +246,14 @@
     var showValues = opts.showValues == null ? horizontal : !!opts.showValues;
     var highlightCategories = opts.highlightCategories || [];
     var hasHighlights = highlightCategories.length > 0;
+    // opts.emphasis: category names painted in the accent; the rest drop to context grey.
+    // opts.diverging: colour each bar by the sign of its value (over / under a baseline).
+    var emphasis = Array.isArray(opts.emphasis) ? opts.emphasis : null;
+    function barClass(cat, si, val) {
+      if (opts.diverging) return 'chart-bar ' + (val < 0 ? 'is-neg' : 'is-pos');
+      if (emphasis) return 'chart-bar ' + (emphasis.indexOf(cat) !== -1 ? 'is-emphasis' : 'is-context');
+      return 'chart-bar ' + seriesClass(si);
+    }
     var valueFmt = resolveFormatter(opts.valueFormat);
     var n = categories.length;
     var height = opts.height || (horizontal ? Math.max(220, n * 26 + 60) : 320);
@@ -292,7 +301,7 @@
           var x0 = xScale(Math.min(0, val)), x1 = xScale(Math.max(0, val));
           var rect = svgEl('rect', {
             x: x0, y: y, width: Math.max(1, x1 - x0), height: Math.max(1, barW - 2),
-            class: 'chart-bar ' + seriesClass(si), fill: s.color || '',
+            class: barClass(cat, si, val), fill: s.color || '',
             opacity: hasHighlights && highlightCategories.indexOf(cat) === -1 ? 0.38 : 1
           });
           wireHover(rect, function () {
@@ -306,6 +315,18 @@
           }
         });
       });
+      // optional reference line (e.g. an all-population average) — solid, labelled once
+      if (opts.baseline && typeof opts.baseline.value === 'number') {
+        var bX = xScale(opts.baseline.value);
+        svg.appendChild(svgEl('line', { class: 'chart-baseline', x1: bX, x2: bX, y1: plot.top - 2, y2: plot.bottom }));
+        if (opts.baseline.label) {
+          svg.appendChild(textEl(bX, plot.top - 7, opts.baseline.label, { 'text-anchor': 'middle', class: 'chart-baseline-label' }));
+        }
+      }
+      if (opts.diverging && minV < 0) {
+        var zx = xScale(0);
+        svg.appendChild(svgEl('line', { class: 'chart-axis', x1: zx, x2: zx, y1: plot.top, y2: plot.bottom }));
+      }
       svg.appendChild(svgEl('line', { class: 'chart-axis', x1: plot.left, x2: plot.left, y1: plot.top, y2: plot.bottom }));
     } else {
       var yScale = linearScale([minV, maxV], [plot.bottom, plot.top]);
@@ -325,7 +346,7 @@
           var yTop = yScale(Math.max(0, val)), yBase = yScale(Math.min(0, val));
           var rect = svgEl('rect', {
             x: x, y: Math.min(yTop, yBase), width: Math.max(1, barW - 2), height: Math.max(1, Math.abs(yBase - yTop)),
-            class: 'chart-bar ' + seriesClass(si),
+            class: barClass(cat, si, val),
             opacity: hasHighlights && highlightCategories.indexOf(cat) === -1 ? 0.38 : 1
           });
           wireHover(rect, function () {
@@ -482,6 +503,17 @@
     }
     if (primary) drawSeries(primary, pScale, false);
     if (secondary) drawSeries(secondary, sScale, true);
+
+    // opts.endLabels: print the first and last value of the primary series on the line
+    if (opts.endLabels && primary && primary.values.length) {
+      var lastIdx = primary.values.length - 1;
+      [0, lastIdx].forEach(function (idx) {
+        var lx = xScale(idx), ly = pScale.scale(primary.values[idx]);
+        svg.appendChild(textEl(lx, ly - 10, pScale.fmt(primary.values[idx]), {
+          'text-anchor': idx === 0 ? 'start' : 'end', class: 'chart-value-label'
+        }));
+      });
+    }
 
     if (series.length > 1) appendLegend(root.canvas, series);
 
@@ -735,6 +767,205 @@
     renderAccessibleTable(el, headers, rows);
   }
 
+  // ==========================================================================
+  // renderStackedBar — one horizontal bar, part-to-whole of a single total
+  // ==========================================================================
+
+  function renderStackedBar(el, cfg) {
+    var segments = cfg.segments || [];
+    var opts = cfg.options || {};
+    var valueFmt = resolveFormatter(opts.valueFormat);
+    var unit = opts.unit ? ' ' + opts.unit : '';
+    var total = opts.total != null ? opts.total
+      : segments.reduce(function (sum, seg) { return sum + seg.value; }, 0);
+    if (total <= 0) total = 1;
+
+    var height = opts.height || 60;
+    var top = 17;
+    var barH = Math.max(14, height - 32);
+    var left = PAD.left - 22;
+    var right = VB_W - PAD.right;
+    var scale = (right - left) / total;
+    var GAP = 2;
+
+    var root = buildChartRoot(el, height);
+    var svg = root.svg;
+
+    var cursor = left;
+    segments.forEach(function (seg, i) {
+      var isLast = i === segments.length - 1;
+      var fullW = seg.value * scale;
+      var w = Math.max(1, fullW - (isLast ? 0 : GAP));
+      var rect = svgEl('rect', {
+        x: cursor, y: top, width: w, height: barH,
+        rx: (i === 0 || isLast) ? 4 : 0,
+        class: 'chart-stack-seg ' + (seg.tone || 'tone-accent')
+      });
+      wireHover(rect, function () {
+        return '<span class="tt-label">' + seg.label + '</span><br>' + valueFmt(seg.value) + unit + ' of ' + valueFmt(total) + unit;
+      });
+      svg.appendChild(rect);
+      // interior stacked segments have no free end — the key row + tooltip carry the value
+      cursor += fullW;
+    });
+
+    // key row — the identity channel plus the segment labels
+    var key = document.createElement('div');
+    key.className = 'chart-stack-key';
+    segments.forEach(function (seg) {
+      var item = document.createElement('span');
+      item.className = 'k';
+      var sw = document.createElement('span');
+      sw.className = 'sw ' + (seg.tone || 'tone-accent');
+      item.appendChild(sw);
+      var strong = document.createElement('strong');
+      strong.textContent = valueFmt(seg.value) + unit;
+      item.appendChild(strong);
+      item.appendChild(document.createTextNode(' ' + seg.label));
+      key.appendChild(item);
+    });
+    root.canvas.parentNode.insertBefore(key, root.canvas.nextSibling);
+
+    var headers = [
+      { key: 'label', label: opts.categoryLabel || 'Component' },
+      { key: 'value', label: opts.valueLabel || 'Value', numeric: true, format: function (v) { return valueFmt(v); } }
+    ];
+    var rows = segments.map(function (seg) { return { label: seg.label, value: seg.value }; });
+    renderAccessibleTable(el, headers, rows);
+  }
+
+  // ==========================================================================
+  // renderSlopegraph — two measures per item, one line each; shows re-ranking
+  // ==========================================================================
+
+  function renderSlopegraph(el, cfg) {
+    var rows = cfg.rows || [];
+    var opts = cfg.options || {};
+    var fmt = resolveFormatter(opts.valueFormat);
+    var emph = Array.isArray(opts.emphasis) ? opts.emphasis : null;
+    var height = opts.height || Math.max(240, rows.length * 30 + 90);
+    var leftLabel = opts.leftLabel || 'Before';
+    var rightLabel = opts.rightLabel || 'After';
+
+    var root = buildChartRoot(el, height);
+    var svg = root.svg;
+    var vals = [];
+    rows.forEach(function (r) { vals.push(r.left, r.right); });
+    var maxV = opts.maxValue == null ? niceMax(Math.max.apply(null, vals)) : opts.maxValue;
+    var minV = opts.minValue == null ? Math.min(0, Math.min.apply(null, vals)) : opts.minValue;
+    if (maxV <= minV) maxV = minV + 1;
+
+    var xL = 176, xR = VB_W - 66, top = 34, bottom = height - 16;
+    var yScale = linearScale([minV, maxV], [bottom, top]);
+
+    svg.appendChild(textEl(xL, top - 15, truncateLabel(leftLabel, 40), { 'text-anchor': 'middle', class: 'chart-axis', 'font-weight': '700' }));
+    svg.appendChild(textEl(xR, top - 15, truncateLabel(rightLabel, 18), { 'text-anchor': 'middle', class: 'chart-axis', 'font-weight': '700' }));
+    svg.appendChild(svgEl('line', { class: 'chart-gridline', x1: xL, x2: xL, y1: top, y2: bottom }));
+    svg.appendChild(svgEl('line', { class: 'chart-gridline', x1: xR, x2: xR, y1: top, y2: bottom }));
+
+    // de-collide the end labels on each rail independently
+    function declutter(key) {
+      var ord = rows.map(function (r, i) { return { i: i, y: yScale(r[key]) }; }).sort(function (a, b) { return a.y - b.y; });
+      for (var k = 1; k < ord.length; k++) {
+        if (ord[k].y - ord[k - 1].y < 13) ord[k].y = ord[k - 1].y + 13;
+      }
+      var out = {};
+      ord.forEach(function (o) { out[o.i] = o.y; });
+      return out;
+    }
+    var leftY = declutter('left');
+    var rightY = declutter('right');
+
+    rows.forEach(function (r, i) {
+      var on = emph ? emph.indexOf(r.label) !== -1 : true;
+      var cls = 'chart-slope ' + (on ? 'is-on' : 'is-off');
+      var yl = yScale(r.left), yr = yScale(r.right);
+      var line = svgEl('line', { class: cls, x1: xL, y1: yl, x2: xR, y2: yr });
+      wireHover(line, function () {
+        return '<span class="tt-label">' + r.label + '</span><br>' + leftLabel + ': ' + fmt(r.left) + '<br>' + rightLabel + ': ' + fmt(r.right);
+      });
+      svg.appendChild(line);
+      svg.appendChild(svgEl('circle', { class: cls, cx: xL, cy: yl, r: 3.6 }));
+      svg.appendChild(svgEl('circle', { class: cls, cx: xR, cy: yr, r: 3.6 }));
+      var ly = leftY[i], ry = rightY[i];
+      if (Math.abs(ly - yl) > 2) svg.appendChild(svgEl('line', { class: 'chart-slope-leader', x1: xL, y1: yl, x2: xL - 8, y2: ly }));
+      svg.appendChild(textEl(xL - 12, ly + 3.5, truncateLabel(r.label, 20) + '  ' + fmt(r.left), { 'text-anchor': 'end', class: 'chart-slope-label ' + (on ? 'is-on' : 'is-off') }));
+      if (Math.abs(ry - yr) > 2) svg.appendChild(svgEl('line', { class: 'chart-slope-leader', x1: xR, y1: yr, x2: xR + 8, y2: ry }));
+      svg.appendChild(textEl(xR + 12, ry + 3.5, fmt(r.right), { 'text-anchor': 'start', class: 'chart-slope-label ' + (on ? 'is-on' : 'is-off') }));
+    });
+
+    var headers = [
+      { key: 'label', label: opts.categoryLabel || 'Item' },
+      { key: 'left', label: leftLabel, numeric: true, format: fmt },
+      { key: 'right', label: rightLabel, numeric: true, format: fmt }
+    ];
+    renderAccessibleTable(el, headers, rows.map(function (r) { return { label: r.label, left: r.left, right: r.right }; }));
+  }
+
+  // ==========================================================================
+  // renderPareto — sorted contribution bars + a cumulative % line, one 0-100 axis
+  // ==========================================================================
+
+  function renderPareto(el, cfg) {
+    var opts = cfg.options || {};
+    var vals = cfg.values || [];
+    var pairs = (cfg.categories || []).map(function (c, i) { return { c: c, v: vals[i] }; });
+    pairs = pairs.sort(function (a, b) { return b.v - a.v; });
+    var total = pairs.reduce(function (s, p) { return s + p.v; }, 0) || 1;
+    var contrib = pairs.map(function (p) { return p.v / total * 100; });
+    var cum = []; var run = 0;
+    contrib.forEach(function (x) { run += x; cum.push(run); });
+
+    var height = opts.height || 340;
+    var n = pairs.length;
+    var root = buildChartRoot(el, height);
+    var svg = root.svg;
+    var plot = { left: PAD.left, right: VB_W - PAD.right, top: PAD.top + 12, bottom: height - PAD.bottom - 6 };
+    var yScale = linearScale([0, 100], [plot.bottom, plot.top]);
+
+    [0, 25, 50, 75, 100].forEach(function (tk) {
+      var gy = yScale(tk);
+      svg.appendChild(svgEl('line', { class: 'chart-gridline', x1: plot.left, x2: plot.right, y1: gy, y2: gy }));
+      svg.appendChild(textEl(plot.left - 8, gy + 4, tk + '%', { 'text-anchor': 'end', class: 'chart-axis' }));
+    });
+
+    var band = (plot.right - plot.left) / n;
+    var barW = Math.min(46, band * 0.62);
+    var m80 = yScale(80);
+    svg.appendChild(svgEl('line', { class: 'chart-baseline', x1: plot.left, x2: plot.right, y1: m80, y2: m80 }));
+    svg.appendChild(textEl(plot.right, m80 - 6, '80% of the total', { 'text-anchor': 'end', class: 'chart-baseline-label' }));
+
+    pairs.forEach(function (p, i) {
+      var cx = plot.left + band * i + band / 2;
+      var y = yScale(contrib[i]);
+      var rect = svgEl('rect', { class: 'chart-bar is-emphasis', x: cx - barW / 2, y: y, width: barW, height: Math.max(1, plot.bottom - y), rx: 3 });
+      wireHover(rect, function () { return '<span class="tt-label">' + p.c + '</span><br>' + fmtNum(contrib[i], { suffix: '%' }) + ' of the total'; });
+      svg.appendChild(rect);
+      svg.appendChild(textEl(cx, plot.bottom + 16, truncateLabel(p.c, 13), { 'text-anchor': 'middle', class: 'chart-axis' }));
+    });
+
+    var pts = cum.map(function (v, i) { return [plot.left + band * i + band / 2, yScale(v)]; });
+    var d = pts.map(function (pt, i) { return (i ? 'L' : 'M') + pt[0].toFixed(1) + ',' + pt[1].toFixed(1); }).join(' ');
+    svg.appendChild(svgEl('path', { class: 'chart-line-path', d: d, stroke: 'var(--ink)' }));
+    pts.forEach(function (pt, i) {
+      var dot = svgEl('circle', { class: 'chart-line-dot', cx: pt[0], cy: pt[1], r: 3.4, fill: 'var(--ink)' });
+      wireHover(dot, function () { return '<span class="tt-label">' + pairs[i].c + '</span><br>Running total: ' + fmtNum(cum[i], { suffix: '%' }); });
+      svg.appendChild(dot);
+      if (i < 2 || i === n - 1) {
+        svg.appendChild(textEl(pt[0], pt[1] - 9, Math.round(cum[i]) + '%', { 'text-anchor': 'middle', class: 'chart-value-label' }));
+      }
+    });
+    svg.appendChild(svgEl('line', { class: 'chart-axis', x1: plot.left, x2: plot.right, y1: plot.bottom, y2: plot.bottom }));
+
+    var headers = [
+      { key: 'c', label: opts.categoryLabel || 'Category' },
+      { key: 'v', label: opts.valueLabel || 'Value', numeric: true },
+      { key: 'share', label: 'Share', numeric: true, format: function (x) { return fmtNum(x, { suffix: '%' }); } },
+      { key: 'cum', label: 'Running total', numeric: true, format: function (x) { return fmtNum(x, { suffix: '%' }); } }
+    ];
+    renderAccessibleTable(el, headers, pairs.map(function (p, i) { return { c: p.c, v: p.v, share: contrib[i], cum: cum[i] }; }));
+  }
+
   // ==================================================================== auto-init --
 
   function autoInit() {
@@ -756,6 +987,9 @@
         case 'waterfall': renderWaterfall(el, payload); break;
         case 'comparison': renderComparison(el, payload); break;
         case 'histogram': renderHistogram(el, payload); break;
+        case 'stacked-bar': renderStackedBar(el, payload); break;
+        case 'slopegraph': renderSlopegraph(el, payload); break;
+        case 'pareto': renderPareto(el, payload); break;
       }
     });
   }
@@ -766,6 +1000,9 @@
     renderWaterfall: renderWaterfall,
     renderComparison: renderComparison,
     renderHistogram: renderHistogram,
+    renderStackedBar: renderStackedBar,
+    renderSlopegraph: renderSlopegraph,
+    renderPareto: renderPareto,
     renderAccessibleTable: renderAccessibleTable,
     autoInit: autoInit
   };

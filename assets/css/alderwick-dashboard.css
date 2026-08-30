@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Alderwick priority dashboard — interactive prototype of the Power BI build.
+   Loaded after alderwick.css / alderwick-v2.css / charts.css.
+   ========================================================================== */
+
+.ald-dash { --dash-accent: var(--arc-teal); }
+
+.ald-dash-intro { padding: 40px 0 8px; background: linear-gradient(160deg, #0b252e, #17434c); color: #dcebe8; }
+.ald-dash-intro .eyebrow { color: #8ed9c4; }
+.ald-dash-intro h1 { margin: 8px 0 12px; color: #fff; font-size: clamp(1.8rem, 3.4vw, 2.7rem); }
+.ald-dash-intro p { max-width: 760px; margin: 0; font-size: .96rem; line-height: 1.65; }
+.ald-dash-intro .ald-dash-note { margin-top: 16px; border-left: 3px solid var(--arc-mint); padding: 10px 14px; background: rgba(255,255,255,.06); font-size: .82rem; }
+.ald-dash-intro .ald-dash-note a { color: #a4e4d2; }
+
+.ald-dash-shell { padding: 26px 0 60px; background: var(--arc-pale); min-height: 60vh; }
+
+/* breadcrumb / tabs */
+.ald-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 14px; font-size: .82rem; color: var(--arc-muted); }
+.ald-crumbs a { color: var(--arc-teal); font-weight: 650; }
+.ald-crumbs span[aria-current] { color: var(--arc-ink); font-weight: 700; }
+.ald-crumbs .sep { color: var(--arc-line); }
+
+.ald-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 20px; border: 1px solid var(--arc-line); border-radius: 12px; padding: 4px; background: #fff; }
+.ald-tabs a { flex: 1 1 auto; text-align: center; padding: 9px 12px; border-radius: 9px; font-size: .84rem; font-weight: 650; color: var(--arc-muted); white-space: nowrap; }
+.ald-tabs a:hover { color: var(--arc-ink); text-decoration: none; }
+.ald-tabs a[aria-current="page"] { background: var(--arc-deep); color: #fff; }
+
+/* view heading + kpis */
+.ald-view > h2 { margin: 4px 0 4px; color: var(--arc-ink); font-size: clamp(1.35rem, 2.6vw, 1.9rem); }
+.ald-view > h2:focus-visible { outline: 2px solid var(--arc-teal); outline-offset: 4px; }
+.ald-sub { margin: 0 0 20px; color: var(--arc-muted); font-size: .92rem; }
+.ald-sub .route-badge { vertical-align: middle; }
+
+.ald-kpis { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 22px; }
+.ald-kpi { border: 1px solid var(--arc-line); border-radius: 12px; padding: 16px; background: #fff; }
+.ald-kpi .n { display: block; color: var(--arc-ink); font-size: 1.7rem; font-weight: 800; letter-spacing: -.03em; }
+.ald-kpi .l { display: block; margin-top: 5px; color: var(--arc-muted); font-size: .78rem; line-height: 1.45; }
+.ald-kpi.is-flag .n { color: var(--bad); }
+
+/* generic card + chart holder */
+.ald-card { border: 1px solid var(--arc-line); border-radius: 13px; padding: 18px; margin-bottom: 18px; background: #fff; }
+.ald-card > h3 { margin: 0 0 12px; color: var(--arc-ink); font-size: 1rem; }
+.ald-card .chart-canvas { position: relative; }
+.ald-card svg { width: 100%; height: auto; display: block; overflow: hidden; }
+.ald-card .ald-card-cap { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--arc-line); color: var(--arc-muted); font-size: .84rem; line-height: 1.55; }
+.ald-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* route strip */
+.ald-routes { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-bottom: 18px; }
+.ald-route { border: 1px solid var(--arc-line); border-radius: 11px; padding: 14px; background: #fff; }
+.ald-route .n { font-size: 1.35rem; font-weight: 800; color: var(--arc-ink); }
+.ald-route .l { display: block; margin-top: 2px; font-size: .76rem; color: var(--arc-muted); }
+.ald-route.is-deep { border-color: var(--bad); box-shadow: inset 3px 0 var(--bad); }
+
+/* badges */
+.route-badge, .band-badge { display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: .72rem; font-weight: 700; letter-spacing: .01em; }
+.route-badge.r-deep, .band-badge.b-deep-dive { background: var(--bad-bg); color: var(--bad); }
+.route-badge.r-group, .band-badge.b-group { background: var(--warn-bg); color: var(--warn); }
+.route-badge.r-ask, .band-badge.b-ask { background: var(--bg-soft); color: var(--arc-muted); }
+.route-badge.r-routine, .band-badge.b-routine { background: var(--good-bg); color: var(--good); }
+.defer-badge { display: inline-block; border-radius: 6px; padding: 2px 7px; background: var(--bad-bg); color: var(--bad); font-size: .72rem; font-weight: 800; }
+
+/* tables */
+.ald-table-wrap { overflow-x: auto; border: 1px solid var(--arc-line); border-radius: 12px; }
+table.ald-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+table.ald-table th, table.ald-table td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--arc-line); vertical-align: top; }
+table.ald-table th { white-space: nowrap; }
+table.ald-table td { line-height: 1.45; }
+table.ald-table td.act { min-width: 260px; white-space: normal; }
+table.ald-table thead th { background: var(--arc-pale); color: var(--arc-ink); font-weight: 700; font-size: .78rem; }
+table.ald-table th.num, table.ald-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.ald-table tbody tr:last-child td { border-bottom: 0; }
+table.ald-table tbody tr:hover td { background: var(--arc-pale); }
+table.ald-table a { color: var(--arc-teal); font-weight: 650; }
+table.ald-table button.sorth { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; color: var(--arc-ink); cursor: pointer; }
+table.ald-table th[aria-sort="ascending"] button.sorth::after { content: " \2191"; color: var(--arc-teal); }
+table.ald-table th[aria-sort="descending"] button.sorth::after { content: " \2193"; color: var(--arc-teal); }
+
+/* filter row */
+.ald-filters { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: flex-end; margin-bottom: 16px; }
+.ald-filters label { display: flex; flex-direction: column; gap: 4px; font-size: .76rem; font-weight: 700; color: var(--arc-muted); text-transform: uppercase; letter-spacing: .05em; }
+.ald-filters select { border: 1px solid var(--arc-line); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: .86rem; background: #fff; color: var(--arc-ink); }
+
+/* soqm list */
+.ald-soqm { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+.ald-soqm .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; border: 1px solid var(--arc-line); border-radius: 9px; padding: 10px 12px; font-size: .84rem; }
+.ald-soqm .row.flagged { border-color: var(--bad); background: var(--bad-bg); }
+.ald-soqm .row .rating { font-size: .74rem; font-weight: 700; color: var(--arc-muted); }
+.ald-soqm .row.flagged .rating { color: var(--bad); }
+
+/* audit detail */
+.ald-score-hero { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+.ald-score-hero .score { font-size: 3rem; font-weight: 800; letter-spacing: -.04em; color: var(--arc-ink); line-height: 1; }
+.ald-score-hero .of { color: var(--arc-muted); font-size: .9rem; }
+.ald-flags { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ald-flags li { position: relative; border: 1px solid var(--arc-line); border-left: 3px solid var(--warn); border-radius: 8px; padding: 10px 12px; font-size: .86rem; color: var(--arc-ink); background: #fff; }
+.ald-flags li.none { border-left-color: var(--good); color: var(--arc-muted); }
+.ald-attrs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+.ald-attr { border: 1px solid var(--arc-line); border-radius: 9px; padding: 10px 12px; }
+.ald-attr dt { color: var(--arc-muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 700; }
+.ald-attr dd { margin: 3px 0 0; color: var(--arc-ink); font-size: .92rem; font-weight: 650; }
+
+/* human-override control */
+.ald-override { border: 1px solid var(--arc-line); border-radius: 11px; padding: 16px; background: var(--arc-sand); }
+.ald-override h3 { margin: 0 0 4px; font-size: .95rem; color: var(--arc-ink); }
+.ald-override p { margin: 0 0 12px; font-size: .82rem; color: var(--arc-muted); }
+.ald-override .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.ald-override select { border: 1px solid var(--arc-line); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: .86rem; background: #fff; }
+.ald-override .recorded { font-size: .82rem; color: var(--arc-ink); }
+.ald-override .recorded strong { color: var(--good); }
+
+.ald-back { display: inline-block; margin-top: 8px; font-size: .85rem; font-weight: 650; color: var(--arc-teal); }
+.ald-empty { padding: 30px; text-align: center; color: var(--arc-muted); font-size: .9rem; }
+
+@media (max-width: 900px) {
+  .ald-kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ald-two, .ald-soqm, .ald-attrs { grid-template-columns: 1fr; }
+  .ald-routes { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 560px) {
+  .ald-kpis { grid-template-columns: 1fr; }
+  .ald-tabs a { flex-basis: 40%; }
+}

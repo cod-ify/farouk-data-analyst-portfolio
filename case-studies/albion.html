@@ -41,7 +41,7 @@
       <div class="case-hero-copy">
         <div class="case-hero-meta"><span class="eyebrow">Insurance operations</span><span class="case-status">End-to-end analysis</span></div>
         <h1>Why did claims cost rise by £3.13m?</h1>
-        <p class="case-question"><span>Business question</span>Is Albion paying more because more claims are happening, because each claim is becoming more expensive, or because the mix of claims has changed—and where should Claims Operations act?</p>
+        <p class="case-question"><span>Business question</span>Is Albion paying more because more claims are happening, because each claim costs more, or because the mix of claims has shifted? And where should Claims Operations act?</p>
         <p class="cs-sub">I analysed two years of synthetic policy, claim, payment, reserve, supplier and lifecycle-event data. The work decomposes the increase exactly enough for management decisions, then follows the pressure into high-cost claim types, under-reserving, reopened claims and fair supplier comparisons.</p>
         <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Management actions</a></div>
       </div>
@@ -78,7 +78,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Read this first</span>
-      <h2>The claims bill rose mainly because 837 more claims occurred—not because the typical claim became much more expensive</h2>
+      <h2>The claims bill rose mainly on 837 extra claims, while the typical claim cost held roughly steady</h2>
       <p>The £3.13m increase combines a dominant volume effect with two smaller forces that almost cancel each other. Separating them changes the management response.</p>
     </div>
 
@@ -159,7 +159,7 @@
       <div class="chart-caption">January 2025 is the clearest spike in both claims and paid cost, but later 2025 months also tend to sit above early 2024. This is why the storm is material without being the whole explanation.</div>
     </div>
 
-    <p class="rounding-note"><strong>Reconciliation note:</strong> the separately calculated decomposition components total £3,132,122.02, while the actual year-to-year increase is £3,132,121.87—a 15p difference created by rounding intermediate averages. The old page's “to the penny” wording was therefore too strong; the management result is unchanged.</p>
+    <p class="rounding-note"><strong>Reconciliation note:</strong> the separately calculated decomposition components total £3,132,122.02, while the actual year-to-year increase is £3,132,121.87, a 15p difference from rounding intermediate averages. The management result is unchanged.</p>
   </div>
 </section>
 
@@ -175,9 +175,9 @@
 
     <div class="chart-block">
       <div class="chart-head"><span class="chart-title">Theft and Fire create 43.5% of cost from 14.5% of claims</span></div>
-      <div data-chart="claim-type-data" data-chart-type="bar"></div>
-      <script type="application/json" id="claim-type-data">{"categories":["Theft","Fire","Escape of Water","Third-party injury","Accidental damage","Storm damage","Windscreen"],"series":[{"label":"Share of claims","values":[11.10,3.39,10.58,4.30,40.12,10.51,20.00]},{"label":"Share of total paid","values":[21.98,21.47,19.95,15.67,15.57,4.31,1.04]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Claim type","maxValue":50,"height":360}}</script>
-      <div class="chart-caption">Theft and Fire represent only 14.5% of claims but 43.5% of paid cost. Accidental Damage is 40.1% of claims yet 15.6% of cost; Windscreen is 20.0% of claims and only 1.0% of cost.</div>
+      <div data-chart="claim-type-data" data-chart-type="slopegraph"></div>
+      <script type="application/json" id="claim-type-data">{"rows":[{"label":"Theft","left":11.10,"right":21.98},{"label":"Fire","left":3.39,"right":21.47},{"label":"Escape of Water","left":10.58,"right":19.95},{"label":"Third-party injury","left":4.30,"right":15.67},{"label":"Accidental damage","left":40.12,"right":15.57},{"label":"Storm damage","left":10.51,"right":4.31},{"label":"Windscreen","left":20.00,"right":1.04}],"options":{"valueFormat":"percent","leftLabel":"Share of claims","rightLabel":"Share of paid cost","categoryLabel":"Claim type","emphasis":["Theft","Fire"],"maxValue":45,"height":360}}</script>
+      <div class="chart-caption">Each line connects a claim type's share of volume to its share of cost. Theft and Fire climb sharply: together they are 14.5% of claims and 43.5% of paid cost. Accidental Damage and Windscreen fall away, so high volume does not mean high spend.</div>
     </div>
 
     <div class="cost-grid" style="margin-top:20px;">
@@ -269,10 +269,10 @@
     <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>The gap between the first estimate and eventual payment reveals where reserve guidance is systematically too cautious or optimistic.</p></div><div><strong>Decision supported</strong><p>Reset initial reserve bands to reduce unnecessary capital use and late reserve strengthening.</p></div></div>
 
     <div class="chart-block">
-      <div class="chart-head"><span class="chart-title">Major and Total Loss claims are materially under-reserved</span></div>
+      <div class="chart-head"><span class="chart-title">Reserves run high on cheap claims and fall short on expensive ones</span></div>
       <div data-chart="reserve-data" data-chart-type="bar"></div>
-      <script type="application/json" id="reserve-data">{"categories":["Minor","Moderate","Major","Total Loss"],"series":[{"label":"Initial reserve","values":[1204.91,3153.41,3871.78,6252.87]},{"label":"Eventual paid","values":[438.41,2252.17,9007.25,21564.59]}],"options":{"valueFormat":"gbp","categoryLabel":"Severity band","maxValue":25000,"height":350}}</script>
-      <div class="chart-caption">Minor claims are initially reserved at 224% of eventual paid, while Major and Total Loss claims are reserved at only 39% and 28% respectively. Moderate claims are also over-reserved at 123%.</div>
+      <script type="application/json" id="reserve-data">{"categories":["Minor","Moderate","Major","Total Loss"],"series":[{"label":"Eventual paid minus initial reserve","values":[-766.50,-901.24,5135.47,15311.72]}],"options":{"horizontal":true,"diverging":true,"valueFormat":"gbp","categoryLabel":"Severity band","minValue":-3000,"maxValue":17000,"height":250}}</script>
+      <div class="chart-caption">Bars to the left are over-reserved: Minor and Moderate claims tie up more capital than the eventual payment needs. Bars to the right are under-reserved: Total Loss claims eventually pay £15,312 more than first estimated, which forces late reserve strengthening.</div>
     </div>
 
     <div class="cost-grid" style="margin-top:20px;">
@@ -287,7 +287,7 @@
     <div class="section-head">
       <span class="eyebrow">7. Management actions</span>
       <h2>Plan for higher volume, then address the concentrated cost and rework problems</h2>
-      <p>The actions are deliberately different because the evidence points to capacity, financial control and operational quality—not one universal “claims cost” problem.</p>
+      <p>The actions are deliberately different because the evidence points to three separate issues: capacity, financial control and operational quality, rather than one universal “claims cost” problem.</p>
     </div>
 
     <ol class="rec-list">

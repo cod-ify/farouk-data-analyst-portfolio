@@ -1,0 +1,289 @@
+firm_id,year,area,rating,high_risk_flag
+F01,2023,Staffing resources,Deficient,True
+F01,2024,Staffing resources,Effective,False
+F01,2025,Staffing resources,Deficient,True
+F02,2023,Staffing resources,Effective,False
+F02,2024,Staffing resources,Effective,False
+F02,2025,Staffing resources,Needs improvement,True
+F03,2023,Staffing resources,Deficient,True
+F03,2024,Staffing resources,Needs improvement,True
+F03,2025,Staffing resources,Effective,False
+F04,2023,Staffing resources,Needs improvement,False
+F04,2024,Staffing resources,Effective,False
+F04,2025,Staffing resources,Needs improvement,True
+F05,2023,Staffing resources,Effective,False
+F05,2024,Staffing resources,Effective,False
+F05,2025,Staffing resources,Effective,False
+F06,2023,Staffing resources,Effective,False
+F06,2024,Staffing resources,Needs improvement,False
+F06,2025,Staffing resources,Needs improvement,True
+F07,2023,Staffing resources,Effective,False
+F07,2024,Staffing resources,Needs improvement,True
+F07,2025,Staffing resources,Deficient,True
+F08,2023,Staffing resources,Effective,False
+F08,2024,Staffing resources,Needs improvement,True
+F08,2025,Staffing resources,Effective,False
+F09,2023,Staffing resources,Effective,False
+F09,2024,Staffing resources,Effective,False
+F09,2025,Staffing resources,Deficient,True
+F10,2023,Staffing resources,Effective,False
+F10,2024,Staffing resources,Effective,False
+F10,2025,Staffing resources,Effective,False
+F11,2023,Staffing resources,Effective,False
+F11,2024,Staffing resources,Effective,False
+F11,2025,Staffing resources,Effective,False
+F12,2023,Staffing resources,Effective,False
+F12,2024,Staffing resources,Effective,False
+F12,2025,Staffing resources,Effective,False
+F01,2023,Overdue fixes,Deficient,True
+F01,2024,Overdue fixes,Needs improvement,True
+F01,2025,Overdue fixes,Deficient,True
+F02,2023,Overdue fixes,Effective,False
+F02,2024,Overdue fixes,Needs improvement,True
+F02,2025,Overdue fixes,Effective,False
+F03,2023,Overdue fixes,Effective,False
+F03,2024,Overdue fixes,Deficient,True
+F03,2025,Overdue fixes,Needs improvement,True
+F04,2023,Overdue fixes,Effective,False
+F04,2024,Overdue fixes,Effective,False
+F04,2025,Overdue fixes,Effective,False
+F05,2023,Overdue fixes,Effective,False
+F05,2024,Overdue fixes,Deficient,True
+F05,2025,Overdue fixes,Deficient,True
+F06,2023,Overdue fixes,Effective,False
+F06,2024,Overdue fixes,Needs improvement,False
+F06,2025,Overdue fixes,Needs improvement,True
+F07,2023,Overdue fixes,Effective,False
+F07,2024,Overdue fixes,Deficient,True
+F07,2025,Overdue fixes,Effective,False
+F08,2023,Overdue fixes,Effective,False
+F08,2024,Overdue fixes,Effective,False
+F08,2025,Overdue fixes,Effective,False
+F09,2023,Overdue fixes,Effective,False
+F09,2024,Overdue fixes,Effective,False
+F09,2025,Overdue fixes,Effective,False
+F10,2023,Overdue fixes,Effective,False
+F10,2024,Overdue fixes,Effective,False
+F10,2025,Overdue fixes,Effective,False
+F11,2023,Overdue fixes,Effective,False
+F11,2024,Overdue fixes,Effective,False
+F11,2025,Overdue fixes,Needs improvement,False
+F12,2023,Overdue fixes,Effective,False
+F12,2024,Overdue fixes,Effective,False
+F12,2025,Overdue fixes,Effective,False
+F01,2023,Communication,Deficient,True
+F01,2024,Communication,Needs improvement,True
+F01,2025,Communication,Needs improvement,True
+F02,2023,Communication,Effective,False
+F02,2024,Communication,Effective,False
+F02,2025,Communication,Effective,False
+F03,2023,Communication,Needs improvement,False
+F03,2024,Communication,Effective,False
+F03,2025,Communication,Effective,False
+F04,2023,Communication,Effective,False
+F04,2024,Communication,Effective,False
+F04,2025,Communication,Deficient,True
+F05,2023,Communication,Deficient,True
+F05,2024,Communication,Effective,False
+F05,2025,Communication,Deficient,True
+F06,2023,Communication,Effective,False
+F06,2024,Communication,Effective,False
+F06,2025,Communication,Needs improvement,True
+F07,2023,Communication,Effective,False
+F07,2024,Communication,Effective,False
+F07,2025,Communication,Deficient,True
+F08,2023,Communication,Needs improvement,False
+F08,2024,Communication,Effective,False
+F08,2025,Communication,Effective,False
+F09,2023,Communication,Effective,False
+F09,2024,Communication,Needs improvement,False
+F09,2025,Communication,Effective,False
+F10,2023,Communication,Effective,False
+F10,2024,Communication,Needs improvement,False
+F10,2025,Communication,Effective,False
+F11,2023,Communication,Effective,False
+F11,2024,Communication,Deficient,True
+F11,2025,Communication,Effective,False
+F12,2023,Communication,Effective,False
+F12,2024,Communication,Effective,False
+F12,2025,Communication,Needs improvement,False
+F01,2023,Audit performance,Effective,False
+F01,2024,Audit performance,Effective,False
+F01,2025,Audit performance,Needs improvement,True
+F02,2023,Audit performance,Deficient,True
+F02,2024,Audit performance,Effective,False
+F02,2025,Audit performance,Effective,False
+F03,2023,Audit performance,Effective,False
+F03,2024,Audit performance,Effective,False
+F03,2025,Audit performance,Effective,False
+F04,2023,Audit performance,Effective,False
+F04,2024,Audit performance,Effective,False
+F04,2025,Audit performance,Deficient,True
+F05,2023,Audit performance,Deficient,True
+F05,2024,Audit performance,Effective,False
+F05,2025,Audit performance,Effective,False
+F06,2023,Audit performance,Deficient,True
+F06,2024,Audit performance,Deficient,True
+F06,2025,Audit performance,Effective,False
+F07,2023,Audit performance,Effective,False
+F07,2024,Audit performance,Effective,False
+F07,2025,Audit performance,Effective,False
+F08,2023,Audit performance,Effective,False
+F08,2024,Audit performance,Effective,False
+F08,2025,Audit performance,Needs improvement,False
+F09,2023,Audit performance,Effective,False
+F09,2024,Audit performance,Needs improvement,False
+F09,2025,Audit performance,Effective,False
+F10,2023,Audit performance,Effective,False
+F10,2024,Audit performance,Effective,False
+F10,2025,Audit performance,Effective,False
+F11,2023,Audit performance,Effective,False
+F11,2024,Audit performance,Effective,False
+F11,2025,Audit performance,Needs improvement,False
+F12,2023,Audit performance,Needs improvement,True
+F12,2024,Audit performance,Effective,False
+F12,2025,Audit performance,Effective,False
+F01,2023,Risk assessment,Needs improvement,True
+F01,2024,Risk assessment,Effective,False
+F01,2025,Risk assessment,Deficient,True
+F02,2023,Risk assessment,Needs improvement,False
+F02,2024,Risk assessment,Effective,False
+F02,2025,Risk assessment,Deficient,True
+F03,2023,Risk assessment,Effective,False
+F03,2024,Risk assessment,Effective,False
+F03,2025,Risk assessment,Effective,False
+F04,2023,Risk assessment,Needs improvement,False
+F04,2024,Risk assessment,Effective,False
+F04,2025,Risk assessment,Needs improvement,False
+F05,2023,Risk assessment,Needs improvement,False
+F05,2024,Risk assessment,Effective,False
+F05,2025,Risk assessment,Effective,False
+F06,2023,Risk assessment,Effective,False
+F06,2024,Risk assessment,Effective,False
+F06,2025,Risk assessment,Effective,False
+F07,2023,Risk assessment,Effective,False
+F07,2024,Risk assessment,Effective,False
+F07,2025,Risk assessment,Effective,False
+F08,2023,Risk assessment,Effective,False
+F08,2024,Risk assessment,Effective,False
+F08,2025,Risk assessment,Effective,False
+F09,2023,Risk assessment,Effective,False
+F09,2024,Risk assessment,Effective,False
+F09,2025,Risk assessment,Effective,False
+F10,2023,Risk assessment,Needs improvement,True
+F10,2024,Risk assessment,Effective,False
+F10,2025,Risk assessment,Needs improvement,False
+F11,2023,Risk assessment,Effective,False
+F11,2024,Risk assessment,Needs improvement,False
+F11,2025,Risk assessment,Effective,False
+F12,2023,Risk assessment,Effective,False
+F12,2024,Risk assessment,Effective,False
+F12,2025,Risk assessment,Deficient,True
+F01,2023,Client acceptance,Effective,False
+F01,2024,Client acceptance,Effective,False
+F01,2025,Client acceptance,Deficient,True
+F02,2023,Client acceptance,Effective,False
+F02,2024,Client acceptance,Needs improvement,False
+F02,2025,Client acceptance,Deficient,True
+F03,2023,Client acceptance,Effective,False
+F03,2024,Client acceptance,Effective,False
+F03,2025,Client acceptance,Deficient,True
+F04,2023,Client acceptance,Effective,False
+F04,2024,Client acceptance,Effective,False
+F04,2025,Client acceptance,Effective,False
+F05,2023,Client acceptance,Effective,False
+F05,2024,Client acceptance,Effective,False
+F05,2025,Client acceptance,Effective,False
+F06,2023,Client acceptance,Effective,False
+F06,2024,Client acceptance,Effective,False
+F06,2025,Client acceptance,Needs improvement,False
+F07,2023,Client acceptance,Effective,False
+F07,2024,Client acceptance,Needs improvement,False
+F07,2025,Client acceptance,Effective,False
+F08,2023,Client acceptance,Effective,False
+F08,2024,Client acceptance,Effective,False
+F08,2025,Client acceptance,Effective,False
+F09,2023,Client acceptance,Effective,False
+F09,2024,Client acceptance,Effective,False
+F09,2025,Client acceptance,Effective,False
+F10,2023,Client acceptance,Effective,False
+F10,2024,Client acceptance,Needs improvement,False
+F10,2025,Client acceptance,Effective,False
+F11,2023,Client acceptance,Needs improvement,False
+F11,2024,Client acceptance,Needs improvement,True
+F11,2025,Client acceptance,Effective,False
+F12,2023,Client acceptance,Needs improvement,False
+F12,2024,Client acceptance,Effective,False
+F12,2025,Client acceptance,Effective,False
+F01,2023,Leadership,Effective,False
+F01,2024,Leadership,Effective,False
+F01,2025,Leadership,Effective,False
+F02,2023,Leadership,Effective,False
+F02,2024,Leadership,Effective,False
+F02,2025,Leadership,Effective,False
+F03,2023,Leadership,Effective,False
+F03,2024,Leadership,Effective,False
+F03,2025,Leadership,Effective,False
+F04,2023,Leadership,Needs improvement,False
+F04,2024,Leadership,Effective,False
+F04,2025,Leadership,Effective,False
+F05,2023,Leadership,Effective,False
+F05,2024,Leadership,Needs improvement,True
+F05,2025,Leadership,Deficient,True
+F06,2023,Leadership,Effective,False
+F06,2024,Leadership,Needs improvement,False
+F06,2025,Leadership,Effective,False
+F07,2023,Leadership,Effective,False
+F07,2024,Leadership,Effective,False
+F07,2025,Leadership,Effective,False
+F08,2023,Leadership,Effective,False
+F08,2024,Leadership,Effective,False
+F08,2025,Leadership,Effective,False
+F09,2023,Leadership,Effective,False
+F09,2024,Leadership,Effective,False
+F09,2025,Leadership,Effective,False
+F10,2023,Leadership,Needs improvement,False
+F10,2024,Leadership,Effective,False
+F10,2025,Leadership,Needs improvement,True
+F11,2023,Leadership,Needs improvement,False
+F11,2024,Leadership,Effective,False
+F11,2025,Leadership,Effective,False
+F12,2023,Leadership,Effective,False
+F12,2024,Leadership,Effective,False
+F12,2025,Leadership,Effective,False
+F01,2023,Ethics,Effective,False
+F01,2024,Ethics,Needs improvement,False
+F01,2025,Ethics,Needs improvement,False
+F02,2023,Ethics,Effective,False
+F02,2024,Ethics,Effective,False
+F02,2025,Ethics,Effective,False
+F03,2023,Ethics,Needs improvement,False
+F03,2024,Ethics,Effective,False
+F03,2025,Ethics,Deficient,True
+F04,2023,Ethics,Effective,False
+F04,2024,Ethics,Effective,False
+F04,2025,Ethics,Effective,False
+F05,2023,Ethics,Effective,False
+F05,2024,Ethics,Needs improvement,True
+F05,2025,Ethics,Effective,False
+F06,2023,Ethics,Effective,False
+F06,2024,Ethics,Effective,False
+F06,2025,Ethics,Effective,False
+F07,2023,Ethics,Effective,False
+F07,2024,Ethics,Effective,False
+F07,2025,Ethics,Deficient,True
+F08,2023,Ethics,Effective,False
+F08,2024,Ethics,Effective,False
+F08,2025,Ethics,Effective,False
+F09,2023,Ethics,Effective,False
+F09,2024,Ethics,Effective,False
+F09,2025,Ethics,Effective,False
+F10,2023,Ethics,Effective,False
+F10,2024,Ethics,Effective,False
+F10,2025,Ethics,Effective,False
+F11,2023,Ethics,Needs improvement,False
+F11,2024,Ethics,Effective,False
+F11,2025,Ethics,Needs improvement,False
+F12,2023,Ethics,Needs improvement,False
+F12,2024,Ethics,Effective,False
+F12,2025,Ethics,Needs improvement,False

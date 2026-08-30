@@ -41,7 +41,7 @@
       <div class="case-hero-copy">
         <div class="case-hero-meta"><span class="eyebrow">Automotive supply chain</span><span class="case-status">End-to-end analysis</span></div>
         <h1>Which supply problems deserve management action?</h1>
-        <p class="case-question"><span>Business question</span>Are the weakest suppliers genuinely unreliable, or do they only look worse because they supply harder parts—and where is that unreliability creating shortages and avoidable freight cost?</p>
+        <p class="case-question"><span>Business question</span>Are the weakest suppliers genuinely unreliable, or do they only look worse because they supply harder parts? And where is that unreliability turning into shortages and avoidable freight cost?</p>
         <p class="cs-sub">I analysed two years of synthetic purchase-order, delivery, shipment, inventory and shortage data. The work compares suppliers fairly, separates an isolated supplier collapse from a stable network trend, and connects late supply to operational cost.</p>
         <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Management actions</a></div>
       </div>
@@ -143,14 +143,14 @@
 
     <div class="analysis-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Adjustment changes the bottom tier—but Kestrel and Solmar remain weak</span></div>
+        <div class="chart-head"><span class="chart-title">Adjustment reshuffles the bottom tier, and Kestrel and Solmar stay in it</span></div>
         <div data-chart="supplier-adjustment-data" data-chart-type="comparison"></div>
         <script type="application/json" id="supplier-adjustment-data">{"rows":[{"label":"Ravensworth Chassis","before":80.0,"after":83.3,"meta":{"orders":461,"rank":"15 → 8"}},{"label":"Solmar Fasteners","before":50.9,"after":47.9,"meta":{"orders":900,"rank":"26 → 27"}},{"label":"Larchmont Tooling","before":50.8,"after":46.0,"meta":{"orders":591,"rank":"27 → 30"}},{"label":"Norwood Castings","before":49.3,"after":46.4,"meta":{"orders":665,"rank":"28 → 29"}},{"label":"Kestrel Precision","before":49.2,"after":47.4,"meta":{"orders":1427,"rank":"29 → 28"}},{"label":"Cliffgate Logistics","before":46.8,"after":51.7,"meta":{"orders":600,"rank":"30 → 26"}}],"options":{"valueFormat":"percent","beforeLabel":"Raw OTIF","afterLabel":"Adjusted OTIF","categoryLabel":"Supplier","minValue":40,"maxValue":90,"metaColumns":[{"key":"orders","label":"Orders","numeric":true,"format":"number"},{"key":"rank","label":"Raw → adjusted rank"}]}}</script>
-        <div class="chart-caption"><strong>How to read this:</strong> Cliffgate improves once its job mix is allowed for, while Ravensworth moves seven places. Kestrel and Solmar do not improve; both remain among the weakest adjusted performers. The exact order changes, so “bottom tier” is the defensible conclusion—not “the same two remain last.”</div>
+        <div class="chart-caption"><strong>How to read this:</strong> Cliffgate improves once its job mix is allowed for, and Ravensworth moves seven places. Kestrel and Solmar hold their positions and stay among the weakest adjusted performers. Because the exact order shifts, the defensible conclusion is “bottom tier”, rather than “the same two remain last”.</div>
       </div>
 
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Kestrel really does supply harder parts—but that does not explain away its result</span></div>
+        <div class="chart-head"><span class="chart-title">Kestrel does supply harder parts, yet that still leaves its result unexplained</span></div>
         <div data-chart="kestrel-mix-data" data-chart-type="bar"></div>
         <script type="application/json" id="kestrel-mix-data">{"categories":["Kestrel","Network"],"series":[{"label":"Critical / high","values":[72.9,36.3]},{"label":"Medium / low","values":[27.1,63.7]}],"options":{"valueFormat":"percent","categoryLabel":"Supplier group","maxValue":100,"height":320}}</script>
         <div class="chart-caption">Nearly three-quarters of Kestrel's components are Critical or High criticality, roughly twice the network average. If difficulty were the main explanation, adjustment should lift its result; instead, OTIF moves from 49.2% to 47.4%.</div>
@@ -199,7 +199,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">4. Causes and cost</span>
-      <h2>Shortages are mainly a supply-side problem—and expediting is an expensive symptom</h2>
+      <h2>Shortages are mainly a supply-side problem, and expediting is its expensive symptom</h2>
       <p>The operational records point upstream: supplier lateness and logistics delay dominate shortage causes, while expedited shipments consume more than half of freight spend.</p>
     </div>
 
@@ -207,24 +207,24 @@
 
     <div class="driver-grid">
       <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Supplier lateness and logistics explain 87.1% of shortages</span></div>
-        <div data-chart="shortage-data" data-chart-type="bar"></div>
-        <script type="application/json" id="shortage-data">{"categories":["Supplier late","Logistics delay","Demand spike","Unknown","Quality reject"],"series":[{"label":"Events","values":[173,118,31,11,1]}],"options":{"horizontal":true,"categoryLabel":"Primary cause","maxValue":200,"height":300}}</script>
-        <div class="chart-caption">Supplier lateness accounts for 51.8% of events and logistics delay for 35.3%—87.1% combined. Demand spikes account for 9.3%, so the evidence does not support forecasting error as the main explanation.</div>
+        <div class="chart-head"><span class="chart-title">Two causes account for 87% of shortage events</span></div>
+        <div data-chart="shortage-data" data-chart-type="pareto"></div>
+        <script type="application/json" id="shortage-data">{"categories":["Supplier late","Logistics delay","Demand spike","Unknown","Quality reject"],"values":[173,118,31,11,1],"options":{"categoryLabel":"Primary cause","valueLabel":"Shortage events","height":330}}</script>
+        <div class="chart-caption">Supplier lateness drives 51.8% of events and logistics delay another 35.3%, so the running total clears 80% after just two causes. Demand spikes sit at 9.3%, which places forecasting error well down the list.</div>
       </div>
 
       <div class="chart-block">
         <div class="chart-head"><span class="chart-title">Expediting costs 3.56 times as much as standard freight</span></div>
         <div data-chart="freight-cost-data" data-chart-type="bar"></div>
         <script type="application/json" id="freight-cost-data">{"categories":["Standard","Expedited"],"series":[{"label":"Average shipment cost","values":[173.04,616.66]}],"options":{"valueFormat":"gbp","categoryLabel":"Freight type","maxValue":700,"height":300}}</script>
-        <div class="chart-caption">An expedited shipment averages £616.66, compared with £173.04 for standard freight—a 3.56× premium. This makes expediting a practical cost-reduction target, but the upstream trigger still needs to be fixed.</div>
+        <div class="chart-caption">An expedited shipment averages £616.66, compared with £173.04 for standard freight, a 3.56× premium. This makes expediting a practical cost-reduction target once the upstream trigger is fixed.</div>
       </div>
 
       <div class="chart-block">
         <div class="chart-head"><span class="chart-title">Expedited freight is a minority of shipments but a majority of spend</span></div>
         <div data-chart="freight-share-data" data-chart-type="bar"></div>
         <script type="application/json" id="freight-share-data">{"categories":["Shipments","Freight spend"],"series":[{"label":"Expedited","values":[26.0,55.6]},{"label":"Standard","values":[74.0,44.4]}],"options":{"valueFormat":"percent","categoryLabel":"Measure","maxValue":100,"height":300}}</script>
-        <div class="chart-caption">Expedited freight represents 26.0% of shipments but 55.6% of the £4.16m freight bill—£2.31m. Tracking the trigger by supplier can reveal where reliability improvements will remove avoidable cost.</div>
+        <div class="chart-caption">Expedited freight is 26.0% of shipments but 55.6% of the £4.16m freight bill, about £2.31m. Tracking the trigger by supplier shows where reliability improvements will remove avoidable cost.</div>
       </div>
 
       <div class="chart-block">

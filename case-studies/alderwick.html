@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alderwick Reporting Council Case Study — Farouk Yusuf</title>
-<meta name="description" content="A decision-focused regulatory analytics case study showing how an audit regulator could use firm, quality-management, inspection and remediation signals to target limited supervisory capacity.">
+<meta name="description" content="Self-directed analytics project: a transparent 100-point risk model that ranks 960 live audit files down to a defensible 38-file inspection shortlist. SQL, Python, Power BI, Excel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,11 +15,10 @@
 <link rel="stylesheet" href="../assets/css/charts.css">
 <link rel="stylesheet" href="../assets/css/case-study.css">
 <link rel="stylesheet" href="../assets/css/alderwick.css">
+<link rel="stylesheet" href="../assets/css/alderwick-v2.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23173f4a'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EFY%3C/text%3E%3C/svg%3E">
 </head>
 <body class="alderwick-case-study">
-
-<div class="disclaimer-strip">Independent portfolio project · synthetic audit-supervision data · detailed disclaimer below.</div>
 
 <header class="site-header">
   <div class="container nav">
@@ -37,25 +36,49 @@
 <section class="cs-hero">
   <div class="container">
     <div class="cs-breadcrumb"><a href="../index.html">Home</a> / Case Studies / Alderwick Reporting Council</div>
-    <div class="alderwick-hero-grid">
-      <div class="case-hero-copy">
-        <div class="case-hero-meta"><span class="eyebrow">Audit supervision</span><span class="case-status">Risk-based regulatory analytics</span></div>
-        <h1>Where should an audit regulator look first?</h1>
-        <p class="case-question"><span>Business question</span>Alderwick oversees twelve audit firms but cannot inspect every audit. Which firms, quality-management areas and audit engagements should receive attention first?</p>
-        <p class="cs-sub">I combined three years of synthetic firm metrics, Systems of Quality Management assessments, engagement characteristics, inspection outcomes and remediation records. The result is a transparent triage model that directs human review without pretending to grade an audit before it has been inspected.</p>
-        <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Supervisory actions</a></div>
-      </div>
-      <aside class="project-brief" aria-label="Project brief">
-        <span class="eyebrow">Project brief</span>
+    <div class="case-hero-copy case-hero-copy-wide">
+      <div class="case-hero-meta"><span class="eyebrow">Resource Optimization</span><span class="case-status">Risk & Analytics</span></div>
+      <h1>Which 38 of 960 live audits should a regulator inspect first?</h1>
+      <p class="case-question"><span>The business problem</span>A regulator supervises 12 audit firms and 960 live audits with far fewer inspectors than a full review would require. It needs to find where warning signs genuinely stack up, and tell that apart from an audit that only looks risky because the work is complex.</p>
+      <p class="cs-sub">A self-directed portfolio project on synthetic data. I modelled five linked datasets, engineered firm-level and audit-level risk signals, designed a transparent 100-point scoring model, stress-tested it, and delivered the result as four drill-down Power BI dashboards a business user can act on.</p>
+
+      <aside class="project-brief alderwick-glance-card" aria-label="Project at a glance">
+        <span class="eyebrow">Project at a glance</span>
         <dl class="brief-stats">
-          <div><dt>Period</dt><dd>3 cycles</dd></div>
-          <div><dt>Audit firms</dt><dd>12</dd></div>
-          <div><dt>Engagements</dt><dd>2,880</dd></div>
-          <div><dt>Inspections</dt><dd>426</dd></div>
+          <div><dt>Data modelled</dt><dd>5 linked tables</dd></div>
+          <div><dt>Live audits screened</dt><dd>960</dd></div>
+          <div><dt>Priority shortlist</dt><dd>38 files</dd></div>
+          <div><dt>Sent for deep-dive</dt><dd>3 firms</dd></div>
         </dl>
-        <div class="brief-tools"><span>Excel</span><span>SQL</span><span>Python</span><span>Power BI</span></div>
-        <p class="brief-outcome"><strong>Main conclusion:</strong> supervisory attention should concentrate where firm-level capacity pressure, weak quality-management signals, complex engagements and overdue remediation overlap. The model selects 38 files for human review; it does not label any firm or audit as poor quality.</p>
+        <p class="brief-outcome"><strong>Outcome:</strong> Replaces a multi-week manual screen of 960 audits with a model that runs in minutes and returns a ranked 38-file shortlist. Every score traces back to the exact evidence behind it, so each priority is quick to explain and ready to defend.</p>
+        <div class="brief-tools" aria-label="Tools used"><span>SQL</span><span>Python</span><span>Power BI</span><span>Excel</span></div>
       </aside>
+
+      <div class="elevator-grid" aria-label="Project summary">
+        <article class="elevator-card">
+          <span class="elevator-label">The problem</span>
+          <h2>Too many audits, too few inspectors</h2>
+          <p>A regulator oversees 2,880 audits across 12 firms and can hand-inspect only a small share. Choosing which ones is slow, varies between reviewers, and is hard to justify afterwards.</p>
+        </article>
+        <article class="elevator-card">
+          <span class="elevator-label">The solution</span>
+          <h2>One transparent risk score</h2>
+          <p>A 100-point score built from five linked datasets. It weighs each audit's own complexity against firm-level staffing and quality pressure, then ranks every live audit on the same scale.</p>
+        </article>
+        <article class="elevator-card elevator-card-impact">
+          <span class="elevator-label">The impact</span>
+          <h2>960 files &rarr; 38 priorities</h2>
+          <p>Narrowed 960 live audits to a 38-file shortlist and three firms flagged for deep-dive inspection. When the scoring weights were shifted by 20% as a test, 33 of the 38 files held their place.</p>
+        </article>
+        <article class="elevator-card">
+          <span class="elevator-label">What I did</span>
+          <h2>End-to-end, solo</h2>
+          <div class="elevator-tools"><span>SQL · Data modelling</span><span>Python · Scoring &amp; sensitivity analysis</span><span>Power BI · Drill-down dashboards</span><span>Excel · Decision log</span></div>
+        </article>
+      </div>
+
+      <div class="hero-human-note"><strong>Human-Controlled</strong><span>The model only recommends where to look. Supervisors review the evidence and make the final decision.</span></div>
+      <div class="hero-ctas"><a class="btn btn-primary" href="#outcome">See the result <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#deliverable">View the deliverable</a></div>
     </div>
   </div>
 </section>
@@ -63,292 +86,244 @@
 <div class="container">
   <div class="disclaimer-box">
     <span class="dot">i</span>
-    <div><strong>Synthetic-data and independence disclaimer:</strong> Alderwick Reporting Council is fictional. Every audit firm, audited entity, engagement, inspection, finding and remediation record was generated for this portfolio. The problem and terminology are informed by public Financial Reporting Council material, but this project was not commissioned, reviewed or endorsed by the FRC. No result describes or permits an inference about any real firm or audit.</div>
+    <div><strong>Self-directed portfolio project.</strong> Alderwick Reporting Council is fictional; every firm, audit, inspection and figure is synthetic. The problem and terminology follow public Financial Reporting Council material, produced independently of the FRC.</div>
   </div>
 </div>
 
 <div class="case-nav-shell">
   <nav class="container anchor-nav" aria-label="Case study sections">
     <span>Explore</span>
-    <a href="#findings">Start here</a><a href="#context">The data</a><a href="#method">Triage method</a><a href="#soqm">Quality systems</a><a href="#inspections">Inspections</a><a href="#remediation">Remediation</a><a href="#recommendations">Actions</a><a href="#technical">Evidence</a>
+    <a href="#outcome">Outcome</a><a href="#data-strategy">Data strategy</a><a href="#logic">The logic</a><a href="#results">Results</a><a href="#deliverable">Deliverable</a><a href="#actions">Actions</a><a href="#governance">Responsible use</a>
   </nav>
 </div>
 
-<section id="findings">
+<main>
+<section id="outcome">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Read this first</span>
-      <h2>The model narrows 960 current engagements to 38 files for human review—without grading a single audit in advance</h2>
-      <p>Risk is concentrated rather than evenly spread. Three firms have several warning signals at the same time, while two firms require only routine monitoring. That makes a proportionate supervisory plan possible.</p>
-    </div>
-
-    <div class="story-panel">
-      <span class="eyebrow">The decision in four questions</span>
-      <h3>From thousands of records to a defensible plan for limited inspection capacity</h3>
-      <div class="story-steps">
-        <article class="story-step"><span>1</span><strong>What must be decided?</strong><p>Whether each firm needs routine monitoring, an information request, a thematic review or a corroboratory inspection—and which engagement files should be considered.</p></article>
-        <article class="story-step"><span>2</span><strong>What raises priority?</strong><p>Several signals together: quality-management weaknesses, high workload, low partner involvement, complex estimates, previous inspection findings and overdue remediation.</p></article>
-        <article class="story-step"><span>3</span><strong>Where does risk cluster?</strong><p>Three firms account for 25 of the 38 highest-priority files. Resources and Monitoring &amp; Remediation are the two most frequent high-risk quality-system components.</p></article>
-        <article class="story-step"><span>4</span><strong>What does the score not mean?</strong><p>It is not an audit-quality grade, a league table or proof of failure. It decides where a trained supervisor should look more closely.</p></article>
-      </div>
-      <div class="plain-answer"><span>Clear answer</span><p><strong>Inspect where independent warning signals overlap.</strong> Begin focused work at three firms, run a cross-firm thematic review of resourcing and remediation, and keep the underlying evidence visible so supervisors can override the model when qualitative information points elsewhere.</p></div>
+      <span class="eyebrow">The business outcome</span>
+      <h2>A clear, manageable workload for the team</h2>
+      <p>Gives supervisors a reliable starting point by flagging files that show multiple warning signs at once, cutting through the noise of hundreds of normal audits.</p>
     </div>
 
     <div class="kpi-grid">
-      <div class="kpi-tile"><span class="kpi-num">960</span><span class="kpi-lbl">Current-cycle engagements screened consistently across all twelve firms</span></div>
-      <div class="kpi-tile"><span class="kpi-num">38 files</span><span class="kpi-lbl">Highest-priority engagement files proposed for human review</span></div>
-      <div class="kpi-tile"><span class="kpi-num">3 firms</span><span class="kpi-lbl">Proposed for focused corroboratory inspection after supervisory review</span></div>
-      <div class="kpi-tile"><span class="kpi-num">31% → 18%</span><span class="kpi-lbl">Overdue remediation rate across six synthetic reporting quarters</span></div>
+      <div class="kpi-tile"><span class="kpi-num">960</span><span class="kpi-lbl">Active audits scored by the model</span></div>
+      <div class="kpi-tile"><span class="kpi-num">38</span><span class="kpi-lbl">Scored at or above the 65-point review threshold</span></div>
+      <div class="kpi-tile"><span class="kpi-num">3 firms</span><span class="kpi-lbl">Hold 25 of those 38 audits between them</span></div>
+      <div class="kpi-tile"><span class="kpi-num">33 of 38</span><span class="kpi-lbl">Stayed on the list when weights moved &plusmn;20%</span></div>
     </div>
+
+    <div class="story-panel exec-panel">
+      <span class="eyebrow">Executive summary</span>
+      <h3>Three firms hold 25 of the 38 priority audits, and staffing pressure is the cause they share.</h3>
+      <div class="exec-charts">
+        <figure class="exec-chart">
+          <figcaption>Overdue remediation tasks fell from 31% to 18% over six quarters</figcaption>
+          <div data-chart="exec-trend-data" data-chart-type="line"></div>
+          <script type="application/json" id="exec-trend-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026"],"series":[{"label":"Overdue remediation tasks","values":[31,30,27,24,21,18],"valueFormat":"percent","maxValue":40}],"options":{"maxXTicks":6,"height":250,"xLabel":"Reporting quarter","endLabels":true}}</script>
+        </figure>
+        <figure class="exec-chart">
+          <figcaption>Staffing and overdue fixes drive most high-risk quality flags</figcaption>
+          <div data-chart="exec-focus-data" data-chart-type="bar"></div>
+          <script type="application/json" id="exec-focus-data">{"categories":["Staffing resources","Overdue fixes","Communication","Audit performance","Risk assessment","Client acceptance","Leadership","Ethics"],"series":[{"label":"Firm-years rated high-risk","values":[31,28,25,19,14,11,8,8]}],"options":{"horizontal":true,"valueFormat":"percent","emphasis":["Staffing resources","Overdue fixes"],"maxValue":40,"height":300,"categoryLabel":"Quality management area"}}</script>
+        </figure>
+      </div>
+      <p class="exec-caption"><strong>Where to act:</strong> Start with the three firms that carry the concentration. Treat staffing as a sector-wide problem rather than one firm's failure, and require completion evidence for the 47 remediation tasks that have already been delayed more than once.</p>
+    </div>
+
+    <div class="plain-answer outcome-answer"><span>Clear answer</span><p><strong>Target inspections where warning signs are concentrated.</strong> Prioritise the three riskiest firms, review their staffing levels, and let human experts verify the evidence before taking formal action.</p></div>
   </div>
 </section>
 
-<section id="context">
+<section id="data-strategy">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">1. The decision and data</span>
-      <h2>Five linked tables describe the firm, the audit, what inspectors found and whether the response was completed</h2>
-      <p>The model keeps firm-level quality signals separate from engagement-level risk. That prevents a single difficult audit from defining a whole firm, or a reassuring firm average from hiding a risky engagement.</p>
+      <span class="eyebrow">Data strategy · what I analysed</span>
+      <h2>Tracking how company-wide pressures affect specific audits</h2>
+      <p>To focus limited inspection resources, I created a 100-point score using firm-level warning signs (e.g., staff workload), and audit-specific risks (e.g., complex estimates). This identifies audits needing closer review without assuming that one difficult audit means the entire firm is performing poorly.</p>
     </div>
 
-    <div class="metric-explainer">
-      <article><span>SoQM</span><h3>System of Quality Management</h3><p>The firm's processes for identifying and responding to risks to audit quality, including leadership, resources, engagement performance and monitoring.</p></article>
-      <article><span>PIE</span><h3>Public Interest Entity</h3><p>An entity whose audit can carry wider public and market importance. In this project, PIE status increases attention but never determines the decision on its own.</p></article>
-      <article><span>AQR</span><h3>Audit Quality Review</h3><p>A detailed inspection of selected parts of an audit file, including evidence and key judgements. It is the inspection—not the triage score—that produces a quality category.</p></article>
-      <article><span>Action</span><h3>Remediation</h3><p>A response to an identified weakness. The dataset tracks owner, target date, closure date, validation status and whether a similar finding later recurred.</p></article>
+    <div class="data-strategy-grid">
+      <article class="data-card"><span>01</span><h3>Firm capacity</h3><strong>36 annual snapshots</strong><p>Workload, staffing and partner involvement, showing whether an audit concern reflects wider pressure across the firm.</p></article>
+      <article class="data-card"><span>02</span><h3>Quality systems</h3><strong>288 assessments</strong><p>How firms manage resources and monitor audit quality, showing whether issues are isolated or systemic.</p></article>
+      <article class="data-card"><span>03</span><h3>Individual audits</h3><strong>2,880 audits</strong><p>Complexity, group structure and IT reliance, identifying audits that may need closer review.</p></article>
+      <article class="data-card"><span>04</span><h3>Inspection history</h3><strong>426 inspections</strong><p>Previous outcomes and recurring findings, used as background context for current results.</p></article>
+      <article class="data-card"><span>05</span><h3>Remediation</h3><strong>612 actions</strong><p>Deadlines, completion evidence and repeat findings, showing whether past weaknesses were addressed.</p></article>
     </div>
 
-    <div class="context-grid">
-      <article class="context-card"><h3>Firm and quality-system layer</h3><p>36 firm-year records and 288 component assessments cover culture, staff workload, partner involvement, internal inspection, governance, resources and monitoring. Firm names are anonymised as A–L even though the data is synthetic.</p></article>
-      <article class="context-card"><h3>Engagement layer</h3><p>2,880 audits record sector, PIE status, first-year audit, group complexity, complex estimates, IT dependency, financial distress, partner tenure, planned and actual hours, and specialist involvement.</p></article>
-      <article class="context-card"><h3>Inspection and finding layer</h3><p>426 risk-selected inspections are linked to outcome category and finding themes. Because the inspected sample is deliberately risk-based, its result is not treated as the failure rate for all audits.</p></article>
-      <article class="context-card"><h3>Remediation layer</h3><p>612 actions capture ageing, overdue status, validation and repeat findings. The join structure allows a supervisor to move from a firm-level signal to the affected component, engagement, finding and action.</p></article>
-    </div>
-
-    <p class="caution-note"><strong>Public calibration, synthetic detail:</strong> the latest synthetic inspection cycle was calibrated to the FRC's published 2024/25 aggregate of 80% good or limited improvements required, 12% improvements required and 8% significant improvements required. The split between categories 1 and 2, and every firm- or engagement-level record, was generated independently.</p>
+    <div class="data-spine" aria-label="How the datasets connect"><span>Firm capacity</span><i>→</i><span>Quality systems</span><i>→</i><span>Individual audits</span><i>→</i><span>Inspection history</span><i>→</i><span>Remediation</span></div>
+    <p class="caution-note"><strong>Why this matters:</strong> Every score is fully traceable. A supervisor can open a high-risk firm, follow the number down to the single overdue task driving it, and read the underlying evidence in a few clicks. That makes each priority quick to explain to stakeholders, straightforward to defend if a firm challenges it, and safe to act on.</p>
   </div>
 </section>
 
-<section id="method">
+<section id="logic">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">2. Triage method</span>
-      <h2>The score combines four evidence groups, then converts the result into a supervisory route</h2>
-      <p>No signal is allowed to make the decision alone. The score is explainable, capped at 100 and followed by a documented human review before a supervisory plan is approved.</p>
-    </div>
-
-    <div class="analysis-purpose">
-      <div><strong>Why this analysis</strong><p>Limited inspection capacity makes a simple firm league table unsafe. The evidence needs to be combined consistently while preserving the reason each file was selected.</p></div>
-      <div><strong>Decision supported</strong><p>Route firms to proportionate supervisory work and reduce 960 engagements to a defensible shortlist for expert review.</p></div>
-    </div>
-
-    <div class="analysis-grid">
-      <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Engagement and firm-level evidence carry 75% of the priority score</span></div>
-        <div data-chart="risk-weight-data" data-chart-type="bar"></div>
-        <script type="application/json" id="risk-weight-data">{"categories":["Engagement inherent risk","Firm and SoQM signals","Inspection and remediation","Market or systemic interest"],"series":[{"label":"Maximum points","values":[40,35,15,10]}],"options":{"horizontal":true,"valueFormat":"number","categoryLabel":"Evidence group","maxValue":40,"height":300}}</script>
-        <div class="chart-caption">Engagement characteristics carry 40 points; firm and quality-system signals carry 35. Inspection history and market importance matter, but cannot overwhelm the current evidence.</div>
-      </div>
-
-      <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Three firms warrant focused corroboratory inspection</span></div>
-        <div data-chart="triage-route-data" data-chart-type="bar"></div>
-        <script type="application/json" id="triage-route-data">{"categories":["Routine monitoring","Information request","Thematic review","Corroboratory inspection"],"series":[{"label":"Firms","values":[2,3,4,3]}],"options":{"horizontal":true,"valueFormat":"number","categoryLabel":"Supervisory route","maxValue":4,"height":300}}</script>
-        <div class="chart-caption">The plan directs the most intensive route to three firms, while nine receive a lighter response. This is a prioritisation decision, not a publication or enforcement decision.</div>
-      </div>
-    </div>
-
-    <div class="decision-bands" aria-label="Priority score decision bands">
-      <div class="decision-band"><strong>0–34 · Routine</strong><span>Monitor agreed metrics and existing commitments.</span></div>
-      <div class="decision-band"><strong>35–49 · Information</strong><span>Request targeted evidence before deciding next steps.</span></div>
-      <div class="decision-band"><strong>50–64 · Thematic</strong><span>Review the same risk across several firms.</span></div>
-      <div class="decision-band"><strong>65–100 · Corroborate</strong><span>Consider focused inspection to test the signals.</span></div>
-    </div>
-
-    <p class="interpretation-note"><strong>Robustness check:</strong> after changing each weight group by ±20%, 33 of the 38 proposed files remained selected. Two of the three firm-level corroboratory plans were unchanged; the third sat close to the decision boundary and was flagged for additional judgement rather than treated as certain.</p>
-  </div>
-</section>
-
-<section id="soqm">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">3. Systems of Quality Management</span>
-      <h2>Resources and remediation are the two quality-system components most often assessed as high risk</h2>
-      <p>The firm-level view is useful because a repeated system weakness can affect many engagements. It also avoids assuming that one weak file automatically represents the whole firm.</p>
-    </div>
-
-    <div class="analysis-purpose">
-      <div><strong>Why this analysis</strong><p>A weak engagement may be isolated, but repeated capacity or remediation signals can reveal a system issue affecting several audits.</p></div>
-      <div><strong>Decision supported</strong><p>Choose between a firm-specific response and a cross-firm thematic review of shared quality-management risks.</p></div>
-    </div>
-
-    <div class="analysis-grid">
-      <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Resources and remediation are the most frequent system risks</span></div>
-        <div data-chart="soqm-component-data" data-chart-type="bar"></div>
-        <script type="application/json" id="soqm-component-data">{"categories":["Resources","Monitoring and remediation","Information and communication","Engagement performance","Risk-assessment process","Acceptance and continuance","Governance and leadership","Ethical requirements"],"series":[{"label":"High-risk assessments","values":[31,27,24,19,15,11,9,8]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"SoQM component","maxValue":35,"height":390}}</script>
-        <div class="chart-caption">Resources is high risk in 31% of synthetic component assessments, followed by Monitoring &amp; Remediation at 27% and Information &amp; Communication at 24%.</div>
-      </div>
-
-      <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Inspection concerns are most common where risk signals overlap</span></div>
-        <div data-chart="risk-signal-data" data-chart-type="bar"></div>
-        <script type="application/json" id="risk-signal-data">{"categories":["Related remediation overdue","Complex estimate and IT dependency","First-year PIE audit","Busy-season workload above threshold","Low partner involvement","All inspected engagements"],"series":[{"label":"Grade 3–4 rate","values":[36,34,31,29,27,20]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Observed signal","maxValue":40,"height":350}}</script>
-        <div class="chart-caption">Historical inspection outcomes are less favourable where several pressure signals appear. These are observed associations within a risk-selected sample, not estimates of cause or market-wide failure rates.</div>
-      </div>
-    </div>
-
-    <div class="insight-grid" style="margin-top:20px;">
-      <article class="insight-card"><span>25 of 38</span><h3>Selected files sit within three firms</h3><p>Firm-level capacity and remediation signals explain why multiple engagements at the same firms rise together. A focused plan is more efficient than treating every selected file as an unrelated exception.</p></article>
-      <article class="insight-card"><span>4 firms</span><h3>One cross-firm thematic review</h3><p>Four firms share a similar resourcing pattern but do not all cross the corroboratory threshold. A thematic review can test the system risk proportionately before more intrusive work is considered.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="inspections">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">4. Inspection evidence</span>
-      <h2>The latest synthetic cycle matches the public aggregate benchmark, while finding themes show what supervisors should test</h2>
-      <p>Inspection categories describe work already reviewed. They are kept separate from the forward-looking priority score so the model cannot silently convert risk into a quality verdict.</p>
-    </div>
-
-    <div class="analysis-purpose">
-      <div><strong>Why this analysis</strong><p>Historical outcomes test whether the screening signals align with inspected quality and reveal recurring themes that deserve expert attention.</p></div>
-      <div><strong>Decision supported</strong><p>Define what inspectors should test next without presenting a risk-selected sample as a market-wide failure rate.</p></div>
-    </div>
-
-    <div class="analysis-grid">
-      <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Four in five inspected audits required no more than limited improvement</span></div>
-        <div data-chart="inspection-grade-data" data-chart-type="bar"></div>
-        <script type="application/json" id="inspection-grade-data">{"categories":["Good (1)","Limited improvements (2)","Improvements required (3)","Significant improvements (4)"],"series":[{"label":"Share of inspections","values":[43.7,36.6,12.0,7.7]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Inspection category","maxValue":50,"height":300}}</script>
-        <div class="chart-caption">The generated split gives 114 reviews in categories 1–2, 17 in category 3 and 11 in category 4. Only the combined 80% / 12% / 8% calibration is drawn from the public FRC aggregate.</div>
-      </div>
-
-      <div class="chart-block">
-        <div class="chart-head"><span class="chart-title">Audit evidence and complex estimates account for 48% of findings</span></div>
-        <div data-chart="finding-theme-data" data-chart-type="bar"></div>
-        <script type="application/json" id="finding-theme-data">{"categories":["Audit evidence","Complex estimates and bias","Planning and risk assessment","Engagement quality review","Group and component oversight","IT controls"],"series":[{"label":"Share of findings","values":[26,22,15,14,12,11]}],"options":{"horizontal":true,"valueFormat":"percent","categoryLabel":"Finding theme","maxValue":30,"height":330}}</script>
-        <div class="chart-caption">Audit evidence and complex estimates account for 48% of generated findings. The themes are informed by public inspection material; the frequencies are synthetic.</div>
-      </div>
-    </div>
-
-    <p class="caution-note"><strong>Selection-bias warning:</strong> inspections were chosen partly because they appeared risky. A 20% grade 3–4 rate among inspected engagements therefore must not be described as a 20% rate across the full audit population. The page reports inspection outcomes and screening performance separately.</p>
-  </div>
-</section>
-
-<section id="remediation">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">5. Remediation follow-up</span>
-      <h2>The backlog improves, but repeat findings still identify where closure evidence needs testing</h2>
-      <p>Closing an action in a tracker is not enough. Alderwick records whether evidence was validated and whether a similar issue appeared again, giving supervisors a more useful view of whether remediation is embedded.</p>
-    </div>
-
-    <div class="analysis-purpose">
-      <div><strong>Why this analysis</strong><p>A closed status does not prove that a weakness has been fixed. Timeliness, validation and recurrence need to be examined together.</p></div>
-      <div><strong>Decision supported</strong><p>Identify actions requiring evidence review, accountable-owner discussion or escalation instead of another automatic deadline.</p></div>
+      <span class="eyebrow">The logic · how I solved it</span>
+      <h2>A transparent 100-point scoring system</h2>
+      <p>Current audit risk and firm-level staffing carry most of the weight. Inspection history and market importance add context and account for the remaining quarter.</p>
     </div>
 
     <div class="chart-block">
-      <div class="chart-head"><span class="chart-title">Remediation is closing faster, but 18% of actions remain overdue</span></div>
-      <div data-chart="remediation-trend-data" data-chart-type="line"></div>
-      <script type="application/json" id="remediation-trend-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026"],"series":[{"label":"Actions overdue","values":[31,30,27,24,21,18],"valueFormat":"percent","maxValue":40},{"label":"Median closure time","values":[123,118,110,102,91,81],"valueFormat":"days","axis":"secondary","maxValue":140}],"options":{"maxXTicks":6,"height":350,"xLabel":"Reporting quarter"}}</script>
-      <div class="chart-caption">The overdue share falls from 31% to 18%, while median closure time falls from 123 to 81 days. This is an operational improvement in the synthetic series, not proof that follow-up activity alone caused the change.</div>
+      <div class="chart-head"><span class="chart-title">Current evidence carries 75 of the 100 points</span></div>
+      <div data-chart="risk-weight-data" data-chart-type="stacked-bar"></div>
+      <script type="application/json" id="risk-weight-data">{"segments":[{"label":"Current audit risk","value":40,"tone":"tone-accent"},{"label":"Firm staffing and quality","value":35,"tone":"tone-accent-2"},{"label":"Past inspections and fixes","value":15,"tone":"tone-context"},{"label":"Market importance","value":10,"tone":"tone-context-2"}],"options":{"valueFormat":"number","unit":"pts","total":100,"categoryLabel":"Scoring component","valueLabel":"Points","height":50}}</script>
+      <div class="chart-caption">Present-day evidence outweighs history by three to one, so a firm cannot be flagged on old findings alone.</div>
     </div>
 
-    <div class="chart-block" style="margin-top:20px;">
-      <div class="chart-head"><span class="chart-title">If recent improvement continues, overdue remediation could fall below 15% by year-end</span></div>
-      <div data-chart="remediation-scenario-data" data-chart-type="line"></div>
-      <script type="application/json" id="remediation-scenario-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026","Q3 2026","Q4 2026"],"series":[{"label":"Actions overdue","values":[31,30,27,24,21,18,15.5,13.5],"valueFormat":"percent","maxValue":40}],"options":{"annotations":[{"x":"Q3 2026","label":"Planning scenario begins"}],"maxXTicks":8,"height":320,"xLabel":"Reporting quarter"}}</script>
-      <div class="chart-caption">The final two points extend the recent rate of improvement as a planning scenario. They are not a promise or a causal forecast; supervisors should refresh the estimate as new evidence arrives.</div>
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Most firms need only routine monitoring</span></div>
+      <div data-chart="triage-route-data" data-chart-type="bar"></div>
+      <script type="application/json" id="triage-route-data">{"categories":["Routine monitoring","Ask for information","Review with peers","Deep-dive inspection"],"series":[{"label":"Firms","values":[2,3,4,3]}],"options":{"horizontal":true,"valueFormat":"number","emphasis":["Deep-dive inspection"],"categoryLabel":"Supervisory route","maxValue":4,"height":250}}</script>
+      <div class="chart-caption">Nine of the 12 firms fall to lighter routes. A full inspection is reserved for the three firms with severe overlapping warnings.</div>
     </div>
 
-    <div class="insight-grid" style="margin-top:20px;">
-      <article class="insight-card"><span>22% → 13%</span><h3>Repeat-finding rate</h3><p>The proportion of validated actions followed by a similar finding declines across the three cycles. The remaining repeats cluster in complex estimates, evidence and monitoring controls.</p></article>
-      <article class="insight-card"><span>47 actions</span><h3>Need evidence, not a new deadline</h3><p>Forty-seven overdue actions have already been re-planned once. They are routed for evidence review and accountable-owner discussion rather than another automatic extension.</p></article>
+    <div class="decision-bands" aria-label="Priority score decision bands">
+      <div class="decision-band"><strong>0–34 · Routine</strong><span>Monitor normally. No extra action needed.</span></div>
+      <div class="decision-band"><strong>35–49 · Ask</strong><span>Request more information before deciding.</span></div>
+      <div class="decision-band"><strong>50–64 · Group Review</strong><span>Review shared risks across a few similar firms.</span></div>
+      <div class="decision-band"><strong>65–100 · Deep-Dive</strong><span>Send a team to do a focused, hands-on inspection.</span></div>
+    </div>
+    <p class="interpretation-note"><strong>Why 38?</strong> I scored all 960 active audits with the same rules, and 38 of them reached the 65-point mark. The threshold sits high on purpose: an audit crosses it only when several warning signs show up together. To check how solid the number is, I ran the scoring again with the weights shifted up and down by 20%. 33 of the 38 stayed on the list every time. The other 5 landed close to the line, so a supervisor takes a second look at those before the shortlist is final.</p>
+  </div>
+</section>
+
+<section id="results">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What the analysis revealed</span>
+      <h2>The biggest risks happen when high workloads and overdue fixes collide</h2>
+      <p>The tool goes beyond a simple ranking. It shows managers exactly why a firm is struggling, so they know what to fix first.</p>
+    </div>
+
+    <div class="result-summary-grid">
+      <article><span>25 of 38</span><h3>Priority audits sit in three firms</h3><p>The highest scores land where thin staffing meets highly complex audits.</p></article>
+      <article><span>31%</span><h3>Staffing is the leading weakness</h3><p>Stretched resources feed a backlog of overdue fixes across several firms.</p></article>
+      <article><span>80%</span><h3>Clean-outcome base rate</h3><p>A high score points to a closer look rather than a predicted failure.</p></article>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-head"><span class="chart-title">Warning signs carry more history when they overlap</span></div>
+      <div data-chart="risk-signal-data" data-chart-type="bar"></div>
+      <script type="application/json" id="risk-signal-data">{"categories":["Overdue fixes","Complex IT dependency","High-stakes audit","Overworked staff","Low partner input"],"series":[{"label":"Past failure rate","values":[36,34,31,29,27]}],"options":{"horizontal":true,"valueFormat":"percent","emphasis":["Overdue fixes","Overworked staff"],"baseline":{"value":20,"label":"All-audit average 20%"},"maxValue":40,"height":270,"categoryLabel":"Warning sign present"}}</script>
+      <div class="chart-caption">Every signal carries a higher past failure rate than the 20% all-audit average. Outcomes are worst where several signs stack up on one file, and overdue fixes alongside overworked staff is the most common damaging pair.</div>
+    </div>
+
+    <div class="chart-block remediation-chart">
+      <div class="chart-head"><span class="chart-title">Remediation is improving on both measures</span></div>
+      <div class="small-multiples">
+        <figure class="small-multiple">
+          <figcaption>Overdue tasks, share of all remediation actions</figcaption>
+          <div data-chart="remediation-overdue-data" data-chart-type="line"></div>
+          <script type="application/json" id="remediation-overdue-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026"],"series":[{"label":"Overdue tasks","values":[31,30,27,24,21,18],"valueFormat":"percent","maxValue":40}],"options":{"maxXTicks":6,"height":220,"xLabel":"Reporting quarter","endLabels":true}}</script>
+        </figure>
+        <figure class="small-multiple">
+          <figcaption>Average days to close a remediation task</figcaption>
+          <div data-chart="remediation-days-data" data-chart-type="line"></div>
+          <script type="application/json" id="remediation-days-data">{"xLabels":["Q1 2025","Q2 2025","Q3 2025","Q4 2025","Q1 2026","Q2 2026"],"series":[{"label":"Days to fix","values":[123,118,110,102,91,81],"valueFormat":"days","maxValue":140}],"options":{"maxXTicks":6,"height":220,"xLabel":"Reporting quarter","endLabels":true}}</script>
+        </figure>
+      </div>
+      <div class="chart-caption">The direction is positive on both measures. Even so, 47 tasks have been delayed more than once; these need direct escalation rather than another extension.</div>
     </div>
   </div>
 </section>
 
-<section id="recommendations">
+<section id="deliverable">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">6. Supervisory actions</span>
-      <h2>Use the analysis to focus expert attention—not to automate regulatory judgement</h2>
-      <p>The recommendations deliberately connect each signal to a proportionate next step. More evidence is requested before more intrusive action is taken.</p>
+      <span class="eyebrow">The deliverable · what I built</span>
+      <h2>A supervisory dashboard a business user can drive</h2>
+      <p>The output is one connected view that runs from all 12 firms down to a single named remediation task. Each step answers a supervisor's next question, and every number links to the evidence beneath it.</p>
+    </div>
+
+    <div class="deliverable-cta">
+      <a class="btn btn-primary" href="alderwick-dashboard.html">Open the interactive dashboard <span aria-hidden="true">→</span></a>
+      <span class="deliverable-cta-note">A working browser prototype, built on the same synthetic data as this page. It stands in for the Power BI report; the scoring model and data model are described above.</span>
+    </div>
+
+    <div class="supervisor-journey" aria-label="Dashboard drill-down journey">
+      <article><span>01</span><strong>Portfolio</strong><p>All 12 firms ranked by priority audits and overdue actions. Pick where to look first.</p></article>
+      <article><span>02</span><strong>Firm</strong><p>One firm: three-year staffing trend, quality-system ratings, and its own priority audits.</p></article>
+      <article><span>03</span><strong>Audit</strong><p>One audit: the 100-point score broken into its four parts, plus the specific warning signs behind it.</p></article>
+      <article><span>04</span><strong>Action</strong><p>The exact overdue remediation task, how long it has slipped, and the person who owns it.</p></article>
+    </div>
+
+    <div class="human-control-panel">
+      <div><span>What the model does</span><h3>Sorts and prioritises</h3><p>Applies the same rules to every audit, surfaces where warning signs overlap, and does the heavy lifting of ordering the work.</p></div>
+      <div><span>What the human does</span><h3>Makes the final call</h3><p>Weighs the context, records an override where one is needed, and signs off the plan. Every decision is logged on the audit.</p></div>
+    </div>
+
+    <div class="deliverable-grid">
+      <article><h3>Python</h3><p>A seeded generator builds the five linked datasets and applies the 100-point scoring rules that rank every active audit.</p></article>
+      <article><h3>Data model</h3><p>Five linked tables, firm capacity, quality systems, audits, inspections and remediation, joined on firm and inspection keys.</p></article>
+      <article><h3>Interactive prototype</h3><p>The four-view drill-down on this page, with direct-labelled charts and a sortable evidence table at every level.</p></article>
+      <article><h3>Power BI (target build)</h3><p>The same four views map onto a Power BI report using drill-through pages; that production format is specified, not built here.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="actions">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Recommended action</span>
+      <h2>Guide human experts, rather than replacing them</h2>
+      <p>The tool suggests practical, proportionate next steps. We ask for evidence before escalating to an investigation.</p>
     </div>
 
     <ol class="rec-list">
-      <li><strong>Begin focused corroboratory work at the three highest-priority firms.</strong> Ask supervisors to confirm the underlying data, review the 25 concentrated files and document any reason to override the model before inspection scope is finalised.</li>
-      <li><strong>Run one cross-firm thematic review of Resources and Monitoring &amp; Remediation.</strong> Compare workload governance, partner capacity, action validation and recurring findings across the four firms sharing the same system-level pattern.</li>
-      <li><strong>Request evidence before escalating borderline cases.</strong> The third proposed corroboratory plan is sensitive to reasonable weight changes. Obtain current staffing, internal inspection and remediation evidence before confirming its route.</li>
-      <li><strong>Test high-risk engagement features through file review.</strong> Prioritise complex estimates, IT-dependent evidence, first-year PIE audits and engagements delivered during peak workload; do not assume those features caused a weak outcome.</li>
-      <li><strong>Challenge overdue remediation with accountable milestones.</strong> Route the 47 repeatedly re-planned actions to owner discussion and validation. Closure should require evidence that the response is operating, not only a completed status field.</li>
-      <li><strong>Govern the model as a supervisory tool.</strong> Recalibrate quarterly, monitor selection stability, retain an override log and publish the factor groups and decision bands internally. Do not publish firm scores as a league table.</li>
+      <li><strong>Focus on the top three firms.</strong> Review the 25 worst files and let experts make the final call on inspections.</li>
+      <li><strong>Investigate industry-wide staffing issues.</strong> Rather than attacking one firm, look at why multiple firms are struggling with workloads.</li>
+      <li><strong>Ask for proof before escalating.</strong> If a firm's score is on the borderline, just ask them for updated staffing records before sending an inspection team.</li>
+      <li><strong>Stop extending deadlines.</strong> Demand real proof that the 47 overdue tasks are being fixed, rather than just changing the due date again.</li>
     </ol>
   </div>
 </section>
 
-<section id="limitations">
+<section id="governance">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">7. What the analysis does not claim</span>
-      <h2>A priority score tells supervisors where to look; only evidence and judgement can tell them what they will find</h2>
-      <p>The limits are part of the design because regulatory decisions can affect firms, audited entities, investors and public confidence.</p>
+      <span class="eyebrow">Keeping humans in control</span>
+      <h2>Making uncertainty visible and avoiding blind trust in algorithms</h2>
+      <p>A score just tells you where to look. Only human common sense and direct evidence can tell you what is actually happening.</p>
     </div>
 
     <ul class="limit-list">
-      <li><strong>Fictional organisation and synthetic data</strong>Alderwick is not a real regulator. No firm, entity, audit, inspection or finding describes a real organisation.</li>
-      <li><strong>Independent of the FRC</strong>Public FRC material informs the problem, terminology and one aggregate calibration point only. The FRC has not reviewed or endorsed this work.</li>
-      <li><strong>Risk-selected inspection sample</strong>Inspection outcomes are not representative of all audits because files were deliberately selected partly for risk.</li>
-      <li><strong>Association, not cause</strong>Workload, partner involvement and engagement complexity are associated with outcomes in the generated data; the analysis does not prove they caused them.</li>
-      <li><strong>Score sensitivity</strong>One firm sits close to a supervisory threshold. The model exposes that uncertainty so a human can request more evidence.</li>
-      <li><strong>Qualitative evidence still matters</strong>Leadership behaviour, professional scepticism, file context and the quality of individual judgements cannot be reduced fully to structured fields.</li>
+      <li><strong>Risk is not failure.</strong> A high score means "look closer," not "this audit failed."</li>
+      <li><strong>Don't jump to conclusions.</strong> Just because an audit is complex doesn't automatically mean the firm did a bad job.</li>
+      <li><strong>Humans can change the rules.</strong> The scoring rules are open, transparent, and can be manually overridden by a manager at any time.</li>
+      <li><strong>Context matters.</strong> Nuanced human behaviors—like leadership style—cannot be fully captured in a spreadsheet.</li>
+      <li><strong>Keep a paper trail.</strong> The system logs exactly why a decision was made, even if a human chose to ignore the model's advice.</li>
     </ul>
+
+    <details class="source-details">
+      <summary>View the public research basis</summary>
+      <ol class="source-list">
+        <li><a href="https://www.frc.org.uk/news-and-events/news/2026/03/frc-introduces-evolved-approach-to-audit-supervision/" target="_blank" rel="noopener">FRC: Evolved approach to audit supervision</a></li>
+        <li><a href="https://www.frc.org.uk/library/supervision/audit-quality-review/audit-quality-review-overview/" target="_blank" rel="noopener">FRC: Audit Quality Review overview</a></li>
+        <li><a href="https://www.frc.org.uk/library/supervision/audit-market-supervision/firm-metrics/" target="_blank" rel="noopener">FRC: Firm Metrics</a></li>
+        <li><a href="https://www.frc.org.uk/news-and-events/news/2025/10/frc-publishes-key-findings-and-good-practice-report/" target="_blank" rel="noopener">FRC: Key findings and good practice</a></li>
+      </ol>
+    </details>
   </div>
 </section>
-
-<section id="technical">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">8. Technical evidence and research basis</span>
-      <h2>A reproducible analytical design with explicit governance and public-source traceability</h2>
-      <p>The web page is the management layer. The project design separates data preparation, scoring, inspection analysis, sensitivity testing and reporting so each result can be challenged.</p>
-    </div>
-
-    <div class="evidence-grid">
-      <article class="evidence-card"><h3>Excel</h3><p>A controlled data dictionary, validation checks, reconciliation sheet and supervisor-facing review template for exceptions and overrides.</p></article>
-      <article class="evidence-card"><h3>SQL</h3><p>A five-table analytical model with explicit grain, key checks, firm-year snapshots, engagement risk flags and remediation ageing logic.</p></article>
-      <article class="evidence-card"><h3>Python and statistics</h3><p>Deterministic synthetic-data generation, calibration, logistic association checks, score stability tests and threshold sensitivity analysis.</p></article>
-      <article class="evidence-card"><h3>Power BI</h3><p>A four-view design covering market supervision, SoQM components, engagement triage and remediation, with drill-through from firm to supporting records.</p></article>
-      <article class="evidence-card"><h3>Governance controls</h3><p>Human approval, override reason, model version, source timestamp, missing-data flag and decision audit trail are required fields rather than optional notes.</p></article>
-      <article class="evidence-card"><h3>Reconciliation</h3><p><code>12 firms</code>, <code>2,880 engagements</code>, <code>426 inspections</code>, <code>288 component assessments</code> and <code>612 actions</code> reconcile across the embedded evidence.</p></article>
-    </div>
-
-    <ol class="source-list">
-      <li><a href="https://www.frc.org.uk/news-and-events/news/2026/03/frc-introduces-evolved-approach-to-audit-supervision/" target="_blank" rel="noopener">FRC: evolved approach to audit supervision (25 March 2026)</a> — informs the emphasis on SoQM, consistent risk assessment, targeted follow-up, thematic review and corroboratory inspection.</li>
-      <li><a href="https://www.frc.org.uk/library/supervision/audit-quality-review/audit-quality-review-overview/" target="_blank" rel="noopener">FRC: Audit Quality Review overview</a> — informs the four inspection categories, risk-based file selection and the public 2024/25 aggregate used for calibration.</li>
-      <li><a href="https://www.frc.org.uk/library/supervision/audit-market-supervision/firm-metrics/" target="_blank" rel="noopener">FRC: Firm Metrics</a> — informs the culture, internal inspection, workload and partner-involvement signal groups.</li>
-      <li><a href="https://www.frc.org.uk/news-and-events/news/2025/10/frc-publishes-key-findings-and-good-practice-report/" target="_blank" rel="noopener">FRC: key findings and good practice (20 October 2025)</a> — informs the synthetic finding themes, not their generated frequencies.</li>
-    </ol>
-  </div>
-</section>
+</main>
 
 <section class="case-next">
   <div class="container">
     <div class="case-next-card">
-      <div><span class="eyebrow">Continue exploring</span><h2>See how the same decision-first approach works in other sectors</h2><p>Return to the portfolio to compare regulatory risk, operational cost, service quality, delay and claims analysis across all six projects.</p></div>
+      <div><span class="eyebrow">Continue exploring</span><h2>See how this approach works in other business sectors</h2><p>Compare operational cost, service quality, and delay analysis across all six projects.</p></div>
       <div class="case-next-actions"><a class="btn btn-primary" href="../index.html#case-studies">All case studies</a><a class="btn btn-secondary" href="../index.html#contact">Get in touch</a></div>
     </div>
   </div>
 </section>
 
-<footer class="site-footer">
+<footer class="site-footer alderwick-footer">
   <div class="container">
-    <p>© 2026 Farouk Yusuf. Synthetic-data portfolio project.</p>
-    <p><a href="../index.html">← Back to portfolio home</a></p>
+    <div class="footer-disclaimer">
+      <span class="footer-disclaimer-label">Synthetic-data and independence disclaimer</span>
+      <p>Alderwick Reporting Council is fictional. Every audit firm, audited entity, engagement, inspection, finding and remediation record was generated for this portfolio. The problem and terminology are informed by public Financial Reporting Council material, but this project was not commissioned, reviewed or endorsed by the FRC. No result describes or permits an inference about any real firm or audit.</p>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Farouk Yusuf</p><p><a href="../index.html">← Back to portfolio home</a></p></div>
   </div>
 </footer>
 

@@ -1,0 +1,613 @@
+action_id,inspection_id,firm_id,category,description,owner,raised,due,closed,status,times_deferred
+RA-0001,IN-0087,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Douglas Mearns,2025-04-09,2026-02-03,,Overdue,2
+RA-0002,IN-0075,F02,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Douglas Mearns,2025-06-17,2025-09-15,2025-09-21,Closed,0
+RA-0003,IN-0279,F07,Communication,Formalise escalation route between component and group teams,Grace Nkemelu,2025-08-28,2026-03-11,,Overdue,1
+RA-0004,IN-0096,F02,Risk assessment,Update the firm risk-assessment methodology for going concern,Karl Adeyemi,2025-02-22,2025-07-22,2025-04-24,Closed,0
+RA-0005,IN-0148,F04,Ethics,Refresh independence declarations across the group audit oversight portfolio,Martin Yau,2026-01-18,2026-04-18,2026-04-17,Closed,0
+RA-0006,IN-0362,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Rajiv Menon,2025-08-19,2025-11-17,2025-10-30,Closed,0
+RA-0007,IN-0040,F01,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Priya Raman,2026-02-19,2026-05-20,2026-04-04,Closed,0
+RA-0008,IN-0050,F02,Audit performance,Re-perform impairment testing on a sample of 3 engagements,Rajiv Menon,2025-03-04,2025-05-03,2025-05-05,Closed,0
+RA-0009,IN-0023,F01,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Owen Pryce,2025-05-26,2025-10-23,2025-08-04,Closed,0
+RA-0010,IN-0160,F04,Audit performance,Re-perform revenue testing on a sample of 5 engagements,Freya Donnelly,2026-02-21,2026-05-22,,Overdue,0
+RA-0011,IN-0043,F01,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Priya Raman,2025-03-29,2025-11-09,2025-05-25,Closed,1
+RA-0012,IN-0098,F03,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Ruth Odede,2026-03-07,2026-08-01,,Overdue,2
+RA-0013,IN-0142,F03,Communication,Formalise escalation route between component and group teams,Ruth Odede,2025-05-21,2025-11-02,2025-10-22,Closed,1
+RA-0014,IN-0102,F03,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Bella Cheng,2025-09-10,2025-11-09,2025-10-21,Closed,0
+RA-0015,IN-0419,F12,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Nadia Suleiman,2025-04-26,2025-07-25,2025-06-16,Closed,0
+RA-0016,IN-0015,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Freya Donnelly,2025-01-25,2025-12-06,,Overdue,3
+RA-0017,IN-0312,F08,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Louisa Trent,2025-03-03,2025-06-01,2025-05-04,Closed,0
+RA-0018,IN-0042,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-09-28,2026-03-12,,Overdue,1
+RA-0019,IN-0032,F01,Communication,Formalise escalation route between component and group teams,Marcus Ilori,2026-01-28,2026-04-28,2026-04-04,Closed,0
+RA-0020,IN-0221,F05,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Elena Poplavska,2025-04-19,2025-09-01,2025-08-22,Closed,1
+RA-0021,IN-0072,F02,Ethics,Refresh independence declarations across the journals & controls portfolio,Douglas Mearns,2026-01-25,2026-06-24,,Overdue,0
+RA-0022,IN-0053,F02,Leadership,Add a second partner review on public-interest engagements,Marcus Ilori,2025-02-24,2025-05-25,2025-05-27,Closed,0
+RA-0023,IN-0024,F01,Communication,Formalise escalation route between component and group teams,Marcus Ilori,2025-08-05,2025-11-03,2025-09-22,Closed,0
+RA-0024,IN-0064,F02,Communication,Formalise escalation route between component and group teams,Owen Pryce,2025-01-15,2025-07-29,2025-03-26,Closed,1
+RA-0025,IN-0073,F02,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Douglas Mearns,2025-07-23,2025-12-20,2025-09-30,Closed,0
+RA-0026,IN-0131,F03,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Louisa Trent,2025-04-10,2025-07-09,2025-07-21,Closed,0
+RA-0027,IN-0018,F01,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Priya Raman,2025-02-26,2025-05-27,2025-05-02,Closed,0
+RA-0028,IN-0078,F02,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Freya Donnelly,2025-12-25,2026-04-24,2026-05-14,Closed,0
+RA-0029,IN-0059,F02,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Douglas Mearns,2025-06-27,2025-09-25,2025-09-22,Closed,0
+RA-0030,IN-0105,F03,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Ruth Odede,2025-03-29,2025-06-27,2025-06-30,Closed,0
+RA-0031,IN-0200,F05,Risk assessment,Update the firm risk-assessment methodology for impairment,Elena Poplavska,2025-06-21,2025-08-20,2025-08-02,Closed,0
+RA-0032,IN-0121,F03,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Freya Donnelly,2025-10-26,2025-12-25,2025-12-05,Closed,0
+RA-0033,IN-0230,F06,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Sam Whitfield,2026-01-22,2026-04-22,2026-05-31,Closed,0
+RA-0034,IN-0120,F03,Leadership,Add a second partner review on public-interest engagements,Ruth Odede,2025-05-12,2025-11-23,2025-08-20,Closed,1
+RA-0035,IN-0394,F11,Ethics,Refresh independence declarations across the going concern portfolio,Bella Cheng,2025-09-05,2025-11-04,2025-12-01,Closed,0
+RA-0036,IN-0011,F01,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Freya Donnelly,2025-10-23,2026-02-20,2026-01-14,Closed,0
+RA-0037,IN-0060,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2026-04-12,2026-09-24,2026-07-11,Closed,1
+RA-0038,IN-0247,F06,Audit performance,Re-perform revenue testing on a sample of 2 engagements,Freya Donnelly,2026-03-04,2026-10-15,2026-08-07,Closed,1
+RA-0039,IN-0225,F06,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Sam Whitfield,2025-08-27,2025-11-25,2025-12-25,Closed,0
+RA-0040,IN-0023,F01,Communication,Formalise escalation route between component and group teams,Priya Raman,2025-01-08,2025-12-19,,Overdue,3
+RA-0041,IN-0002,F01,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Bella Cheng,2025-06-30,2026-01-26,,Overdue,2
+RA-0042,IN-0093,F02,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Rajiv Menon,2026-01-11,2026-04-11,2026-02-19,Closed,0
+RA-0043,IN-0409,F12,Risk assessment,Update the firm risk-assessment methodology for impairment,Freya Donnelly,2025-08-05,2025-12-03,2025-11-01,Closed,0
+RA-0044,IN-0161,F04,Audit performance,Re-perform revenue testing on a sample of 4 engagements,Freya Donnelly,2026-02-16,2026-07-16,2026-05-15,Closed,0
+RA-0045,IN-0102,F03,Ethics,Refresh independence declarations across the impairment portfolio,Owen Pryce,2026-04-20,2026-11-01,,Open,1
+RA-0046,IN-0167,F04,Audit performance,Re-perform revenue testing on a sample of 5 engagements,Nadia Suleiman,2025-09-15,2026-02-27,2025-12-31,Closed,1
+RA-0047,IN-0048,F01,Ethics,Refresh independence declarations across the engagement quality review portfolio,Freya Donnelly,2026-04-10,2026-07-09,2026-07-23,Closed,0
+RA-0048,IN-0135,F03,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Ruth Odede,2025-07-26,2025-12-08,2025-11-23,Closed,1
+RA-0049,IN-0380,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Colin Ebbsworth,2025-06-20,2025-11-17,2025-10-21,Closed,0
+RA-0050,IN-0313,F08,Leadership,Add a second partner review on public-interest engagements,Tomasz Halloran,2026-01-14,2026-03-15,2026-04-22,Closed,0
+RA-0051,IN-0358,F10,Communication,Formalise escalation route between component and group teams,Colin Ebbsworth,2026-01-04,2026-03-05,2026-02-08,Closed,0
+RA-0052,IN-0034,F01,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Priya Raman,2025-04-15,2025-08-28,2025-06-24,Closed,1
+RA-0053,IN-0081,F02,Leadership,Add a second partner review on public-interest engagements,Douglas Mearns,2025-05-14,2025-10-11,2025-09-07,Closed,0
+RA-0054,IN-0388,F11,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Hannah Leung,2025-03-29,2025-08-26,2025-06-09,Closed,0
+RA-0055,IN-0219,F05,Audit performance,Re-perform going concern testing on a sample of 4 engagements,Nadia Suleiman,2025-12-08,2026-03-08,2026-04-26,Closed,0
+RA-0056,IN-0042,F01,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Nadia Suleiman,2025-07-19,2025-09-17,2025-11-15,Closed,0
+RA-0057,IN-0194,F05,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Elena Poplavska,2025-05-22,2025-07-21,2025-08-29,Closed,0
+RA-0058,IN-0022,F01,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Priya Raman,2025-12-02,2026-03-02,2026-04-16,Closed,0
+RA-0059,IN-0024,F01,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Freya Donnelly,2025-07-12,2025-11-09,2025-10-19,Closed,0
+RA-0060,IN-0111,F03,Ethics,Refresh independence declarations across the revenue portfolio,Bella Cheng,2025-10-25,2026-04-08,2025-12-22,Closed,1
+RA-0061,IN-0396,F11,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Marcus Ilori,2025-09-13,2026-01-11,2025-12-29,Closed,0
+RA-0062,IN-0132,F03,Risk assessment,Update the firm risk-assessment methodology for impairment,Ruth Odede,2026-04-18,2026-02-14,,Overdue,3
+RA-0063,IN-0361,F10,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Marcus Ilori,2026-04-18,2026-09-30,,Open,1
+RA-0064,IN-0217,F05,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Marcus Ilori,2025-12-14,2026-03-14,2026-03-26,Closed,0
+RA-0065,IN-0009,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Owen Pryce,2025-04-15,2025-06-14,2025-07-11,Closed,0
+RA-0066,IN-0413,F12,Leadership,Add a second partner review on public-interest engagements,Bella Cheng,2025-09-12,2026-02-24,2025-12-21,Closed,1
+RA-0067,IN-0152,F04,Risk assessment,Update the firm risk-assessment methodology for going concern,Martin Yau,2026-03-24,2026-05-23,,Overdue,0
+RA-0068,IN-0079,F02,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Douglas Mearns,2025-11-04,2026-04-03,,Overdue,0
+RA-0069,IN-0123,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Freya Donnelly,2026-03-23,2026-06-21,2026-05-27,Closed,0
+RA-0070,IN-0020,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-12-24,2026-02-22,2026-02-01,Closed,0
+RA-0071,IN-0115,F03,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Nadia Suleiman,2025-03-13,2025-06-11,2025-05-02,Closed,0
+RA-0072,IN-0025,F01,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Owen Pryce,2026-04-09,2026-09-06,2026-05-23,Closed,0
+RA-0073,IN-0093,F02,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Marcus Ilori,2025-02-23,2025-04-24,2025-05-24,Closed,0
+RA-0074,IN-0009,F01,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Priya Raman,2025-10-01,2026-02-28,2025-11-11,Closed,0
+RA-0075,IN-0043,F01,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Rajiv Menon,2025-12-26,2026-04-25,2026-04-18,Closed,0
+RA-0076,IN-0118,F03,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Nadia Suleiman,2026-04-16,2026-06-15,2026-06-19,Closed,0
+RA-0077,IN-0086,F02,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Douglas Mearns,2025-02-09,2025-04-10,2025-04-25,Closed,0
+RA-0078,IN-0045,F01,Ethics,Refresh independence declarations across the engagement quality review portfolio,Priya Raman,2025-07-23,2025-11-20,2025-11-04,Closed,0
+RA-0079,IN-0076,F02,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Douglas Mearns,2026-01-01,2026-04-01,,Overdue,0
+RA-0080,IN-0269,F07,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-02-23,2025-07-08,2025-07-07,Closed,1
+RA-0081,IN-0248,F06,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Nadia Suleiman,2025-06-06,2025-11-03,2025-10-09,Closed,0
+RA-0082,IN-0165,F04,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Martin Yau,2025-02-28,2025-04-29,2025-06-18,Closed,0
+RA-0083,IN-0096,F02,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Douglas Mearns,2025-07-16,2026-06-26,,Overdue,3
+RA-0084,IN-0390,F11,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Rajiv Menon,2025-09-30,2025-11-29,2025-12-18,Closed,0
+RA-0085,IN-0320,F08,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Nadia Suleiman,2026-01-23,2026-06-07,,Overdue,1
+RA-0086,IN-0133,F03,Communication,Formalise escalation route between component and group teams,Marcus Ilori,2026-03-16,2026-08-13,2026-06-07,Closed,0
+RA-0087,IN-0096,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2025-02-13,2025-05-14,2025-05-09,Closed,0
+RA-0088,IN-0092,F02,Communication,Formalise escalation route between component and group teams,Bella Cheng,2026-02-05,2026-04-23,,Overdue,3
+RA-0089,IN-0006,F01,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Priya Raman,2025-01-05,2025-12-16,,Overdue,3
+RA-0090,IN-0028,F01,Communication,Formalise escalation route between component and group teams,Freya Donnelly,2026-04-05,2026-09-02,2026-06-12,Closed,0
+RA-0091,IN-0221,F05,Overdue fixes,Complete root-cause analysis for the prior impairment finding,Elena Poplavska,2025-04-27,2025-07-26,2025-08-23,Closed,0
+RA-0092,IN-0109,F03,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Ruth Odede,2025-10-11,2026-08-22,,Overdue,3
+RA-0093,IN-0016,F01,Ethics,Refresh independence declarations across the impairment portfolio,Priya Raman,2025-05-01,2025-10-13,2025-07-04,Closed,1
+RA-0094,IN-0127,F03,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Rajiv Menon,2025-02-06,2025-06-06,2025-05-29,Closed,0
+RA-0095,IN-0128,F03,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Nadia Suleiman,2025-05-31,2026-06-10,,Overdue,3
+RA-0096,IN-0073,F02,Audit performance,Re-perform journals & controls testing on a sample of 2 engagements,Douglas Mearns,2025-09-19,2026-02-16,,Overdue,0
+RA-0097,IN-0052,F02,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Louisa Trent,2026-01-26,2026-03-27,2026-05-14,Closed,0
+RA-0098,IN-0255,F06,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Freya Donnelly,2025-11-07,2026-05-21,2026-01-25,Closed,1
+RA-0099,IN-0083,F02,Audit performance,Re-perform revenue testing on a sample of 4 engagements,Louisa Trent,2025-04-29,2025-08-27,2025-07-29,Closed,0
+RA-0100,IN-0121,F03,Leadership,Add a second partner review on public-interest engagements,Marcus Ilori,2025-09-16,2026-01-29,2026-01-06,Closed,1
+RA-0101,IN-0084,F02,Risk assessment,Update the firm risk-assessment methodology for revenue,Douglas Mearns,2025-12-12,2026-05-11,,Overdue,0
+RA-0102,IN-0140,F03,Risk assessment,Update the firm risk-assessment methodology for revenue,Nadia Suleiman,2025-09-16,2025-12-15,2025-12-08,Closed,0
+RA-0103,IN-0143,F03,Communication,Formalise escalation route between component and group teams,Ruth Odede,2026-01-27,2026-09-09,,Open,1
+RA-0104,IN-0156,F04,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Louisa Trent,2025-12-20,2026-03-20,2026-04-01,Closed,0
+RA-0105,IN-0138,F03,Leadership,Add a second partner review on public-interest engagements,Ruth Odede,2025-05-04,2025-08-02,2025-08-25,Closed,0
+RA-0106,IN-0122,F03,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Bella Cheng,2026-04-12,2026-10-24,2026-08-06,Closed,1
+RA-0107,IN-0003,F01,Ethics,Refresh independence declarations across the engagement quality review portfolio,Priya Raman,2025-10-31,2026-04-14,2026-02-19,Closed,1
+RA-0108,IN-0034,F01,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Priya Raman,2025-06-02,2025-12-14,2025-09-14,Closed,1
+RA-0109,IN-0015,F01,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Priya Raman,2025-08-09,2026-01-06,2025-10-19,Closed,0
+RA-0110,IN-0213,F05,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Marcus Ilori,2025-04-25,2025-07-24,2025-06-29,Closed,0
+RA-0111,IN-0033,F01,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Marcus Ilori,2025-10-10,2026-03-09,2025-11-19,Closed,0
+RA-0112,IN-0009,F01,Audit performance,Re-perform revenue testing on a sample of 4 engagements,Karl Adeyemi,2025-04-15,2025-09-27,2025-08-26,Closed,1
+RA-0113,IN-0041,F01,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Owen Pryce,2026-04-01,2026-07-30,,Overdue,0
+RA-0114,IN-0027,F01,Overdue fixes,Evidence sign-off on the outstanding revenue remediation,Owen Pryce,2026-01-08,2026-03-09,2026-05-03,Closed,0
+RA-0115,IN-0158,F04,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Marcus Ilori,2026-04-23,2026-09-20,,Open,0
+RA-0116,IN-0129,F03,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Freya Donnelly,2025-12-11,2026-03-11,2026-02-07,Closed,0
+RA-0117,IN-0365,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Colin Ebbsworth,2025-09-22,2026-05-20,,Overdue,2
+RA-0118,IN-0143,F03,Communication,Formalise escalation route between component and group teams,Bella Cheng,2025-11-11,2026-03-11,2026-02-15,Closed,0
+RA-0119,IN-0080,F02,Communication,Formalise escalation route between component and group teams,Owen Pryce,2025-12-09,2026-06-22,2026-04-12,Closed,1
+RA-0120,IN-0099,F03,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Owen Pryce,2025-08-17,2026-01-29,2025-12-09,Closed,1
+RA-0121,IN-0136,F03,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Ruth Odede,2026-02-01,2026-08-15,2026-06-23,Closed,1
+RA-0122,IN-0234,F06,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Karl Adeyemi,2026-04-01,2026-07-11,,Overdue,3
+RA-0123,IN-0089,F02,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Douglas Mearns,2025-05-18,2025-09-15,2025-06-27,Closed,0
+RA-0124,IN-0301,F08,Overdue fixes,Complete root-cause analysis for the prior impairment finding,Rajiv Menon,2025-10-02,2025-12-31,2025-11-22,Closed,0
+RA-0125,IN-0267,F07,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Grace Nkemelu,2026-01-05,2026-03-06,,Overdue,0
+RA-0126,IN-0281,F07,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Louisa Trent,2025-12-02,2026-01-31,2026-01-26,Closed,0
+RA-0127,IN-0056,F02,Audit performance,Re-perform engagement quality review testing on a sample of 2 engagements,Douglas Mearns,2025-06-19,2025-10-17,2025-10-08,Closed,0
+RA-0128,IN-0254,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Sam Whitfield,2025-09-14,2026-01-12,2025-11-26,Closed,0
+RA-0129,IN-0093,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Owen Pryce,2026-02-21,2026-06-21,,Overdue,0
+RA-0130,IN-0231,F06,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Marcus Ilori,2025-01-11,2025-03-12,2025-05-01,Closed,0
+RA-0131,IN-0111,F03,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Karl Adeyemi,2025-09-20,2026-02-02,2025-12-17,Closed,1
+RA-0132,IN-0154,F04,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Marcus Ilori,2025-04-24,2025-11-05,2025-09-15,Closed,1
+RA-0133,IN-0223,F06,Risk assessment,Update the firm risk-assessment methodology for going concern,Sam Whitfield,2025-07-10,2026-02-20,2025-09-06,Closed,1
+RA-0134,IN-0127,F03,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Owen Pryce,2025-10-16,2025-12-15,2026-02-08,Closed,0
+RA-0135,IN-0216,F05,Ethics,Refresh independence declarations across the group audit oversight portfolio,Nadia Suleiman,2025-05-08,2025-09-20,2025-09-12,Closed,1
+RA-0136,IN-0141,F03,Communication,Formalise escalation route between component and group teams,Nadia Suleiman,2026-01-15,2026-04-15,2026-05-02,Closed,0
+RA-0137,IN-0072,F02,Leadership,Add a second partner review on public-interest engagements,Douglas Mearns,2026-02-11,2026-06-11,,Overdue,0
+RA-0138,IN-0209,F05,Leadership,Add a second partner review on public-interest engagements,Elena Poplavska,2025-10-12,2026-02-24,2026-01-23,Closed,1
+RA-0139,IN-0247,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Karl Adeyemi,2025-03-27,2025-06-25,2025-06-24,Closed,0
+RA-0140,IN-0275,F07,Risk assessment,Update the firm risk-assessment methodology for impairment,Freya Donnelly,2025-07-24,2025-12-06,2025-11-21,Closed,1
+RA-0141,IN-0127,F03,Ethics,Refresh independence declarations across the going concern portfolio,Rajiv Menon,2025-11-29,2026-02-27,,Overdue,0
+RA-0142,IN-0188,F05,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Nadia Suleiman,2026-04-25,2026-07-24,2026-08-29,Closed,0
+RA-0143,IN-0062,F02,Overdue fixes,Complete root-cause analysis for the prior impairment finding,Douglas Mearns,2025-08-29,2025-10-28,2025-10-27,Closed,0
+RA-0144,IN-0184,F05,Audit performance,Re-perform journals & controls testing on a sample of 4 engagements,Marcus Ilori,2025-02-18,2025-04-19,2025-06-14,Closed,0
+RA-0145,IN-0005,F01,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Priya Raman,2025-05-21,2025-11-02,2025-08-23,Closed,1
+RA-0146,IN-0289,F07,Leadership,Add a second partner review on public-interest engagements,Grace Nkemelu,2025-11-25,2026-07-23,,Overdue,2
+RA-0147,IN-0035,F01,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Freya Donnelly,2026-02-13,2026-09-26,2026-07-16,Closed,1
+RA-0148,IN-0058,F02,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Bella Cheng,2026-02-06,2026-05-07,,Overdue,0
+RA-0149,IN-0001,F01,Audit performance,Re-perform estimates & judgements testing on a sample of 2 engagements,Priya Raman,2025-02-09,2025-06-24,2025-06-04,Closed,1
+RA-0150,IN-0288,F07,Risk assessment,Update the firm risk-assessment methodology for impairment,Grace Nkemelu,2025-07-13,2025-11-10,2025-10-22,Closed,0
+RA-0151,IN-0074,F02,Overdue fixes,Complete root-cause analysis for the prior impairment finding,Freya Donnelly,2025-11-21,2026-05-05,2026-03-18,Closed,1
+RA-0152,IN-0160,F04,Audit performance,Re-perform estimates & judgements testing on a sample of 5 engagements,Martin Yau,2025-04-02,2025-08-15,2025-07-23,Closed,1
+RA-0153,IN-0346,F09,Leadership,Add a second partner review on public-interest engagements,Marcus Ilori,2026-03-25,2026-06-23,,Overdue,0
+RA-0154,IN-0253,F06,Overdue fixes,Evidence sign-off on the outstanding revenue remediation,Nadia Suleiman,2025-01-03,2025-06-02,2025-05-27,Closed,0
+RA-0155,IN-0377,F10,Communication,Formalise escalation route between component and group teams,Nadia Suleiman,2025-11-25,2026-03-25,2026-01-06,Closed,0
+RA-0156,IN-0362,F10,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Bella Cheng,2025-09-09,2025-12-08,2025-10-17,Closed,0
+RA-0157,IN-0045,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Priya Raman,2025-08-03,2026-03-01,,Overdue,2
+RA-0158,IN-0343,F09,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Rajiv Menon,2025-06-20,2025-09-18,2025-09-05,Closed,0
+RA-0159,IN-0138,F03,Risk assessment,Update the firm risk-assessment methodology for revenue,Ruth Odede,2026-03-05,2026-02-11,,Overdue,2
+RA-0160,IN-0095,F02,Ethics,Refresh independence declarations across the going concern portfolio,Douglas Mearns,2025-04-12,2025-09-09,2025-07-27,Closed,0
+RA-0161,IN-0296,F08,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Tomasz Halloran,2025-10-17,2026-02-14,2025-12-02,Closed,0
+RA-0162,IN-0058,F02,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Marcus Ilori,2025-04-22,2025-07-21,2025-08-22,Closed,0
+RA-0163,IN-0019,F01,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Priya Raman,2025-12-28,2026-03-28,2026-03-25,Closed,0
+RA-0164,IN-0069,F02,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Rajiv Menon,2025-06-01,2025-08-30,2025-08-20,Closed,0
+RA-0165,IN-0361,F10,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Freya Donnelly,2025-01-19,2025-06-18,2025-05-30,Closed,0
+RA-0166,IN-0230,F06,Leadership,Add a second partner review on public-interest engagements,Sam Whitfield,2026-03-01,2026-05-30,2026-06-03,Closed,0
+RA-0167,IN-0389,F11,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Nadia Suleiman,2025-09-01,2025-11-30,2025-11-23,Closed,0
+RA-0168,IN-0036,F01,Audit performance,Re-perform group audit oversight testing on a sample of 4 engagements,Bella Cheng,2026-03-22,2026-08-04,2026-08-06,Closed,1
+RA-0169,IN-0056,F02,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Louisa Trent,2025-10-07,2026-03-21,,Overdue,1
+RA-0170,IN-0084,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2026-01-06,2026-06-20,2026-04-09,Closed,1
+RA-0171,IN-0234,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Freya Donnelly,2025-08-04,2026-02-15,2025-10-18,Closed,1
+RA-0172,IN-0048,F01,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Priya Raman,2025-12-06,2026-03-06,,Overdue,0
+RA-0173,IN-0119,F03,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Ruth Odede,2025-07-22,2025-10-20,2025-09-17,Closed,0
+RA-0174,IN-0081,F02,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Douglas Mearns,2025-08-12,2025-10-11,2025-12-24,Closed,0
+RA-0175,IN-0118,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Karl Adeyemi,2025-08-30,2026-01-27,2025-12-24,Closed,0
+RA-0176,IN-0033,F01,Risk assessment,Update the firm risk-assessment methodology for impairment,Louisa Trent,2025-03-07,2025-06-05,2025-05-22,Closed,0
+RA-0177,IN-0025,F01,Audit performance,Re-perform impairment testing on a sample of 4 engagements,Priya Raman,2025-09-08,2026-07-05,,Overdue,2
+RA-0178,IN-0001,F01,Ethics,Refresh independence declarations across the going concern portfolio,Priya Raman,2025-11-03,2026-03-03,2026-01-01,Closed,0
+RA-0179,IN-0032,F01,Audit performance,Re-perform going concern testing on a sample of 4 engagements,Nadia Suleiman,2025-07-16,2025-10-14,2025-11-14,Closed,0
+RA-0180,IN-0062,F02,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Douglas Mearns,2025-07-23,2026-03-05,,Overdue,1
+RA-0181,IN-0139,F03,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Louisa Trent,2025-03-24,2025-09-05,2025-05-19,Closed,1
+RA-0182,IN-0019,F01,Communication,Formalise escalation route between component and group teams,Rajiv Menon,2025-08-06,2025-11-04,2025-12-21,Closed,0
+RA-0183,IN-0115,F03,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-07-06,2025-11-18,2025-10-18,Closed,1
+RA-0184,IN-0116,F03,Ethics,Refresh independence declarations across the engagement quality review portfolio,Ruth Odede,2025-05-13,2025-10-25,2025-09-04,Closed,1
+RA-0185,IN-0216,F05,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Nadia Suleiman,2025-07-07,2025-09-05,2025-09-23,Closed,0
+RA-0186,IN-0101,F03,Audit performance,Re-perform impairment testing on a sample of 2 engagements,Ruth Odede,2025-08-02,2025-10-01,2025-11-21,Closed,0
+RA-0187,IN-0136,F03,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Louisa Trent,2025-03-31,2025-05-30,2025-05-09,Closed,0
+RA-0188,IN-0184,F05,Ethics,Refresh independence declarations across the going concern portfolio,Elena Poplavska,2025-05-05,2025-10-02,2025-07-26,Closed,0
+RA-0189,IN-0239,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Sam Whitfield,2025-06-22,2025-09-20,2025-10-30,Closed,0
+RA-0190,IN-0158,F04,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Marcus Ilori,2026-02-11,2026-05-12,2026-05-26,Closed,0
+RA-0191,IN-0302,F08,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Tomasz Halloran,2025-04-21,2025-08-19,2025-08-19,Closed,0
+RA-0192,IN-0409,F12,Communication,Formalise escalation route between component and group teams,Freya Donnelly,2025-05-20,2025-07-19,2025-07-09,Closed,0
+RA-0193,IN-0328,F09,Audit performance,Re-perform impairment testing on a sample of 5 engagements,Aisha Farooqi,2025-02-19,2025-05-20,2025-06-12,Closed,0
+RA-0194,IN-0145,F04,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Martin Yau,2025-06-18,2025-11-15,2025-09-01,Closed,0
+RA-0195,IN-0188,F05,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Owen Pryce,2025-04-18,2025-11-29,2025-06-16,Closed,1
+RA-0196,IN-0118,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Karl Adeyemi,2025-04-17,2025-09-14,2025-09-06,Closed,0
+RA-0197,IN-0354,F09,Ethics,Refresh independence declarations across the impairment portfolio,Aisha Farooqi,2025-03-27,2025-11-07,2025-08-26,Closed,1
+RA-0198,IN-0217,F05,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Elena Poplavska,2025-07-12,2025-12-09,2025-09-12,Closed,0
+RA-0199,IN-0099,F03,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Louisa Trent,2026-03-19,2026-08-31,2026-06-27,Closed,1
+RA-0200,IN-0124,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Karl Adeyemi,2025-12-07,2026-05-21,2026-03-23,Closed,1
+RA-0201,IN-0175,F04,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Bella Cheng,2026-04-19,2026-07-18,2026-07-05,Closed,0
+RA-0202,IN-0309,F08,Risk assessment,Update the firm risk-assessment methodology for revenue,Owen Pryce,2025-08-03,2025-12-01,2025-09-24,Closed,0
+RA-0203,IN-0111,F03,Ethics,Refresh independence declarations across the impairment portfolio,Ruth Odede,2025-05-08,2025-10-20,2025-08-18,Closed,1
+RA-0204,IN-0238,F06,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Rajiv Menon,2026-03-12,2026-06-10,2026-07-16,Closed,0
+RA-0205,IN-0023,F01,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Bella Cheng,2025-04-16,2025-09-13,2025-07-16,Closed,0
+RA-0206,IN-0371,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Nadia Suleiman,2026-02-16,2026-07-16,2026-06-23,Closed,0
+RA-0207,IN-0408,F12,Risk assessment,Update the firm risk-assessment methodology for going concern,Owen Pryce,2026-03-20,2026-10-31,2026-07-06,Closed,1
+RA-0208,IN-0207,F05,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Karl Adeyemi,2025-05-30,2025-09-27,2025-10-03,Closed,0
+RA-0209,IN-0043,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Priya Raman,2025-03-16,2025-06-14,2025-05-05,Closed,0
+RA-0210,IN-0083,F02,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Marcus Ilori,2025-04-18,2025-07-17,2025-08-21,Closed,0
+RA-0211,IN-0101,F03,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Ruth Odede,2025-06-19,2025-10-17,2025-10-29,Closed,0
+RA-0212,IN-0076,F02,Audit performance,Re-perform going concern testing on a sample of 4 engagements,Douglas Mearns,2025-10-16,2026-01-14,2026-01-08,Closed,0
+RA-0213,IN-0165,F04,Communication,Formalise escalation route between component and group teams,Martin Yau,2025-03-21,2025-06-19,2025-05-29,Closed,0
+RA-0214,IN-0073,F02,Ethics,Refresh independence declarations across the impairment portfolio,Louisa Trent,2025-06-05,2025-09-03,2025-09-13,Closed,0
+RA-0215,IN-0059,F02,Audit performance,Re-perform engagement quality review testing on a sample of 3 engagements,Karl Adeyemi,2025-11-26,2026-02-24,2026-02-17,Closed,0
+RA-0216,IN-0252,F06,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Sam Whitfield,2025-03-31,2025-07-29,2025-05-13,Closed,0
+RA-0217,IN-0077,F02,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Nadia Suleiman,2025-05-23,2025-10-20,2025-08-11,Closed,0
+RA-0218,IN-0070,F02,Audit performance,Re-perform engagement quality review testing on a sample of 2 engagements,Freya Donnelly,2025-12-07,2026-02-05,2026-01-28,Closed,0
+RA-0219,IN-0020,F01,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Priya Raman,2025-10-18,2026-03-17,,Overdue,0
+RA-0220,IN-0421,F12,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Owen Pryce,2025-04-01,2025-05-31,2025-05-17,Closed,0
+RA-0221,IN-0104,F03,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Nadia Suleiman,2025-04-17,2025-09-29,2025-08-18,Closed,1
+RA-0222,IN-0364,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Marcus Ilori,2025-04-11,2025-08-09,2025-05-28,Closed,0
+RA-0223,IN-0297,F08,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Marcus Ilori,2025-10-25,2026-02-22,2026-01-24,Closed,0
+RA-0224,IN-0086,F02,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Freya Donnelly,2025-11-04,2026-02-02,2026-02-08,Closed,0
+RA-0225,IN-0259,F07,Overdue fixes,Evidence sign-off on the outstanding revenue remediation,Bella Cheng,2025-06-24,2025-09-22,2025-08-12,Closed,0
+RA-0226,IN-0109,F03,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-08-29,2025-12-27,2025-12-23,Closed,0
+RA-0227,IN-0368,F10,Leadership,Add a second partner review on public-interest engagements,Colin Ebbsworth,2026-02-26,2026-05-27,,Overdue,0
+RA-0228,IN-0258,F06,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Sam Whitfield,2025-02-22,2025-05-23,2025-04-17,Closed,0
+RA-0229,IN-0136,F03,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Louisa Trent,2026-03-13,2026-06-11,2026-06-22,Closed,0
+RA-0230,IN-0090,F02,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Rajiv Menon,2026-04-24,2026-07-23,2026-07-13,Closed,0
+RA-0231,IN-0150,F04,Ethics,Refresh independence declarations across the going concern portfolio,Martin Yau,2025-07-21,2026-07-01,,Overdue,3
+RA-0232,IN-0094,F02,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Douglas Mearns,2026-02-24,2026-05-25,2026-05-17,Closed,0
+RA-0233,IN-0131,F03,Audit performance,Re-perform estimates & judgements testing on a sample of 2 engagements,Owen Pryce,2025-10-13,2026-03-12,2026-01-12,Closed,0
+RA-0234,IN-0055,F02,Audit performance,Re-perform estimates & judgements testing on a sample of 5 engagements,Louisa Trent,2026-01-06,2026-07-20,,Overdue,1
+RA-0235,IN-0096,F02,Ethics,Refresh independence declarations across the revenue portfolio,Karl Adeyemi,2025-10-28,2026-07-25,,Overdue,2
+RA-0236,IN-0198,F05,Overdue fixes,Complete root-cause analysis for the prior impairment finding,Freya Donnelly,2026-03-27,2026-08-09,,Overdue,1
+RA-0237,IN-0031,F01,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Priya Raman,2025-05-06,2025-08-04,2025-09-22,Closed,0
+RA-0238,IN-0024,F01,Audit performance,Re-perform going concern testing on a sample of 4 engagements,Priya Raman,2026-03-13,2026-08-25,,Overdue,1
+RA-0239,IN-0078,F02,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Bella Cheng,2025-07-05,2025-10-03,2025-11-12,Closed,0
+RA-0240,IN-0141,F03,Risk assessment,Update the firm risk-assessment methodology for revenue,Nadia Suleiman,2025-07-22,2025-11-19,2025-11-11,Closed,0
+RA-0241,IN-0231,F06,Audit performance,Re-perform impairment testing on a sample of 2 engagements,Sam Whitfield,2026-02-09,2026-07-09,2026-06-18,Closed,0
+RA-0242,IN-0039,F01,Leadership,Add a second partner review on public-interest engagements,Marcus Ilori,2025-03-23,2025-08-20,2025-06-25,Closed,0
+RA-0243,IN-0415,F12,Risk assessment,Update the firm risk-assessment methodology for going concern,Peter Okafor,2026-02-23,2026-05-24,2026-04-08,Closed,0
+RA-0244,IN-0255,F06,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Sam Whitfield,2026-04-01,2026-05-31,2026-06-24,Closed,0
+RA-0245,IN-0152,F04,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Rajiv Menon,2025-05-13,2025-08-11,2025-09-08,Closed,0
+RA-0246,IN-0051,F02,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Owen Pryce,2025-06-07,2025-09-05,2025-08-09,Closed,0
+RA-0247,IN-0108,F03,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Ruth Odede,2025-12-03,2026-03-03,2026-02-10,Closed,0
+RA-0248,IN-0122,F03,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Marcus Ilori,2025-03-12,2025-09-23,2025-08-09,Closed,1
+RA-0249,IN-0172,F04,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Martin Yau,2025-07-24,2026-01-05,2025-10-02,Closed,1
+RA-0250,IN-0307,F08,Leadership,Add a second partner review on public-interest engagements,Rajiv Menon,2025-03-04,2025-06-02,2025-05-21,Closed,0
+RA-0251,IN-0066,F02,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Douglas Mearns,2025-02-16,2025-07-16,2025-05-20,Closed,0
+RA-0252,IN-0145,F04,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Freya Donnelly,2026-03-16,2026-05-15,,Overdue,0
+RA-0253,IN-0029,F01,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Nadia Suleiman,2026-03-25,2026-05-04,,Overdue,3
+RA-0254,IN-0085,F02,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Nadia Suleiman,2025-10-17,2025-12-16,2026-01-20,Closed,0
+RA-0255,IN-0391,F11,Communication,Formalise escalation route between component and group teams,Bella Cheng,2025-07-10,2025-12-07,2025-09-05,Closed,0
+RA-0256,IN-0038,F01,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Nadia Suleiman,2025-01-16,2025-07-30,2025-04-14,Closed,1
+RA-0257,IN-0010,F01,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Bella Cheng,2025-01-18,2025-04-18,2025-05-30,Closed,0
+RA-0258,IN-0006,F01,Audit performance,Re-perform estimates & judgements testing on a sample of 5 engagements,Louisa Trent,2026-04-05,2026-07-04,2026-07-09,Closed,0
+RA-0259,IN-0332,F09,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Owen Pryce,2025-06-09,2025-10-07,2025-10-06,Closed,0
+RA-0260,IN-0299,F08,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Louisa Trent,2025-03-06,2025-06-04,2025-04-20,Closed,0
+RA-0261,IN-0036,F01,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Freya Donnelly,2025-04-26,2025-07-25,2025-07-29,Closed,0
+RA-0262,IN-0147,F04,Audit performance,Re-perform estimates & judgements testing on a sample of 3 engagements,Nadia Suleiman,2025-12-05,2026-03-05,,Overdue,0
+RA-0263,IN-0005,F01,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Priya Raman,2025-11-21,2026-01-20,2026-02-05,Closed,0
+RA-0264,IN-0118,F03,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Owen Pryce,2025-11-18,2026-04-17,2026-01-25,Closed,0
+RA-0265,IN-0241,F06,Audit performance,Re-perform engagement quality review testing on a sample of 4 engagements,Owen Pryce,2025-06-22,2025-12-04,2025-11-19,Closed,1
+RA-0266,IN-0246,F06,Communication,Formalise escalation route between component and group teams,Sam Whitfield,2025-02-02,2025-05-03,2025-04-13,Closed,0
+RA-0267,IN-0038,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Owen Pryce,2025-10-09,2026-01-07,2026-01-07,Closed,0
+RA-0268,IN-0238,F06,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Sam Whitfield,2025-03-14,2025-06-12,2025-05-30,Closed,0
+RA-0269,IN-0258,F06,Leadership,Add a second partner review on public-interest engagements,Sam Whitfield,2025-01-25,2025-06-24,2025-05-07,Closed,0
+RA-0270,IN-0411,F12,Overdue fixes,Complete root-cause analysis for the prior revenue finding,Marcus Ilori,2025-11-22,2026-04-21,2026-03-15,Closed,0
+RA-0271,IN-0137,F03,Communication,Formalise escalation route between component and group teams,Freya Donnelly,2025-07-19,2026-03-01,2025-09-29,Closed,1
+RA-0272,IN-0086,F02,Leadership,Add a second partner review on public-interest engagements,Douglas Mearns,2025-12-09,2026-03-09,2026-03-06,Closed,0
+RA-0273,IN-0055,F02,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Owen Pryce,2025-07-20,2026-01-01,2025-10-14,Closed,1
+RA-0274,IN-0048,F01,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Rajiv Menon,2025-03-05,2025-08-02,2025-04-27,Closed,0
+RA-0275,IN-0041,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-06-09,2026-01-20,2025-09-28,Closed,1
+RA-0276,IN-0339,F09,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Nadia Suleiman,2025-03-20,2025-05-19,2025-04-14,Closed,0
+RA-0277,IN-0088,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Karl Adeyemi,2025-11-17,2026-03-17,,Overdue,0
+RA-0278,IN-0250,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Louisa Trent,2025-02-15,2025-07-15,2025-06-15,Closed,0
+RA-0279,IN-0368,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Rajiv Menon,2026-03-19,2026-06-17,,Overdue,0
+RA-0280,IN-0086,F02,Audit performance,Re-perform journals & controls testing on a sample of 5 engagements,Douglas Mearns,2025-02-12,2025-06-27,2025-06-10,Closed,1
+RA-0281,IN-0091,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Douglas Mearns,2026-02-04,2026-08-18,2026-06-24,Closed,1
+RA-0282,IN-0373,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Louisa Trent,2025-10-22,2025-12-21,2026-02-20,Closed,0
+RA-0283,IN-0014,F01,Audit performance,Re-perform estimates & judgements testing on a sample of 2 engagements,Louisa Trent,2025-11-28,2026-03-28,,Overdue,0
+RA-0284,IN-0295,F08,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Freya Donnelly,2025-01-13,2025-06-27,2025-06-20,Closed,1
+RA-0285,IN-0414,F12,Audit performance,Re-perform estimates & judgements testing on a sample of 3 engagements,Freya Donnelly,2025-06-30,2025-09-28,2025-11-01,Closed,0
+RA-0286,IN-0286,F07,Leadership,Add a second partner review on public-interest engagements,Grace Nkemelu,2025-11-28,2026-02-26,,Overdue,0
+RA-0287,IN-0031,F01,Audit performance,Re-perform journals & controls testing on a sample of 2 engagements,Priya Raman,2025-06-30,2025-11-27,2025-09-12,Closed,0
+RA-0288,IN-0139,F03,Audit performance,Re-perform group audit oversight testing on a sample of 5 engagements,Rajiv Menon,2025-11-15,2026-05-29,2026-04-09,Closed,1
+RA-0289,IN-0055,F02,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Freya Donnelly,2025-06-15,2025-08-14,2025-08-03,Closed,0
+RA-0290,IN-0348,F09,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Aisha Farooqi,2025-04-12,2026-01-22,,Overdue,3
+RA-0291,IN-0121,F03,Risk assessment,Update the firm risk-assessment methodology for going concern,Ruth Odede,2025-03-10,2025-07-08,2025-04-24,Closed,0
+RA-0292,IN-0014,F01,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Marcus Ilori,2025-10-08,2026-01-06,2025-12-10,Closed,0
+RA-0293,IN-0165,F04,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Karl Adeyemi,2025-03-16,2025-05-15,2025-05-06,Closed,0
+RA-0294,IN-0279,F07,Ethics,Refresh independence declarations across the going concern portfolio,Rajiv Menon,2025-04-09,2025-10-21,2025-07-22,Closed,1
+RA-0295,IN-0127,F03,Audit performance,Re-perform engagement quality review testing on a sample of 3 engagements,Ruth Odede,2026-04-06,2026-07-05,2026-08-07,Closed,0
+RA-0296,IN-0266,F07,Ethics,Refresh independence declarations across the journals & controls portfolio,Marcus Ilori,2025-03-07,2025-07-20,2025-05-14,Closed,1
+RA-0297,IN-0375,F10,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2026-02-25,2026-05-26,2026-05-27,Closed,0
+RA-0298,IN-0008,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-08-18,2026-01-15,2025-12-21,Closed,0
+RA-0299,IN-0095,F02,Ethics,Refresh independence declarations across the journals & controls portfolio,Louisa Trent,2025-05-10,2025-09-22,2025-10-09,Closed,1
+RA-0300,IN-0177,F04,Communication,Formalise escalation route between component and group teams,Rajiv Menon,2025-10-03,2026-03-17,2026-02-04,Closed,1
+RA-0301,IN-0019,F01,Audit performance,Re-perform estimates & judgements testing on a sample of 3 engagements,Bella Cheng,2025-10-28,2025-12-27,2026-02-07,Closed,0
+RA-0302,IN-0330,F09,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Aisha Farooqi,2026-03-04,2026-02-01,,Overdue,3
+RA-0303,IN-0302,F08,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Tomasz Halloran,2026-02-17,2026-08-31,2026-05-26,Closed,1
+RA-0304,IN-0061,F02,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Douglas Mearns,2026-03-27,2026-06-25,2026-05-26,Closed,0
+RA-0305,IN-0177,F04,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Martin Yau,2025-09-26,2026-05-24,,Overdue,2
+RA-0306,IN-0058,F02,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Rajiv Menon,2025-09-28,2026-07-10,,Overdue,3
+RA-0307,IN-0065,F02,Ethics,Refresh independence declarations across the going concern portfolio,Rajiv Menon,2025-09-13,2025-12-12,2026-01-13,Closed,0
+RA-0308,IN-0061,F02,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-03-18,2025-12-13,,Overdue,2
+RA-0309,IN-0037,F01,Audit performance,Re-perform going concern testing on a sample of 4 engagements,Bella Cheng,2025-12-16,2026-03-16,,Overdue,0
+RA-0310,IN-0389,F11,Leadership,Add a second partner review on public-interest engagements,Hannah Leung,2026-03-02,2026-06-30,2026-04-14,Closed,0
+RA-0311,IN-0082,F02,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Owen Pryce,2025-04-07,2026-01-02,,Overdue,2
+RA-0312,IN-0385,F10,Audit performance,Re-perform estimates & judgements testing on a sample of 4 engagements,Freya Donnelly,2026-04-12,2026-11-23,,Open,1
+RA-0313,IN-0173,F04,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Rajiv Menon,2025-05-30,2025-12-11,2025-07-27,Closed,1
+RA-0314,IN-0133,F03,Communication,Formalise escalation route between component and group teams,Ruth Odede,2025-09-12,2025-12-11,2025-10-22,Closed,0
+RA-0315,IN-0316,F08,Ethics,Refresh independence declarations across the group audit oversight portfolio,Louisa Trent,2025-10-05,2026-01-03,2025-11-15,Closed,0
+RA-0316,IN-0265,F07,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Marcus Ilori,2026-02-26,2026-06-26,2026-06-28,Closed,0
+RA-0317,IN-0064,F02,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Nadia Suleiman,2025-12-31,2026-08-28,,Overdue,2
+RA-0318,IN-0071,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Louisa Trent,2026-04-19,2026-01-07,,Overdue,2
+RA-0319,IN-0138,F03,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Freya Donnelly,2025-03-21,2025-06-19,2025-05-28,Closed,0
+RA-0320,IN-0094,F02,Risk assessment,Update the firm risk-assessment methodology for impairment,Karl Adeyemi,2025-12-20,2026-05-04,2026-03-09,Closed,1
+RA-0321,IN-0004,F01,Risk assessment,Update the firm risk-assessment methodology for revenue,Priya Raman,2025-01-22,2025-05-22,2025-03-12,Closed,0
+RA-0322,IN-0063,F02,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2025-06-17,2025-09-15,2025-09-06,Closed,0
+RA-0323,IN-0098,F03,Communication,Formalise escalation route between component and group teams,Karl Adeyemi,2026-03-15,2026-08-12,2026-05-14,Closed,0
+RA-0324,IN-0245,F06,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Sam Whitfield,2025-08-29,2025-12-27,2025-11-21,Closed,0
+RA-0325,IN-0161,F04,Ethics,Refresh independence declarations across the journals & controls portfolio,Marcus Ilori,2025-07-09,2026-01-20,2025-09-07,Closed,1
+RA-0326,IN-0109,F03,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Ruth Odede,2025-10-19,2025-12-18,2025-11-11,Closed,0
+RA-0327,IN-0188,F05,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Marcus Ilori,2026-04-07,2026-06-06,,Overdue,0
+RA-0328,IN-0067,F02,Audit performance,Re-perform estimates & judgements testing on a sample of 3 engagements,Freya Donnelly,2025-12-03,2026-05-02,,Overdue,3
+RA-0329,IN-0275,F07,Audit performance,Re-perform group audit oversight testing on a sample of 4 engagements,Bella Cheng,2025-01-30,2025-06-14,2025-03-28,Closed,1
+RA-0330,IN-0014,F01,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Priya Raman,2026-04-07,2026-06-06,2026-07-23,Closed,0
+RA-0331,IN-0295,F08,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Tomasz Halloran,2026-03-15,2026-06-13,2026-04-28,Closed,0
+RA-0332,IN-0375,F10,Risk assessment,Update the firm risk-assessment methodology for going concern,Colin Ebbsworth,2025-05-25,2025-10-22,2025-09-15,Closed,0
+RA-0333,IN-0053,F02,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Louisa Trent,2025-10-02,2025-12-31,2025-11-28,Closed,0
+RA-0334,IN-0126,F03,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Louisa Trent,2025-08-10,2026-01-22,2025-12-12,Closed,1
+RA-0335,IN-0356,F09,Audit performance,Re-perform group audit oversight testing on a sample of 5 engagements,Louisa Trent,2025-04-17,2025-10-29,2025-08-07,Closed,1
+RA-0336,IN-0116,F03,Audit performance,Re-perform engagement quality review testing on a sample of 3 engagements,Ruth Odede,2025-12-07,2026-04-06,2026-04-12,Closed,0
+RA-0337,IN-0390,F11,Ethics,Refresh independence declarations across the going concern portfolio,Hannah Leung,2025-07-06,2026-01-17,2025-10-08,Closed,1
+RA-0338,IN-0038,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-11-30,2026-06-13,2026-02-20,Closed,1
+RA-0339,IN-0132,F03,Leadership,Add a second partner review on public-interest engagements,Bella Cheng,2025-08-10,2025-11-08,2025-11-02,Closed,0
+RA-0340,IN-0411,F12,Ethics,Refresh independence declarations across the group audit oversight portfolio,Bella Cheng,2026-01-29,2026-04-29,2026-04-14,Closed,0
+RA-0341,IN-0340,F09,Ethics,Refresh independence declarations across the engagement quality review portfolio,Nadia Suleiman,2025-09-29,2025-11-28,2025-11-04,Closed,0
+RA-0342,IN-0031,F01,Audit performance,Re-perform group audit oversight testing on a sample of 2 engagements,Priya Raman,2026-04-22,2026-07-21,,Overdue,0
+RA-0343,IN-0353,F09,Audit performance,Re-perform estimates & judgements testing on a sample of 3 engagements,Bella Cheng,2025-10-26,2026-02-23,2025-12-12,Closed,0
+RA-0344,IN-0142,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Marcus Ilori,2025-09-30,2026-05-13,2025-12-29,Closed,1
+RA-0345,IN-0051,F02,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Douglas Mearns,2025-02-19,2025-07-04,2025-06-15,Closed,1
+RA-0346,IN-0419,F12,Audit performance,Re-perform revenue testing on a sample of 4 engagements,Rajiv Menon,2026-04-22,2026-08-20,2026-05-29,Closed,0
+RA-0347,IN-0127,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Ruth Odede,2025-04-01,2025-09-13,2025-08-31,Closed,1
+RA-0348,IN-0110,F03,Communication,Formalise escalation route between component and group teams,Bella Cheng,2025-12-31,2026-05-15,2026-05-10,Closed,1
+RA-0349,IN-0087,F02,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Douglas Mearns,2025-09-20,2025-12-19,2025-11-15,Closed,0
+RA-0350,IN-0105,F03,Communication,Formalise escalation route between component and group teams,Karl Adeyemi,2025-08-18,2025-12-16,2025-11-27,Closed,0
+RA-0351,IN-0279,F07,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Louisa Trent,2025-03-08,2026-01-02,,Overdue,2
+RA-0352,IN-0426,F12,Communication,Formalise escalation route between component and group teams,Peter Okafor,2025-12-23,2026-07-06,2026-03-31,Closed,1
+RA-0353,IN-0090,F02,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-04-09,2025-08-07,2025-07-04,Closed,0
+RA-0354,IN-0236,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Sam Whitfield,2025-01-12,2025-04-12,2025-03-10,Closed,0
+RA-0355,IN-0081,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Douglas Mearns,2026-03-19,2026-02-25,,Overdue,2
+RA-0356,IN-0311,F08,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Marcus Ilori,2025-11-20,2026-02-18,2026-01-01,Closed,0
+RA-0357,IN-0032,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Priya Raman,2025-01-02,2025-05-02,2025-05-08,Closed,0
+RA-0358,IN-0257,F06,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Nadia Suleiman,2025-09-01,2026-02-13,2025-11-18,Closed,1
+RA-0359,IN-0234,F06,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Marcus Ilori,2025-02-10,2025-05-11,2025-05-25,Closed,0
+RA-0360,IN-0026,F01,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Freya Donnelly,2025-04-06,2025-07-05,2025-07-31,Closed,0
+RA-0361,IN-0370,F10,Communication,Formalise escalation route between component and group teams,Freya Donnelly,2025-04-22,2025-08-20,2025-07-16,Closed,0
+RA-0362,IN-0056,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Karl Adeyemi,2025-02-01,2025-04-02,2025-06-20,Closed,0
+RA-0363,IN-0405,F11,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Owen Pryce,2025-06-13,2025-11-10,2025-10-03,Closed,0
+RA-0364,IN-0109,F03,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Ruth Odede,2025-07-03,2025-10-31,2025-10-18,Closed,0
+RA-0365,IN-0316,F08,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Louisa Trent,2025-01-22,2025-07-06,2025-06-27,Closed,1
+RA-0366,IN-0190,F05,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Rajiv Menon,2025-03-20,2025-09-01,2025-05-17,Closed,1
+RA-0367,IN-0362,F10,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Colin Ebbsworth,2025-07-24,2026-03-21,,Overdue,2
+RA-0368,IN-0198,F05,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Freya Donnelly,2025-05-19,2025-10-31,2025-08-20,Closed,1
+RA-0369,IN-0213,F05,Ethics,Refresh independence declarations across the revenue portfolio,Elena Poplavska,2026-01-06,2026-05-06,2026-05-06,Closed,0
+RA-0370,IN-0111,F03,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Nadia Suleiman,2025-11-08,2026-04-22,,Overdue,1
+RA-0371,IN-0055,F02,Audit performance,Re-perform group audit oversight testing on a sample of 4 engagements,Douglas Mearns,2025-11-19,2026-05-03,2026-03-30,Closed,1
+RA-0372,IN-0128,F03,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Marcus Ilori,2025-07-09,2025-12-06,2025-09-29,Closed,0
+RA-0373,IN-0080,F02,Audit performance,Re-perform engagement quality review testing on a sample of 4 engagements,Bella Cheng,2025-11-21,2026-03-21,2026-02-06,Closed,0
+RA-0374,IN-0362,F10,Ethics,Refresh independence declarations across the revenue portfolio,Colin Ebbsworth,2026-04-12,2026-07-11,,Overdue,0
+RA-0375,IN-0107,F03,Leadership,Add a second partner review on public-interest engagements,Karl Adeyemi,2026-03-27,2026-05-26,2026-05-11,Closed,0
+RA-0376,IN-0175,F04,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Nadia Suleiman,2026-02-03,2026-05-04,2026-04-25,Closed,0
+RA-0377,IN-0077,F02,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Douglas Mearns,2025-06-17,2025-11-29,2025-11-19,Closed,1
+RA-0378,IN-0108,F03,Ethics,Refresh independence declarations across the journals & controls portfolio,Owen Pryce,2026-03-29,2026-08-26,,Overdue,0
+RA-0379,IN-0021,F01,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Freya Donnelly,2025-09-26,2026-05-09,2026-03-04,Closed,1
+RA-0380,IN-0050,F02,Communication,Formalise escalation route between component and group teams,Bella Cheng,2025-01-13,2025-05-28,2025-05-07,Closed,1
+RA-0381,IN-0131,F03,Leadership,Add a second partner review on public-interest engagements,Marcus Ilori,2025-03-22,2025-08-19,2025-05-31,Closed,0
+RA-0382,IN-0056,F02,Ethics,Refresh independence declarations across the group audit oversight portfolio,Rajiv Menon,2025-03-07,2025-06-05,2025-05-22,Closed,0
+RA-0383,IN-0129,F03,Leadership,Add a second partner review on public-interest engagements,Nadia Suleiman,2025-01-14,2025-07-28,2025-05-27,Closed,1
+RA-0384,IN-0294,F07,Ethics,Refresh independence declarations across the impairment portfolio,Grace Nkemelu,2025-01-21,2025-11-17,,Overdue,2
+RA-0385,IN-0056,F02,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Karl Adeyemi,2025-02-17,2025-05-18,2025-05-06,Closed,0
+RA-0386,IN-0022,F01,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-08-02,2025-11-30,2025-11-13,Closed,0
+RA-0387,IN-0082,F02,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Douglas Mearns,2025-11-27,2026-07-13,,Overdue,2
+RA-0388,IN-0047,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-06-13,2025-11-25,2025-11-12,Closed,1
+RA-0389,IN-0142,F03,Leadership,Add a second partner review on public-interest engagements,Rajiv Menon,2025-02-04,2025-04-05,2025-05-24,Closed,0
+RA-0390,IN-0126,F03,Leadership,Add a second partner review on public-interest engagements,Freya Donnelly,2026-04-06,2026-07-05,2026-07-30,Closed,0
+RA-0391,IN-0128,F03,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2025-07-18,2025-10-16,2025-10-02,Closed,0
+RA-0392,IN-0098,F03,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Ruth Odede,2025-01-15,2025-07-29,2025-03-25,Closed,1
+RA-0393,IN-0071,F02,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Freya Donnelly,2026-01-24,2026-06-23,,Overdue,0
+RA-0394,IN-0019,F01,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Rajiv Menon,2025-10-18,2026-01-16,2025-12-19,Closed,0
+RA-0395,IN-0133,F03,Audit performance,Re-perform revenue testing on a sample of 3 engagements,Freya Donnelly,2025-08-23,2025-12-21,2025-11-15,Closed,0
+RA-0396,IN-0346,F09,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Nadia Suleiman,2026-03-29,2026-05-28,,Overdue,0
+RA-0397,IN-0131,F03,Ethics,Refresh independence declarations across the group audit oversight portfolio,Rajiv Menon,2025-03-23,2025-10-19,,Overdue,2
+RA-0398,IN-0143,F03,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Marcus Ilori,2025-06-02,2025-08-01,2025-09-03,Closed,0
+RA-0399,IN-0413,F12,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Freya Donnelly,2026-03-27,2026-07-25,2026-05-31,Closed,0
+RA-0400,IN-0291,F07,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Grace Nkemelu,2025-02-02,2025-07-17,2025-04-01,Closed,1
+RA-0401,IN-0191,F05,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Freya Donnelly,2025-03-31,2025-05-30,2025-08-11,Closed,0
+RA-0402,IN-0092,F02,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Nadia Suleiman,2025-12-10,2026-03-10,2026-03-12,Closed,0
+RA-0403,IN-0215,F05,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Bella Cheng,2026-01-02,2026-03-03,2026-04-05,Closed,0
+RA-0404,IN-0127,F03,Leadership,Add a second partner review on public-interest engagements,Karl Adeyemi,2025-10-04,2026-01-02,2026-01-21,Closed,0
+RA-0405,IN-0100,F03,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Ruth Odede,2026-02-21,2026-09-04,2026-06-11,Closed,1
+RA-0406,IN-0114,F03,Audit performance,Re-perform impairment testing on a sample of 3 engagements,Ruth Odede,2025-11-27,2026-03-27,,Overdue,0
+RA-0407,IN-0117,F03,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2025-11-20,2026-02-18,,Overdue,0
+RA-0408,IN-0144,F04,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Bella Cheng,2025-09-14,2026-07-11,,Overdue,2
+RA-0409,IN-0115,F03,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Louisa Trent,2025-03-01,2025-05-30,2025-05-25,Closed,0
+RA-0410,IN-0120,F03,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Marcus Ilori,2025-12-19,2026-05-03,2026-05-11,Closed,1
+RA-0411,IN-0231,F06,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Sam Whitfield,2025-09-11,2025-12-10,2025-12-06,Closed,0
+RA-0412,IN-0368,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Colin Ebbsworth,2026-02-22,2026-03-16,,Overdue,2
+RA-0413,IN-0087,F02,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Douglas Mearns,2025-03-02,2025-09-13,2025-07-11,Closed,1
+RA-0414,IN-0072,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2025-08-08,2026-03-21,2025-12-16,Closed,1
+RA-0415,IN-0226,F06,Audit performance,Re-perform going concern testing on a sample of 2 engagements,Sam Whitfield,2025-06-29,2025-11-11,2025-10-19,Closed,1
+RA-0416,IN-0420,F12,Ethics,Refresh independence declarations across the engagement quality review portfolio,Peter Okafor,2025-11-14,2026-04-28,,Overdue,1
+RA-0417,IN-0030,F01,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Owen Pryce,2025-05-10,2025-10-07,2025-08-31,Closed,0
+RA-0418,IN-0116,F03,Overdue fixes,Evidence sign-off on the outstanding revenue remediation,Marcus Ilori,2025-11-06,2026-07-11,,Overdue,3
+RA-0419,IN-0004,F01,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Louisa Trent,2025-10-31,2026-03-15,2026-01-17,Closed,1
+RA-0420,IN-0314,F08,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Tomasz Halloran,2025-12-24,2026-08-06,2026-03-09,Closed,1
+RA-0421,IN-0038,F01,Overdue fixes,Complete root-cause analysis for the prior revenue finding,Bella Cheng,2026-03-05,2026-07-18,2026-06-17,Closed,1
+RA-0422,IN-0104,F03,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Owen Pryce,2025-04-25,2025-10-07,2025-08-14,Closed,1
+RA-0423,IN-0048,F01,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Nadia Suleiman,2026-01-15,2026-08-28,2026-06-20,Closed,1
+RA-0424,IN-0271,F07,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Grace Nkemelu,2025-08-03,2026-07-14,,Overdue,3
+RA-0425,IN-0395,F11,Audit performance,Re-perform estimates & judgements testing on a sample of 2 engagements,Owen Pryce,2025-09-01,2025-12-30,2025-12-23,Closed,0
+RA-0426,IN-0030,F01,Ethics,Refresh independence declarations across the impairment portfolio,Priya Raman,2025-04-06,2025-07-05,2025-07-11,Closed,0
+RA-0427,IN-0142,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Nadia Suleiman,2025-10-14,2025-12-13,2026-02-21,Closed,0
+RA-0428,IN-0237,F06,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Sam Whitfield,2025-02-27,2025-07-27,2025-07-15,Closed,0
+RA-0429,IN-0206,F05,Overdue fixes,Evidence sign-off on the outstanding journals & controls remediation,Owen Pryce,2025-04-07,2025-08-05,2025-06-30,Closed,0
+RA-0430,IN-0044,F01,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2025-03-16,2025-05-15,2025-05-21,Closed,0
+RA-0431,IN-0090,F02,Risk assessment,Update the firm risk-assessment methodology for going concern,Douglas Mearns,2025-01-31,2026-01-11,,Overdue,3
+RA-0432,IN-0175,F04,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Louisa Trent,2026-03-05,2026-06-03,2026-07-19,Closed,0
+RA-0433,IN-0328,F09,Leadership,Add a second partner review on public-interest engagements,Aisha Farooqi,2025-05-28,2025-12-09,2025-09-13,Closed,1
+RA-0434,IN-0050,F02,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Douglas Mearns,2025-07-09,2025-12-21,2025-10-15,Closed,1
+RA-0435,IN-0196,F05,Leadership,Add a second partner review on public-interest engagements,Rajiv Menon,2025-09-07,2026-01-05,2025-10-23,Closed,0
+RA-0436,IN-0359,F10,Communication,Formalise escalation route between component and group teams,Marcus Ilori,2026-04-24,2026-07-23,2026-07-09,Closed,0
+RA-0437,IN-0066,F02,Audit performance,Re-perform estimates & judgements testing on a sample of 4 engagements,Bella Cheng,2025-09-23,2026-04-06,2025-12-11,Closed,1
+RA-0438,IN-0418,F12,Audit performance,Re-perform journals & controls testing on a sample of 2 engagements,Bella Cheng,2025-12-31,2026-05-30,,Overdue,0
+RA-0439,IN-0100,F03,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Rajiv Menon,2025-04-16,2025-09-13,2025-08-11,Closed,0
+RA-0440,IN-0210,F05,Communication,Formalise escalation route between component and group teams,Elena Poplavska,2026-04-23,2026-09-20,2026-08-13,Closed,0
+RA-0441,IN-0278,F07,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Freya Donnelly,2025-01-02,2025-03-03,2025-02-13,Closed,0
+RA-0442,IN-0091,F02,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Douglas Mearns,2025-08-07,2026-02-18,2025-11-10,Closed,1
+RA-0443,IN-0124,F03,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Louisa Trent,2025-01-22,2025-03-23,2025-03-10,Closed,0
+RA-0444,IN-0391,F11,Ethics,Refresh independence declarations across the impairment portfolio,Hannah Leung,2025-01-31,2025-04-01,2025-04-06,Closed,0
+RA-0445,IN-0121,F03,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Ruth Odede,2025-03-19,2025-05-18,2025-05-13,Closed,0
+RA-0446,IN-0269,F07,Ethics,Refresh independence declarations across the engagement quality review portfolio,Grace Nkemelu,2025-01-09,2025-04-09,2025-04-03,Closed,0
+RA-0447,IN-0139,F03,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Ruth Odede,2025-05-04,2025-09-01,2025-08-15,Closed,0
+RA-0448,IN-0402,F11,Communication,Formalise escalation route between component and group teams,Hannah Leung,2025-08-11,2026-03-24,2025-11-03,Closed,1
+RA-0449,IN-0169,F04,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Martin Yau,2025-03-18,2025-09-29,2025-08-17,Closed,1
+RA-0450,IN-0251,F06,Audit performance,Re-perform journals & controls testing on a sample of 3 engagements,Rajiv Menon,2025-06-14,2025-10-27,2025-10-02,Closed,1
+RA-0451,IN-0027,F01,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Priya Raman,2026-03-05,2026-09-16,2026-06-08,Closed,1
+RA-0452,IN-0100,F03,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Ruth Odede,2025-07-14,2025-12-11,2025-10-29,Closed,0
+RA-0453,IN-0008,F01,Risk assessment,Update the firm risk-assessment methodology for going concern,Louisa Trent,2025-10-20,2026-01-18,2026-02-24,Closed,0
+RA-0454,IN-0088,F02,Audit performance,Re-perform engagement quality review testing on a sample of 3 engagements,Douglas Mearns,2025-04-28,2025-07-27,2025-06-23,Closed,0
+RA-0455,IN-0013,F01,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Priya Raman,2025-07-06,2025-09-04,2025-08-30,Closed,0
+RA-0456,IN-0028,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2026-04-23,2026-07-22,2026-07-22,Closed,0
+RA-0457,IN-0140,F03,Communication,Formalise escalation route between component and group teams,Bella Cheng,2025-03-27,2025-08-24,2025-07-13,Closed,0
+RA-0458,IN-0196,F05,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Elena Poplavska,2026-04-04,2026-07-03,2026-05-18,Closed,0
+RA-0459,IN-0062,F02,Leadership,Add a second partner review on public-interest engagements,Douglas Mearns,2025-03-05,2025-07-03,2025-06-17,Closed,0
+RA-0460,IN-0003,F01,Audit performance,Re-perform revenue testing on a sample of 3 engagements,Priya Raman,2026-03-14,2026-06-12,2026-04-25,Closed,0
+RA-0461,IN-0195,F05,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Karl Adeyemi,2026-03-10,2026-06-08,2026-05-19,Closed,0
+RA-0462,IN-0038,F01,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Priya Raman,2025-03-24,2025-08-21,2025-07-22,Closed,0
+RA-0463,IN-0256,F06,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Rajiv Menon,2025-12-13,2026-06-26,,Overdue,1
+RA-0464,IN-0086,F02,Leadership,Add a second partner review on public-interest engagements,Douglas Mearns,2026-04-25,2026-11-06,2026-06-23,Closed,1
+RA-0465,IN-0102,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Nadia Suleiman,2025-11-06,2026-03-06,2026-01-20,Closed,0
+RA-0466,IN-0368,F10,Overdue fixes,Complete root-cause analysis for the prior revenue finding,Colin Ebbsworth,2025-08-19,2026-01-16,2025-10-31,Closed,0
+RA-0467,IN-0078,F02,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Louisa Trent,2025-05-10,2025-11-21,2025-07-30,Closed,1
+RA-0468,IN-0050,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Louisa Trent,2025-06-01,2026-04-12,,Overdue,3
+RA-0469,IN-0101,F03,Audit performance,Re-perform group audit oversight testing on a sample of 2 engagements,Karl Adeyemi,2026-02-25,2026-07-25,,Overdue,0
+RA-0470,IN-0114,F03,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Nadia Suleiman,2025-06-08,2025-11-05,2025-10-12,Closed,0
+RA-0471,IN-0075,F02,Leadership,Add a second partner review on public-interest engagements,Rajiv Menon,2025-07-10,2025-09-08,2025-09-05,Closed,0
+RA-0472,IN-0018,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-10-27,2026-03-11,2026-02-24,Closed,1
+RA-0473,IN-0129,F03,Audit performance,Re-perform group audit oversight testing on a sample of 5 engagements,Owen Pryce,2025-12-05,2026-04-04,2026-04-16,Closed,0
+RA-0474,IN-0135,F03,Overdue fixes,Evidence sign-off on the outstanding going concern remediation,Ruth Odede,2025-01-22,2025-03-23,2025-05-09,Closed,0
+RA-0475,IN-0275,F07,Ethics,Refresh independence declarations across the engagement quality review portfolio,Grace Nkemelu,2025-05-11,2026-01-06,,Overdue,2
+RA-0476,IN-0023,F01,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Rajiv Menon,2025-08-28,2026-02-09,2026-01-15,Closed,1
+RA-0477,IN-0195,F05,Communication,Formalise escalation route between component and group teams,Freya Donnelly,2025-10-23,2026-03-22,2026-01-07,Closed,0
+RA-0478,IN-0008,F01,Risk assessment,Update the firm risk-assessment methodology for engagement quality review,Nadia Suleiman,2025-09-05,2025-12-04,2026-01-10,Closed,0
+RA-0479,IN-0088,F02,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Douglas Mearns,2026-02-26,2026-05-27,,Overdue,0
+RA-0480,IN-0270,F07,Leadership,Add a second partner review on public-interest engagements,Grace Nkemelu,2025-07-05,2026-01-16,2025-10-06,Closed,1
+RA-0481,IN-0207,F05,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Louisa Trent,2026-02-01,2026-05-02,2026-06-20,Closed,0
+RA-0482,IN-0114,F03,Audit performance,Re-perform going concern testing on a sample of 3 engagements,Ruth Odede,2025-03-02,2025-08-14,2025-07-13,Closed,1
+RA-0483,IN-0155,F04,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Martin Yau,2025-05-27,2025-08-25,2025-09-15,Closed,0
+RA-0484,IN-0029,F01,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Owen Pryce,2025-02-12,2025-04-13,2025-05-12,Closed,0
+RA-0485,IN-0001,F01,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Owen Pryce,2025-04-01,2025-05-31,2025-08-19,Closed,0
+RA-0486,IN-0106,F03,Audit performance,Re-perform going concern testing on a sample of 3 engagements,Marcus Ilori,2025-02-21,2025-04-22,2025-04-01,Closed,0
+RA-0487,IN-0217,F05,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Elena Poplavska,2025-05-17,2025-10-14,2025-09-12,Closed,0
+RA-0488,IN-0335,F09,Communication,Formalise escalation route between component and group teams,Aisha Farooqi,2025-03-22,2025-08-19,2025-04-30,Closed,0
+RA-0489,IN-0056,F02,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Louisa Trent,2026-02-19,2026-06-19,2026-06-24,Closed,0
+RA-0490,IN-0106,F03,Audit performance,Re-perform revenue testing on a sample of 3 engagements,Owen Pryce,2025-04-18,2025-07-17,2025-05-30,Closed,0
+RA-0491,IN-0174,F04,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Martin Yau,2025-03-18,2025-05-17,2025-07-05,Closed,0
+RA-0492,IN-0140,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 5 audits,Ruth Odede,2026-04-22,2026-09-19,,Open,0
+RA-0493,IN-0012,F01,Audit performance,Re-perform engagement quality review testing on a sample of 3 engagements,Priya Raman,2025-03-22,2025-07-20,2025-08-06,Closed,0
+RA-0494,IN-0224,F06,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Sam Whitfield,2025-12-04,2026-04-03,2026-04-22,Closed,0
+RA-0495,IN-0108,F03,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Karl Adeyemi,2026-03-21,2026-05-19,,Overdue,2
+RA-0496,IN-0015,F01,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Louisa Trent,2025-05-03,2025-09-30,2025-09-22,Closed,0
+RA-0497,IN-0004,F01,Audit performance,Re-perform estimates & judgements testing on a sample of 3 engagements,Marcus Ilori,2025-12-31,2026-03-31,2026-02-17,Closed,0
+RA-0498,IN-0114,F03,Leadership,Add a second partner review on public-interest engagements,Karl Adeyemi,2025-05-21,2025-10-18,2025-09-26,Closed,0
+RA-0499,IN-0182,F04,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Marcus Ilori,2025-05-26,2026-01-21,,Overdue,2
+RA-0500,IN-0320,F08,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Freya Donnelly,2025-08-19,2025-11-17,2025-11-06,Closed,0
+RA-0501,IN-0002,F01,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2025-04-28,2025-09-10,2025-06-22,Closed,1
+RA-0502,IN-0274,F07,Risk assessment,Update the firm risk-assessment methodology for impairment,Karl Adeyemi,2025-01-09,2025-06-08,2025-05-16,Closed,0
+RA-0503,IN-0392,F11,Leadership,Add a second partner review on public-interest engagements,Hannah Leung,2025-05-28,2025-10-10,2025-09-02,Closed,1
+RA-0504,IN-0416,F12,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Freya Donnelly,2025-02-10,2025-07-25,2025-04-22,Closed,1
+RA-0505,IN-0100,F03,Communication,Formalise escalation route between component and group teams,Ruth Odede,2025-08-01,2025-10-30,2025-10-15,Closed,0
+RA-0506,IN-0270,F07,Leadership,Add a second partner review on public-interest engagements,Nadia Suleiman,2025-11-24,2026-01-23,2025-12-21,Closed,0
+RA-0507,IN-0093,F02,Overdue fixes,Complete root-cause analysis for the prior group audit oversight finding,Freya Donnelly,2025-02-28,2025-09-11,2025-06-24,Closed,1
+RA-0508,IN-0032,F01,Audit performance,Re-perform estimates & judgements testing on a sample of 2 engagements,Owen Pryce,2025-04-01,2025-07-30,2025-06-23,Closed,0
+RA-0509,IN-0050,F02,Audit performance,Re-perform engagement quality review testing on a sample of 4 engagements,Nadia Suleiman,2025-03-24,2025-08-21,2025-08-02,Closed,0
+RA-0510,IN-0133,F03,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Karl Adeyemi,2025-02-23,2025-10-06,2025-05-13,Closed,1
+RA-0511,IN-0078,F02,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Douglas Mearns,2025-10-13,2026-02-10,2025-11-22,Closed,0
+RA-0512,IN-0299,F08,Audit performance,Re-perform engagement quality review testing on a sample of 4 engagements,Tomasz Halloran,2025-01-09,2025-06-23,2025-05-17,Closed,1
+RA-0513,IN-0189,F05,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Rajiv Menon,2025-03-10,2025-05-09,2025-06-13,Closed,0
+RA-0514,IN-0012,F01,Audit performance,Re-perform journals & controls testing on a sample of 4 engagements,Priya Raman,2025-05-06,2025-10-18,2025-07-13,Closed,1
+RA-0515,IN-0047,F01,Communication,Formalise escalation route between component and group teams,Rajiv Menon,2026-02-22,2026-06-22,2026-05-20,Closed,0
+RA-0516,IN-0106,F03,Communication,Formalise escalation route between component and group teams,Ruth Odede,2025-07-28,2026-05-09,,Overdue,3
+RA-0517,IN-0332,F09,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Rajiv Menon,2026-03-13,2026-05-12,,Overdue,0
+RA-0518,IN-0305,F08,Overdue fixes,Evidence sign-off on the outstanding impairment remediation,Owen Pryce,2025-10-26,2025-12-25,2026-03-07,Closed,0
+RA-0519,IN-0388,F11,Communication,Formalise escalation route between component and group teams,Hannah Leung,2025-02-21,2025-06-21,2025-05-20,Closed,0
+RA-0520,IN-0018,F01,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Priya Raman,2025-02-05,2025-04-06,2025-05-12,Closed,0
+RA-0521,IN-0269,F07,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Grace Nkemelu,2025-05-16,2025-08-14,2025-07-11,Closed,0
+RA-0522,IN-0006,F01,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Priya Raman,2025-04-22,2025-07-21,2025-06-24,Closed,0
+RA-0523,IN-0065,F02,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Douglas Mearns,2025-10-08,2026-01-06,2025-12-31,Closed,0
+RA-0524,IN-0047,F01,Risk assessment,Update the firm risk-assessment methodology for group audit oversight,Owen Pryce,2025-10-30,2026-02-27,2026-02-20,Closed,0
+RA-0525,IN-0378,F10,Ethics,Refresh independence declarations across the impairment portfolio,Colin Ebbsworth,2025-09-12,2026-01-25,2026-02-09,Closed,1
+RA-0526,IN-0063,F02,Ethics,Refresh independence declarations across the estimates & judgements portfolio,Owen Pryce,2025-03-03,2025-06-01,2025-05-08,Closed,0
+RA-0527,IN-0075,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2025-02-27,2025-12-24,,Overdue,2
+RA-0528,IN-0071,F02,Client acceptance,Re-run client acceptance checks on 5 higher-risk clients,Douglas Mearns,2025-03-15,2025-06-13,2025-06-07,Closed,0
+RA-0529,IN-0390,F11,Leadership,Add a second partner review on public-interest engagements,Hannah Leung,2025-12-15,2026-03-15,,Overdue,0
+RA-0530,IN-0065,F02,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Bella Cheng,2025-09-08,2026-03-22,2025-11-02,Closed,1
+RA-0531,IN-0021,F01,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Priya Raman,2025-09-26,2025-12-25,2025-11-27,Closed,0
+RA-0532,IN-0151,F04,Staffing resources,Recruit 3 experienced seniors to close the resourcing gap,Martin Yau,2025-08-31,2026-04-13,2026-01-15,Closed,1
+RA-0533,IN-0095,F02,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Douglas Mearns,2025-07-19,2025-10-17,2025-09-09,Closed,0
+RA-0534,IN-0212,F05,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Elena Poplavska,2025-04-23,2025-09-20,2025-08-28,Closed,0
+RA-0535,IN-0034,F01,Communication,Formalise escalation route between component and group teams,Owen Pryce,2026-03-18,2026-10-29,2026-07-23,Closed,1
+RA-0536,IN-0087,F02,Overdue fixes,Evidence sign-off on the outstanding group audit oversight remediation,Douglas Mearns,2026-01-23,2026-06-22,2026-05-05,Closed,0
+RA-0537,IN-0421,F12,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2025-08-03,2026-03-16,2025-10-10,Closed,1
+RA-0538,IN-0093,F02,Ethics,Refresh independence declarations across the revenue portfolio,Marcus Ilori,2025-04-13,2025-08-11,2025-07-17,Closed,0
+RA-0539,IN-0115,F03,Audit performance,Re-perform revenue testing on a sample of 2 engagements,Ruth Odede,2025-08-30,2026-02-11,2026-01-03,Closed,1
+RA-0540,IN-0293,F07,Overdue fixes,Complete root-cause analysis for the prior journals & controls finding,Owen Pryce,2025-04-29,2025-08-27,2025-08-10,Closed,0
+RA-0541,IN-0276,F07,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Grace Nkemelu,2026-01-03,2026-04-03,2026-02-19,Closed,0
+RA-0542,IN-0140,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 4 audits,Owen Pryce,2025-05-24,2025-10-21,2025-07-28,Closed,0
+RA-0543,IN-0327,F09,Leadership,Add a second partner review on public-interest engagements,Nadia Suleiman,2026-01-18,2026-04-18,2026-05-17,Closed,0
+RA-0544,IN-0074,F02,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Douglas Mearns,2026-03-31,2026-06-29,,Overdue,0
+RA-0545,IN-0120,F03,Audit performance,Re-perform estimates & judgements testing on a sample of 4 engagements,Nadia Suleiman,2026-01-21,2026-05-21,2026-03-09,Closed,0
+RA-0546,IN-0059,F02,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Douglas Mearns,2025-04-30,2025-06-29,2025-05-29,Closed,0
+RA-0547,IN-0021,F01,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Rajiv Menon,2025-04-26,2025-09-23,2025-09-07,Closed,0
+RA-0548,IN-0418,F12,Risk assessment,Update the firm risk-assessment methodology for impairment,Peter Okafor,2025-03-20,2025-05-19,2025-04-24,Closed,0
+RA-0549,IN-0060,F02,Risk assessment,Update the firm risk-assessment methodology for journals & controls,Douglas Mearns,2025-02-25,2025-04-26,2025-05-24,Closed,0
+RA-0550,IN-0057,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2026-01-01,2026-05-31,,Overdue,0
+RA-0551,IN-0150,F04,Overdue fixes,Complete root-cause analysis for the prior going concern finding,Nadia Suleiman,2025-11-09,2026-03-09,2026-03-17,Closed,0
+RA-0552,IN-0101,F03,Risk assessment,Update the firm risk-assessment methodology for revenue,Ruth Odede,2026-01-31,2026-06-30,,Overdue,0
+RA-0553,IN-0079,F02,Leadership,Add a second partner review on public-interest engagements,Bella Cheng,2026-03-15,2026-07-28,,Overdue,1
+RA-0554,IN-0062,F02,Leadership,Add a second partner review on public-interest engagements,Owen Pryce,2026-03-25,2026-06-23,,Overdue,0
+RA-0555,IN-0280,F07,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Grace Nkemelu,2025-06-23,2025-11-20,2025-10-06,Closed,0
+RA-0556,IN-0152,F04,Client acceptance,Re-run client acceptance checks on 2 higher-risk clients,Karl Adeyemi,2026-03-12,2026-06-10,2026-04-27,Closed,0
+RA-0557,IN-0364,F10,Leadership,Add a second partner review on public-interest engagements,Colin Ebbsworth,2025-02-11,2025-05-12,2025-04-12,Closed,0
+RA-0558,IN-0004,F01,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Owen Pryce,2026-02-01,2026-04-02,2026-03-29,Closed,0
+RA-0559,IN-0065,F02,Client acceptance,Re-run client acceptance checks on 3 higher-risk clients,Nadia Suleiman,2026-02-17,2026-04-18,2026-06-12,Closed,0
+RA-0560,IN-0107,F03,Risk assessment,Update the firm risk-assessment methodology for impairment,Ruth Odede,2025-12-11,2026-02-09,2026-01-02,Closed,0
+RA-0561,IN-0051,F02,Ethics,Refresh independence declarations across the engagement quality review portfolio,Douglas Mearns,2025-12-09,2026-05-08,2026-04-21,Closed,0
+RA-0562,IN-0099,F03,Leadership,Add a second partner review on public-interest engagements,Nadia Suleiman,2025-11-15,2026-03-30,2026-03-05,Closed,1
+RA-0563,IN-0392,F11,Communication,Formalise escalation route between component and group teams,Bella Cheng,2026-03-30,2026-06-28,2026-08-04,Closed,0
+RA-0564,IN-0291,F07,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Grace Nkemelu,2025-05-01,2025-08-29,2025-07-16,Closed,0
+RA-0565,IN-0106,F03,Overdue fixes,Complete root-cause analysis for the prior estimates & judgements finding,Nadia Suleiman,2026-02-06,2026-07-06,2026-03-18,Closed,0
+RA-0566,IN-0083,F02,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Douglas Mearns,2025-11-05,2026-04-04,,Overdue,0
+RA-0567,IN-0023,F01,Staffing resources,Recruit 2 experienced seniors to close the resourcing gap,Priya Raman,2025-05-18,2025-09-30,2025-09-17,Closed,1
+RA-0568,IN-0355,F09,Communication,Formalise escalation route between component and group teams,Louisa Trent,2026-03-15,2026-08-27,2026-06-09,Closed,1
+RA-0569,IN-0378,F10,Staffing resources,Rebalance engagement teams so no senior runs more than 3 audits,Freya Donnelly,2025-07-24,2025-10-22,2025-10-18,Closed,0
+RA-0570,IN-0300,F08,Communication,Formalise escalation route between component and group teams,Bella Cheng,2025-07-28,2025-10-26,2025-09-28,Closed,0
+RA-0571,IN-0256,F06,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Freya Donnelly,2025-04-20,2025-06-19,2025-05-30,Closed,0
+RA-0572,IN-0122,F03,Audit performance,Re-perform group audit oversight testing on a sample of 4 engagements,Ruth Odede,2026-01-23,2026-04-23,2026-06-07,Closed,0
+RA-0573,IN-0271,F07,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Grace Nkemelu,2025-05-31,2025-08-29,2025-09-03,Closed,0
+RA-0574,IN-0096,F02,Communication,Formalise escalation route between component and group teams,Rajiv Menon,2025-09-20,2026-02-17,,Overdue,0
+RA-0575,IN-0227,F06,Leadership,Add a second partner review on public-interest engagements,Sam Whitfield,2025-04-02,2025-07-01,2025-08-04,Closed,0
+RA-0576,IN-0099,F03,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Marcus Ilori,2026-03-13,2026-06-11,2026-07-23,Closed,0
+RA-0577,IN-0108,F03,Staffing resources,Rebalance engagement teams so no senior runs more than 2 audits,Karl Adeyemi,2025-07-22,2025-10-20,2025-11-25,Closed,0
+RA-0578,IN-0017,F01,Ethics,Refresh independence declarations across the revenue portfolio,Rajiv Menon,2025-04-12,2025-07-11,2025-06-03,Closed,0
+RA-0579,IN-0139,F03,Staffing resources,Recruit 5 experienced seniors to close the resourcing gap,Ruth Odede,2026-01-06,2026-05-21,,Overdue,1
+RA-0580,IN-0187,F05,Leadership,Add a second partner review on public-interest engagements,Elena Poplavska,2026-03-16,2026-07-14,2026-05-13,Closed,0
+RA-0581,IN-0011,F01,Ethics,Refresh independence declarations across the journals & controls portfolio,Nadia Suleiman,2025-02-24,2025-05-25,2025-06-15,Closed,0
+RA-0582,IN-0129,F03,Audit performance,Re-perform impairment testing on a sample of 2 engagements,Louisa Trent,2025-08-30,2025-12-28,2025-12-09,Closed,0
+RA-0583,IN-0411,F12,Overdue fixes,Evidence sign-off on the outstanding engagement quality review remediation,Peter Okafor,2025-07-20,2025-10-18,2025-08-31,Closed,0
+RA-0584,IN-0043,F01,Leadership,Add a second partner review on public-interest engagements,Rajiv Menon,2025-11-24,2026-04-23,2026-02-17,Closed,0
+RA-0585,IN-0048,F01,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Bella Cheng,2025-04-10,2025-07-09,2025-06-24,Closed,0
+RA-0586,IN-0177,F04,Communication,Formalise escalation route between component and group teams,Freya Donnelly,2025-06-21,2025-09-19,2025-07-30,Closed,0
+RA-0587,IN-0263,F07,Risk assessment,Update the firm risk-assessment methodology for going concern,Grace Nkemelu,2026-01-18,2026-03-19,,Overdue,0
+RA-0588,IN-0153,F04,Risk assessment,Update the firm risk-assessment methodology for estimates & judgements,Nadia Suleiman,2026-02-09,2026-04-10,2026-04-01,Closed,0
+RA-0589,IN-0019,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2026-03-30,2026-09-11,,Open,1
+RA-0590,IN-0053,F02,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Freya Donnelly,2025-02-07,2025-05-08,2025-04-05,Closed,0
+RA-0591,IN-0018,F01,Risk assessment,Update the firm risk-assessment methodology for impairment,Bella Cheng,2025-09-18,2026-02-15,2025-12-24,Closed,0
+RA-0592,IN-0091,F02,Communication,Formalise escalation route between component and group teams,Douglas Mearns,2026-01-19,2026-03-20,,Overdue,0
+RA-0593,IN-0067,F02,Audit performance,Re-perform impairment testing on a sample of 4 engagements,Douglas Mearns,2025-06-02,2025-08-31,2025-08-03,Closed,0
+RA-0594,IN-0043,F01,Staffing resources,Recruit 4 experienced seniors to close the resourcing gap,Owen Pryce,2025-02-22,2025-05-23,2025-04-04,Closed,0
+RA-0595,IN-0302,F08,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Bella Cheng,2026-04-24,2026-09-06,,Open,1
+RA-0596,IN-0327,F09,Ethics,Refresh independence declarations across the impairment portfolio,Karl Adeyemi,2025-11-16,2026-05-30,,Overdue,1
+RA-0597,IN-0101,F03,Overdue fixes,Complete root-cause analysis for the prior engagement quality review finding,Ruth Odede,2025-10-02,2025-12-31,2026-01-17,Closed,0
+RA-0598,IN-0227,F06,Communication,Formalise escalation route between component and group teams,Owen Pryce,2025-10-19,2026-03-18,,Overdue,0
+RA-0599,IN-0077,F02,Communication,Formalise escalation route between component and group teams,Nadia Suleiman,2026-02-04,2026-07-19,2026-06-10,Closed,1
+RA-0600,IN-0008,F01,Leadership,Add a second partner review on public-interest engagements,Nadia Suleiman,2025-08-31,2025-11-29,2025-11-27,Closed,0
+RA-0601,IN-0074,F02,Communication,Formalise escalation route between component and group teams,Rajiv Menon,2025-10-15,2026-01-13,2026-02-11,Closed,0
+RA-0602,IN-0048,F01,Leadership,Add a second partner review on public-interest engagements,Louisa Trent,2026-01-23,2026-03-24,,Overdue,0
+RA-0603,IN-0426,F12,Ethics,Refresh independence declarations across the going concern portfolio,Peter Okafor,2025-11-09,2026-03-09,2026-03-21,Closed,0
+RA-0604,IN-0391,F11,Communication,Formalise escalation route between component and group teams,Hannah Leung,2025-02-17,2025-09-30,2025-07-02,Closed,1
+RA-0605,IN-0290,F07,Client acceptance,Re-run client acceptance checks on 4 higher-risk clients,Rajiv Menon,2026-02-19,2026-08-11,,Overdue,2
+RA-0606,IN-0042,F01,Communication,Formalise escalation route between component and group teams,Priya Raman,2026-03-08,2026-06-06,2026-05-01,Closed,0
+RA-0607,IN-0236,F06,Communication,Formalise escalation route between component and group teams,Sam Whitfield,2025-11-17,2026-01-16,2025-12-20,Closed,0
+RA-0608,IN-0003,F01,Leadership,Add a second partner review on public-interest engagements,Priya Raman,2025-08-11,2026-03-24,,Overdue,1
+RA-0609,IN-0133,F03,Leadership,Add a second partner review on public-interest engagements,Nadia Suleiman,2025-04-14,2025-06-13,2025-08-31,Closed,0
+RA-0610,IN-0129,F03,Leadership,Add a second partner review on public-interest engagements,Rajiv Menon,2025-01-29,2025-06-28,2025-05-24,Closed,0
+RA-0611,IN-0140,F03,Overdue fixes,Complete root-cause analysis for the prior revenue finding,Louisa Trent,2026-03-18,2026-08-15,,Overdue,0
+RA-0612,IN-0126,F03,Overdue fixes,Evidence sign-off on the outstanding estimates & judgements remediation,Freya Donnelly,2025-11-23,2026-02-21,2026-03-01,Closed,0

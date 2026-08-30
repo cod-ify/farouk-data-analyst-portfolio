@@ -59,7 +59,39 @@ text.chart-axis, .chart-axis text { fill: var(--muted); font-size: 11px; font-fa
 .chart-bar.is-secondary { fill: var(--navy); }
 .chart-bar.is-tertiary { fill: var(--warn); }
 .chart-bar.is-quaternary { fill: var(--muted); }
+.chart-bar.is-emphasis { fill: var(--teal); }
+.chart-bar.is-context { fill: var(--muted); }
+.chart-bar.is-pos { fill: var(--teal); }
+.chart-bar.is-neg { fill: var(--bad); }
 .chart-bar:hover, .chart-bar.is-active { fill: var(--navy-deep); }
+
+/* slopegraph */
+.chart-slope { stroke: var(--muted); stroke-width: 2; fill: var(--muted); }
+.chart-slope.is-on { stroke: var(--teal); fill: var(--teal); stroke-width: 2.5; }
+.chart-slope.is-off { stroke: var(--line); fill: var(--muted); opacity: 0.85; }
+circle.chart-slope { stroke: #fff; stroke-width: 1.5; }
+.chart-slope-leader { stroke: var(--line); stroke-width: 1; }
+text.chart-slope-label, .chart-slope-label { fill: var(--ink); font-size: 10.5px; font-family: inherit; }
+.chart-slope-label.is-off { fill: var(--muted); }
+.chart-slope-label.is-on { fill: var(--ink); font-weight: 700; }
+
+/* reference / baseline line on a bar chart (solid hairline, one label) */
+.chart-baseline { stroke: var(--ink); stroke-width: 1.5; }
+text.chart-baseline-label, .chart-baseline-label { fill: var(--muted); font-size: 10.5px; font-weight: 700; font-family: inherit; }
+
+/* stacked single bar — part-to-whole of one total */
+.chart-stack-seg.tone-accent { fill: var(--teal); }
+.chart-stack-seg.tone-accent-2 { fill: var(--teal); opacity: 0.5; }
+.chart-stack-seg.tone-context { fill: var(--muted); }
+.chart-stack-seg.tone-context-2 { fill: var(--muted); opacity: 0.42; }
+.chart-stack-key { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 12px 0 2px; }
+.chart-stack-key .k { display: inline-flex; align-items: center; gap: 8px; font-size: 0.83rem; color: var(--muted); line-height: 1.4; }
+.chart-stack-key .k .sw { flex: none; width: 10px; height: 10px; border-radius: 3px; }
+.chart-stack-key .k .sw.tone-accent { background: var(--teal); }
+.chart-stack-key .k .sw.tone-accent-2 { background: var(--teal); opacity: 0.5; }
+.chart-stack-key .k .sw.tone-context { background: var(--muted); }
+.chart-stack-key .k .sw.tone-context-2 { background: var(--muted); opacity: 0.42; }
+.chart-stack-key .k strong { color: var(--ink); font-weight: 700; margin-right: 2px; }
 
 .chart-line-path { fill: none; stroke: var(--teal); stroke-width: 2.5; }
 .chart-line-dot { fill: var(--teal); stroke: #fff; stroke-width: 1.5; }

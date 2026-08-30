@@ -1,0 +1,427 @@
+inspection_id,firm_id,year,area,grade,findings_count
+IN-0001,F01,2021,Estimates & judgements,Unacceptable,4
+IN-0002,F01,2023,Revenue,Limited improvements needed,7
+IN-0003,F01,2021,Impairment,Improvements needed,6
+IN-0004,F01,2024,Engagement quality review,Improvements needed,4
+IN-0005,F01,2021,Engagement quality review,Good,3
+IN-0006,F01,2025,Revenue,Significant improvements needed,4
+IN-0007,F01,2022,Revenue,Significant improvements needed,9
+IN-0008,F01,2025,Engagement quality review,Significant improvements needed,7
+IN-0009,F01,2024,Group audit oversight,Improvements needed,12
+IN-0010,F01,2024,Journals & controls,Improvements needed,8
+IN-0011,F01,2023,Group audit oversight,Significant improvements needed,9
+IN-0012,F01,2024,Group audit oversight,Significant improvements needed,8
+IN-0013,F01,2021,Engagement quality review,Good,9
+IN-0014,F01,2022,Revenue,Good,11
+IN-0015,F01,2023,Engagement quality review,Unacceptable,6
+IN-0016,F01,2023,Journals & controls,Improvements needed,10
+IN-0017,F01,2025,Estimates & judgements,Improvements needed,3
+IN-0018,F01,2023,Group audit oversight,Good,3
+IN-0019,F01,2023,Estimates & judgements,Significant improvements needed,12
+IN-0020,F01,2024,Impairment,Improvements needed,4
+IN-0021,F01,2023,Going concern,Improvements needed,4
+IN-0022,F01,2024,Estimates & judgements,Improvements needed,5
+IN-0023,F01,2025,Engagement quality review,Unacceptable,11
+IN-0024,F01,2021,Engagement quality review,Limited improvements needed,4
+IN-0025,F01,2023,Impairment,Significant improvements needed,10
+IN-0026,F01,2022,Revenue,Unacceptable,10
+IN-0027,F01,2025,Estimates & judgements,Limited improvements needed,5
+IN-0028,F01,2021,Journals & controls,Limited improvements needed,3
+IN-0029,F01,2022,Group audit oversight,Unacceptable,9
+IN-0030,F01,2023,Group audit oversight,Limited improvements needed,10
+IN-0031,F01,2021,Impairment,Significant improvements needed,10
+IN-0032,F01,2021,Group audit oversight,Significant improvements needed,6
+IN-0033,F01,2025,Impairment,Significant improvements needed,4
+IN-0034,F01,2023,Journals & controls,Improvements needed,9
+IN-0035,F01,2025,Going concern,Unacceptable,6
+IN-0036,F01,2022,Group audit oversight,Improvements needed,4
+IN-0037,F01,2021,Journals & controls,Limited improvements needed,12
+IN-0038,F01,2022,Revenue,Significant improvements needed,12
+IN-0039,F01,2023,Group audit oversight,Limited improvements needed,9
+IN-0040,F01,2025,Group audit oversight,Significant improvements needed,3
+IN-0041,F01,2025,Engagement quality review,Significant improvements needed,9
+IN-0042,F01,2024,Group audit oversight,Improvements needed,5
+IN-0043,F01,2025,Impairment,Significant improvements needed,6
+IN-0044,F01,2021,Impairment,Improvements needed,10
+IN-0045,F01,2023,Group audit oversight,Limited improvements needed,6
+IN-0046,F01,2024,Estimates & judgements,Significant improvements needed,12
+IN-0047,F01,2023,Journals & controls,Limited improvements needed,3
+IN-0048,F01,2025,Impairment,Improvements needed,4
+IN-0049,F01,2023,Journals & controls,Unacceptable,12
+IN-0050,F02,2024,Estimates & judgements,Significant improvements needed,10
+IN-0051,F02,2023,Going concern,Significant improvements needed,3
+IN-0052,F02,2023,Journals & controls,Limited improvements needed,6
+IN-0053,F02,2022,Revenue,Significant improvements needed,5
+IN-0054,F02,2024,Group audit oversight,Significant improvements needed,5
+IN-0055,F02,2021,Group audit oversight,Significant improvements needed,9
+IN-0056,F02,2024,Engagement quality review,Unacceptable,9
+IN-0057,F02,2024,Journals & controls,Good,7
+IN-0058,F02,2023,Estimates & judgements,Significant improvements needed,11
+IN-0059,F02,2024,Group audit oversight,Limited improvements needed,12
+IN-0060,F02,2021,Journals & controls,Unacceptable,7
+IN-0061,F02,2024,Impairment,Significant improvements needed,5
+IN-0062,F02,2024,Group audit oversight,Significant improvements needed,5
+IN-0063,F02,2022,Journals & controls,Limited improvements needed,6
+IN-0064,F02,2021,Engagement quality review,Improvements needed,12
+IN-0065,F02,2021,Engagement quality review,Significant improvements needed,5
+IN-0066,F02,2024,Going concern,Unacceptable,5
+IN-0067,F02,2021,Going concern,Limited improvements needed,5
+IN-0068,F02,2021,Impairment,Limited improvements needed,8
+IN-0069,F02,2025,Estimates & judgements,Improvements needed,9
+IN-0070,F02,2022,Estimates & judgements,Good,9
+IN-0071,F02,2024,Impairment,Improvements needed,5
+IN-0072,F02,2024,Engagement quality review,Significant improvements needed,4
+IN-0073,F02,2024,Journals & controls,Unacceptable,9
+IN-0074,F02,2023,Going concern,Significant improvements needed,8
+IN-0075,F02,2021,Revenue,Limited improvements needed,4
+IN-0076,F02,2024,Impairment,Significant improvements needed,6
+IN-0077,F02,2021,Impairment,Significant improvements needed,10
+IN-0078,F02,2023,Revenue,Significant improvements needed,12
+IN-0079,F02,2022,Journals & controls,Improvements needed,9
+IN-0080,F02,2023,Revenue,Significant improvements needed,8
+IN-0081,F02,2021,Engagement quality review,Significant improvements needed,11
+IN-0082,F02,2022,Journals & controls,Improvements needed,3
+IN-0083,F02,2024,Impairment,Significant improvements needed,11
+IN-0084,F02,2024,Engagement quality review,Good,12
+IN-0085,F02,2025,Engagement quality review,Significant improvements needed,4
+IN-0086,F02,2022,Revenue,Unacceptable,5
+IN-0087,F02,2025,Revenue,Significant improvements needed,11
+IN-0088,F02,2024,Revenue,Significant improvements needed,3
+IN-0089,F02,2022,Journals & controls,Significant improvements needed,5
+IN-0090,F02,2021,Engagement quality review,Significant improvements needed,3
+IN-0091,F02,2021,Impairment,Unacceptable,7
+IN-0092,F02,2023,Estimates & judgements,Unacceptable,9
+IN-0093,F02,2021,Revenue,Limited improvements needed,11
+IN-0094,F02,2023,Going concern,Significant improvements needed,5
+IN-0095,F02,2025,Group audit oversight,Improvements needed,11
+IN-0096,F02,2023,Impairment,Significant improvements needed,6
+IN-0097,F02,2021,Revenue,Significant improvements needed,6
+IN-0098,F03,2021,Group audit oversight,Limited improvements needed,6
+IN-0099,F03,2022,Estimates & judgements,Significant improvements needed,12
+IN-0100,F03,2023,Journals & controls,Improvements needed,12
+IN-0101,F03,2024,Group audit oversight,Good,7
+IN-0102,F03,2024,Estimates & judgements,Significant improvements needed,9
+IN-0103,F03,2024,Group audit oversight,Good,9
+IN-0104,F03,2022,Revenue,Significant improvements needed,7
+IN-0105,F03,2022,Impairment,Significant improvements needed,11
+IN-0106,F03,2025,Engagement quality review,Limited improvements needed,5
+IN-0107,F03,2023,Going concern,Unacceptable,9
+IN-0108,F03,2021,Estimates & judgements,Unacceptable,4
+IN-0109,F03,2023,Revenue,Limited improvements needed,11
+IN-0110,F03,2024,Journals & controls,Good,4
+IN-0111,F03,2023,Engagement quality review,Unacceptable,7
+IN-0112,F03,2022,Estimates & judgements,Unacceptable,7
+IN-0113,F03,2021,Estimates & judgements,Limited improvements needed,9
+IN-0114,F03,2021,Revenue,Significant improvements needed,5
+IN-0115,F03,2025,Group audit oversight,Significant improvements needed,12
+IN-0116,F03,2024,Group audit oversight,Limited improvements needed,12
+IN-0117,F03,2023,Impairment,Significant improvements needed,4
+IN-0118,F03,2021,Engagement quality review,Limited improvements needed,9
+IN-0119,F03,2022,Journals & controls,Improvements needed,11
+IN-0120,F03,2025,Engagement quality review,Significant improvements needed,9
+IN-0121,F03,2024,Group audit oversight,Significant improvements needed,3
+IN-0122,F03,2025,Journals & controls,Significant improvements needed,5
+IN-0123,F03,2022,Journals & controls,Improvements needed,7
+IN-0124,F03,2021,Journals & controls,Unacceptable,8
+IN-0125,F03,2022,Going concern,Significant improvements needed,10
+IN-0126,F03,2022,Group audit oversight,Improvements needed,10
+IN-0127,F03,2025,Going concern,Improvements needed,11
+IN-0128,F03,2022,Engagement quality review,Improvements needed,4
+IN-0129,F03,2023,Group audit oversight,Improvements needed,4
+IN-0130,F03,2021,Estimates & judgements,Good,4
+IN-0131,F03,2022,Revenue,Significant improvements needed,7
+IN-0132,F03,2025,Engagement quality review,Unacceptable,3
+IN-0133,F03,2024,Journals & controls,Significant improvements needed,5
+IN-0134,F03,2024,Journals & controls,Improvements needed,11
+IN-0135,F03,2021,Impairment,Improvements needed,6
+IN-0136,F03,2021,Journals & controls,Significant improvements needed,11
+IN-0137,F03,2023,Journals & controls,Limited improvements needed,11
+IN-0138,F03,2025,Going concern,Good,5
+IN-0139,F03,2025,Estimates & judgements,Unacceptable,4
+IN-0140,F03,2023,Impairment,Unacceptable,8
+IN-0141,F03,2021,Going concern,Improvements needed,5
+IN-0142,F03,2023,Group audit oversight,Unacceptable,6
+IN-0143,F03,2025,Engagement quality review,Unacceptable,4
+IN-0144,F04,2023,Group audit oversight,Good,2
+IN-0145,F04,2022,Journals & controls,Good,4
+IN-0146,F04,2024,Group audit oversight,Good,5
+IN-0147,F04,2025,Revenue,Improvements needed,3
+IN-0148,F04,2025,Revenue,Improvements needed,2
+IN-0149,F04,2021,Group audit oversight,Limited improvements needed,2
+IN-0150,F04,2023,Group audit oversight,Good,5
+IN-0151,F04,2022,Revenue,Good,0
+IN-0152,F04,2024,Revenue,Limited improvements needed,4
+IN-0153,F04,2025,Going concern,Improvements needed,0
+IN-0154,F04,2024,Engagement quality review,Good,5
+IN-0155,F04,2023,Going concern,Good,2
+IN-0156,F04,2023,Estimates & judgements,Good,4
+IN-0157,F04,2023,Going concern,Good,5
+IN-0158,F04,2024,Group audit oversight,Good,5
+IN-0159,F04,2024,Engagement quality review,Good,5
+IN-0160,F04,2022,Group audit oversight,Good,0
+IN-0161,F04,2022,Journals & controls,Good,2
+IN-0162,F04,2021,Estimates & judgements,Good,3
+IN-0163,F04,2023,Going concern,Good,4
+IN-0164,F04,2024,Journals & controls,Improvements needed,1
+IN-0165,F04,2023,Engagement quality review,Improvements needed,3
+IN-0166,F04,2025,Journals & controls,Limited improvements needed,3
+IN-0167,F04,2022,Revenue,Good,0
+IN-0168,F04,2022,Impairment,Good,0
+IN-0169,F04,2022,Engagement quality review,Good,2
+IN-0170,F04,2024,Journals & controls,Significant improvements needed,0
+IN-0171,F04,2024,Group audit oversight,Limited improvements needed,3
+IN-0172,F04,2021,Estimates & judgements,Improvements needed,4
+IN-0173,F04,2022,Estimates & judgements,Limited improvements needed,1
+IN-0174,F04,2023,Engagement quality review,Improvements needed,2
+IN-0175,F04,2022,Going concern,Limited improvements needed,1
+IN-0176,F04,2024,Engagement quality review,Limited improvements needed,0
+IN-0177,F04,2025,Estimates & judgements,Limited improvements needed,4
+IN-0178,F04,2022,Estimates & judgements,Good,3
+IN-0179,F04,2021,Estimates & judgements,Good,1
+IN-0180,F04,2024,Estimates & judgements,Good,0
+IN-0181,F04,2021,Impairment,Good,2
+IN-0182,F04,2022,Going concern,Good,3
+IN-0183,F05,2021,Journals & controls,Limited improvements needed,0
+IN-0184,F05,2023,Group audit oversight,Good,2
+IN-0185,F05,2023,Estimates & judgements,Limited improvements needed,2
+IN-0186,F05,2021,Revenue,Good,0
+IN-0187,F05,2023,Going concern,Good,2
+IN-0188,F05,2025,Estimates & judgements,Good,2
+IN-0189,F05,2024,Group audit oversight,Good,0
+IN-0190,F05,2021,Journals & controls,Limited improvements needed,4
+IN-0191,F05,2022,Journals & controls,Good,2
+IN-0192,F05,2025,Group audit oversight,Limited improvements needed,1
+IN-0193,F05,2023,Going concern,Good,0
+IN-0194,F05,2021,Journals & controls,Good,4
+IN-0195,F05,2021,Journals & controls,Good,1
+IN-0196,F05,2022,Revenue,Limited improvements needed,0
+IN-0197,F05,2025,Group audit oversight,Limited improvements needed,5
+IN-0198,F05,2024,Estimates & judgements,Significant improvements needed,4
+IN-0199,F05,2022,Estimates & judgements,Good,3
+IN-0200,F05,2025,Engagement quality review,Limited improvements needed,4
+IN-0201,F05,2023,Going concern,Improvements needed,5
+IN-0202,F05,2021,Revenue,Improvements needed,3
+IN-0203,F05,2024,Impairment,Limited improvements needed,0
+IN-0204,F05,2022,Journals & controls,Limited improvements needed,1
+IN-0205,F05,2023,Impairment,Good,0
+IN-0206,F05,2022,Going concern,Limited improvements needed,3
+IN-0207,F05,2025,Revenue,Improvements needed,1
+IN-0208,F05,2024,Going concern,Improvements needed,4
+IN-0209,F05,2024,Group audit oversight,Good,1
+IN-0210,F05,2022,Impairment,Good,1
+IN-0211,F05,2025,Engagement quality review,Limited improvements needed,4
+IN-0212,F05,2024,Journals & controls,Limited improvements needed,4
+IN-0213,F05,2023,Estimates & judgements,Good,2
+IN-0214,F05,2023,Estimates & judgements,Limited improvements needed,1
+IN-0215,F05,2021,Group audit oversight,Limited improvements needed,0
+IN-0216,F05,2022,Group audit oversight,Significant improvements needed,1
+IN-0217,F05,2023,Revenue,Improvements needed,5
+IN-0218,F05,2022,Estimates & judgements,Significant improvements needed,4
+IN-0219,F05,2021,Group audit oversight,Good,5
+IN-0220,F05,2025,Group audit oversight,Significant improvements needed,0
+IN-0221,F05,2025,Estimates & judgements,Good,3
+IN-0222,F06,2025,Revenue,Good,5
+IN-0223,F06,2021,Estimates & judgements,Improvements needed,5
+IN-0224,F06,2023,Revenue,Good,4
+IN-0225,F06,2025,Journals & controls,Good,5
+IN-0226,F06,2024,Group audit oversight,Significant improvements needed,5
+IN-0227,F06,2025,Engagement quality review,Limited improvements needed,3
+IN-0228,F06,2022,Estimates & judgements,Good,4
+IN-0229,F06,2024,Estimates & judgements,Good,5
+IN-0230,F06,2024,Going concern,Good,0
+IN-0231,F06,2024,Estimates & judgements,Good,1
+IN-0232,F06,2022,Journals & controls,Limited improvements needed,1
+IN-0233,F06,2023,Estimates & judgements,Good,1
+IN-0234,F06,2024,Estimates & judgements,Limited improvements needed,0
+IN-0235,F06,2022,Estimates & judgements,Good,3
+IN-0236,F06,2024,Impairment,Good,1
+IN-0237,F06,2021,Going concern,Limited improvements needed,3
+IN-0238,F06,2021,Revenue,Good,5
+IN-0239,F06,2021,Engagement quality review,Good,0
+IN-0240,F06,2023,Journals & controls,Good,4
+IN-0241,F06,2021,Revenue,Improvements needed,0
+IN-0242,F06,2025,Group audit oversight,Limited improvements needed,5
+IN-0243,F06,2021,Going concern,Good,4
+IN-0244,F06,2024,Group audit oversight,Improvements needed,2
+IN-0245,F06,2024,Revenue,Good,4
+IN-0246,F06,2023,Revenue,Limited improvements needed,0
+IN-0247,F06,2021,Group audit oversight,Good,0
+IN-0248,F06,2025,Going concern,Improvements needed,1
+IN-0249,F06,2021,Revenue,Improvements needed,1
+IN-0250,F06,2024,Group audit oversight,Good,5
+IN-0251,F06,2023,Journals & controls,Good,3
+IN-0252,F06,2021,Revenue,Limited improvements needed,1
+IN-0253,F06,2021,Group audit oversight,Significant improvements needed,2
+IN-0254,F06,2021,Revenue,Limited improvements needed,2
+IN-0255,F06,2021,Impairment,Improvements needed,1
+IN-0256,F06,2022,Group audit oversight,Limited improvements needed,4
+IN-0257,F06,2022,Estimates & judgements,Limited improvements needed,5
+IN-0258,F06,2023,Group audit oversight,Limited improvements needed,2
+IN-0259,F07,2021,Going concern,Good,5
+IN-0260,F07,2023,Engagement quality review,Significant improvements needed,5
+IN-0261,F07,2021,Engagement quality review,Improvements needed,1
+IN-0262,F07,2022,Going concern,Good,3
+IN-0263,F07,2024,Revenue,Improvements needed,4
+IN-0264,F07,2024,Group audit oversight,Significant improvements needed,1
+IN-0265,F07,2021,Estimates & judgements,Good,1
+IN-0266,F07,2024,Going concern,Good,3
+IN-0267,F07,2024,Going concern,Limited improvements needed,4
+IN-0268,F07,2023,Journals & controls,Good,1
+IN-0269,F07,2024,Going concern,Limited improvements needed,4
+IN-0270,F07,2025,Impairment,Limited improvements needed,1
+IN-0271,F07,2024,Journals & controls,Good,3
+IN-0272,F07,2025,Journals & controls,Limited improvements needed,5
+IN-0273,F07,2022,Estimates & judgements,Limited improvements needed,2
+IN-0274,F07,2021,Engagement quality review,Good,0
+IN-0275,F07,2023,Estimates & judgements,Limited improvements needed,0
+IN-0276,F07,2021,Group audit oversight,Improvements needed,1
+IN-0277,F07,2023,Engagement quality review,Limited improvements needed,4
+IN-0278,F07,2024,Engagement quality review,Good,1
+IN-0279,F07,2021,Revenue,Limited improvements needed,5
+IN-0280,F07,2022,Revenue,Good,5
+IN-0281,F07,2024,Journals & controls,Good,0
+IN-0282,F07,2025,Engagement quality review,Good,4
+IN-0283,F07,2022,Group audit oversight,Good,1
+IN-0284,F07,2021,Revenue,Good,4
+IN-0285,F07,2024,Estimates & judgements,Good,3
+IN-0286,F07,2022,Journals & controls,Limited improvements needed,2
+IN-0287,F07,2024,Group audit oversight,Good,3
+IN-0288,F07,2021,Estimates & judgements,Good,0
+IN-0289,F07,2021,Estimates & judgements,Limited improvements needed,4
+IN-0290,F07,2022,Engagement quality review,Good,3
+IN-0291,F07,2024,Engagement quality review,Limited improvements needed,2
+IN-0292,F07,2025,Journals & controls,Limited improvements needed,1
+IN-0293,F07,2024,Group audit oversight,Significant improvements needed,0
+IN-0294,F07,2025,Estimates & judgements,Good,5
+IN-0295,F08,2022,Revenue,Good,1
+IN-0296,F08,2024,Journals & controls,Good,4
+IN-0297,F08,2025,Engagement quality review,Improvements needed,5
+IN-0298,F08,2024,Journals & controls,Limited improvements needed,5
+IN-0299,F08,2024,Estimates & judgements,Improvements needed,0
+IN-0300,F08,2023,Estimates & judgements,Limited improvements needed,2
+IN-0301,F08,2021,Group audit oversight,Good,4
+IN-0302,F08,2023,Group audit oversight,Good,1
+IN-0303,F08,2025,Estimates & judgements,Good,4
+IN-0304,F08,2021,Group audit oversight,Improvements needed,1
+IN-0305,F08,2025,Revenue,Good,1
+IN-0306,F08,2023,Impairment,Good,4
+IN-0307,F08,2021,Engagement quality review,Limited improvements needed,3
+IN-0308,F08,2021,Revenue,Good,2
+IN-0309,F08,2021,Engagement quality review,Significant improvements needed,2
+IN-0310,F08,2024,Group audit oversight,Limited improvements needed,3
+IN-0311,F08,2023,Journals & controls,Significant improvements needed,5
+IN-0312,F08,2021,Journals & controls,Good,4
+IN-0313,F08,2021,Engagement quality review,Limited improvements needed,1
+IN-0314,F08,2021,Going concern,Limited improvements needed,3
+IN-0315,F08,2025,Revenue,Improvements needed,2
+IN-0316,F08,2022,Going concern,Good,0
+IN-0317,F08,2021,Estimates & judgements,Significant improvements needed,1
+IN-0318,F08,2022,Estimates & judgements,Improvements needed,4
+IN-0319,F08,2025,Impairment,Significant improvements needed,5
+IN-0320,F08,2025,Group audit oversight,Significant improvements needed,3
+IN-0321,F08,2022,Group audit oversight,Good,4
+IN-0322,F08,2024,Journals & controls,Good,5
+IN-0323,F08,2024,Impairment,Good,4
+IN-0324,F08,2021,Impairment,Significant improvements needed,5
+IN-0325,F08,2024,Revenue,Good,1
+IN-0326,F08,2023,Engagement quality review,Limited improvements needed,0
+IN-0327,F09,2024,Group audit oversight,Good,1
+IN-0328,F09,2023,Group audit oversight,Good,4
+IN-0329,F09,2023,Revenue,Good,1
+IN-0330,F09,2024,Going concern,Good,2
+IN-0331,F09,2024,Estimates & judgements,Limited improvements needed,0
+IN-0332,F09,2025,Group audit oversight,Limited improvements needed,2
+IN-0333,F09,2024,Impairment,Good,5
+IN-0334,F09,2022,Impairment,Limited improvements needed,4
+IN-0335,F09,2023,Journals & controls,Good,3
+IN-0336,F09,2025,Journals & controls,Limited improvements needed,0
+IN-0337,F09,2025,Revenue,Significant improvements needed,5
+IN-0338,F09,2022,Impairment,Limited improvements needed,0
+IN-0339,F09,2022,Group audit oversight,Improvements needed,3
+IN-0340,F09,2022,Engagement quality review,Limited improvements needed,0
+IN-0341,F09,2022,Going concern,Good,5
+IN-0342,F09,2021,Going concern,Good,5
+IN-0343,F09,2025,Going concern,Improvements needed,0
+IN-0344,F09,2021,Revenue,Good,3
+IN-0345,F09,2024,Group audit oversight,Good,0
+IN-0346,F09,2023,Impairment,Good,3
+IN-0347,F09,2022,Going concern,Limited improvements needed,0
+IN-0348,F09,2023,Impairment,Limited improvements needed,1
+IN-0349,F09,2024,Estimates & judgements,Good,2
+IN-0350,F09,2025,Impairment,Good,3
+IN-0351,F09,2021,Group audit oversight,Significant improvements needed,3
+IN-0352,F09,2024,Estimates & judgements,Good,0
+IN-0353,F09,2024,Journals & controls,Good,1
+IN-0354,F09,2021,Group audit oversight,Good,3
+IN-0355,F09,2021,Journals & controls,Good,3
+IN-0356,F09,2024,Journals & controls,Limited improvements needed,2
+IN-0357,F10,2022,Revenue,Improvements needed,3
+IN-0358,F10,2023,Group audit oversight,Significant improvements needed,1
+IN-0359,F10,2022,Going concern,Good,3
+IN-0360,F10,2024,Engagement quality review,Limited improvements needed,1
+IN-0361,F10,2024,Journals & controls,Good,4
+IN-0362,F10,2024,Impairment,Improvements needed,4
+IN-0363,F10,2022,Journals & controls,Good,4
+IN-0364,F10,2025,Journals & controls,Good,5
+IN-0365,F10,2023,Going concern,Good,1
+IN-0366,F10,2024,Revenue,Improvements needed,5
+IN-0367,F10,2024,Journals & controls,Good,0
+IN-0368,F10,2024,Engagement quality review,Significant improvements needed,1
+IN-0369,F10,2024,Impairment,Limited improvements needed,0
+IN-0370,F10,2021,Estimates & judgements,Good,3
+IN-0371,F10,2025,Impairment,Improvements needed,3
+IN-0372,F10,2022,Estimates & judgements,Good,5
+IN-0373,F10,2025,Group audit oversight,Significant improvements needed,2
+IN-0374,F10,2021,Group audit oversight,Good,4
+IN-0375,F10,2021,Journals & controls,Limited improvements needed,3
+IN-0376,F10,2024,Group audit oversight,Good,4
+IN-0377,F10,2024,Engagement quality review,Limited improvements needed,2
+IN-0378,F10,2021,Going concern,Significant improvements needed,3
+IN-0379,F10,2023,Impairment,Good,1
+IN-0380,F10,2025,Group audit oversight,Limited improvements needed,5
+IN-0381,F10,2024,Journals & controls,Limited improvements needed,4
+IN-0382,F10,2021,Engagement quality review,Significant improvements needed,0
+IN-0383,F10,2021,Impairment,Limited improvements needed,3
+IN-0384,F10,2021,Engagement quality review,Limited improvements needed,4
+IN-0385,F10,2025,Going concern,Good,4
+IN-0386,F10,2025,Journals & controls,Improvements needed,2
+IN-0387,F11,2024,Engagement quality review,Good,3
+IN-0388,F11,2025,Estimates & judgements,Good,3
+IN-0389,F11,2021,Engagement quality review,Good,3
+IN-0390,F11,2024,Journals & controls,Improvements needed,5
+IN-0391,F11,2024,Group audit oversight,Good,1
+IN-0392,F11,2025,Journals & controls,Good,2
+IN-0393,F11,2023,Engagement quality review,Improvements needed,3
+IN-0394,F11,2022,Going concern,Good,0
+IN-0395,F11,2021,Engagement quality review,Good,2
+IN-0396,F11,2025,Impairment,Improvements needed,2
+IN-0397,F11,2023,Impairment,Good,3
+IN-0398,F11,2022,Going concern,Limited improvements needed,1
+IN-0399,F11,2025,Engagement quality review,Limited improvements needed,0
+IN-0400,F11,2025,Journals & controls,Limited improvements needed,3
+IN-0401,F11,2022,Group audit oversight,Good,4
+IN-0402,F11,2022,Revenue,Limited improvements needed,5
+IN-0403,F11,2022,Journals & controls,Limited improvements needed,4
+IN-0404,F11,2024,Journals & controls,Improvements needed,2
+IN-0405,F11,2025,Group audit oversight,Good,1
+IN-0406,F11,2021,Going concern,Good,0
+IN-0407,F11,2025,Impairment,Good,5
+IN-0408,F12,2025,Revenue,Significant improvements needed,4
+IN-0409,F12,2024,Journals & controls,Good,1
+IN-0410,F12,2024,Engagement quality review,Limited improvements needed,2
+IN-0411,F12,2022,Estimates & judgements,Good,2
+IN-0412,F12,2022,Estimates & judgements,Limited improvements needed,5
+IN-0413,F12,2024,Journals & controls,Improvements needed,0
+IN-0414,F12,2023,Estimates & judgements,Good,5
+IN-0415,F12,2021,Impairment,Limited improvements needed,0
+IN-0416,F12,2021,Impairment,Limited improvements needed,0
+IN-0417,F12,2021,Group audit oversight,Good,1
+IN-0418,F12,2021,Engagement quality review,Good,2
+IN-0419,F12,2022,Going concern,Good,0
+IN-0420,F12,2024,Journals & controls,Good,0
+IN-0421,F12,2022,Going concern,Limited improvements needed,2
+IN-0422,F12,2024,Estimates & judgements,Improvements needed,2
+IN-0423,F12,2021,Journals & controls,Improvements needed,4
+IN-0424,F12,2025,Revenue,Improvements needed,2
+IN-0425,F12,2023,Impairment,Limited improvements needed,4
+IN-0426,F12,2025,Impairment,Good,5

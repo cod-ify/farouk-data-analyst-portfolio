@@ -43,8 +43,8 @@
     <div class="aerovista-hero-grid">
       <div class="case-hero-copy">
         <div class="case-hero-meta"><span class="eyebrow">Aviation operations</span><span class="case-status">End-to-end analysis</span></div>
-        <h1>Airline Delays: Finding the Problems Management Can Fix</h1>
-        <p class="case-question"><span>Business question</span>AeroVista's punctuality got worse. Was this caused by a few exceptional events, or was there an underlying decline—and where should managers act first?</p>
+        <h1>Which of AeroVista's delays can management actually fix?</h1>
+        <p class="case-question"><span>Business question</span>AeroVista's punctuality got worse. Was that a few exceptional events, or a genuine underlying decline? And where should managers act first?</p>
         <p class="cs-sub">I analysed 25,204 scheduled flights across two years. “On time” means arriving no more than 15 minutes after schedule; cancellations are reported separately because the evidence shows they are a different operational problem.</p>
         <div class="hero-ctas"><a class="btn btn-primary" href="#findings">See the answer <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#recommendations">Management actions</a></div>
       </div>
@@ -81,7 +81,7 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Read this first</span>
-      <h2>The decline is real—but cancellations tell a different story</h2>
+      <h2>The punctuality decline is real; cancellations tell a different story</h2>
       <p>Every headline figure below is <button type="button" class="term" data-term="reconciled">checked to match <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"
@@ -129,8 +129,8 @@
     <div class="findings-grid">
     <div class="finding-card">
       <span class="finding-num">FINDING 1</span>
-      <h4>On-time performance really did get worse — and it's not just a run of bad weeks.</h4>
-      <p>The share of flights arriving broadly on time fell over the two years covered by this data. Even after removing the three known bad-weather and grounding episodes from the numbers, the decline is still there — this is a genuine underlying trend, not one-off bad luck.</p>
+      <h4>On-time performance really did get worse, and the drop outlasts the bad weeks.</h4>
+      <p>The share of flights arriving broadly on time fell over the two years covered by this data. Remove the three known bad-weather and grounding episodes and the decline is still there, which makes it a genuine underlying trend rather than one-off bad luck.</p>
       <div class="figure-line">On-time performance: 87.72% (2024) &rarr; 86.18% (2025) &middot; Still falls to 86.25% (&minus;1.52pp) even with the 3 disruption episodes removed</div>
       <details class="detail"><summary>Show the statistical detail</summary><div class="detail-body">Two-proportion z-test on on-time performance: z=&minus;3.57, <button type="button" class="term" data-term="p-value">p=0.0004 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -466,10 +466,10 @@
     </div>
     <div class="analysis-purpose"><div><strong>Why this analysis</strong><p>Knowing when lateness starts to spread identifies the operational threshold at which local delay becomes a network problem.</p></div><div><strong>Decision supported</strong><p>Prioritise rotation protection and recovery resources once inbound lateness exceeds the available turnaround cushion.</p></div></div>
     <div class="chart-block ">
-  <div class="chart-head"><span class="chart-title">Delay begins to spread once inbound lateness exceeds 15 minutes</span></div>
-  <div data-chart="c3-data" data-chart-type="bar"></div>
-  <script type="application/json" id="c3-data">{"categories": ["Arrived early", "0–15 min late", "15–30 min late", "30–60 min late", "Over 60 min late"], "series": [{"label": "Minutes passed to next flight", "values": [0.0, 0.0, 3.8, 22.5, 63.7]}], "options": {"categoryLabel": "Inbound aircraft arrival"}}</script>
-  <div class="chart-caption">Nothing carries forward on average when the inbound aircraft is less than 15 minutes late. More than an hour of inbound lateness passes through almost minute for minute: 63.7 minutes reaches the next departure.</div>
+  <div class="chart-head"><span class="chart-title">Delay begins to spread once inbound lateness passes 15 minutes</span></div>
+  <div data-chart="c3-data" data-chart-type="line"></div>
+  <script type="application/json" id="c3-data">{"xLabels": ["Arrived early", "0–15 min late", "15–30 min late", "30–60 min late", "Over 60 min late"], "series": [{"label": "Minutes carried to the next flight", "values": [0.0, 0.0, 3.8, 22.5, 63.7], "maxValue": 70}], "options": {"height": 320, "xLabel": "Inbound aircraft lateness", "endLabels": true, "maxXTicks": 5, "annotations": [{"x": "15–30 min late", "label": "Cushion used up"}]}}</script>
+  <div class="chart-caption">The line stays flat while the inbound aircraft is under 15 minutes late: the turnaround cushion absorbs it. Past that point it climbs steeply, and beyond an hour of lateness roughly 64 minutes carries straight through to the next departure.</div>
 </div>
   </div>
 </section>
@@ -555,7 +555,7 @@
       <span class="eyebrow">9. What management should do</span>
       <h2>Five actions, each linked to a finding</h2>
     </div>
-    <ol class="rec-list"><li><strong>Treat the punctuality decline and the cancellation-rate rise as two separate problems.</strong> The first remains after exceptional periods are removed and warrants an operations-capacity review. The second is concentrated in the September 2025 Turboprop grounding and needs a fleet-maintenance-scheduling review, not a network-wide policy change.</li><li><strong>Prioritise airline-controlled causes in the cancellation response.</strong> They account for 99.4% of cancellations in this dataset, while ordinary delay is roughly half external.</li><li><strong>Investigate Northgate&ndash;Bellhaven first.</strong> Its actual on-time rate is 5.46 percentage points below the result expected for its distance, haul type and congestion—the largest unexplained route gap.</li><li><strong>Review turnaround plans where inbound lateness often exceeds 15 minutes.</strong> The existing cushion absorbs smaller delays; beyond that point, lateness increasingly reaches the next departure.</li><li><strong>Do not treat Northgate airport's raw delay ranking as proof of a local problem.</strong> Much of it is explained by the hub's complexity. Porthaven and Millbeck remain the stronger airport review candidates after adjustment.</li></ol>
+    <ol class="rec-list"><li><strong>Treat the punctuality decline and the cancellation-rate rise as two separate problems.</strong> The first remains after exceptional periods are removed and warrants an operations-capacity review. The second is concentrated in the September 2025 Turboprop grounding and needs a fleet-maintenance-scheduling review, not a network-wide policy change.</li><li><strong>Prioritise airline-controlled causes in the cancellation response.</strong> They account for 99.4% of cancellations in this dataset, while ordinary delay is roughly half external.</li><li><strong>Investigate Northgate&ndash;Bellhaven first.</strong> Its actual on-time rate is 5.46 percentage points below the result expected for its distance, haul type and congestion. That is the largest unexplained route gap.</li><li><strong>Review turnaround plans where inbound lateness often exceeds 15 minutes.</strong> The existing cushion absorbs smaller delays; beyond that point, lateness increasingly reaches the next departure.</li><li><strong>Read Northgate airport's raw delay ranking with care.</strong> Much of it is explained by the hub's complexity. Porthaven and Millbeck remain the stronger airport review candidates after adjustment.</li></ol>
   </div>
 </section>
 <section id="limitations">

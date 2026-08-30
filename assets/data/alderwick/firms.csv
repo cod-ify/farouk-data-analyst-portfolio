@@ -1,0 +1,13 @@
+id,name,supervisory_route,lead_supervisor,active_audits,priority_audits
+F01,Harlow & Vance,deep-dive,Priya Raman,105,10
+F02,Castlereagh Audit,deep-dive,Douglas Mearns,98,9
+F03,Ashby Kellerman,deep-dive,Ruth Odede,92,6
+F04,Thornfield & Co,group,Martin Yau,86,3
+F05,Corveth Audit Group,group,Elena Poplavska,84,3
+F06,Pellow & Rhodes,group,Sam Whitfield,80,2
+F07,Ingleby Foulkes,group,Grace Nkemelu,78,1
+F08,Prentice Meridian,ask,Tomasz Halloran,74,2
+F09,Whitmark LLP,ask,Aisha Farooqi,70,1
+F10,Stanmere Partners,ask,Colin Ebbsworth,68,1
+F11,Dunmore Audit,routine,Hannah Leung,63,0
+F12,Marrable Quaid,routine,Peter Okafor,62,0
